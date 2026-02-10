@@ -2,7 +2,7 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        
 
         public MainPage()
         {
@@ -18,7 +18,7 @@
 
         }
 
-        private async void Button_sign_in_Clicked(object sender, EventArgs e)
+        private async void Button_sign_up_Clicked(object sender, EventArgs e)
         {
             await DisplayAlertAsync("SIGNIN", "You have been alerted", "OK");
         }

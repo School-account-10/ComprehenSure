@@ -22,10 +22,10 @@
                 
             </Button>
             <Button
-            Text="Sign in"
-            x:Name="Button_signin"
+            Text="Sign up"
+            x:Name="Button_signup"
                 Margin="20"
-                Clicked="Button_sign_in_Clicked">
+                Clicked="Button_sign_up_Clicked">
 
             </Button>
         </VerticalStackLayout>

@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|solutionrelative:comprehensure\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|c:\\users\\franzoli\\desktop\\coding\\vscode\\computer_ils\\gr12_ils\\comprehensure\\expo_software_and_site\\app_desktop\\comprehensure\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|solutionrelative:comprehensure\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|c:\\users\\franzoli\\desktop\\coding\\vscode\\computer_ils\\gr12_ils\\comprehensure\\expo_software_and_site\\app_desktop\\comprehensure\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|solutionrelative:comprehensure\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|c:\\users\\franzoli\\desktop\\coding\\vscode\\computer_ils\\gr12_ils\\comprehensure\\expo_software_and_site\\app_desktop\\comprehensure\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|solutionrelative:comprehensure\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|c:\\users\\franzoli\\desktop\\coding\\vscode\\computer_ils\\gr12_ils\\comprehensure\\expo_software_and_site\\app_desktop\\comprehensure\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|solutionrelative:comprehensure\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{63F75816-12CC-5910-0BF8-D43CEDC62941}|comprehensure\\comprehensure.csproj|c:\\users\\franzoli\\desktop\\coding\\vscode\\computer_ils\\gr12_ils\\comprehensure\\expo_software_and_site\\app_desktop\\comprehensure\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "LoginPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Franzoli\\Desktop\\Coding\\Vscode\\Computer_ils\\gr12_ils\\ComprehenSure\\expo_Software_and_Site\\app_desktop\\comprehensure\\LoginPage.xaml.cs",
               "RelativeDocumentMoniker": "comprehensure\\LoginPage.xaml.cs",
@@ -93,7 +93,7 @@
               "RelativeDocumentMoniker": "comprehensure\\LoginPage.xaml",
               "ToolTip": "C:\\Users\\Franzoli\\Desktop\\Coding\\Vscode\\Computer_ils\\gr12_ils\\ComprehenSure\\expo_Software_and_Site\\app_desktop\\comprehensure\\LoginPage.xaml",
               "RelativeToolTip": "comprehensure\\LoginPage.xaml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-10T10:29:18.223Z",
               "EditorCaption": ""
@@ -112,26 +112,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Franzoli\\Desktop\\Coding\\Vscode\\Computer_ils\\gr12_ils\\ComprehenSure\\expo_Software_and_Site\\app_desktop\\comprehensure\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "comprehensure\\MainPage.xaml.cs",
               "ToolTip": "C:\\Users\\Franzoli\\Desktop\\Coding\\Vscode\\Computer_ils\\gr12_ils\\ComprehenSure\\expo_Software_and_Site\\app_desktop\\comprehensure\\MainPage.xaml.cs",
               "RelativeToolTip": "comprehensure\\MainPage.xaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAiwA8AAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-10T09:50:34.654Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\Franzoli\\Desktop\\Coding\\Vscode\\Computer_ils\\gr12_ils\\ComprehenSure\\expo_Software_and_Site\\app_desktop\\comprehensure\\MainPage.xaml",
               "RelativeDocumentMoniker": "comprehensure\\MainPage.xaml",
               "ToolTip": "C:\\Users\\Franzoli\\Desktop\\Coding\\Vscode\\Computer_ils\\gr12_ils\\ComprehenSure\\expo_Software_and_Site\\app_desktop\\comprehensure\\MainPage.xaml",
               "RelativeToolTip": "comprehensure\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-10T09:50:13.836Z",
               "EditorCaption": ""
@@ -146,8 +146,7 @@
               "RelativeToolTip": "comprehensure\\MauiProgram.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T09:50:10.818Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T09:50:10.818Z"
             },
             {
               "$type": "Document",

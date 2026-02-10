@@ -10,19 +10,22 @@
             HorizontalOptions="Center">
             <VerticalStackLayout>
                 <Entry
-        Placeholder="Email:"
-        Margin="20"
-        x:Name="Email">
+                Placeholder="Email:"
+                Margin="20"
+                x:Name="Email">
                 </Entry>
                 <Entry
             Placeholder="Password:"
             Margin="20"
-            x:Name="Password">
+            x:Name="Password"
+            IsPassword="True">
+           
                 </Entry>
 
                 <Button
-                    Text="Login">
-                    
+                    Text="Login"
+                    x:Name="Login_Button"
+                    Clicked="Login_Button_Clicked">
                 </Button>
 
             </VerticalStackLayout>
