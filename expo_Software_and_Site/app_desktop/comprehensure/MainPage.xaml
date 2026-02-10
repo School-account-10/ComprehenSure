@@ -1,33 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="comprehensure.MainPage">
+<ContentPage
+    x:Class="comprehensure.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <ScrollView>
         <VerticalStackLayout>
             <Image
-                Source="logo_edited.jpg"
-                HorizontalOptions="Center"
                 HeightRequest="200"
-                WidthRequest="200">
-                
-            </Image>
-                
+                HorizontalOptions="Center"
+                Source="logo_edited.jpg"
+                WidthRequest="200" />
+
 
             <Button
-                Text="Login"
                 x:Name="Button_login"
-                Clicked="Button_login_Clicked"
-                Margin="20">
-                
-            </Button>
-            <Button
-            Text="Sign up"
-            x:Name="Button_signup"
                 Margin="20"
-                Clicked="Button_sign_up_Clicked">
-
-            </Button>
+                Clicked="Button_login_Clicked"
+                Text="Login" />
+            <Button
+                x:Name="Button_signup"
+                Margin="20"
+                Clicked="Button_sign_up_Clicked"
+                Text="Sign up" />
+            
         </VerticalStackLayout>
     </ScrollView>
 

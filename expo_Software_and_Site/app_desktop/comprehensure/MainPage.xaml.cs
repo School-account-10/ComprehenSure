@@ -21,6 +21,7 @@
         private async void Button_sign_up_Clicked(object sender, EventArgs e)
         {
             await DisplayAlertAsync("SIGNIN", "You have been alerted", "OK");
+            await Navigation.PushAsync(new SignUpPage());
         }
     }
 }
