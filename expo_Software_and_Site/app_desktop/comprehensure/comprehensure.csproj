@@ -62,13 +62,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Login.xaml.cs">
-	    <DependentUpon>Login.xaml</DependentUpon>
+	  <Compile Update="LoginPage.xaml.cs">
+	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Login.xaml">
+	  <MauiXaml Update="LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

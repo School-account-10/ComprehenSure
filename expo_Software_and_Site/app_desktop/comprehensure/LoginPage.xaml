@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="comprehensure.LoginPage">
+
+
+    <ScrollView>
+        <HorizontalStackLayout
+           VerticalOptions="Center"
+            HorizontalOptions="Center">
+            <VerticalStackLayout>
+                <Entry
+        Placeholder="Email:"
+        Margin="20"
+        x:Name="Email">
+                </Entry>
+                <Entry
+            Placeholder="Password:"
+            Margin="20"
+            x:Name="Password">
+                </Entry>
+
+                <Button
+                    Text="Login">
+                    
+                </Button>
+
+            </VerticalStackLayout>
+
+        
+
+
+        </HorizontalStackLayout>
+        
+    </ScrollView>
+    
+
+   
+</ContentPage>
+    
