@@ -6,4 +6,8 @@ public partial class SignUpPage : ContentPage
 	{
 		InitializeComponent();
 	}
+	public async void BackButtonEvent(Object sender, EventArgs e)
+	{
+        await Navigation.PushAsync(new MainPage());
+    }
 }

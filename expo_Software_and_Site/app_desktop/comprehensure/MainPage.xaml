@@ -5,26 +5,60 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <ScrollView>
-        <VerticalStackLayout>
-            <Image
+        <VerticalStackLayout
+            Padding="40"
+            MaximumWidthRequest="450"
+            Spacing="15"
+            VerticalOptions="Center">
+
+            <Frame
+                Margin="0,0,0,25"
+                Padding="0"
+                CornerRadius="130"
                 HeightRequest="200"
                 HorizontalOptions="Center"
-                Source="logo_edited.jpg"
-                WidthRequest="200" />
+                IsClippedToBounds="True"
+                WidthRequest="200">
 
+                <Image
+                    Aspect="AspectFill"
+                    HeightRequest="200"
+                    Source="logo_edited.jpg"
+                    WidthRequest="200" />
+            </Frame>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="32"
+                HorizontalOptions="Center"
+                Text="Comprehensure"
+                TextColor="Blue" />
+
+            <Label
+                Margin="0,0,0,30"
+                FontSize="16"
+                HorizontalOptions="Center"
+                Text="The learning app."
+                TextColor="Gray" />
 
             <Button
                 x:Name="Button_login"
-                Margin="20"
                 Clicked="Button_login_Clicked"
+                CornerRadius="25"
+                HeightRequest="50"
                 Text="Login" />
+
             <Button
                 x:Name="Button_signup"
-                Margin="20"
+                BackgroundColor="Transparent"
+                BorderColor="{StaticResource Primary}"
+                BorderWidth="1"
                 Clicked="Button_sign_up_Clicked"
-                Text="Sign up" />
-            
+                CornerRadius="25"
+                HeightRequest="50"
+                Text="Sign Up"
+                TextColor="{StaticResource Primary}" />
+
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

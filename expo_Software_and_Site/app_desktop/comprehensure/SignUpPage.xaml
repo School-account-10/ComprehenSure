@@ -1,12 +1,77 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="comprehensure.SignUpPage"
-             Title="Sign up">
-    <VerticalStackLayout>
-        <Label 
-            Text="Sign Up Page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    x:Class="comprehensure.SignUpPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Create Account">
+
+
+    <ScrollView>
+        <Grid>
+            <VerticalStackLayout>
+                <VerticalStackLayout>
+
+                    <ImageButton
+                        Margin="10"
+                        Clicked="BackButtonEvent"
+                        HeightRequest="40"
+                        HorizontalOptions="Start"
+                        Source="backbutton.png"
+                        VerticalOptions="Start"
+                        WidthRequest="40">
+                        <ImageButton.IsVisible>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="Default" Value="True" />
+                                <On Platform="Android" Value="False" />
+                            </OnPlatform>
+                        </ImageButton.IsVisible>
+                    </ImageButton>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Padding="30"
+                    Spacing="15"
+                    VerticalOptions="Center">
+
+                    <Label
+                        Margin="0,0,0,20"
+                        FontAttributes="Bold"
+                        FontSize="32"
+                        HorizontalOptions="Center"
+                        Text="Join Us!" />
+
+                    <Entry
+                        x:Name="EmailEntry"
+                        Keyboard="Email"
+                        Placeholder="Email" />
+
+                    <Entry
+                        x:Name="PasswordNonConf"
+                        IsPassword="True"
+                        Placeholder="Password" />
+
+                    <Entry
+                        x:Name="ConfirmPassword"
+                        IsPassword="True"
+                        Placeholder="Confirm Password" />
+
+                    <Button
+                        x:Name="SignUpButton"
+                        Margin="0,10,0,0"
+                        Clicked="SignUpButton_Clicked"
+                        Text="Create Account" />
+
+                    <Button
+                        BackgroundColor="Transparent"
+                        Clicked="OnLoginNavigationClicked"
+                        FontSize="12"
+                        Text="Already have an account? Login"
+                        TextColor="Gray" />
+
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+
+
+    </ScrollView>
 </ContentPage>
+

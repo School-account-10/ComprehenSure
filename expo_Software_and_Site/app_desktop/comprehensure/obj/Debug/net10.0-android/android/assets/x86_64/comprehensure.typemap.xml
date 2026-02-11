@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="comprehensure" mvid="37ede11f77c245968eab6df8e75e47c2">
+  <java-to-managed>
+    <entry java-name="crc64ce27115333a3f076/MainActivity" managed-name="comprehensure.MainActivity, comprehensure" managed-type-token-id="33554442" />
+    <entry java-name="crc64ce27115333a3f076/MainApplication" managed-name="comprehensure.MainApplication, comprehensure" managed-type-token-id="33554443" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64ce27115333a3f076/MainActivity" managed-name="comprehensure.MainActivity, comprehensure" managed-type-token-id="33554442" />
+    <entry java-name="crc64ce27115333a3f076/MainApplication" managed-name="comprehensure.MainApplication, comprehensure" managed-type-token-id="33554443" />
+  </managed-to-java>
+</api>

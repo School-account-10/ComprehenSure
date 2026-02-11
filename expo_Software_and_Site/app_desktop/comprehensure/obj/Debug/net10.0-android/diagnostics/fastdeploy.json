@@ -1,18 +1,18 @@
 {
   "Task": "FastDeploy",
   "Properties": {
-    "target.prop.ro.product.build.version.sdk": "36",
-    "target.prop.ro.product.cpu.abilist": "arm64-v8a",
-    "target.prop.ro.product.manufacturer": "Google",
-    "target.prop.ro.product.model": "Pixel 8a",
+    "target.prop.ro.product.build.version.sdk": "34",
+    "target.prop.ro.product.cpu.abilist": "arm64-v8a;armeabi-v7a;armeabi",
+    "target.prop.ro.product.manufacturer": "vivo",
+    "target.prop.ro.product.model": "V2205",
     "target.prop.ro.product.cpu.abi": "arm64-v8a",
-    "deploy.error.code": "XA0129",
-    "deploy.tool": "xamarin.cp",
-    "deploy.result": "Failed",
+    "deploy.error.code": "",
+    "deploy.tool": "xamarin.sync",
+    "deploy.result": "Success",
     "deploy.supports.fastdev": "True",
     "deploy.systemapp": "False",
-    "deploy.duration.ms": "120151",
-    "pii.deploy.error": "Error deploying \u0027{0}\u0027.\nPlease set the \u0027EmbedAssembliesIntoApk\u0027 MSBuild property to \u0027true\u0027 to disable Fast Deployment in the Visual Studio project property pages, or edit the project file in a text editor.",
-    "pii.deploy.file": "files/.__override__/arm64-v8a/Microsoft.Extensions.Primitives.dll"
+    "deploy.duration.ms": "895",
+    "pii.deploy.error": "",
+    "pii.deploy.file": ""
   }
 }

@@ -2,36 +2,63 @@
 <ContentPage
     x:Class="comprehensure.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Login">
 
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="30" 
+                             Spacing="15" 
+                             MaximumWidthRequest="400" 
+                             VerticalOptions="Center">
 
-    <ScrollView>
-        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <VerticalStackLayout>
-                <Entry
-                    x:Name="Email"
-                    Margin="20"
-                    Placeholder="Email:" />
-                <Entry
-                    x:Name="Password"
-                    Margin="20"
-                    IsPassword="True"
-                    Placeholder="Password:" />
+                <BoxView HeightRequest="50" Color="Transparent" />
 
-                <Button
-                    x:Name="Login_Button"
+                <Label Margin="0,0,0,10"
+                   FontAttributes="Bold"
+                   FontSize="28"
+                   HorizontalOptions="Center"
+                   Text="Welcome Back" />
+
+                <Entry x:Name="Email"
+                   Keyboard="Email"
+                   Placeholder="Email"
+                   ReturnType="Next" />
+
+                <Entry x:Name="Password"
+                   IsPassword="True"
+                   Placeholder="Password"
+                   ReturnType="Done" />
+
+                <Button x:Name="Login_Button"
+                    Margin="0,10,0,0"
                     Clicked="Login_Button_Clicked"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
                     Text="Login" />
 
+                <Label FontSize="12"
+                   HorizontalOptions="Center"
+                   Text="Forgot Password?(still not working)"
+                   TextColor="{StaticResource Primary}" />
             </VerticalStackLayout>
+        </ScrollView>
 
-
-
-
-        </HorizontalStackLayout>
-
-    </ScrollView>
-
-
+        <ImageButton Source="backbutton.png"
+                 Clicked="BackButtonEvent"
+                 HeightRequest="40"
+                 WidthRequest="40"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Start"
+                 Margin="10" >
+            <ImageButton.IsVisible>
+            <OnPlatform x:TypeArguments="x:Boolean">
+                <On Platform="Default" Value="True" />
+                <On Platform="Android" Value="False" />
+            </OnPlatform>
+            </ImageButton.IsVisible>
+        </ImageButton>
+    </Grid>
 
 </ContentPage>
