@@ -272,6 +272,9 @@ C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\mauisplash.stamp
+C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\Resources\user.png
+C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\Resources\exclamation_mark.png
+C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\Resources\book.png
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\Resources\logo_edited.jpg
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
@@ -288,6 +291,9 @@ C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@3x.png
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@2x.png
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot.png
+C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\backbutton@3x.png
+C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\backbutton@2x.png
+C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\backbutton.png
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\mauiimage.stamp
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\mauiimage.outputs
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\f\MauiInfo.plist
@@ -318,3 +324,4 @@ C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\comprehensure.pdb
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\comprehensure.genruntimeconfig.cache
 C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\ref\comprehensure.dll
+C:\Users\Franzoli\Desktop\Coding\Vscode\Computer_ils\gr12_ils\ComprehenSure\expo_Software_and_Site\app_desktop\comprehensure\obj\Debug\net10.0-ios\iossimulator-x64\resizetizer\r\Resources\placeholder.png

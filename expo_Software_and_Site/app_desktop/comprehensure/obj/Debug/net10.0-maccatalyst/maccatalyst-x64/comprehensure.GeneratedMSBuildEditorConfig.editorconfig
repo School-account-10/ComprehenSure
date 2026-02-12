@@ -46,6 +46,56 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
+[C:/Users/Franzoli/Desktop/Coding/Vscode/Computer_ils/gr12_ils/ComprehenSure/expo_Software_and_Site/app_desktop/comprehensure/DASHBOARD/AllAboutUS_Dashboard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = comprehensure.DASHBOARD.AllAboutUS_Dashboard.xaml
+build_metadata.AdditionalFiles.TargetPath = DASHBOARD\AllAboutUS_Dashboard.xaml
+build_metadata.AdditionalFiles.RelativePath = DASHBOARD\AllAboutUS_Dashboard.xaml
+build_metadata.AdditionalFiles.Inflator = Runtime
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Users/Franzoli/Desktop/Coding/Vscode/Computer_ils/gr12_ils/ComprehenSure/expo_Software_and_Site/app_desktop/comprehensure/DASHBOARD/MainDashboard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = comprehensure.DASHBOARD.MainDashboard.xaml
+build_metadata.AdditionalFiles.TargetPath = DASHBOARD\MainDashboard.xaml
+build_metadata.AdditionalFiles.RelativePath = DASHBOARD\MainDashboard.xaml
+build_metadata.AdditionalFiles.Inflator = Runtime
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Users/Franzoli/Desktop/Coding/Vscode/Computer_ils/gr12_ils/ComprehenSure/expo_Software_and_Site/app_desktop/comprehensure/DASHBOARD/ModulesDaskboard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = comprehensure.DASHBOARD.ModulesDaskboard.xaml
+build_metadata.AdditionalFiles.TargetPath = DASHBOARD\ModulesDaskboard.xaml
+build_metadata.AdditionalFiles.RelativePath = DASHBOARD\ModulesDaskboard.xaml
+build_metadata.AdditionalFiles.Inflator = Runtime
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Users/Franzoli/Desktop/Coding/Vscode/Computer_ils/gr12_ils/ComprehenSure/expo_Software_and_Site/app_desktop/comprehensure/DASHBOARD/ProfileDashboard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = comprehensure.DASHBOARD.ProfileDashboard.xaml
+build_metadata.AdditionalFiles.TargetPath = DASHBOARD\ProfileDashboard.xaml
+build_metadata.AdditionalFiles.RelativePath = DASHBOARD\ProfileDashboard.xaml
+build_metadata.AdditionalFiles.Inflator = Runtime
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Users/Franzoli/Desktop/Coding/Vscode/Computer_ils/gr12_ils/ComprehenSure/expo_Software_and_Site/app_desktop/comprehensure/DASHBOARD/ProgressDashboard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = comprehensure.DASHBOARD.ProgressDashboard.xaml
+build_metadata.AdditionalFiles.TargetPath = DASHBOARD\ProgressDashboard.xaml
+build_metadata.AdditionalFiles.RelativePath = DASHBOARD\ProgressDashboard.xaml
+build_metadata.AdditionalFiles.Inflator = Runtime
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [C:/Users/Franzoli/Desktop/Coding/Vscode/Computer_ils/gr12_ils/ComprehenSure/expo_Software_and_Site/app_desktop/comprehensure/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = comprehensure.LoginPage.xaml

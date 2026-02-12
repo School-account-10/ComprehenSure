@@ -57,6 +57,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Raw\LocalDB\ACCOUNTS\Accounts.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 	</ItemGroup>
@@ -71,6 +75,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="DASHBOARD\AllAboutUS_Dashboard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="DASHBOARD\MainDashboard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="DASHBOARD\ModulesDaskboard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="DASHBOARD\ProfileDashboard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="DASHBOARD\ProgressDashboard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

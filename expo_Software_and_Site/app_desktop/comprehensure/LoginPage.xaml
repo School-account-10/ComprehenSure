@@ -45,7 +45,8 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <ImageButton Source="backbutton.png"
+        <ImageButton Source="null"
+                    
                  Clicked="BackButtonEvent"
                  HeightRequest="40"
                  WidthRequest="40"
@@ -54,7 +55,7 @@
                  Margin="10" >
             <ImageButton.IsVisible>
             <OnPlatform x:TypeArguments="x:Boolean">
-                <On Platform="Default" Value="True" />
+                <On Platform="Default" Value="false" />
                 <On Platform="Android" Value="False" />
             </OnPlatform>
             </ImageButton.IsVisible>

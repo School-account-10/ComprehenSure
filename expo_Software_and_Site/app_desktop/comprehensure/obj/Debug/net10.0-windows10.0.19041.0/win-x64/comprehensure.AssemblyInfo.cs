@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("comprehensure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+cef034dc2723259fb7c2aa9c9ea8830d192c302e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+71816eb5e5a43fc75816cef0cbc567eadb440f22")]
 [assembly: System.Reflection.AssemblyProductAttribute("comprehensure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("comprehensure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

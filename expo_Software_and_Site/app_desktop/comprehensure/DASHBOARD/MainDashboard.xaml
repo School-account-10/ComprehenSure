@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="comprehensure.DASHBOARD.MainDashboard"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="MainDashboard">
+
+    <ScrollView>
+        
+        <Grid
+            Padding="30"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="40"
+            RowDefinitions="Auto, Auto"
+            RowSpacing="30">
+
+            <VerticalStackLayout
+                Grid.Row="0"
+                Grid.Column="0"
+                Spacing="5">
+                <ImageButton
+                    x:Name="ProgressButton"
+                    BackgroundColor="LightBlue"
+                    Clicked="ProgressButton_Clicked"
+                    CornerRadius="30"
+                    HeightRequest="150"
+                    IsEnabled="True"
+                    Source="placeholder.png"
+                    WidthRequest="150" />
+                <Label
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Text="PROGRESS(PlaceHolder yang picture sir)" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                Grid.Row="0"
+                Grid.Column="1"
+                Spacing="5">
+                <ImageButton
+                    x:Name="ModulesButton"
+                    BackgroundColor="LightBlue"
+                    Clicked="ModulesButton_Clicked"
+                    CornerRadius="30"
+                    HeightRequest="150"
+                    Source="book.png"
+                    WidthRequest="150" />
+                <Label
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Text="MODULES" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                Grid.Row="1"
+                Grid.Column="0"
+                Spacing="5">
+                <ImageButton
+                    x:Name="ProfileButton"
+                    BackgroundColor="LightBlue"
+                    CornerRadius="30"
+                    Clicked="ProfileButton_Clicked"
+                    HeightRequest="150"
+                    Source="user.png"
+                    WidthRequest="150" />
+                <Label
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Text="PROFILE" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout
+                Grid.Row="1"
+                Grid.Column="1"
+                Spacing="5">
+                <ImageButton
+                    x:Name="AboutUsButton"
+                    BackgroundColor="LightBlue"
+                    CornerRadius="30"
+                    Clicked="AboutUsButton_Clicked"
+                    HeightRequest="150"
+                    Source="exclamation_mark.png"
+                    WidthRequest="150" />
+                <Label
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Text="ALL ABOUT US" />
+            </VerticalStackLayout>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
