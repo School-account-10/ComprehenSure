@@ -12,7 +12,7 @@
 
         private async void Button_login_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlertAsync("LOGIN", "You have been alerted", "OK");
+            
             await Navigation.PushAsync(new LoginPage());
 
 
@@ -20,7 +20,7 @@
 
         private async void Button_sign_up_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlertAsync("SIGNIN", "You have been alerted", "OK");
+            
             await Navigation.PushAsync(new SignUpPage());
         }
     }

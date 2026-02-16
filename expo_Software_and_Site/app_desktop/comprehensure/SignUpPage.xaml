@@ -1,78 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="comprehensure.SignUpPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Create Account">
 
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="30" 
+                                 Spacing="15" 
+                                 MaximumWidthRequest="400" 
+                                 VerticalOptions="Center">
 
-    <ScrollView>
-        <Grid>
-            <VerticalStackLayout>
-                <VerticalStackLayout>
+                <BoxView HeightRequest="50" Color="Transparent" />
 
-                    <ImageButton
-                        IsEnabled="False"
-                        Margin="10"
-                        Clicked="BackButtonEvent"
-                        HeightRequest="40"
-                        HorizontalOptions="Start"
-                        Source="null"
-                        VerticalOptions="Start"
-                        WidthRequest="40">
-                        <ImageButton.IsVisible>
-                            <OnPlatform x:TypeArguments="x:Boolean">
-                                <On Platform="Default" Value="false" />
-                                <On Platform="Android" Value="False" />
-                            </OnPlatform>
-                        </ImageButton.IsVisible>
-                    </ImageButton>
-                </VerticalStackLayout>
+                <Label Margin="0,0,0,10"
+                       FontAttributes="Bold"
+                       FontSize="28"
+                       HorizontalOptions="Center"
+                       Text="Join Us!" />
 
-                <VerticalStackLayout
-                    Padding="30"
-                    Spacing="15"
-                    VerticalOptions="Center">
+                <Entry x:Name="EmailEntry"
+                       Keyboard="Email"
+                       Placeholder="Email"
+                       ReturnType="Next" />
 
-                    <Label
-                        Margin="0,0,0,20"
-                        FontAttributes="Bold"
-                        FontSize="32"
-                        HorizontalOptions="Center"
-                        Text="Join Us!" />
+                <Entry x:Name="PasswordNonConf"
+                       IsPassword="True"
+                       Placeholder="Password"
+                       ReturnType="Next" />
 
-                    <Entry
-                        x:Name="EmailEntry"
-                        Keyboard="Email"
-                        Placeholder="Email" />
+                <Entry x:Name="ConfirmPassword"
+                       IsPassword="True"
+                       Placeholder="Confirm Password"
+                       ReturnType="Done" />
 
-                    <Entry
-                        x:Name="PasswordNonConf"
-                        IsPassword="True"
-                        Placeholder="Password" />
-
-                    <Entry
-                        x:Name="ConfirmPassword"
-                        IsPassword="True"
-                        Placeholder="Confirm Password" />
-
-                    <Button
-                        x:Name="SignUpButton"
+                <Button x:Name="SignUpButton"
                         Margin="0,10,0,0"
                         Clicked="SignUpButton_Clicked"
+                        CornerRadius="10"
+                        FontAttributes="Bold"
+                        HeightRequest="50"
                         Text="Create Account" />
 
-                    <Button
-                        BackgroundColor="Transparent"
+                <Button BackgroundColor="Transparent"
                         Clicked="OnLoginNavigationClicked"
                         FontSize="12"
+                        HorizontalOptions="Center"
                         Text="Already have an account? Login"
-                        TextColor="Gray" />
+                        TextColor="{StaticResource Primary}" />
 
-                </VerticalStackLayout>
             </VerticalStackLayout>
-        </Grid>
+        </ScrollView>
 
-
-    </ScrollView>
+        <ImageButton Source="null"
+                     Clicked="BackButtonEvent"
+                     HeightRequest="40"
+                     WidthRequest="40"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Start"
+                     Margin="10">
+            <ImageButton.IsVisible>
+                <OnPlatform x:TypeArguments="x:Boolean">
+                    <On Platform="Default" Value="false" />
+                    <On Platform="Android" Value="False" />
+                </OnPlatform>
+            </ImageButton.IsVisible>
+        </ImageButton>
+    </Grid>
 </ContentPage>
-
