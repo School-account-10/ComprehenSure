@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    x:Class="comprehensure.DASHBOARD.MainDashboard"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="MainDashboard">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="comprehensure.DASHBOARD.MainDashboard">
 
     <ScrollView>
-        
-        <Grid
-            Padding="30"
-            ColumnDefinitions="*,*"
-            ColumnSpacing="40"
-            RowDefinitions="Auto, Auto"
-            RowSpacing="30">
+        <VerticalStackLayout tVerticalOptions="Center" Padding="20,60,20,60">
 
-            <VerticalStackLayout
-                Grid.Row="0"
-                Grid.Column="0"
-                Spacing="5">
-                <ImageButton
-                    x:Name="ProgressButton"
-                    BackgroundColor="LightBlue"
-                    Clicked="ProgressButton_Clicked"
-                    CornerRadius="30"
-                    HeightRequest="150"
-                    IsEnabled="True"
-                    Source="placeholder.png"
-                    WidthRequest="150" />
-                <Label
-                    FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"
-                    Text="PROGRESS(PlaceHolder yang picture sir)" />
-            </VerticalStackLayout>
+            <FlexLayout Wrap="Wrap" 
+                        JustifyContent="SpaceEvenly" 
+                        AlignContent="Center" 
+                        AlignItems="Center">
 
-            <VerticalStackLayout
-                Grid.Row="0"
-                Grid.Column="1"
-                Spacing="5">
-                <ImageButton
-                    x:Name="ModulesButton"
-                    BackgroundColor="LightBlue"
-                    Clicked="ModulesButton_Clicked"
-                    CornerRadius="30"
-                    HeightRequest="150"
-                    Source="book.png"
-                    WidthRequest="150" />
-                <Label
-                    FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"
-                    Text="MODULES" />
-            </VerticalStackLayout>
+                <Border Margin="25"
+                        StrokeShape="RoundRectangle 30" 
+                        BackgroundColor="#CDB4DB" 
+                        HeightRequest="340" 
+                        WidthRequest="340"
+                        StrokeThickness="0">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="8,8" Radius="15" Opacity="0.15" />
+                    </Border.Shadow>
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="25">
+                        <Image Source="placeholder.png" HeightRequest="140" WidthRequest="140" />
+                        <Label Text="PROGRESS" 
+                               HorizontalOptions="Center" 
+                               FontAttributes="Bold" 
+                               FontSize="28" 
+                               TextColor="#2D2D2D"/>
+                    </VerticalStackLayout>
+                </Border>
 
-            <VerticalStackLayout
-                Grid.Row="1"
-                Grid.Column="0"
-                Spacing="5">
-                <ImageButton
-                    x:Name="ProfileButton"
-                    BackgroundColor="LightBlue"
-                    CornerRadius="30"
-                    Clicked="ProfileButton_Clicked"
-                    HeightRequest="150"
-                    Source="user.png"
-                    WidthRequest="150" />
-                <Label
-                    FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"
-                    Text="PROFILE" />
-            </VerticalStackLayout>
+                <Border Margin="25"
+                        StrokeShape="RoundRectangle 30" 
+                        BackgroundColor="#FFC8DD" 
+                        HeightRequest="340" 
+                        WidthRequest="340"
+                        StrokeThickness="0">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="8,8" Radius="15" Opacity="0.15" />
+                    </Border.Shadow>
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="25">
+                        <Image Source="book.png" HeightRequest="140" WidthRequest="140" />
+                        <Label Text="MODULES" 
+                               HorizontalOptions="Center" 
+                               FontAttributes="Bold" 
+                               FontSize="28" 
+                               TextColor="#2D2D2D"/>
+                    </VerticalStackLayout>
+                </Border>
 
-            <VerticalStackLayout
-                Grid.Row="1"
-                Grid.Column="1"
-                Spacing="5">
-                <ImageButton
-                    x:Name="AboutUsButton"
-                    BackgroundColor="LightBlue"
-                    CornerRadius="30"
-                    Clicked="AboutUsButton_Clicked"
-                    HeightRequest="150"
-                    Source="exclamation_mark.png"
-                    WidthRequest="150" />
-                <Label
-                    FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"
-                    Text="ALL ABOUT US" />
-            </VerticalStackLayout>
+                <Border Margin="25"
+                        StrokeShape="RoundRectangle 30" 
+                        BackgroundColor="#BDE0FE" 
+                        HeightRequest="340" 
+                        WidthRequest="340"
+                        StrokeThickness="0">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="8,8" Radius="15" Opacity="0.15" />
+                    </Border.Shadow>
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="25">
+                        <Image Source="user.png" HeightRequest="140" WidthRequest="140" />
+                        <Label Text="PROFILE" 
+                               HorizontalOptions="Center" 
+                               FontAttributes="Bold" 
+                               FontSize="28" 
+                               TextColor="#2D2D2D"/>
+                    </VerticalStackLayout>
+                </Border>
 
-        </Grid>
+                <Border Margin="25"
+                        StrokeShape="RoundRectangle 30" 
+                        BackgroundColor="#A2D2FF" 
+                        HeightRequest="340" 
+                        WidthRequest="340"
+                        StrokeThickness="0">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Offset="8,8" Radius="15" Opacity="0.15" />
+                    </Border.Shadow>
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="25">
+                        <Image Source="exclamation_mark.png" HeightRequest="140" WidthRequest="140" />
+                        <Label Text="ABOUT US" 
+                               HorizontalOptions="Center" 
+                               FontAttributes="Bold" 
+                               FontSize="28" 
+                               TextColor="#2D2D2D"/>
+                    </VerticalStackLayout>
+                </Border>
+
+            </FlexLayout>
+        </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
