@@ -1,0 +1,67 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="comprehensure.DASHBOARD.MainDashboard"
+             BackgroundColor="#f0e7ff">
+
+    <Grid>
+        <HorizontalStackLayout VerticalOptions="Start" HorizontalOptions="Start" Spacing="30" Padding="30">
+            <Frame WidthRequest="150" HeightRequest="150" CornerRadius="75" Padding="0" HasShadow="True" BackgroundColor="#ffffffcc">
+                <Image Source="user.png" Aspect="AspectFill"/>
+            </Frame>
+            <Label Text="user" VerticalOptions="Center" FontSize="48" FontAttributes="Bold" TextColor="#3a3a3a"/>
+        </HorizontalStackLayout>
+
+        <FlexLayout Direction="Row" Wrap="Wrap" JustifyContent="Center" AlignItems="Center" AlignContent="Center" 
+                    VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Border WidthRequest="340" HeightRequest="340" StrokeShape="RoundRectangle 30" BackgroundColor="#CDB4DB" StrokeThickness="0" Margin="15">
+                <Border.Shadow>
+                    <Shadow Brush="#7a5dc0" Offset="0,8" Radius="20" Opacity="0.25"/>
+                </Border.Shadow>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="15">
+                    <Frame BackgroundColor="#ffffffcc" Padding="20" CornerRadius="50" HasShadow="True">
+                        <ImageButton Source="placeholder.png" HeightRequest="140" WidthRequest="140" Clicked="ProgressButton_Clicked" BackgroundColor="Transparent" Aspect="AspectFit"/>
+                    </Frame>
+                    <Label Text="PROGRESS" HorizontalOptions="Center" FontAttributes="Bold" FontSize="28" TextColor="#3a3a3a"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border WidthRequest="340" HeightRequest="340" StrokeShape="RoundRectangle 30" BackgroundColor="#FFC8DD" StrokeThickness="0" Margin="15">
+                <Border.Shadow>
+                    <Shadow Brush="#e97a8b" Offset="0,8" Radius="20" Opacity="0.25"/>
+                </Border.Shadow>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="15">
+                    <Frame BackgroundColor="#ffffffcc" Padding="20" CornerRadius="50" HasShadow="True">
+                        <ImageButton Source="book.png" HeightRequest="140" WidthRequest="140" Clicked="ModulesButton_Clicked" BackgroundColor="Transparent" Aspect="AspectFit"/>
+                    </Frame>
+                    <Label Text="MODULES" HorizontalOptions="Center" FontAttributes="Bold" FontSize="28" TextColor="#3a3a3a"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border WidthRequest="340" HeightRequest="340" StrokeShape="RoundRectangle 30" BackgroundColor="#BDE0FE" StrokeThickness="0" Margin="15">
+                <Border.Shadow>
+                    <Shadow Brush="#5f8de0" Offset="0,8" Radius="20" Opacity="0.25"/>
+                </Border.Shadow>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="15">
+                    <Frame BackgroundColor="#ffffffcc" Padding="20" CornerRadius="50" HasShadow="True">
+                        <ImageButton Source="user.png" HeightRequest="140" WidthRequest="140" Clicked="ProfileButton_Clicked" BackgroundColor="Transparent" Aspect="AspectFit"/>
+                    </Frame>
+                    <Label Text="PROFILE" HorizontalOptions="Center" FontAttributes="Bold" FontSize="28" TextColor="#3a3a3a"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border WidthRequest="340" HeightRequest="340" StrokeShape="RoundRectangle 30" BackgroundColor="#A2D2FF" StrokeThickness="0" Margin="15">
+                <Border.Shadow>
+                    <Shadow Brush="#3b79e0" Offset="0,8" Radius="20" Opacity="0.25"/>
+                </Border.Shadow>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="15">
+                    <Frame BackgroundColor="#ffffffcc" Padding="20" CornerRadius="50" HasShadow="True">
+                        <ImageButton Source="exclamation_mark.png" HeightRequest="140" WidthRequest="140" Clicked="AboutUsButton_Clicked" BackgroundColor="Transparent" Aspect="AspectFit"/>
+                    </Frame>
+                    <Label Text="ABOUT US" HorizontalOptions="Center" FontAttributes="Bold" FontSize="28" TextColor="#3a3a3a"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </FlexLayout>
+    </Grid>
+</ContentPage>
