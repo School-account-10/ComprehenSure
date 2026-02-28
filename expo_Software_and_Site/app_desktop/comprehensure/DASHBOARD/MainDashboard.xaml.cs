@@ -9,12 +9,11 @@ public partial class MainDashboard : ContentPage
 
 	private async void ProgressButton_Clicked(object sender, EventArgs e)
 	{
-		await DisplayAlert("progress button", "Hi", "hewo btw ok button");
         await Navigation.PushAsync(new ProgressDashboard());
     }
 	private async void ModulesButton_Clicked(object sender, EventArgs e)
 	{
-		await DisplayAlert("modules button", "Hi", "hewo btw ok button");
+		
         await Navigation.PushAsync(new ModulesDaskboard());
     }
 
