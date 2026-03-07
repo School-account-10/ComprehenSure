@@ -2,9 +2,10 @@ namespace comprehensure;
 
 public partial class SignUpPage : ContentPage
 {
-    public SignUpPage()
+    public SignUpPage(DataBaseControl.Models.SignUpViewModel viewModel)
     {
         InitializeComponent();
+        BindingContext = viewModel;
     }
 
     public async void BackButtonEvent(Object sender, EventArgs e)

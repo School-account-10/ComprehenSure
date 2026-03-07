@@ -1,5 +1,7 @@
 ﻿using Firebase.Auth;
+using Firebase.Auth.Providers;
 using Microsoft.Extensions.Logging;
+
 
 namespace comprehensure
 {
@@ -21,12 +23,20 @@ namespace comprehensure
 #endif
             builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
             {
-                ApiKey = ""
+                ApiKey = "AIzaSyBZ5o4uLtYW2m6JxPFD35cbf9vPz5jsNVk",
+                AuthDomain = "comprehensuredb.web.app",
+                Providers = new FirebaseAuthProvider[]
+                {
+                    new EmailProvider()
+                }
+
 
             })
             {
 
             });
+
+
 
             return builder.Build();
         }

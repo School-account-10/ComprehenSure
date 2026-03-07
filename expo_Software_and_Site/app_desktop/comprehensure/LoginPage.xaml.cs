@@ -4,9 +4,10 @@ namespace comprehensure
 {
     public partial class LoginPage : ContentPage
     {
-        public LoginPage()
+        public LoginPage(DataBaseControl.Models.LoginViewModel viewModel)
         {
             InitializeComponent();
+            BindingContext = viewModel;
         }
 
         public class UserAccount // in simple terms this more of the name of the terms in the accounts.json
@@ -68,7 +69,7 @@ namespace comprehensure
 
         public async void BackButtonEvent(Object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage());
+            await Shell.Current.GoToAsync("..");
         }
     }
 }
