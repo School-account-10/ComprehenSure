@@ -1,64 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    x:Class="comprehensure.MainPage"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="comprehensure.MainPage"
+             BackgroundColor="#f4f9fd"
+             Shell.NavBarIsVisible="False">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="40"
-            MaximumWidthRequest="450"
-            Spacing="15"
-            VerticalOptions="Center">
+    <Grid RowDefinitions="Auto, *">
+        <Label Grid.Row="0" Text="ComprehenSure" Padding="25,15"
+               TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
 
-            <Frame
-                Margin="0,0,0,25"
-                Padding="0"
-                CornerRadius="130"
-                HeightRequest="200"
-                HorizontalOptions="Center"
-                IsClippedToBounds="True"
-                WidthRequest="200">
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="40" Spacing="20" VerticalOptions="Center">
 
-                <Image
-                    Aspect="AspectFill"
-                    HeightRequest="200"
-                    Source="logo_edited.jpg"
-                    WidthRequest="200" />
-            </Frame>
+                <Border Stroke="#80c2ed" StrokeThickness="2" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="100"/>
+                    </Border.StrokeShape>
+                    <Image Aspect="AspectFill" Source="logo_edited.jpg" />
+                </Border>
 
-            <Label
-                FontAttributes="Bold"
-                FontSize="32"
-                HorizontalOptions="Center"
-                Text="Comprehensure"
-                TextColor="Blue" />
+                <Label Text="Comprehensure" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#1B3A57" />
+                <Label Text="The learning app." FontSize="16" HorizontalOptions="Center" TextColor="Gray" />
 
-            <Label
-                Margin="0,0,0,30"
-                FontSize="16"
-                HorizontalOptions="Center"
-                Text="The learning app."
-                TextColor="Gray" />
+                <VerticalStackLayout Spacing="15" Margin="0,20" MaximumWidthRequest="400">
+                    <Button Text="Login" Clicked="Button_login_Clicked" BackgroundColor="#80c2ed" TextColor="White" CornerRadius="25" HeightRequest="55" />
+                    <Button Text="Sign Up" Clicked="Button_sign_up_Clicked" BackgroundColor="Transparent" BorderColor="#80c2ed" BorderWidth="1" CornerRadius="25" HeightRequest="55" TextColor="#80c2ed" />
+                </VerticalStackLayout>
 
-            <Button
-                x:Name="Button_login"
-                Clicked="Button_login_Clicked"
-                CornerRadius="25"
-                HeightRequest="50"
-                Text="Login" />
-
-            <Button
-                x:Name="Button_signup"
-                BackgroundColor="Transparent"
-                BorderColor="{StaticResource Primary}"
-                BorderWidth="1"
-                Clicked="Button_sign_up_Clicked"
-                CornerRadius="25"
-                HeightRequest="50"
-                Text="Sign Up"
-                TextColor="{StaticResource Primary}" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+                <Border Stroke="#eaed80" StrokeThickness="1" BackgroundColor="#fffef0" Padding="15" MaximumWidthRequest="400">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15"/>
+                    </Border.StrokeShape>
+                    <Label Text="about the app (placeholder)"
+                           TextColor="Gray" HorizontalTextAlignment="Center" FontSize="12" />
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

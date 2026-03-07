@@ -9,7 +9,6 @@ public partial class MainDashboard : ContentPage
 
 	private async void ProgressButton_Clicked(object sender, EventArgs e)
 	{
-		
         await Navigation.PushAsync(new ProgressDashboard());
     }
 	private async void ModulesButton_Clicked(object sender, EventArgs e)
