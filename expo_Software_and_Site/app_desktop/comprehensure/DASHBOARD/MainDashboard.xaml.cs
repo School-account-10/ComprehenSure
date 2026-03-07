@@ -19,12 +19,12 @@ public partial class MainDashboard : ContentPage
 
 	private async void ProfileButton_Clicked(object sender, EventArgs e)
 	{
-		await DisplayAlert("profile button", "Hi", "hewo btw ok button");
+		
         await Navigation.PushAsync(new ProfileDashboard());
     }
 	private async void AboutUsButton_Clicked(object sender, EventArgs e)
 	{
-		await DisplayAlert("About US button", "Hi", "hewo btw ok button");
+		
         await Navigation.PushAsync(new AllAboutUS_Dashboard());
     }
 
