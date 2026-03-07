@@ -23,7 +23,7 @@ namespace comprehensure
 #endif
             builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
             {
-                ApiKey = "AIzaSyBZ5o4uLtYW2m6JxPFD35cbf9vPz5jsNVk",
+                ApiKey = "",
                 AuthDomain = "comprehensuredb.web.app",
                 Providers = new FirebaseAuthProvider[]
                 {
