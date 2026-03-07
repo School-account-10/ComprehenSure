@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Firebase.Auth;
+using Microsoft.Extensions.Logging;
 
 namespace comprehensure
 {
@@ -18,6 +19,14 @@ namespace comprehensure
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
+            {
+                ApiKey = ""
+
+            })
+            {
+
+            });
 
             return builder.Build();
         }
