@@ -3,69 +3,68 @@
     x:Class="comprehensure.SignUpPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Create Account">
+    BackgroundColor="#f4f9fd">
 
-    <Grid>
-        <ScrollView>
-            <VerticalStackLayout Padding="30" 
-                                 Spacing="15" 
-                                 MaximumWidthRequest="400" 
-                                 VerticalOptions="Center">
+    <Grid RowDefinitions="Auto, *">
+        <Label
+            Padding="20,10"
+            FontAttributes="Bold"
+            FontSize="18"
+            Text="ComprehenSure"
+            TextColor="#1B3A57" />
 
-                <BoxView HeightRequest="50" Color="Transparent" />
+        <ScrollView Grid.Row="1" VerticalOptions="Center">
+            <VerticalStackLayout
+                Padding="30"
+                MaximumWidthRequest="450"
+                Spacing="20">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="Create Account"
+                    TextColor="#1B3A57" />
+                <Frame
+                    Padding="25"
+                    BackgroundColor="White"
+                    BorderColor="Transparent"
+                    CornerRadius="20"
+                    HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
 
-                <Label Margin="0,0,0,10"
-                       FontAttributes="Bold"
-                       FontSize="28"
-                       HorizontalOptions="Center"
-                       Text="Join Us!" />
 
-                <Entry x:Name="EmailEntry"
-                       Keyboard="Email"
-                       Placeholder="Email"
-                       ReturnType="Next" />
+                        <Entry
+                            x:Name="EmailEntry"
+                            BackgroundColor="#f9fdff"
+                            Placeholder="Email Address" 
+                            Text="{Binding Email}"/>
 
-                <Entry x:Name="PasswordNonConf"
-                       IsPassword="True"
-                       Placeholder="Password"
-                       ReturnType="Next" />
+                        <Entry
+                            x:Name="PasswordNonConf"
+                            BackgroundColor="#f9fdff"
+                            IsPassword="True"
+                            Placeholder="Password" 
+                            Text="{Binding Password}"/>
 
-                <Entry x:Name="ConfirmPassword"
-                       IsPassword="True"
-                       Placeholder="Confirm Password"
-                       ReturnType="Done" />
+                        
+                       <!-- <Entry
+                            x:Name="PasswordConf"
+                            BackgroundColor="#f9fdff"
+                            IsPassword="True"
+                            Placeholder="Confirm Password" 
+                            Text="{Binding}"/> -->
 
-                <Button x:Name="SignUpButton"
-                        Margin="0,10,0,0"
-                        Clicked="SignUpButton_Clicked"
-                        CornerRadius="10"
-                        FontAttributes="Bold"
-                        HeightRequest="50"
-                        Text="Create Account" />
-
-                <Button BackgroundColor="Transparent"
-                        Clicked="OnLoginNavigationClicked"
-                        FontSize="12"
-                        HorizontalOptions="Center"
-                        Text="Already have an account? Login"
-                        TextColor="{StaticResource Primary}" />
-
+                        <Button
+                            x:Name="SignUpButton"
+                            BackgroundColor="#80c2ed"
+                            Command="{Binding SignUpCommand}"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            Text="SIGN UP"
+                            TextColor="White" />
+                    </VerticalStackLayout>
+                </Frame>
             </VerticalStackLayout>
         </ScrollView>
-
-        <ImageButton Source="null"
-                     Clicked="BackButtonEvent"
-                     HeightRequest="40"
-                     WidthRequest="40"
-                     HorizontalOptions="Start"
-                     VerticalOptions="Start"
-                     Margin="10">
-            <ImageButton.IsVisible>
-                <OnPlatform x:TypeArguments="x:Boolean">
-                    <On Platform="Default" Value="false" />
-                    <On Platform="Android" Value="False" />
-                </OnPlatform>
-            </ImageButton.IsVisible>
-        </ImageButton>
     </Grid>
 </ContentPage>

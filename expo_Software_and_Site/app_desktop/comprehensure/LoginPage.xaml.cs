@@ -1,13 +1,14 @@
 using System.Text.Json;
+
 namespace comprehensure
 {
     public partial class LoginPage : ContentPage
     {
-        public LoginPage()
+        public LoginPage(DataBaseControl.Models.LoginViewModel viewModel)
         {
             InitializeComponent();
+            BindingContext = viewModel;
         }
-
 
         public class UserAccount // in simple terms this more of the name of the terms in the accounts.json
         {
@@ -15,27 +16,29 @@ namespace comprehensure
             public string Password { get; set; }
         }
 
-        public async Task<List<UserAccount>> GetAccountsAsync()
+       /* public async Task<List<UserAccount>> GetAccountsAsync()
         {
-
             try
             {
-                using var stream = await FileSystem.OpenAppPackageFileAsync("LocalDB/ACCOUNTS/Accounts.json");
-                using var reader = new StreamReader(stream);
+                var stream = await FileSystem.OpenAppPackageFileAsync(
+                    "LocalDB/ACCOUNTS/Accounts.json"
+                );
+                var reader = new StreamReader(stream);
                 var contents = await reader.ReadToEndAsync();
 
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                return JsonSerializer.Deserialize<List<UserAccount>>(contents, options) ?? new List<UserAccount>();
+                return JsonSerializer.Deserialize<List<UserAccount>>(contents, options)
+                    ?? new List<UserAccount>();
             }
-                
             catch (Exception e)
             {
-                await DisplayAlert("DORA", "dora the explorer why cant i find the db????????????", "why tf cant it find the db? ");// why tf //update why still not seeing db// update: works now 
-                
+                await DisplayAlert(
+                    "no DB",
+                    "dora the explorer why cant i find the db????????????",
+                    "why cant it find the db? "
+                ); // why tf //update why still not seeing db// update: works now
+
                 return new List<UserAccount>();
-
-
-
             }
             // for the devs in simple termmms just return the value of email and password
             // note for future me:  DO NOT DO THIS THIS YOU CAN EXPLOIT THIS BY reading memory or sum OR JUST READING THE ACCOUNTS.JSON
@@ -45,10 +48,13 @@ namespace comprehensure
         {
             var accounts = await GetAccountsAsync();
 
-            
+            //String ConvEmail = Email.Replace(" ", String.Empty);
+
+            string cleanEmail = Email.Text.Trim();
+
             var user = accounts.FirstOrDefault(a =>
-                a.Email == Email.Text &&
-                a.Password == Password.Text);
+                a.Email == cleanEmail && a.Password == Password.Text
+            );
 
             if (user != null)
             {
@@ -60,11 +66,12 @@ namespace comprehensure
                 await DisplayAlert("Error", "Invalid wrong something!", "OK");
             }
         }
+       */
 
 
         public async void BackButtonEvent(Object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage());
+            await Shell.Current.GoToAsync("..");
         }
     }
 }
