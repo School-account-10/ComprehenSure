@@ -1,47 +1,39 @@
-﻿//
-//
-// using Android.Widget;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-//using AuthenticationServices;
-//using MetalPerformanceShadersGraph;
-
-// using Xamarin.KotlinX.Coroutines.Selects;
+﻿using System;
 using Microsoft.Maui.Networking;
+using Microsoft.Maui.Controls;  
 
 namespace comprehensure.DataBaseControl
 {
-    internal class SwitchOffline
+    internal class SwitchOffline 
     {
-        public class SwitchModes(Boolean Switcher)
+       
+        private static SwitchOffline _instance; 
+
+        private SwitchOffline()  
         {
-            public async Task<bool> CHECK()
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+        }
+
+        public static void Checker()  
+        {
+            Shell.Current.DisplayAlert("Connection Lost", "You are now offline.", "OK");  // im so killing my self
+            if (_instance == null)
             {
-                var current = Connectivity.Current.NetworkAccess;
+                _instance = new SwitchOffline();
+            }
+        }
 
-                if (current == NetworkAccess.Internet)
-                {
-                    Switcher = true;
 
-                    await Shell.Current.DisplayAlert("INTERNET DETEC", "YOUR ONLINE!", "OK");
-                }
-                else if (current == NetworkAccess.ConstrainedInternet)
-                {
-                    Console.WriteLine("CAPTIVE PORTAL / LIMITED ACCESS");
-                    await Shell.Current.DisplayAlert("INTERNET DETEC", "CAPTIVE PORTAL", "OK");
-                    Switcher = false;
-                }
-                else
-                {
-                    await Shell.Current.DisplayAlert("INTERNET DETEC", "OFFLINE", "OK");
-                    Console.WriteLine("OFFLINE OR UNKNOWN");
-                    Switcher = false;
-                }
-
-                return Switcher;
+        private async void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+            var current = e.NetworkAccess;
+            if (current == NetworkAccess.Internet)
+            {
+                await Shell.Current.DisplayAlert("Connected", "You are now online.", "OK");
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Connection Lost", "You are now offline.", "OK");
             }
         }
     }

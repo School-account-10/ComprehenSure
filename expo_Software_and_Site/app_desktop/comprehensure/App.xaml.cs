@@ -17,7 +17,7 @@ namespace comprehensure
 
             await Task.Delay(500);
 
-            CheckInitialConnection();
+            
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
@@ -25,23 +25,21 @@ namespace comprehensure
             return new Window(new AppShell());
         }
 
-        private async void CheckInitialConnection()
+        private async void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {
-            var offlineSwitcher = new comprehensure.DataBaseControl.SwitchOffline.SwitchModes(
-                false
-            );
-
-            bool isOnline = await offlineSwitcher.CHECK();
-
-            Console.WriteLine($"Startup connection status: {isOnline}");
-        }
-
-        private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
-        {
-            if (e.NetworkAccess != NetworkAccess.Internet)
+            var current = e.NetworkAccess;
+            if (current == NetworkAccess.Internet)
             {
-                Shell.Current.DisplayAlert("Connection Lost", "You are now offline.", "OK");
+                await Shell.Current.DisplayAlert("Connected ", "You are now online.", "OK");
+
             }
+            else
+            {
+                await Shell.Current.DisplayAlert("Connection Lost", "You are now offline.", "OK");
+            }
+
+
+
         }
     }
 }

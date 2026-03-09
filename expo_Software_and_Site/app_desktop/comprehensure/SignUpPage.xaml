@@ -1,21 +1,67 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="comprehensure.SignUpPage"
-             BackgroundColor="#f4f9fd">
+<ContentPage
+    x:Class="comprehensure.SignUpPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#f4f9fd">
 
     <Grid RowDefinitions="Auto, *">
-        <Label Text="ComprehenSure" Padding="20,10" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
+        <Label
+            Padding="20,10"
+            FontAttributes="Bold"
+            FontSize="18"
+            Text="ComprehenSure"
+            TextColor="#1B3A57" />
 
         <ScrollView Grid.Row="1" VerticalOptions="Center">
-            <VerticalStackLayout Spacing="20" Padding="30" MaximumWidthRequest="450">
-                <Label Text="Create Account" FontSize="30" FontAttributes="Bold" TextColor="#1B3A57" HorizontalOptions="Center" />
-                <Frame CornerRadius="20" HasShadow="True" BorderColor="Transparent" BackgroundColor="White" Padding="25">
+            <VerticalStackLayout
+                Padding="30"
+                MaximumWidthRequest="450"
+                Spacing="20">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="Create Account"
+                    TextColor="#1B3A57" />
+                <Frame
+                    Padding="25"
+                    BackgroundColor="White"
+                    BorderColor="Transparent"
+                    CornerRadius="20"
+                    HasShadow="True">
                     <VerticalStackLayout Spacing="15">
-                        <Entry x:Name="EmailEntry" Placeholder="Email Address" BackgroundColor="#f9fdff" />
-                        <Entry x:Name="PasswordNonConf" Placeholder="Password" IsPassword="True" BackgroundColor="#f9fdff" />
-                        <Button x:Name="SignUpButton" Text="SIGN UP" Clicked="SignUpButton_Clicked"
-                                BackgroundColor="#80c2ed" TextColor="White" CornerRadius="25" HeightRequest="50" />
+
+
+                        <Entry
+                            x:Name="EmailEntry"
+                            BackgroundColor="#f9fdff"
+                            Placeholder="Email Address" 
+                            Text="{Binding Email}"/>
+
+                        <Entry
+                            x:Name="PasswordNonConf"
+                            BackgroundColor="#f9fdff"
+                            IsPassword="True"
+                            Placeholder="Password" 
+                            Text="{Binding Password}"/>
+
+                        
+                       <!-- <Entry
+                            x:Name="PasswordConf"
+                            BackgroundColor="#f9fdff"
+                            IsPassword="True"
+                            Placeholder="Confirm Password" 
+                            Text="{Binding}"/> -->
+
+                        <Button
+                            x:Name="SignUpButton"
+                            BackgroundColor="#80c2ed"
+                            Command="{Binding SignUpCommand}"
+                            CornerRadius="25"
+                            HeightRequest="50"
+                            Text="SIGN UP"
+                            TextColor="White" />
                     </VerticalStackLayout>
                 </Frame>
             </VerticalStackLayout>
