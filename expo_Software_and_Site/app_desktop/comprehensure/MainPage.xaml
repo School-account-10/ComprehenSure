@@ -10,7 +10,7 @@
                TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
 
         <ScrollView Grid.Row="1">
-            <VerticalStackLayout Padding="40" Spacing="20" VerticalOptions="Center">
+            <VerticalStackLayout Padding="40" Spacing="20" VerticalOptions="Center" MaximumWidthRequest="500">
 
                 <Border Stroke="#80c2ed" StrokeThickness="2" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
                     <Border.StrokeShape>
@@ -22,17 +22,16 @@
                 <Label Text="Comprehensure" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#1B3A57" />
                 <Label Text="The learning app." FontSize="16" HorizontalOptions="Center" TextColor="Gray" />
 
-                <VerticalStackLayout Spacing="15" Margin="0,20" MaximumWidthRequest="400">
+                <VerticalStackLayout Spacing="15" Margin="0,20">
                     <Button Text="Login" Clicked="Button_login_Clicked" BackgroundColor="#80c2ed" TextColor="White" CornerRadius="25" HeightRequest="55" />
                     <Button Text="Sign Up" Clicked="Button_sign_up_Clicked" BackgroundColor="Transparent" BorderColor="#80c2ed" BorderWidth="1" CornerRadius="25" HeightRequest="55" TextColor="#80c2ed" />
                 </VerticalStackLayout>
 
-                <Border Stroke="#eaed80" StrokeThickness="1" BackgroundColor="#fffef0" Padding="15" MaximumWidthRequest="400">
+                <Border Stroke="#eaed80" StrokeThickness="1" BackgroundColor="#fffef0" Padding="15">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="15"/>
                     </Border.StrokeShape>
-                    <Label Text="about the app (placeholder)"
-                           TextColor="Gray" HorizontalTextAlignment="Center" FontSize="12" />
+                    <Label Text="about the app (placeholder)" TextColor="Gray" HorizontalTextAlignment="Center" FontSize="12" />
                 </Border>
             </VerticalStackLayout>
         </ScrollView>
