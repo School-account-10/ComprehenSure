@@ -1,4 +1,6 @@
-﻿namespace comprehensure
+﻿using comprehensure.DataBaseControl.Models;
+
+namespace comprehensure
 {
     public partial class MainPage : ContentPage
     {
@@ -12,16 +14,19 @@
 
         private async void Button_login_Clicked(object sender, EventArgs e)
         {
+
+            await Shell.Current.GoToAsync(nameof(LoginPage));
             
-            await Navigation.PushAsync(new LoginPage());
+
+
 
 
         }
 
         private async void Button_sign_up_Clicked(object sender, EventArgs e)
         {
-            
-            await Navigation.PushAsync(new SignUpPage());
+
+            await Shell.Current.GoToAsync(nameof(SignUpPage));
         }
     }
 }

@@ -1,94 +1,74 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="comprehensure.DASHBOARD.MainDashboard">
+             x:Class="comprehensure.DASHBOARD.MainDashboard"
+             BackgroundColor="#f4f9fd"
+             Shell.NavBarIsVisible="False">
 
-    <ScrollView>
-        <VerticalStackLayout VerticalOptions="Center" Padding="20,60,20,60">
+    <Grid ColumnDefinitions="250, 1, *, 1, 250" Padding="0">
 
-            <FlexLayout Wrap="Wrap" 
-                        JustifyContent="SpaceEvenly" 
-                        AlignContent="Center" 
-                        AlignItems="Center">
+        <VerticalStackLayout Grid.Column="0" BackgroundColor="#fdfdfd" Padding="20" Spacing="20">
+            <Label Text="ComprehenSure" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" Margin="0,0,0,10"/>
+            <Label Text="LEADERBOARD" FontSize="16" FontAttributes="Bold" TextColor="#1B3A57" HorizontalOptions="Center" />
 
-                <Border Margin="25"
-                        StrokeShape="RoundRectangle 30" 
-                        BackgroundColor="#CDB4DB" 
-                        HeightRequest="340" 
-                        WidthRequest="340"
-                        StrokeThickness="0">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="8,8" Radius="15" Opacity="0.15" />
-                    </Border.Shadow>
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="25">
-                        <ImageButton Source="placeholder.png" HeightRequest="140" WidthRequest="140" Clicked="ProgressButton_Clicked" />
-                        <Label Text="PROGRESS" 
-                               HorizontalOptions="Center" 
-                               FontAttributes="Bold" 
-                               FontSize="28" 
-                               TextColor="#2D2D2D"
-                               />
-                    </VerticalStackLayout>
-                </Border>
-
-                <Border Margin="25"
-                        StrokeShape="RoundRectangle 30" 
-                        BackgroundColor="#FFC8DD" 
-                        HeightRequest="340" 
-                        WidthRequest="340"
-                        StrokeThickness="0">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="8,8" Radius="15" Opacity="0.15" />
-                    </Border.Shadow>
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="25">
-                        <ImageButton Source="book.png" HeightRequest="140" WidthRequest="140" Clicked="ModulesButton_Clicked"/>
-                        <Label Text="MODULES" 
-                               HorizontalOptions="Center" 
-                               FontAttributes="Bold" 
-                               FontSize="28" 
-                               TextColor="#2D2D2D"/>
-                    </VerticalStackLayout>
-                </Border>
-
-                <Border Margin="25"
-                        StrokeShape="RoundRectangle 30" 
-                        BackgroundColor="#BDE0FE" 
-                        HeightRequest="340" 
-                        WidthRequest="340"
-                        StrokeThickness="0">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="8,8" Radius="15" Opacity="0.15" />
-                    </Border.Shadow>
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="25">
-                        <ImageButton Source="user.png" HeightRequest="140" WidthRequest="140" Clicked="ProfileButton_Clicked" />
-                        <Label Text="PROFILE" 
-                               HorizontalOptions="Center" 
-                               FontAttributes="Bold" 
-                               FontSize="28" 
-                               TextColor="#2D2D2D"/>
-                    </VerticalStackLayout>
-                </Border>
-
-                <Border Margin="25"
-                        StrokeShape="RoundRectangle 30" 
-                        BackgroundColor="#A2D2FF" 
-                        HeightRequest="340" 
-                        WidthRequest="340"
-                        StrokeThickness="0">
-                    <Border.Shadow>
-                        <Shadow Brush="Black" Offset="8,8" Radius="15" Opacity="0.15" />
-                    </Border.Shadow>
-                    <VerticalStackLayout VerticalOptions="Center" Spacing="25">
-                        <ImageButton Source="exclamation_mark.png" HeightRequest="140" WidthRequest="140" Clicked="AboutUsButton_Clicked" />
-                        <Label Text="ABOUT US" 
-                               HorizontalOptions="Center" 
-                               FontAttributes="Bold" 
-                               FontSize="28" 
-                               TextColor="#2D2D2D"/>
-                    </VerticalStackLayout>
-                </Border>
-
-            </FlexLayout>
+            <Border Stroke="#BDE0FE" StrokeThickness="1" Padding="10" BackgroundColor="#f0f8ff">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+                <Label Text="1. User_Alpha - 2500xp" FontSize="12" TextColor="#1B3A57"/>
+            </Border>
         </VerticalStackLayout>
-    </ScrollView>
+
+        <BoxView Grid.Column="1" WidthRequest="1" Color="#D1D9E0" VerticalOptions="Fill" />
+
+        <ScrollView Grid.Column="2" Padding="40">
+            <VerticalStackLayout Spacing="30" VerticalOptions="Center">
+                <Label Text="DASHBOARD" FontSize="32" FontAttributes="Bold" TextColor="#1B3A57" HorizontalOptions="Center"/>
+
+                <Border Stroke="#80c2ed" StrokeThickness="2" HeightRequest="250" BackgroundColor="White">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
+                    <Label Text="PROGRESS DATA" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#80c2ed" FontAttributes="Bold" />
+                </Border>
+
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
+                    <Border Grid.Column="0" Stroke="#eaed80" BackgroundColor="#fffef0" Padding="15">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Button Text="MODULES" Clicked="ModulesButton_Clicked" BackgroundColor="#eaed80" TextColor="#1B3A57" CornerRadius="20"/>
+                    </Border>
+                    <Border Grid.Column="1" Stroke="#BDE0FE" BackgroundColor="#f0f8ff" Padding="15">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Button Text="ABOUT US" Clicked="AboutUsButton_Clicked" BackgroundColor="#BDE0FE" TextColor="#1B3A57" CornerRadius="20"/>
+                    </Border>
+                </Grid>
+
+                <Border BackgroundColor="#80c2ed" Padding="25">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
+                    <Label Text="quote from the group (placeholder)" TextColor="White" HorizontalTextAlignment="Center" FontAttributes="Italic" />
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <BoxView Grid.Column="3" WidthRequest="1" Color="#D1D9E0" VerticalOptions="Fill" />
+
+        <VerticalStackLayout Grid.Column="4" BackgroundColor="#fdfdfd" Padding="20" Spacing="25">
+            <Label Text="PROFILE" FontSize="18" FontAttributes="Bold" TextColor="#1B3A57" HorizontalOptions="Center" Margin="0,10"/>
+            <Border Stroke="#80c2ed" StrokeThickness="2" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="60"/>
+                </Border.StrokeShape>
+                <ImageButton Source="user.png" Aspect="AspectFill" Clicked="ProfileButton_Clicked" />
+            </Border>
+            <Label Text="User_Name" FontAttributes="Bold" TextColor="#1B3A57" HorizontalOptions="Center"/>
+            <Button Text="Settings" BackgroundColor="Transparent" BorderColor="#80c2ed" BorderWidth="1" TextColor="#80c2ed" CornerRadius="15"/>
+        </VerticalStackLayout>
+
+    </Grid>
 </ContentPage>
