@@ -16,7 +16,7 @@ namespace comprehensure
             public string Password { get; set; }
         }
 
-        public async Task<List<UserAccount>> GetAccountsAsync()
+       /* public async Task<List<UserAccount>> GetAccountsAsync()
         {
             try
             {
@@ -66,6 +66,8 @@ namespace comprehensure
                 await DisplayAlert("Error", "Invalid wrong something!", "OK");
             }
         }
+       */
+
 
         public async void BackButtonEvent(Object sender, EventArgs e)
         {

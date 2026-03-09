@@ -12,9 +12,11 @@
                 <Label Text="Welcome Back" FontSize="30" FontAttributes="Bold" TextColor="#1B3A57" HorizontalOptions="Center" />
                 <Frame CornerRadius="20" HasShadow="True" BorderColor="Transparent" BackgroundColor="White" Padding="25">
                     <VerticalStackLayout Spacing="15">
-                        <Entry x:Name="Email" Placeholder="Email Address" BackgroundColor="#f9fdff" />
-                        <Entry x:Name="Password" Placeholder="Password" IsPassword="True" BackgroundColor="#f9fdff" />
-                        <Button x:Name="Login_Button" Text="LOGIN" Clicked="Login_Button_Clicked"
+                        <Entry x:Name="Email" Placeholder="Email Address" BackgroundColor="#f9fdff" Text="{Binding Email}" />
+                        
+                        <Entry x:Name="Password" Placeholder="Password" IsPassword="True" BackgroundColor="#f9fdff" Text="{Binding Password}" />
+                        
+                        <Button x:Name="Login_Button" Text="LOGIN" Command="{Binding LoginCommand}"
                                 BackgroundColor="#80c2ed" TextColor="White" CornerRadius="25" HeightRequest="50" />
                     </VerticalStackLayout>
                 </Frame>
