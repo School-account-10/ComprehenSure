@@ -37,7 +37,10 @@
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="20"/>
                     </Border.StrokeShape>
-                    <Label Text="PROGRESS DATA" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#80c2ed" FontAttributes="Bold" />
+                    <Label Text="{Binding percentage}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#80c2ed" FontAttributes="Bold" />
+
+                    
+                  
                 </Border>
                 <Grid ColumnDefinitions="*, *" ColumnSpacing="20">
                     <Button Grid.Column="0" Text="MODULES" Clicked="ModulesButton_Clicked" BackgroundColor="#eaed80" TextColor="#1B3A57" CornerRadius="20" HeightRequest="50"/>

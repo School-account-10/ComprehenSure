@@ -1,3 +1,6 @@
+using CommunityToolkit.Mvvm.Messaging.Messages;
+
+
 namespace comprehensure.DASHBOARD;
 
 public partial class MainDashboard : ContentPage 
@@ -5,7 +8,36 @@ public partial class MainDashboard : ContentPage
 	public MainDashboard()
 	{
 		InitializeComponent();
+        this.BindingContext = this;
+    }
+	public int score;
+	public int modulefinished;
+	public int added;
+
+
+	public readonly int module_count = 8;
+    public float ResultModule;
+    public int Percentage()
+	{
+		// fake user data 
+
+		
+		modulefinished = 1;
+		score = 30;
+
+
+
+		ResultModule = (modulefinished / module_count) * 100;
+
+
+
+
+
+		return (int)ResultModule;
 	}
+
+
+
 
 	private async void ProgressButton_Clicked(object sender, EventArgs e)
 	{
