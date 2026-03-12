@@ -16,24 +16,26 @@ public partial class MainDashboard : ContentPage
 
 
 	public readonly int module_count = 8;
-    public float ResultModule;
-    public int Percentage()
-	{
+	public readonly int score_count_max = 80;
+	public float ResultModule;
+    public float ResultScore;
+    public (float, float) Percentage()
+    {
 		// fake user data 
 
 		
 		modulefinished = 1;
-		score = 30;
+		score = 10;
+
+
+        ResultModule = ((float)modulefinished / module_count) * 100;
+        ResultScore = ((float)score / score_count_max) * 100;
 
 
 
-		ResultModule = (modulefinished / module_count) * 100;
 
 
-
-
-
-		return (int)ResultModule;
+        return (ResultModule, ResultScore);
 	}
 
 
