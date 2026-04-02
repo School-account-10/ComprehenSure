@@ -1,4 +1,5 @@
 ﻿using comprehensure.DataBaseControl.Models;
+using comprehensure.DASHBOARD;
 using Firebase.Auth;
 using Firebase.Auth.Providers;
 using Microsoft.Extensions.Logging;
@@ -22,8 +23,11 @@ namespace comprehensure
             builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = "", AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<SignUpViewModel>();
+            builder.Services.AddTransient<MainDashboardViewModel>();
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<SignUpPage>();
+            builder.Services.AddTransient<MainDashboard>();
+            
             return builder.Build();
         }
     }
