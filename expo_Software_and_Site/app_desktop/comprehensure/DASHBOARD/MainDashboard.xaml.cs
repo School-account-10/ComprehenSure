@@ -1,38 +1,18 @@
-using CommunityToolkit.Mvvm.Messaging.Messages;
+
+
+using comprehensure.DataBaseControl.Models;
 
 namespace comprehensure.DASHBOARD;
 
 public partial class MainDashboard : ContentPage
 {
-    public MainDashboard()
+    public MainDashboard(DataBaseControl.Models.MainDashboardViewModel viewModel)
     {
         InitializeComponent();
-        Percentage();
-        this.BindingContext = this;
+        BindingContext = viewModel;
+        
     }
 
-    public int score;
-    public int modulefinished;
-    public int added;
-    public string DisplayPercentage { get; set; }
-    public readonly int module_count = 8;
-    public readonly int score_count_max = 80;
-    public float ResultModule;
-    public float ResultScore;
-
-    public (float, float) Percentage()
-    {
-        // fake user data
-        // THIS IS FAKE DATA 
-        // PLUG IN DB DATA HERE
-        modulefinished = 1;
-        score = 10;
-
-        ResultModule = ((float)modulefinished / module_count) * 100;
-        ResultScore = ((float)score / score_count_max) * 100;
-        DisplayPercentage = ResultModule.ToString() + "%";
-        return (ResultModule, ResultScore);
-    }
 
     private async void ProgressButton_Clicked(object sender, EventArgs e)
     {
@@ -53,4 +33,6 @@ public partial class MainDashboard : ContentPage
     {
         await Navigation.PushAsync(new AllAboutUS_Dashboard());
     }
+
+   
 }
