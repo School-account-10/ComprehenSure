@@ -5,43 +5,269 @@
              Title="Modules"
              BackgroundColor="#F4F8FB">
 
-    <ScrollView>
+    <ScrollView VerticalOptions="FillAndExpand">
+
         <FlexLayout Direction="Row" 
                     Wrap="Wrap" 
                     JustifyContent="Center" 
-                    AlignContent="Start" 
-                    Padding="20">
+                    AlignItems="Center"
+                    AlignContent="Center"
+                    Padding="40">
 
-            <Border Stroke="#A5D6F7" StrokeThickness="1" StrokeShape="RoundRectangle 20" Background="White" Margin="10" HeightRequest="100" WidthRequest="150">
-                <Button Text="Module 1" BackgroundColor="#CCE5FF" TextColor="#1A2A47" FontAttributes="Bold" />
+            <Border x:Name="M1" HeightRequest="450" WidthRequest="165" Margin="10" BackgroundColor="White" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="80,10,80,10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow x:Name="S1" Brush="#80c2ed" Offset="0,10" Radius="20" Opacity="0.1" />
+                </Border.Shadow>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="Common">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter TargetName="M1" Property="TranslationY" Value="-15"/>
+                                    <Setter TargetName="S1" Property="Opacity" Value="0.3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid RowDefinitions="Auto, *, Auto" Padding="15,40">
+                    <Label Grid.Row="0" Text="01" FontAttributes="Bold" TextColor="#80c2ed" FontSize="24" HorizontalOptions="Center"/>
+                    <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+                        <Label Text="The Forgotten Library" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                        <Label Text="Easy" FontSize="11" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <Button Grid.Row="2" Text="START" BackgroundColor="#80c2ed" CornerRadius="20" HeightRequest="50" FontAttributes="Bold" />
+                </Grid>
             </Border>
 
-            <Border Stroke="#A5D6F7" StrokeThickness="1" StrokeShape="RoundRectangle 20" Background="White" Margin="10" HeightRequest="100" WidthRequest="150">
-                <Button Text="Module 2" BackgroundColor="#CCE5FF" TextColor="#1A2A47" FontAttributes="Bold" />
+            <Border x:Name="M2" HeightRequest="450" WidthRequest="165" Margin="10" BackgroundColor="White" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10,80,10,80" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow x:Name="S2" Brush="#eaed80" Offset="0,10" Radius="20" Opacity="0.1" />
+                </Border.Shadow>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="Common">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter TargetName="M2" Property="TranslationY" Value="-15"/>
+                                    <Setter TargetName="S2" Property="Opacity" Value="0.3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid RowDefinitions="Auto, *, Auto" Padding="15,40">
+                    <Label Grid.Row="0" Text="02" FontAttributes="Bold" TextColor="#eaed80" FontSize="24" HorizontalOptions="Center"/>
+                    <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+                        <Label Text="The Clockmaker’s Secret" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                        <Label Text="Easy" FontSize="11" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <Button Grid.Row="2" Text="START" BackgroundColor="#eaed80" TextColor="#1B3A57" CornerRadius="20" HeightRequest="50" FontAttributes="Bold" />
+                </Grid>
             </Border>
 
-            <Border Stroke="#A5D6F7" StrokeThickness="1" StrokeShape="RoundRectangle 20" Background="White" Margin="10" HeightRequest="100" WidthRequest="150">
-                <Button Text="Module 3" BackgroundColor="#CCE5FF" TextColor="#1A2A47" FontAttributes="Bold" />
+            <Border x:Name="M3" HeightRequest="450" WidthRequest="165" Margin="10" BackgroundColor="White" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="80,10,80,10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow x:Name="S3" Brush="#BDE0FE" Offset="0,10" Radius="20" Opacity="0.1" />
+                </Border.Shadow>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="Common">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter TargetName="M3" Property="TranslationY" Value="-15"/>
+                                    <Setter TargetName="S3" Property="Opacity" Value="0.3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid RowDefinitions="Auto, *, Auto" Padding="15,40">
+                    <Label Grid.Row="0" Text="03" FontAttributes="Bold" TextColor="#BDE0FE" FontSize="24" HorizontalOptions="Center"/>
+                    <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+                        <Label Text="The Observatory on the Hill" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                        <Label Text="Easy" FontSize="11" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <Button Grid.Row="2" Text="START" BackgroundColor="#BDE0FE" TextColor="#1B3A57" CornerRadius="20" HeightRequest="50" FontAttributes="Bold" />
+                </Grid>
             </Border>
 
-            <Border Stroke="#A5D6F7" StrokeThickness="1" StrokeShape="RoundRectangle 20" Background="White" Margin="10" HeightRequest="100" WidthRequest="150">
-                <Button Text="Module 4" BackgroundColor="#CCE5FF" TextColor="#1A2A47" FontAttributes="Bold" />
+            <Border x:Name="M4" HeightRequest="450" WidthRequest="165" Margin="10" BackgroundColor="White" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10,80,10,80" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow x:Name="S4" Brush="#80c2ed" Offset="0,10" Radius="20" Opacity="0.1" />
+                </Border.Shadow>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="Common">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter TargetName="M4" Property="TranslationY" Value="-15"/>
+                                    <Setter TargetName="S4" Property="Opacity" Value="0.3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid RowDefinitions="Auto, *, Auto" Padding="15,40">
+                    <Label Grid.Row="0" Text="04" FontAttributes="Bold" TextColor="#80c2ed" FontSize="24" HorizontalOptions="Center"/>
+                    <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+                        <Label Text="The Garden of Hidden Patterns" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                        <Label Text="Average" FontSize="11" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <Button Grid.Row="2" Text="START" BackgroundColor="#80c2ed" CornerRadius="20" HeightRequest="50" FontAttributes="Bold" />
+                </Grid>
             </Border>
 
-            <Border Stroke="#A5D6F7" StrokeThickness="1" StrokeShape="RoundRectangle 20" Background="White" Margin="10" HeightRequest="100" WidthRequest="150">
-                <Button Text="Module 5" BackgroundColor="#CCE5FF" TextColor="#1A2A47" FontAttributes="Bold" />
+            <Border x:Name="M5" HeightRequest="450" WidthRequest="165" Margin="10" BackgroundColor="White" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="80,10,80,10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow x:Name="S5" Brush="#eaed80" Offset="0,10" Radius="20" Opacity="0.1" />
+                </Border.Shadow>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="Common">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter TargetName="M5" Property="TranslationY" Value="-15"/>
+                                    <Setter TargetName="S5" Property="Opacity" Value="0.3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid RowDefinitions="Auto, *, Auto" Padding="15,40">
+                    <Label Grid.Row="0" Text="05" FontAttributes="Bold" TextColor="#eaed80" FontSize="24" HorizontalOptions="Center"/>
+                    <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+                        <Label Text="The Map of Quiet Decisions" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                        <Label Text="Average" FontSize="11" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <Button Grid.Row="2" Text="START" BackgroundColor="#eaed80" TextColor="#1B3A57" CornerRadius="20" HeightRequest="50" FontAttributes="Bold" />
+                </Grid>
             </Border>
 
-            <Border Stroke="#A5D6F7" StrokeThickness="1" StrokeShape="RoundRectangle 20" Background="White" Margin="10" HeightRequest="100" WidthRequest="150">
-                <Button Text="Module 6" BackgroundColor="#CCE5FF" TextColor="#1A2A47" FontAttributes="Bold" />
+            <Border x:Name="M6" HeightRequest="450" WidthRequest="165" Margin="10" BackgroundColor="White" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10,80,10,80" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow x:Name="S6" Brush="#BDE0FE" Offset="0,10" Radius="20" Opacity="0.1" />
+                </Border.Shadow>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="Common">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter TargetName="M6" Property="TranslationY" Value="-15"/>
+                                    <Setter TargetName="S6" Property="Opacity" Value="0.3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid RowDefinitions="Auto, *, Auto" Padding="15,40">
+                    <Label Grid.Row="0" Text="06" FontAttributes="Bold" TextColor="#BDE0FE" FontSize="24" HorizontalOptions="Center"/>
+                    <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+                        <Label Text="The Weight of Paper Wings" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                        <Label Text="Average" FontSize="11" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <Button Grid.Row="2" Text="START" BackgroundColor="#BDE0FE" TextColor="#1B3A57" CornerRadius="20" HeightRequest="50" FontAttributes="Bold" />
+                </Grid>
             </Border>
 
-            <Border Stroke="#A5D6F7" StrokeThickness="1" StrokeShape="RoundRectangle 20" Background="White" Margin="10" HeightRequest="100" WidthRequest="150">
-                <Button Text="Module 7" BackgroundColor="#CCE5FF" TextColor="#1A2A47" FontAttributes="Bold" />
+            <Border x:Name="M7" HeightRequest="450" WidthRequest="165" Margin="10" BackgroundColor="White" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="80,10,80,10" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow x:Name="S7" Brush="#80c2ed" Offset="0,10" Radius="20" Opacity="0.1" />
+                </Border.Shadow>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="Common">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter TargetName="M7" Property="TranslationY" Value="-15"/>
+                                    <Setter TargetName="S7" Property="Opacity" Value="0.3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid RowDefinitions="Auto, *, Auto" Padding="15,40">
+                    <Label Grid.Row="0" Text="07" FontAttributes="Bold" TextColor="#80c2ed" FontSize="24" HorizontalOptions="Center"/>
+                    <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+                        <Label Text="The City of Silent Bargains" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                        <Label Text="Intermediate" FontSize="11" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <Button Grid.Row="2" Text="START" BackgroundColor="#80c2ed" CornerRadius="20" HeightRequest="50" FontAttributes="Bold" />
+                </Grid>
             </Border>
 
-            <Border Stroke="#A5D6F7" StrokeThickness="1" StrokeShape="RoundRectangle 20" Background="White" Margin="10" HeightRequest="100" WidthRequest="150">
-                <Button Text="Module 8" BackgroundColor="#CCE5FF" TextColor="#1A2A47" FontAttributes="Bold" />
+            <Border x:Name="M8" HeightRequest="450" WidthRequest="165" Margin="10" BackgroundColor="White" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10,80,10,80" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow x:Name="S8" Brush="#eaed80" Offset="0,10" Radius="20" Opacity="0.1" />
+                </Border.Shadow>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="Common">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter TargetName="M8" Property="TranslationY" Value="-15"/>
+                                    <Setter TargetName="S8" Property="Opacity" Value="0.3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Grid RowDefinitions="Auto, *, Auto" Padding="15,40">
+                    <Label Grid.Row="0" Text="08" FontAttributes="Bold" TextColor="#eaed80" FontSize="24" HorizontalOptions="Center"/>
+                    <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
+                        <Label Text="Whispers of the Iron Forest" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                        <Label Text="Intermediate" FontSize="11" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                    <Button Grid.Row="2" Text="START" BackgroundColor="#eaed80" TextColor="#1B3A57" CornerRadius="20" HeightRequest="50" FontAttributes="Bold" />
+                </Grid>
             </Border>
 
         </FlexLayout>
