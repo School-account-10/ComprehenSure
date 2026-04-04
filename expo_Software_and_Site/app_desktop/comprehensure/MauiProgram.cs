@@ -24,6 +24,8 @@ namespace comprehensure
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<SignUpViewModel>();
             builder.Services.AddTransient<MainDashboardViewModel>();
+            builder.Services.AddTransient<UsernameReqViewModel>();
+            builder.Services.AddTransient<UsernameReq>();
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<SignUpPage>();
             builder.Services.AddTransient<MainDashboard>();

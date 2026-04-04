@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Firebase.Auth;
 
@@ -23,6 +18,13 @@ namespace comprehensure.DataBaseControl.Models
 
         [ObservableProperty]
         private string _Email;
+
+
+        public async Task UserName_requiremen()
+        {
+
+        }
+
 
         [RelayCommand]
         private async Task SignUp()
@@ -51,12 +53,15 @@ namespace comprehensure.DataBaseControl.Models
                 await _authClient.CreateUserWithEmailAndPasswordAsync(emailcl, passwordcl);
 
                 await Shell.Current.DisplayAlert("Sign Up", "Account Registered " + emailcl, "OK");
-                await Shell.Current.GoToAsync("LoginPage");
+
+                await Shell.Current.GoToAsync("///UsernameReq");
             }
             catch (Exception ex)
             {
                 await Shell.Current.DisplayAlert("Login Failed", ex.Message, "OK");
             }
+
+
         }
     }
 }

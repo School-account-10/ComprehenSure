@@ -23,4 +23,9 @@
         Title="MainPage"
         ContentTemplate="{DataTemplate dashboard:MainDashboard}"
         Route="MainDashboard" />
+
+    <ShellContent
+        Title="Username Requirement"
+        ContentTemplate="{DataTemplate dashboard:UsernameReq}"
+        Route="UsernameReq" />
 </Shell>
