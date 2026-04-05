@@ -51,16 +51,20 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="FirebaseAuthentication.net" Version="4.1.0" />
 		<PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
+		<PackageReference Include="Google.Cloud.Firestore" Version="4.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="LoginPage.xaml.cs">
+		<Compile Update="DASHBOARD\UsernameReq.xaml.cs">
+		  <DependentUpon>UsernameReq.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="MainPages\LoginPage.xaml.cs">
 			<DependentUpon>LoginPage.xaml</DependentUpon>
 		</Compile>
-		<Compile Update="SignUpPage.xaml.cs">
+		<Compile Update="MainPages\SignUpPage.xaml.cs">
 			<DependentUpon>SignUpPage.xaml</DependentUpon>
 		</Compile>
 	</ItemGroup>
@@ -81,12 +85,20 @@
 		<MauiXaml Update="DASHBOARD\ProgressDashboard.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
-		<MauiXaml Update="LoginPage.xaml">
+		<MauiXaml Update="DASHBOARD\UsernameReq.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="MainPages\LoginPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
-		<MauiXaml Update="SignUpPage.xaml">
+		<MauiXaml Update="MainPages\SignUpPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\Images\Progress_bar\" />
+	  <Folder Include="Resources\Raw\Firebase_api\" />
 	</ItemGroup>
 
 </Project>
