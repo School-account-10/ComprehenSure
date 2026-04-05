@@ -4,7 +4,7 @@ namespace comprehensure;
 
 public partial class SignUpPage : ContentPage
 {
-    private SwitchOffline _checker;
+    // private SwitchOffline _checker;
     public SignUpPage(DataBaseControl.Models.SignUpViewModel viewModel)
     {
         InitializeComponent();
