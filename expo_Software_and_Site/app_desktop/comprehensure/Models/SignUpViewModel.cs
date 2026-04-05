@@ -54,11 +54,11 @@ namespace comprehensure.DataBaseControl.Models
 
             try
             {
-                await _authClient.CreateUserWithEmailAndPasswordAsync(emailcl, passwordcl);
+                var result = await _authClient.CreateUserWithEmailAndPasswordAsync(emailcl, passwordcl);
 
                 await Shell.Current.DisplayAlert("Sign Up", "Account Registered " + emailcl, "OK");
 
-                await Shell.Current.GoToAsync($"///UsernameReq?email={emailcl}");
+                await Shell.Current.GoToAsync($"///UsernameReq?email={emailcl}&uid={result.User.Uid}");
             }
             catch (Exception ex)
             {

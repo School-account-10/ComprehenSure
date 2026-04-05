@@ -1,19 +1,23 @@
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+using Firebase.Auth;
 
 namespace comprehensure.DataBaseControl.Models
 {
     [QueryProperty(nameof(UserEmail), "email")]
-    // [QueryProperty(nameof(UserEmail), "email")] just stack them like this if you need more data
+    [QueryProperty(nameof(UserUid), "uid")]
     public partial class UsernameReqViewModel : ObservableObject
     {
         [ObservableProperty]
         private string _userEmail;
+
+        [ObservableProperty]
+        private string _userUid;
 
         [ObservableProperty]
         private string _username;
@@ -30,9 +34,72 @@ namespace comprehensure.DataBaseControl.Models
         [RelayCommand]
         public async Task UsernameCheck()
         {
-            //_ = UsernameExists(_username);
-            _ = UserCreation();
+            _ = UsernameExists(_username);
         }
+
+        private async Task<bool> UsernameExists(string username)
+        {
+            Username = Username.Trim().ToLower();
+
+            string url = $"{BaseUrl}:runQuery";
+
+            string json = JsonSerializer.Serialize(
+                new
+                {
+                    structuredQuery = new
+                    {
+                        from = new[] { new { collectionId = "userdata" } },
+                        where = new
+                        {
+                            fieldFilter = new
+                            {
+                                field = new { fieldPath = "username" },
+                                op = "EQUAL",
+                                value = new { stringValue = username },
+                            },
+                        },
+                        limit = 1,
+                    },
+                }
+            );
+
+            HttpResponseMessage response = await client.PostAsync(
+                url,
+                new StringContent(json, Encoding.UTF8, "application/json")
+            );
+
+            string result = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                await Shell.Current.DisplayAlert("Sign Up", "user name note taken Status:  " + "false", "OK");
+                _ = UserCreation();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(result))
+            {
+                await Shell.Current.DisplayAlert("text field empty", "Status:  " + "false", "OK");
+                return false;
+            }
+
+            if (result.Contains("document"))
+            {
+                await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "true", "OK");
+                await Shell.Current.DisplayAlert("Sign Up", "Welcome back " + Username, "OK");
+                await Shell.Current.GoToAsync("MainDashboard");
+                return true;
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "false", "OK");
+               
+                return false;
+            }
+        }
+
+
+
 
         public async Task UserCreation()
         {
@@ -45,6 +112,7 @@ namespace comprehensure.DataBaseControl.Models
                     Username = new { stringValue = Username },
                     Email = new { stringValue = UserEmail },
                     DeviceTimeOfReg = new { stringValue = Usertime },
+                    Uid = new { stringValue = UserUid },
                     ServerTimeOfReg = new
                     {
                         stringValue = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"),
@@ -78,70 +146,6 @@ namespace comprehensure.DataBaseControl.Models
                 );
                 await Shell.Current.GoToAsync("MainDashboard");
             }
-
         }
     }
 }
-
-
-/*
-
-private async Task<bool> UsernameExists(string username)
-        {
-            username = username.Trim().ToLower();
-
-            string url = $"{BaseUrl}:runQuery";
-
-            string json = JsonSerializer.Serialize(
-                new
-                {
-                    structuredQuery = new
-                    {
-                        from = new[] { new { collectionId = "users" } },
-                        where = new
-                        {
-                            fieldFilter = new
-                            {
-                                field = new { fieldPath = "username" },
-                                op = "EQUAL",
-                                value = new { stringValue = username },
-                            },
-                        },
-                        limit = 1,
-                    },
-                }
-            );
-
-            HttpResponseMessage response = await client.PostAsync(
-                url,
-                new StringContent(json, Encoding.UTF8, "application/json")
-            );
-
-            string result = await response.Content.ReadAsStringAsync();
-
-            if (!response.IsSuccessStatusCode)
-            {
-                await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "false", "OK");
-                return false;
-            }
-
-            if (string.IsNullOrEmpty(result))
-            {
-                await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "false", "OK");
-                return false;
-            }
-
-            if (result.Contains("document"))
-            {
-                await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "true", "OK");
-                return true;
-            }
-            else
-            {
-                await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "false", "OK");
-                return false;
-            }
-        }
-    }
-}
-*/
