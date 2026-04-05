@@ -19,6 +19,8 @@ namespace comprehensure.DataBaseControl.Models
     {
         private readonly FirebaseAuthClient _authClient;
 
+        
+
         public LoginViewModel(FirebaseAuthClient authClient)
         {
             _authClient = authClient;

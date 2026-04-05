@@ -6,12 +6,7 @@
     BackgroundColor="#f4f9fd">
 
     <Grid RowDefinitions="Auto, *">
-        <Label
-            Padding="20,10"
-            FontAttributes="Bold"
-            FontSize="18"
-            Text="ComprehenSure"
-            TextColor="#1B3A57" />
+        <Label Text="ComprehenSure" Padding="20,10" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
 
         <ScrollView Grid.Row="1" VerticalOptions="Center">
             <VerticalStackLayout
