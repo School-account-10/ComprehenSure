@@ -1,9 +1,10 @@
-﻿using comprehensure.DataBaseControl.Models;
+﻿using CommunityToolkit.Maui;
 using comprehensure.DASHBOARD;
+using comprehensure.DataBaseControl.Models;
 using Firebase.Auth;
 using Firebase.Auth.Providers;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using CommunityToolkit.Maui;
 
 namespace comprehensure
 {
@@ -12,15 +13,33 @@ namespace comprehensure
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            builder.UseMauiApp<App>().ConfigureFonts(fonts =>
-            {
-                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-            }).UseMauiCommunityToolkit();
+
+            builder.Configuration.AddUserSecrets<App>();
+            builder.Configuration.AddJsonFile("Resources/Raw/Firebase_api/API_KEY/secrets.json", optional: true);
+            var apiKey = builder.Configuration["FirebaseApiKey"];
+
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                })
+                .UseMauiCommunityToolkit();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
-            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = "", AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
+            builder.Services.AddSingleton(
+                new FirebaseAuthClient(
+                    new FirebaseAuthConfig()
+                    {
+                        ApiKey = apiKey,
+                        AuthDomain = "comprehensuredb.web.app",
+                        Providers = new FirebaseAuthProvider[] { new EmailProvider() },
+                    }
+                )
+                { }
+            );
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<SignUpViewModel>();
             builder.Services.AddTransient<MainDashboardViewModel>();
@@ -29,7 +48,7 @@ namespace comprehensure
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<SignUpPage>();
             builder.Services.AddTransient<MainDashboard>();
-            
+
             return builder.Build();
         }
     }

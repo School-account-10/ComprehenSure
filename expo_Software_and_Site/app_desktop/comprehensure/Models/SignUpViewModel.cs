@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using Firebase.Auth;
+using Microsoft.Maui.Controls;
 
 namespace comprehensure.DataBaseControl.Models
 {
@@ -29,7 +31,9 @@ namespace comprehensure.DataBaseControl.Models
         [RelayCommand]
         private async Task SignUp()
         {
+            
             string emailcl = _Email?.Trim();
+           
             string passwordcl = _Password?.Trim();
 
             if (string.IsNullOrEmpty(emailcl))
@@ -54,7 +58,7 @@ namespace comprehensure.DataBaseControl.Models
 
                 await Shell.Current.DisplayAlert("Sign Up", "Account Registered " + emailcl, "OK");
 
-                await Shell.Current.GoToAsync("///UsernameReq");
+                await Shell.Current.GoToAsync($"///UsernameReq?email={emailcl}");
             }
             catch (Exception ex)
             {
