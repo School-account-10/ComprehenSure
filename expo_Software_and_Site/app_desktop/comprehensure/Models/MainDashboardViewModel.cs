@@ -10,26 +10,27 @@ using System.Threading.Tasks;
 
 
 namespace comprehensure.DataBaseControl.Models
-{
-    [QueryProperty(nameof(UserUid), "useruid")]
-    [QueryProperty(nameof(Baseurl), "baseUrl")]
+{ 
+    
+    
     public partial class MainDashboardViewModel : ObservableObject
     {
-        [ObservableProperty]
-        private string _userUid;
+      
+
+        private readonly string projectId = "comprehensuredb";
+        private string BaseUrl => $"https://firestore.googleapis.com/v1/projects/{projectId}/databases/(default)/documents";
+        private readonly HttpClient client = new HttpClient();
+
         [ObservableProperty]
         private string _UsernameEdit;
 
-       [ObservableProperty]
-        private string _baseurl;
 
         [ObservableProperty]
         private int _score;
 
 
          
-        private readonly HttpClient client = new HttpClient();
-        private readonly string projectId = "comprehensuredb";
+      
 
         [ObservableProperty]
         private double _strokeOffset = 100;
@@ -55,60 +56,67 @@ namespace comprehensure.DataBaseControl.Models
         }
         public async Task OnAppearing()
         {
-            await changedisplayname(); 
+            
+            await changedisplayname();
         }
-
-
 
         private async Task<string> GetUsername()
         {
-            string url = $"{Baseurl}/users/{UserUid}";
-            HttpResponseMessage response = await client.GetAsync(url);
+            // Retrieve the UID from storage
+            string myUid = Preferences.Default.Get("SavedUserUid", "");
 
-            if (!response.IsSuccessStatusCode)
+            if (string.IsNullOrEmpty(myUid))
             {
-                return null;
-            }
-            else
-            {
-                _ =changedisplayname();
+                return "Not Logged In";
             }
 
-            string json = await response.Content.ReadAsStringAsync();
+            
+            string url = $"{BaseUrl}/userdata/{myUid}";
 
-
-            string dbUser = null;
-
-            using (JsonDocument doc = JsonDocument.Parse(json))
+            try
             {
+                var response = await client.GetAsync(url);
+                if (!response.IsSuccessStatusCode) return null;
 
-                dbUser = doc.RootElement
+                var json = await response.Content.ReadAsStringAsync();
+                using var doc = JsonDocument.Parse(json);
+
+               
+                return doc.RootElement
                     .GetProperty("fields")
-                    .GetProperty("username")
+                    .GetProperty("Username")
                     .GetProperty("stringValue")
                     .GetString();
             }
-
-            await Shell.Current.DisplayAlert("Login fetched prosees", "username" + dbUser, "OK");
-            return dbUser;
+            catch (Exception ex)
+            {
+                return "Error loading profile";
+            }
         }
+
+
         public async Task changedisplayname()
         {
-           
+            
             string fetchedName = await GetUsername();
 
-            if (fetchedName != null)
+            
+            if (!string.IsNullOrEmpty(fetchedName))
             {
-
+                
                 UsernameEdit = fetchedName;
-                await Shell.Current.DisplayAlert("Login fetched prosees", "username" + fetchedName, "OK");
+
+                
+                await Shell.Current.DisplayAlert("Success", $"Welcome back, {fetchedName}!", "OK");
             }
             else
             {
                
-                UsernameEdit = "USER NOT FOUND(meaning user somehow signed in without acc)";
+                UsernameEdit = "User not found";
+                await Shell.Current.DisplayAlert("Error", "Could not find user data.", "OK");
             }
         }
+        
         public int valuecheck()
         {
             if (ModuleFinished < 0)

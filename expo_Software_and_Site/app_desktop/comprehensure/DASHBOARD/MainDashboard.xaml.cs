@@ -1,5 +1,3 @@
-
-
 using comprehensure.DataBaseControl.Models;
 
 namespace comprehensure.DASHBOARD;
@@ -13,6 +11,16 @@ public partial class MainDashboard : ContentPage
         
     }
 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        
+        if (BindingContext is MainDashboardViewModel vm)
+        {
+            await vm.OnAppearing();
+        }
+    }
 
     private async void ProgressButton_Clicked(object sender, EventArgs e)
     {

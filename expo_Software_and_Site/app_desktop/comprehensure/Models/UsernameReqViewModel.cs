@@ -96,10 +96,10 @@ namespace comprehensure.DataBaseControl.Models
             }
             else
             {
-                await Shell.Current.DisplayAlert("Username Not Created", "Status:  " + "No", "OK");
+                
                 await Shell.Current.DisplayAlert($"Error {(int)response.StatusCode}", result, "OK");
                 _ = UserCreation();
-                return false;
+                return true;
             }
         }
 
@@ -132,10 +132,9 @@ namespace comprehensure.DataBaseControl.Models
             var options = new JsonSerializerOptions { PropertyNamingPolicy = null };
             var json = JsonSerializer.Serialize(data, options);
 
-            var response = await client.PostAsync(
-                $"{BaseUrl}/userdata",
-                new StringContent(json, Encoding.UTF8, "application/json")
-            );
+            var response = await client.PatchAsync($"{BaseUrl}/userdata/{UserUid}",
+    new StringContent(json, Encoding.UTF8, "application/json"));
+            
 
             string result = await response.Content.ReadAsStringAsync();
 
@@ -150,6 +149,8 @@ namespace comprehensure.DataBaseControl.Models
                     "Account Registered for " + Username,
                     "OK"
                 );
+                Preferences.Default.Set("SavedUserUid", UserUid);
+                Preferences.Default.Set("SavedUserEmail", UserEmail);
                 await Shell.Current.GoToAsync($"MainDashboard?uid={UserUid}&baseUrl={BaseUrl}");
             }
         }
