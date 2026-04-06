@@ -2,8 +2,68 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="comprehensure.DASHBOARD.ProfileDashboard"
-             Title="ProfileDashboard">
-    <VerticalStackLayout>
-        <Label Text="ComprehenSure" Padding="20,10" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
-    </VerticalStackLayout>
+             BackgroundColor="#F4F8FB"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+
+            <Label Text="ComprehenSure" TextColor="#1B3A57" FontAttributes="Bold" FontSize="22" HorizontalOptions="Center" FontFamily="Calibri" />
+
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0,10,0,10">
+                <Frame CornerRadius="60" HeightRequest="120" WidthRequest="120" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BorderColor="#80c2ed">
+                    <Image Source="user.png" Aspect="AspectFill" HeightRequest="120" WidthRequest="120" BackgroundColor="#E0F7FA" />
+                </Frame>
+
+                <Button Text="Change PFP" Clicked="OnChangePfpClicked" BackgroundColor="Transparent" TextColor="#80c2ed" FontSize="14" Padding="0" HeightRequest="30" FontFamily="Calibri"/>
+
+                <Label Text="Student Name" TextColor="#1B3A57" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" Margin="0,5,0,0" FontFamily="Calibri" />
+                <Label Text="student@school.edu" TextColor="Gray" FontSize="14" HorizontalOptions="Center" FontFamily="Calibri" />
+            </VerticalStackLayout>
+
+            <Frame BackgroundColor="White" CornerRadius="15" HasShadow="True" Padding="20" BorderColor="Transparent">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Your Progress" TextColor="#1B3A57" FontAttributes="Bold" FontSize="16" FontFamily="Calibri" />
+
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Grid.Column="0" Text="Level 5: Master Reader" TextColor="#1B3A57" FontSize="14" FontFamily="Calibri" />
+                        <Label Grid.Column="1" Text="80%" TextColor="#80c2ed" FontAttributes="Bold" FontSize="14" FontFamily="Calibri" />
+                    </Grid>
+                    <ProgressBar Progress="0.8" ProgressColor="#80c2ed" />
+
+                    <Label Text="Achievements:" TextColor="Gray" FontSize="12" Margin="0,10,0,0" FontFamily="Calibri" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Frame BackgroundColor="#FFF9C4" CornerRadius="10" Padding="10" BorderColor="Transparent">
+                            <Label Text="🏆 10 Quizzes" FontSize="12" TextColor="#1B3A57" FontFamily="Calibri"/>
+                        </Frame>
+                        <Frame BackgroundColor="#BDE0FE" CornerRadius="10" Padding="10" BorderColor="Transparent">
+                            <Label Text="🔥 5 Day Streak" FontSize="12" TextColor="#1B3A57" FontFamily="Calibri"/>
+                        </Frame>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Change Password" 
+                    Clicked="OnChangePasswordClicked" 
+                    BackgroundColor="White" 
+                    TextColor="#1B3A57" 
+                    BorderColor="#80c2ed" 
+                    BorderWidth="1" 
+                    CornerRadius="25" 
+                    HeightRequest="50"
+                    Margin="0,10,0,0"
+                    FontFamily="Calibri"/>
+
+            <Button Text="Log Out" 
+                    Clicked="OnLogoutClicked" 
+                    BackgroundColor="#E63946" 
+                    TextColor="White" 
+                    CornerRadius="25" 
+                    HeightRequest="50"
+                    Margin="0,5,0,20"
+                    FontFamily="Calibri"
+                    FontAttributes="Bold"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

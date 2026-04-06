@@ -61,7 +61,8 @@
                         CornerRadius="20"
                         FontAttributes="Bold"
                         HeightRequest="50"
-                        Text="START" />
+                        Text="START" 
+                        Clicked="OnStartClicked"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -125,7 +126,8 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57" />
+                        TextColor="#1B3A57"
+                        Clicked="OnStartClicked"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -189,7 +191,8 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57" />
+                        TextColor="#1B3A57"
+                        Clicked="OnStartClicked"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -252,7 +255,8 @@
                         CornerRadius="20"
                         FontAttributes="Bold"
                         HeightRequest="50"
-                        Text="START" />
+                        Text="START"
+                        Clicked="OnStartClicked"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -316,7 +320,8 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57" />
+                        TextColor="#1B3A57"
+                        Clicked="OnStartClicked"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -380,7 +385,8 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57" />
+                        TextColor="#1B3A57"
+                        Clicked="OnStartClicked"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -443,7 +449,8 @@
                         CornerRadius="20"
                         FontAttributes="Bold"
                         HeightRequest="50"
-                        Text="START" />
+                        Text="START"
+                        Clicked="OnStartClicked"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -507,7 +514,8 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57" />
+                        TextColor="#1B3A57"
+                        Clicked="OnStartClicked"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>

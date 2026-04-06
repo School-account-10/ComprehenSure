@@ -1,6 +1,6 @@
-
-
 using comprehensure.DataBaseControl.Models;
+using Microsoft.Maui.Controls;
+using System;
 
 namespace comprehensure.DASHBOARD;
 
@@ -10,9 +10,7 @@ public partial class MainDashboard : ContentPage
     {
         InitializeComponent();
         BindingContext = viewModel;
-        
     }
-
 
     private async void ProgressButton_Clicked(object sender, EventArgs e)
     {
@@ -33,6 +31,4 @@ public partial class MainDashboard : ContentPage
     {
         await Navigation.PushAsync(new AllAboutUS_Dashboard());
     }
-
-   
 }

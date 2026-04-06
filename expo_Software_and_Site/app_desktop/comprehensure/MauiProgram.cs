@@ -29,6 +29,7 @@ namespace comprehensure
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
+
             builder.Services.AddSingleton(
                 new FirebaseAuthClient(
                     new FirebaseAuthConfig()
@@ -40,6 +41,9 @@ namespace comprehensure
                 )
                 { }
             );
+
+            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = "", AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
+
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<SignUpViewModel>();
             builder.Services.AddTransient<MainDashboardViewModel>();
