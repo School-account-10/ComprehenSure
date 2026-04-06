@@ -28,4 +28,9 @@
         Title="Username Requirement"
         ContentTemplate="{DataTemplate dashboard:UsernameReq}"
         Route="UsernameReq" />
+
+    <ShellContent
+     Title="Profile"
+     ContentTemplate="{DataTemplate dashboard:ProfileDashboard}"
+     Route="ProfileDashboard" />
 </Shell>

@@ -24,10 +24,7 @@ public partial class MainDashboard : ContentPage
         await Navigation.PushAsync(new ModulesDaskboard());
     }
 
-    private async void ProfileButton_Clicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new ProfileDashboard());
-    }
+   
 
     private async void AboutUsButton_Clicked(object sender, EventArgs e)
     {

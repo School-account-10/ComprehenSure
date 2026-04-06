@@ -14,6 +14,8 @@ namespace comprehensure.DataBaseControl.Models
     public partial class UsernameReqViewModel : ObservableObject
     {
         [ObservableProperty]
+        private string[] _achievements; // get from quiz with limits, module finished.
+        [ObservableProperty]
         private string _userEmail;
 
         [ObservableProperty]
@@ -71,7 +73,9 @@ namespace comprehensure.DataBaseControl.Models
             string result = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
+
             {
+                await Shell.Current.DisplayAlert($"Error {(int)response.StatusCode}", result, "OK");
                 await Shell.Current.DisplayAlert("Sign Up", "user name note taken Status:  " + "false", "OK");
                 _ = UserCreation();
                 return false;
@@ -87,13 +91,14 @@ namespace comprehensure.DataBaseControl.Models
             {
                 await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "true", "OK");
                 await Shell.Current.DisplayAlert("Sign Up", "Welcome back " + Username, "OK");
-                await Shell.Current.GoToAsync("MainDashboard");
+                await Shell.Current.GoToAsync($"MainDashboard?uid={UserUid}&baseUrl={BaseUrl}");
                 return true;
             }
             else
             {
-                await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "false", "OK");
-               
+                await Shell.Current.DisplayAlert("Username Not Created", "Status:  " + "No", "OK");
+                await Shell.Current.DisplayAlert($"Error {(int)response.StatusCode}", result, "OK");
+                _ = UserCreation();
                 return false;
             }
         }
@@ -109,6 +114,7 @@ namespace comprehensure.DataBaseControl.Models
             {
                 fields = new
                 {
+
                     Username = new { stringValue = Username },
                     Email = new { stringValue = UserEmail },
                     DeviceTimeOfReg = new { stringValue = Usertime },
@@ -144,7 +150,7 @@ namespace comprehensure.DataBaseControl.Models
                     "Account Registered for " + Username,
                     "OK"
                 );
-                await Shell.Current.GoToAsync("MainDashboard");
+                await Shell.Current.GoToAsync($"MainDashboard?uid={UserUid}&baseUrl={BaseUrl}");
             }
         }
     }
