@@ -5,5 +5,13 @@
              Title="ProfileDashboard">
     <VerticalStackLayout>
         <Label Text="ComprehenSure" Padding="20,10" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
+        <Button
+     BackgroundColor="Transparent"
+     BorderColor="#80c2ed"
+    Command="{Binding logoutCommand}"
+     BorderWidth="1"
+     CornerRadius="15"
+     Text="Logout"
+     TextColor="#80c2ed" />
     </VerticalStackLayout>
 </ContentPage>

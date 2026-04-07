@@ -7,15 +7,16 @@
     BackgroundColor="#F4F8FB">
 
     <ScrollView VerticalOptions="FillAndExpand">
-
+       
         <FlexLayout
+            
             Padding="40"
             AlignContent="Center"
             AlignItems="Center"
             Direction="Row"
             JustifyContent="Center"
             Wrap="Wrap">
-
+            <Button Text="← Back" Clicked="BackButton_Clicked" HorizontalOptions="Start" />
             <Border
                 x:Name="M1"
                 Margin="10"
@@ -459,6 +460,8 @@
                         </VisualStateGroup>
                     </VisualStateGroupList>
                 </VisualStateManager.VisualStateGroups>
+
+                
             </Border>
 
             <Border

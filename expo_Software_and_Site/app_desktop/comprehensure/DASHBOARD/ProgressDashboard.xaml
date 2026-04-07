@@ -5,5 +5,6 @@
              Title="ProgressDashboard">
     <VerticalStackLayout>
         <Label Text="ComprehenSure" Padding="20,10" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
+        <Button Text="← Back" Clicked="BackButton_Clicked" HorizontalOptions="Start" />
     </VerticalStackLayout>
 </ContentPage>

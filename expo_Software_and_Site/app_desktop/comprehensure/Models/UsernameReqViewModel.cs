@@ -15,6 +15,7 @@ namespace comprehensure.DataBaseControl.Models
     {
         [ObservableProperty]
         private string[] _achievements; // get from quiz with limits, module finished.
+
         [ObservableProperty]
         private string _userEmail;
 
@@ -73,11 +74,14 @@ namespace comprehensure.DataBaseControl.Models
             string result = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
-
             {
                 await Shell.Current.DisplayAlert($"Error {(int)response.StatusCode}", result, "OK");
-                await Shell.Current.DisplayAlert("Sign Up", "user name note taken Status:  " + "false", "OK");
-                _ = UserCreation();
+                await Shell.Current.DisplayAlert(
+                    "Sign Up",
+                    "username note taken Status:  " + "false",
+                    "OK"
+                );
+               _ = UserCreation();
                 return false;
             }
 
@@ -96,25 +100,19 @@ namespace comprehensure.DataBaseControl.Models
             }
             else
             {
-                
-                await Shell.Current.DisplayAlert($"Error {(int)response.StatusCode}", result, "OK");
                 _ = UserCreation();
                 return true;
             }
         }
 
-
-
-
         public async Task UserCreation()
         {
-            await Shell.Current.DisplayAlert("Sign Up", "Account Registered " + Username, "OK");
+           
 
             var data = new
             {
                 fields = new
                 {
-
                     Username = new { stringValue = Username },
                     Email = new { stringValue = UserEmail },
                     DeviceTimeOfReg = new { stringValue = Usertime },
@@ -132,9 +130,10 @@ namespace comprehensure.DataBaseControl.Models
             var options = new JsonSerializerOptions { PropertyNamingPolicy = null };
             var json = JsonSerializer.Serialize(data, options);
 
-            var response = await client.PatchAsync($"{BaseUrl}/userdata/{UserUid}",
-    new StringContent(json, Encoding.UTF8, "application/json"));
-            
+            var response = await client.PatchAsync(
+                $"{BaseUrl}/userdata/{UserUid}",
+                new StringContent(json, Encoding.UTF8, "application/json")
+            );
 
             string result = await response.Content.ReadAsStringAsync();
 

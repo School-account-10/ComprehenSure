@@ -6,4 +6,9 @@ public partial class ProgressDashboard : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async void BackButton_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
 }

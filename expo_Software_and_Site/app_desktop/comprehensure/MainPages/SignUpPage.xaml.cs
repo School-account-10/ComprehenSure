@@ -11,10 +11,7 @@ public partial class SignUpPage : ContentPage
         BindingContext = viewModel;
     }
 
-    public async void BackButtonEvent(Object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new MainPage());
-    }
+   
 
     private async void SignUpButton_Clicked(object sender, EventArgs e)
     {
