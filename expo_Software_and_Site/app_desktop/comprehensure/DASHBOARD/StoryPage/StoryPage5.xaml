@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="comprehensure.DASHBOARD.StoryPage.StoryPage5"
+             BackgroundColor="#F4F8FB"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        <Border Grid.Row="0" BackgroundColor="#80c2ed" HeightRequest="60">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0,0,25,25" />
+            </Border.StrokeShape>
+            <Label Text="Module 02: The Hidden Path" 
+                   TextColor="White" 
+                   FontAttributes="Bold" 
+                   FontSize="18" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" />
+        </Border>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="20">
+                <Frame BackgroundColor="White" CornerRadius="15" HasShadow="True" Padding="20">
+                    <Label Text="Insert your story text for Module 2 here. This area is scrollable to accommodate longer narratives." 
+                           TextColor="#1B3A57" 
+                           FontSize="16" 
+                           LineHeight="1.5" />
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Grid Grid.Row="2" ColumnDefinitions="*, *" Padding="20" ColumnSpacing="20">
+            <Button Grid.Column="0" 
+                    Text="Back" 
+                    Clicked="OnBackButtonClicked" 
+                    BackgroundColor="Transparent" 
+                    TextColor="#80c2ed" 
+                    BorderColor="#80c2ed" 
+                    BorderWidth="1" 
+                    CornerRadius="25" />
+            <Button Grid.Column="1" 
+                    Text="Take Quiz" 
+                    Clicked="OnGoToQuizClicked" 
+                    BackgroundColor="#80c2ed" 
+                    TextColor="White" 
+                    CornerRadius="25" />
+        </Grid>
+    </Grid>
+</ContentPage>

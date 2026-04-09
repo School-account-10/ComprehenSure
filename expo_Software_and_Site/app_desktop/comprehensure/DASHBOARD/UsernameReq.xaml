@@ -2,29 +2,83 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="comprehensure.DASHBOARD.UsernameReq"
-             Title="Username Requirement">
+             BackgroundColor="#f4f9fd"
+             Shell.NavBarIsVisible="False">
 
-    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+    <Grid RowDefinitions="Auto, *">
+        <Label Text="ComprehenSure" Padding="20,10" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
 
-        <Label 
-            Text="Choose your username"
-            FontSize="Large"
-            HorizontalOptions="Center" />
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="40" 
+                                 Spacing="20" 
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="Fill">
 
-        <Entry 
-            Placeholder="Enter username"
-            x:Name="UsernameEntry"
-            Text="{Binding Username}"
-            HorizontalOptions="Fill"
-            Keyboard="Text"
-            ReturnType="Done" />
+                <Image Source="applogo.jpg"
+                       HeightRequest="180"
+                       WidthRequest="180"
+                       Aspect="AspectFill"
+                       HorizontalOptions="Center">
+                    <Image.Clip>
+                        <EllipseGeometry Center="90,90" RadiusX="90" RadiusY="90" />
+                    </Image.Clip>
+                </Image>
 
-        <Button 
-            Command="{Binding UsernameCheckCommand}"
-            Text="Continue"
-            HeightRequest="50"
-            HorizontalOptions="Fill" />
+                <Label Text="Choose your username" 
+                       FontSize="28" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       TextColor="#1B3A57" />
 
-    </VerticalStackLayout>
+                <Label Text="This is how you will appear in the app." 
+                       FontSize="15" 
+                       HorizontalOptions="Center" 
+                       TextColor="Gray" />
 
+                <VerticalStackLayout Spacing="15" Margin="0,20" MaximumWidthRequest="350" HorizontalOptions="Center">
+                    <Border Stroke="#80c2ed" 
+                            StrokeThickness="1" 
+                            BackgroundColor="White" 
+                            Padding="15,2" 
+                            HeightRequest="55">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="25"/>
+                        </Border.StrokeShape>
+                        <Entry x:Name="UsernameEntry"
+                               Placeholder="Enter username"
+                               PlaceholderColor="Silver"
+                               Text="{Binding Username}"
+                               TextColor="#1B3A57"
+                               FontSize="16"
+                               VerticalOptions="Center"
+                               Keyboard="Text"
+                               ReturnType="Done" />
+                    </Border>
+
+                    <Button Text="Continue" 
+                            Command="{Binding UsernameCheckCommand}"
+                            BackgroundColor="#80c2ed" 
+                            TextColor="White" 
+                            CornerRadius="25" 
+                            HeightRequest="55" 
+                            FontAttributes="Bold" />
+                </VerticalStackLayout>
+
+                <Border Stroke="#eaed80" 
+                        StrokeThickness="1" 
+                        BackgroundColor="#fffef0" 
+                        Padding="15" 
+                        MaximumWidthRequest="400" 
+                        HorizontalOptions="Center">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15"/>
+                    </Border.StrokeShape>
+                    <Label Text="Tip: Pick a name that is easy to remember!" 
+                           TextColor="Gray" 
+                           HorizontalTextAlignment="Center" 
+                           FontSize="12" />
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
