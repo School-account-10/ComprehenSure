@@ -1,12 +1,6 @@
-﻿using System.Buffers.Text;
-using System.Reflection;
-using System.Text.Json;
-using System.Threading.Tasks;
-
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using comprehensure.DASHBOARD;
-using Firebase.Auth;
+using System.Text.Json;
 
 namespace comprehensure.DataBaseControl.Models
 {
@@ -85,7 +79,7 @@ namespace comprehensure.DataBaseControl.Models
         public async Task changedisplayname()
         {
             string fetchedName = await GetUsername();
-
+            _ = getms();
             if (!string.IsNullOrEmpty(fetchedName))
             {
                 UsernameEdit = fetchedName;
@@ -109,6 +103,15 @@ namespace comprehensure.DataBaseControl.Models
             }
 
             return ModuleFinished;
+        }
+       public async Task getms()
+        {
+            string dateString = DateTime.Now.ToString("M/d/yyyy h:mm:ss.fff tt");
+            DateTime dateValue = DateTime.Parse(dateString);
+            DateTimeOffset dateOffsetValue = DateTimeOffset.Parse(dateString);
+            string timems = ($"{ dateValue.ToString("fff")}");
+            await Shell.Current.DisplayAlert("Ms Checker", $"command completed in: {timems} MS", "OK");
+
         }
 
         [RelayCommand]
@@ -142,14 +145,14 @@ namespace comprehensure.DataBaseControl.Models
         public async Task showloginwelcome()
         {
             string fetchedName = await GetUsername();
-           
-            
-                bool isFirst = Preferences.Default.Get("IsFirstLogin", false);
-                if (isFirst)
-                {
-                   
-                    await Shell.Current.DisplayAlert("Success", $"Welcome back, {fetchedName}", "OK");
-                    Preferences.Default.Set("IsFirstLogin", false);
+
+
+            bool isFirst = Preferences.Default.Get("IsFirstLogin", false);
+            if (isFirst)
+            {
+
+                await Shell.Current.DisplayAlert("Success", $"Welcome back, {fetchedName}", "OK");
+                Preferences.Default.Set("IsFirstLogin", false);
             }
 
 

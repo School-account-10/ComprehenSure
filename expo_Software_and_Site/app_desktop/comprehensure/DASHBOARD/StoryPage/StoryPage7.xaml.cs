@@ -1,5 +1,3 @@
-using Microsoft.Maui.Controls;
-using System;
 namespace comprehensure.DASHBOARD.StoryPage;
 
 public partial class StoryPage7 : ContentPage // 1

@@ -1,7 +1,4 @@
-using Microsoft.Maui.Controls;
-using System;
-
-namespace comprehensure.DASHBOARD.StoryPage; 
+namespace comprehensure.DASHBOARD.StoryPage;
 
 public partial class QuizPage1 : ContentPage
 {

@@ -1,5 +1,4 @@
-﻿using comprehensure.DataBaseControl.Models;
-using comprehensure.Models;
+﻿using comprehensure.Models;
 
 namespace comprehensure
 {

@@ -23,8 +23,8 @@
         Title="Maindashboard"
         ContentTemplate="{DataTemplate dashboard:MainDashboard}"
         Route="MainDashboard" />
-    
-   
+
+
 
     <ShellContent
         Title="Username Requirement"

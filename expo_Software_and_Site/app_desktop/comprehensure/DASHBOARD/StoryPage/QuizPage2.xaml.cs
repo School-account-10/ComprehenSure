@@ -1,6 +1,3 @@
-using Microsoft.Maui.Controls;
-using System;
-
 namespace comprehensure.DASHBOARD.StoryPage;
 
 public partial class QuizPage2 : ContentPage
@@ -12,7 +9,7 @@ public partial class QuizPage2 : ContentPage
 
     private async void OnSubmitClicked(object sender, EventArgs e)
     {
-      
+
         await DisplayAlert("Quiz Complete", "You have finished the quiz for Module 2!", "OK");
         await Navigation.PopToRootAsync();
     }

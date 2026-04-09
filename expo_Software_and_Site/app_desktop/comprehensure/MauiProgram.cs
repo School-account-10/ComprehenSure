@@ -31,19 +31,8 @@ namespace comprehensure
             builder.Logging.AddDebug();
 #endif
 
-            builder.Services.AddSingleton(
-                new FirebaseAuthClient(
-                    new FirebaseAuthConfig()
-                    {
-                        ApiKey = apiKey,
-                        AuthDomain = "comprehensuredb.web.app",
-                        Providers = new FirebaseAuthProvider[] { new EmailProvider() },
-                    }
-                )
-                { }
-            );
 
-            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = "AIzaSyBZ5o4uLtYW2m6JxPFD35cbf9vPz5jsNVk\r\n   ", AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
+            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = apiKey, AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
 
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<SignUpViewModel>();

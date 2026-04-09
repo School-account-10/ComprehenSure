@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace comprehensure
+﻿namespace comprehensure
 {
     public partial class App : Application
     {
@@ -15,7 +13,7 @@ namespace comprehensure
         {
             string savedUid = Preferences.Default.Get("SavedUserUid", "");
 
-            
+
 
             if (!string.IsNullOrEmpty(savedUid))
             {

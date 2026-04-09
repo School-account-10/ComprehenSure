@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net9.0-android;net9.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
 
 		<OutputType>Exe</OutputType>
@@ -47,71 +47,15 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
-		<PackageReference Include="CommunityToolkit.Maui.Core" Version="9.1.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="FirebaseAuthentication.net" Version="4.1.0" />
 		<PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
 		<PackageReference Include="Google.Cloud.Firestore" Version="4.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.5" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="DASHBOARD\ModulesDashboard.xaml.cs">
-		  <DependentUpon>ModulesDashboard.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\QuizPage8.xaml.cs">
-		  <DependentUpon>QuizPage8.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\QuizPage7.xaml.cs">
-		  <DependentUpon>QuizPage7.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\QuizPage6.xaml.cs">
-		  <DependentUpon>QuizPage6.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\QuizPage5.xaml.cs">
-		  <DependentUpon>QuizPage5.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\QuizPage4.xaml.cs">
-		  <DependentUpon>QuizPage4.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\QuizPage3.xaml.cs">
-		  <DependentUpon>QuizPage3.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\StoryPage8.xaml.cs">
-		  <DependentUpon>StoryPage8.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\StoryPage7.xaml.cs">
-		  <DependentUpon>StoryPage7.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\StoryPage6.xaml.cs">
-		  <DependentUpon>StoryPage6.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\StoryPage5.xaml.cs">
-		  <DependentUpon>StoryPage5.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\StoryPage4.xaml.cs">
-		  <DependentUpon>StoryPage4.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\StoryPage3.xaml.cs">
-		  <DependentUpon>StoryPage3.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\QuizPage2.xaml.cs">
-		  <DependentUpon>QuizPage2.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\StoryPage2.xaml.cs">
-		  <DependentUpon>StoryPage2.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\QuizPage1.xaml.cs">
-		  <DependentUpon>QuizPage1.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\StoryPage\StoryPage1.xaml.cs">
-		  <DependentUpon>StoryPage1.xaml</DependentUpon>
-		</Compile>
-		<Compile Update="DASHBOARD\UsernameReq.xaml.cs">
-			<DependentUpon>UsernameReq.xaml</DependentUpon>
-		</Compile>
 		<Compile Update="MainPages\LoginPage.xaml.cs">
 			<DependentUpon>LoginPage.xaml</DependentUpon>
 		</Compile>
@@ -122,70 +66,22 @@
 
 	<ItemGroup>
 		<MauiXaml Update="DASHBOARD\AllAboutUS_Dashboard.xaml">
-			<Generator>MSBuild:Compile</Generator>
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\MainDashboard.xaml">
-			<Generator>MSBuild:Compile</Generator>
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\ModulesDashboard.xaml">
-			<Generator>MSBuild:Compile</Generator>
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\ProfileDashboard.xaml">
-			<Generator>MSBuild:Compile</Generator>
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\ProgressDashboard.xaml">
-			<Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\QuizPage8.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\QuizPage7.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\QuizPage6.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\QuizPage5.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\QuizPage4.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\QuizPage3.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\StoryPage8.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\StoryPage7.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\StoryPage6.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\StoryPage5.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\StoryPage4.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\StoryPage3.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\QuizPage2.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\StoryPage2.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\QuizPage1.xaml">
-		  <Generator>MSBuild:Compile</Generator>
-		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\StoryPage\StoryPage1.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\UsernameReq.xaml">
-			<Generator>MSBuild:Compile</Generator>
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="MainPages\LoginPage.xaml">
 			<Generator>MSBuild:Compile</Generator>

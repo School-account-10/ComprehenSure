@@ -4,6 +4,17 @@
              x:Class="comprehensure.DASHBOARD.ProfileDashboard"
              Title="ProfileDashboard">
     <VerticalStackLayout>
-        <Label Text="ComprehenSure" Padding="20,10" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button
+       BackgroundColor="Transparent"
+       BorderColor="#80c2ed"
+       BorderWidth="1"
+       CornerRadius="15"
+       Text="Logout"
+       TextColor="#80c2ed" 
+       Command="{Binding logoutCommand}"/>
     </VerticalStackLayout>
 </ContentPage>
