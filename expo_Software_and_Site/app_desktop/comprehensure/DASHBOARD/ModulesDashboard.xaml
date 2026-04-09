@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="comprehensure.DASHBOARD.ProfileDashboard"
+             x:Class="comprehensure.DASHBOARD.ModulesDashboard"
              BackgroundColor="#F4F8FB"
              Shell.NavBarIsVisible="False">
 
@@ -62,7 +62,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START" 
-                        Clicked="OnStartClicked"/>
+                        />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -127,7 +127,7 @@
                         HeightRequest="50"
                         Text="START"
                         TextColor="#1B3A57"
-                        Clicked="OnStartClicked"/>
+                        />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -192,7 +192,7 @@
                         HeightRequest="50"
                         Text="START"
                         TextColor="#1B3A57"
-                        Clicked="OnStartClicked"/>
+                        />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -256,7 +256,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        Clicked="OnStartClicked"/>
+                        />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -321,7 +321,7 @@
                         HeightRequest="50"
                         Text="START"
                         TextColor="#1B3A57"
-                        Clicked="OnStartClicked"/>
+                        />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -386,7 +386,7 @@
                         HeightRequest="50"
                         Text="START"
                         TextColor="#1B3A57"
-                        Clicked="OnStartClicked"/>
+                        />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -450,7 +450,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        Clicked="OnStartClicked"/>
+                        />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -517,7 +517,7 @@
                         HeightRequest="50"
                         Text="START"
                         TextColor="#1B3A57"
-                        Clicked="OnStartClicked"/>
+                        />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>

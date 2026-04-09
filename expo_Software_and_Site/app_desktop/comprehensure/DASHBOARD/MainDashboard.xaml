@@ -1,6 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="comprehensure.DASHBOARD.ModulesDashboard"
+              x:Class="comprehensure.DASHBOARD.MainDashboard"
              BackgroundColor="#F4F8FB">
 
     <ScrollView>
@@ -125,7 +125,7 @@
                     <Button
                         Grid.Column="0"
                         BackgroundColor="#eaed80"
-                        Clicked="ModulesButton_Clicked"
+                        
                         CornerRadius="20"
                         HeightRequest="50"
                         Text="MODULES"
@@ -133,7 +133,7 @@
                     <Button
                         Grid.Column="1"
                         BackgroundColor="#BDE0FE"
-                        Clicked="AboutUsButton_Clicked"
+                       
                         CornerRadius="20"
                         HeightRequest="50"
                         Text="ABOUT US"

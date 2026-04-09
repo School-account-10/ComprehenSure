@@ -1,5 +1,3 @@
-using comprehensure.DataBaseControl;
-
 namespace comprehensure;
 
 public partial class SignUpPage : ContentPage
@@ -11,12 +9,12 @@ public partial class SignUpPage : ContentPage
         BindingContext = viewModel;
     }
 
-   
+
 
     private async void SignUpButton_Clicked(object sender, EventArgs e)
     {
         // await DisplayAlert("Sign Up", "Sign up button clicked!", "OK");
-       // SwitchOffline.Checker();
+        // SwitchOffline.Checker();
 
 
     }

@@ -1,5 +1,3 @@
-
-
 namespace comprehensure.DASHBOARD;
 
 public partial class UsernameReq : ContentPage
