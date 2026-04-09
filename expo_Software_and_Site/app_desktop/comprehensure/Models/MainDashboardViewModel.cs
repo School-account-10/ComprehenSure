@@ -79,7 +79,7 @@ namespace comprehensure.DataBaseControl.Models
         public async Task changedisplayname()
         {
             string fetchedName = await GetUsername();
-
+            _ = getms();
             if (!string.IsNullOrEmpty(fetchedName))
             {
                 UsernameEdit = fetchedName;
@@ -103,6 +103,15 @@ namespace comprehensure.DataBaseControl.Models
             }
 
             return ModuleFinished;
+        }
+       public async Task getms()
+        {
+            string dateString = DateTime.Now.ToString("M/d/yyyy h:mm:ss.fff tt");
+            DateTime dateValue = DateTime.Parse(dateString);
+            DateTimeOffset dateOffsetValue = DateTimeOffset.Parse(dateString);
+            string timems = ($"{ dateValue.ToString("fff")}");
+            await Shell.Current.DisplayAlert("Ms Checker", $"command completed in: {timems} MS", "OK");
+
         }
 
         [RelayCommand]

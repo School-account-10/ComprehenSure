@@ -15,6 +15,6 @@
        CornerRadius="15"
        Text="Logout"
        TextColor="#80c2ed" 
-            Command="{Binding logoutCommand}"/>
+       Command="{Binding logoutCommand}"/>
     </VerticalStackLayout>
 </ContentPage>
