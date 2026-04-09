@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    x:Class="comprehensure.DASHBOARD.MainDashboard"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="#f4f9fd"
-    Shell.NavBarIsVisible="False">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="comprehensure.DASHBOARD.ModulesDashboard"
+             BackgroundColor="#F4F8FB">
 
     <ScrollView>
         <Grid

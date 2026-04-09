@@ -58,6 +58,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Update="DASHBOARD\ModulesDashboard.xaml.cs">
+		  <DependentUpon>ModulesDashboard.xaml</DependentUpon>
+		</Compile>
 		<Compile Update="DASHBOARD\StoryPage\QuizPage8.xaml.cs">
 		  <DependentUpon>QuizPage8.xaml</DependentUpon>
 		</Compile>
@@ -124,7 +127,7 @@
 		<MauiXaml Update="DASHBOARD\MainDashboard.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
-		<MauiXaml Update="DASHBOARD\ModulesDaskboard.xaml">
+		<MauiXaml Update="DASHBOARD\ModulesDashboard.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\ProfileDashboard.xaml">
