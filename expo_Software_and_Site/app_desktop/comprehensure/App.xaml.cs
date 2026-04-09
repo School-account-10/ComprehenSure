@@ -11,7 +11,18 @@ namespace comprehensure
             Connectivity.Current.ConnectivityChanged += Connectivity_ConnectivityChanged;
         }
 
-       
+        protected override async void OnStart()
+        {
+            string savedUid = Preferences.Default.Get("SavedUserUid", "");
+
+            
+
+            if (!string.IsNullOrEmpty(savedUid))
+            {
+                await Shell.Current.GoToAsync("///MainDashboard");
+            }
+        }
+
 
         protected override Window CreateWindow(IActivationState? activationState)
         {

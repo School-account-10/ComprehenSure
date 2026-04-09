@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Firebase.Auth;
 
@@ -8,9 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using CommunityToolkit.Maui.Alerts;
-using CommunityToolkit.Maui.Core;
-
 
 namespace comprehensure.DataBaseControl.Models
 {
@@ -19,7 +18,7 @@ namespace comprehensure.DataBaseControl.Models
     {
         private readonly FirebaseAuthClient _authClient;
 
-        
+
 
         public LoginViewModel(FirebaseAuthClient authClient)
         {
@@ -43,17 +42,23 @@ namespace comprehensure.DataBaseControl.Models
 
             try
             {
-                await _authClient.SignInWithEmailAndPasswordAsync(emailcl, passwordcl);
+                var result = await _authClient.SignInWithEmailAndPasswordAsync(emailcl, passwordcl);
+
+                Preferences.Default.Set("SavedUserUid", result.User.Uid);
+                Preferences.Default.Set("SavedUserEmail", emailcl);
+                Preferences.Default.Set("IsFirstLogin", true);
+
                 await Shell.Current.GoToAsync("MainDashboard");
-                await Shell.Current.DisplayAlert("Login COMPLETE", "LOGIN COMPLETE: " + emailcl, "OK");
-            }
-            catch (Exception ex)
-            {
-                await Shell.Current.DisplayAlert("SIGNUP FAIL", ex.Message, "OK");
+                await Shell.Current.DisplayAlert("Login Complete", "Welcome, " + emailcl, "OK");
             }
 
+            catch (System.Exception ex)
+            {
+                string raw = ex.Message;
+                string readable = raw.Contains(":") ? raw.Split(':').Last().Trim() : raw;
+                await Shell.Current.DisplayAlert("Login Failed", readable, "OK");
+            }
         }
+
     }
 }
-
-

@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using comprehensure.DASHBOARD;
 using comprehensure.DataBaseControl.Models;
+using comprehensure.Models;
 using Firebase.Auth;
 using Firebase.Auth.Providers;
 using Microsoft.Extensions.Configuration;
@@ -48,10 +49,14 @@ namespace comprehensure
             builder.Services.AddTransient<SignUpViewModel>();
             builder.Services.AddTransient<MainDashboardViewModel>();
             builder.Services.AddTransient<UsernameReqViewModel>();
+            builder.Services.AddTransient<ProfileDashboard>();
+            builder.Services.AddTransient<ProfileDashboardViewModel>();
             builder.Services.AddTransient<UsernameReq>();
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<SignUpPage>();
             builder.Services.AddTransient<MainDashboard>();
+            builder.Services.AddTransient<MainPageViewModel>();
+            builder.Services.AddTransient<MainPage>();
 
             return builder.Build();
         }

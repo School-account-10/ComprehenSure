@@ -20,12 +20,25 @@
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="Login" />
     <ShellContent
-        Title="MainPage"
+        Title="Maindashboard"
         ContentTemplate="{DataTemplate dashboard:MainDashboard}"
         Route="MainDashboard" />
+    
+   
 
     <ShellContent
         Title="Username Requirement"
         ContentTemplate="{DataTemplate dashboard:UsernameReq}"
         Route="UsernameReq" />
+
+    <ShellContent
+     Title="Profile"
+     ContentTemplate="{DataTemplate dashboard:ProfileDashboard}"
+     Route="ProfileDashboard" />
+
+    <ShellContent
+    Title="Startpaget"
+    ContentTemplate="{DataTemplate local:MainPage}"
+    Route="MainPage" />
+
 </Shell>

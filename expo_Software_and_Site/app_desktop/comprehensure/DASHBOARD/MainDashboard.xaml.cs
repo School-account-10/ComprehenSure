@@ -12,6 +12,17 @@ public partial class MainDashboard : ContentPage
         BindingContext = viewModel;
     }
 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        
+        if (BindingContext is MainDashboardViewModel vm)
+        {
+            await vm.OnAppearing();
+        }
+    }
+
     private async void ProgressButton_Clicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new ProgressDashboard());
@@ -22,10 +33,7 @@ public partial class MainDashboard : ContentPage
         await Navigation.PushAsync(new ModulesDaskboard());
     }
 
-    private async void ProfileButton_Clicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new ProfileDashboard());
-    }
+   
 
     private async void AboutUsButton_Clicked(object sender, EventArgs e)
     {

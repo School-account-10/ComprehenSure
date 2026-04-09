@@ -14,6 +14,9 @@ namespace comprehensure.DataBaseControl.Models
     public partial class UsernameReqViewModel : ObservableObject
     {
         [ObservableProperty]
+        private string[] _achievements; // get from quiz with limits, module finished.
+
+        [ObservableProperty]
         private string _userEmail;
 
         [ObservableProperty]
@@ -72,8 +75,13 @@ namespace comprehensure.DataBaseControl.Models
 
             if (!response.IsSuccessStatusCode)
             {
-                await Shell.Current.DisplayAlert("Sign Up", "user name note taken Status:  " + "false", "OK");
-                _ = UserCreation();
+                await Shell.Current.DisplayAlert($"Error {(int)response.StatusCode}", result, "OK");
+                await Shell.Current.DisplayAlert(
+                    "Sign Up",
+                    "username note taken Status:  " + "false",
+                    "OK"
+                );
+               _ = UserCreation();
                 return false;
             }
 
@@ -87,23 +95,19 @@ namespace comprehensure.DataBaseControl.Models
             {
                 await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "true", "OK");
                 await Shell.Current.DisplayAlert("Sign Up", "Welcome back " + Username, "OK");
-                await Shell.Current.GoToAsync("MainDashboard");
+                await Shell.Current.GoToAsync($"MainDashboard?uid={UserUid}&baseUrl={BaseUrl}");
                 return true;
             }
             else
             {
-                await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "false", "OK");
-               
-                return false;
+                _ = UserCreation();
+                return true;
             }
         }
 
-
-
-
         public async Task UserCreation()
         {
-            await Shell.Current.DisplayAlert("Sign Up", "Account Registered " + Username, "OK");
+           
 
             var data = new
             {
@@ -126,8 +130,8 @@ namespace comprehensure.DataBaseControl.Models
             var options = new JsonSerializerOptions { PropertyNamingPolicy = null };
             var json = JsonSerializer.Serialize(data, options);
 
-            var response = await client.PostAsync(
-                $"{BaseUrl}/userdata",
+            var response = await client.PatchAsync(
+                $"{BaseUrl}/userdata/{UserUid}",
                 new StringContent(json, Encoding.UTF8, "application/json")
             );
 
@@ -144,7 +148,9 @@ namespace comprehensure.DataBaseControl.Models
                     "Account Registered for " + Username,
                     "OK"
                 );
-                await Shell.Current.GoToAsync("MainDashboard");
+                Preferences.Default.Set("SavedUserUid", UserUid);
+                Preferences.Default.Set("SavedUserEmail", UserEmail);
+                await Shell.Current.GoToAsync($"MainDashboard?uid={UserUid}&baseUrl={BaseUrl}");
             }
         }
     }

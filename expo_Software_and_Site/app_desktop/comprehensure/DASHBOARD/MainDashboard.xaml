@@ -40,13 +40,13 @@
                     </Border.StrokeShape>
                     <ImageButton
                         Aspect="AspectFill"
-                        Clicked="ProfileButton_Clicked"
+                        Command="{Binding ProfileDashboardCommand}"
                         Source="user.png" />
                 </Border>
                 <Label
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    Text="User_Name"
+                    Text="{Binding UsernameEdit}"
                     TextColor="#1B3A57" />
                 <Button
                     BackgroundColor="Transparent"
@@ -115,7 +115,11 @@
                                 TextColor="#80c2ed"
                                 VerticalOptions="Center" />
                         </Grid>
+                        
+                        
                     </Border>
+                    
+                    
 
 
                 </Border>

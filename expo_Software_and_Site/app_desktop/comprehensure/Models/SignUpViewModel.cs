@@ -31,9 +31,8 @@ namespace comprehensure.DataBaseControl.Models
         [RelayCommand]
         private async Task SignUp()
         {
-            
+
             string emailcl = _Email?.Trim();
-           
             string passwordcl = _Password?.Trim();
 
             if (string.IsNullOrEmpty(emailcl))
@@ -44,28 +43,21 @@ namespace comprehensure.DataBaseControl.Models
 
             if (!emailcl.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase))
             {
-                await Shell.Current.DisplayAlert(
-                    "Invalid Email",
-                    "Only Gmail accounts are allowed.",
-                    "OK"
-                );
+                await Shell.Current.DisplayAlert("Invalid Email", "Only Gmail accounts are allowed.", "OK");
                 return;
             }
 
             try
             {
                 var result = await _authClient.CreateUserWithEmailAndPasswordAsync(emailcl, passwordcl);
-
-                await Shell.Current.DisplayAlert("Sign Up", "Account Registered " + emailcl, "OK");
-
                 await Shell.Current.GoToAsync($"///UsernameReq?email={emailcl}&uid={result.User.Uid}");
             }
             catch (Exception ex)
             {
-                await Shell.Current.DisplayAlert("Login Failed", ex.Message, "OK");
+                string raw = ex.Message;
+                string readable = raw.Contains(":") ? raw.Split(':').Last().Trim() : raw;
+                await Shell.Current.DisplayAlert("Sign Up Failed", readable, "OK");
             }
-
-
         }
     }
 }
