@@ -92,6 +92,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="DASHBOARD\StoryPage\ViewModels\stories\" />
 		<Folder Include="Resources\Images\Progress_bar\" />
 	</ItemGroup>
 	
