@@ -6,6 +6,7 @@ using Firebase.Auth;
 using Firebase.Auth.Providers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+// code to android emu is 1111
 
 namespace comprehensure
 {
@@ -30,9 +31,16 @@ namespace comprehensure
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
+            if (DeviceInfo.Current.Platform == DevicePlatform.Android)
+            {
+                builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = "USEBUILTIN", AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
+            }
+            else
+            {
+                builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = apiKey, AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
+            }
+            // sorry sir in a cybersecurity standpoint this is bad asf 
 
-
-            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = apiKey, AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
 
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<SignUpViewModel>();
@@ -46,6 +54,8 @@ namespace comprehensure
             builder.Services.AddTransient<MainDashboard>();
             builder.Services.AddTransient<MainPageViewModel>();
             builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<ModulesDashboardViewModel>();
+            builder.Services.AddTransient<ModulesDashboard>();
 
             return builder.Build();
         }

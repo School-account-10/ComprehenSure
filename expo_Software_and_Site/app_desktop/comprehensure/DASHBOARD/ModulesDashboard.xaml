@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="comprehensure.DASHBOARD.ModulesDashboard"
-             BackgroundColor="#F4F8FB"
-             Shell.NavBarIsVisible="False">
+<ContentPage
+    x:Class="comprehensure.DASHBOARD.ModulesDashboard"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F4F8FB"
+    Shell.NavBarIsVisible="False">
 
     <ScrollView VerticalOptions="FillAndExpand">
-       
+
         <FlexLayout
-            
             Padding="40"
             AlignContent="Center"
             AlignItems="Center"
             Direction="Row"
             JustifyContent="Center"
             Wrap="Wrap">
-            <Button Text="← Back" Clicked="BackButton_Clicked" HorizontalOptions="Start" />
+            <Button
+                Clicked="BackButton_Clicked"
+                HorizontalOptions="Start"
+                Text="← Back" />
             <Border
                 x:Name="M1"
                 Margin="10"
@@ -61,8 +64,7 @@
                         CornerRadius="20"
                         FontAttributes="Bold"
                         HeightRequest="50"
-                        Text="START" 
-                        />
+                        Text="START" />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -126,8 +128,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57"
-                        />
+                        TextColor="#1B3A57" />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -191,8 +192,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57"
-                        />
+                        TextColor="#1B3A57" />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -255,8 +255,7 @@
                         CornerRadius="20"
                         FontAttributes="Bold"
                         HeightRequest="50"
-                        Text="START"
-                        />
+                        Text="START" />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -320,8 +319,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57"
-                        />
+                        TextColor="#1B3A57" />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -385,8 +383,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57"
-                        />
+                        TextColor="#1B3A57" />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -449,8 +446,7 @@
                         CornerRadius="20"
                         FontAttributes="Bold"
                         HeightRequest="50"
-                        Text="START"
-                        />
+                        Text="START" />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -466,8 +462,6 @@
                         </VisualStateGroup>
                     </VisualStateGroupList>
                 </VisualStateManager.VisualStateGroups>
-
-                
             </Border>
 
             <Border
@@ -516,8 +510,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57"
-                        />
+                        TextColor="#1B3A57" />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>

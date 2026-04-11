@@ -1,6 +1,11 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Firebase.Auth;
+using Firebase.Auth.Providers;
 using System.Text.Json;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace comprehensure.DataBaseControl.Models
 {
@@ -32,6 +37,27 @@ namespace comprehensure.DataBaseControl.Models
         [ObservableProperty]
         private string _displayPercentage = "0%";
 
+
+        [RelayCommand]
+        public async Task modules()
+        {
+            await Shell.Current.GoToAsync("///ModuleDashboard");
+        }
+
+        public async Task Toastshow(string showtext) // this part does not work in windows 
+        {
+
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
+
+            ToastDuration duration = ToastDuration.Long;
+            double fontSize = 14;
+
+            var toast = Toast.Make(showtext, duration, fontSize);
+
+            await toast.Show(cancellationTokenSource.Token);
+           
+        }
         public MainDashboardViewModel()
         {
             _ = CalculateProgress();
@@ -109,15 +135,24 @@ namespace comprehensure.DataBaseControl.Models
             string dateString = DateTime.Now.ToString("M/d/yyyy h:mm:ss.fff tt");
             DateTime dateValue = DateTime.Parse(dateString);
             DateTimeOffset dateOffsetValue = DateTimeOffset.Parse(dateString);
-            string timems = ($"{ dateValue.ToString("fff")}");
-            await Shell.Current.DisplayAlert("Ms Checker", $"command completed in: {timems} MS", "OK");
+            string timems = ($"{dateValue.ToString("fff")}");
 
+            if (DeviceInfo.Current.Platform == DevicePlatform.Android)
+            {
+                _ = Toastshow($"Ms Checker Get UserName now completed in: {timems} MS ");
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Ms Checker", $"Get UserName now completed in: {timems} MS","OK");
+            }
+           
         }
 
         [RelayCommand]
         public async Task ProfileDashboard()
         {
             await Shell.Current.GoToAsync("///ProfileDashboard");
+            
         }
 
         [RelayCommand]

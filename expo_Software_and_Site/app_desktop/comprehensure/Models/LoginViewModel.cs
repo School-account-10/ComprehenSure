@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Firebase.Auth;
 
@@ -11,6 +13,37 @@ namespace comprehensure.DataBaseControl.Models
         private readonly FirebaseAuthClient _authClient;
 
 
+
+        public async Task Toastshow(string showtext) // this part does not work in windows 
+        {
+
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
+
+            ToastDuration duration = ToastDuration.Long;
+            double fontSize = 14;
+
+            var toast = Toast.Make(showtext, duration, fontSize);
+
+            await toast.Show(cancellationTokenSource.Token);
+
+        }
+        public async Task getms()
+        {
+            string dateString = DateTime.Now.ToString("M/d/yyyy h:mm:ss.fff tt");
+            DateTime dateValue = DateTime.Parse(dateString);
+            DateTimeOffset dateOffsetValue = DateTimeOffset.Parse(dateString);
+            string timems = ($"{dateValue.ToString("fff")}");
+            
+            if (DeviceInfo.Current.Platform == DevicePlatform.Android)
+            {
+                _ = Toastshow($"Ms Checker Login UserName now completed in: {timems} MS ");
+            }
+            else
+            {
+                await Shell.Current.DisplayAlert("Ms Checker", $"Login completed in: {timems} MS", "OK");
+            }
+        }
 
         public LoginViewModel(FirebaseAuthClient authClient)
         {
@@ -34,8 +67,9 @@ namespace comprehensure.DataBaseControl.Models
 
             try
             {
+                
                 var result = await _authClient.SignInWithEmailAndPasswordAsync(emailcl, passwordcl);
-
+                _ = getms();
                 Preferences.Default.Set("SavedUserUid", result.User.Uid);
                 Preferences.Default.Set("SavedUserEmail", emailcl);
                 Preferences.Default.Set("IsFirstLogin", true);

@@ -24,6 +24,10 @@
         ContentTemplate="{DataTemplate dashboard:MainDashboard}"
         Route="MainDashboard" />
 
+    <ShellContent
+    Title="ModuleDashboard"
+    ContentTemplate="{DataTemplate dashboard:ModulesDashboard}"
+    Route="ModuleDashboard" />
 
 
     <ShellContent
