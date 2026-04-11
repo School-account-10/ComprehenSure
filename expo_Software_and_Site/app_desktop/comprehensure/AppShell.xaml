@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:dashboard="clr-namespace:comprehensure.DASHBOARD"
     xmlns:local="clr-namespace:comprehensure"
+    xmlns:storypage="clr-namespace:comprehensure.DASHBOARD.StoryPage"
     Shell.NavBarIsVisible="False">
 
     <FlyoutItem Title="Main">
@@ -45,4 +46,44 @@
     ContentTemplate="{DataTemplate local:MainPage}"
     Route="MainPage" />
 
+
+    <ShellContent
+    Title="Story Page 1"
+    ContentTemplate="{DataTemplate storypage:StoryPage1}"
+    Route="StoryPage1" />
+
+    <ShellContent
+    Title="Story Page 2"
+    ContentTemplate="{DataTemplate storypage:StoryPage2}"
+    Route="StoryPage2" />
+
+    <ShellContent
+    Title="Story Page 3"
+    ContentTemplate="{DataTemplate storypage:StoryPage3}"
+    Route="StoryPage3" />
+
+    <ShellContent
+    Title="Story Page 4"
+    ContentTemplate="{DataTemplate storypage:StoryPage4}"
+    Route="StoryPage4" />
+
+    <ShellContent
+    Title="Story Page 5"
+    ContentTemplate="{DataTemplate storypage:StoryPage5}"
+    Route="StoryPage5" />
+
+    <ShellContent
+    Title="Story Page 6"
+    ContentTemplate="{DataTemplate storypage:StoryPage6}"
+    Route="StoryPage6" />
+
+    <ShellContent
+    Title="Story Page 7"
+    ContentTemplate="{DataTemplate storypage:StoryPage7}"
+    Route="StoryPage7" />
+
+    <ShellContent
+    Title="Story Page 8"
+    ContentTemplate="{DataTemplate storypage:StoryPage8}"
+    Route="StoryPage8" />
 </Shell>

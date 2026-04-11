@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using comprehensure.DASHBOARD;
+using comprehensure.DASHBOARD.StoryPage;
 using comprehensure.DataBaseControl.Models;
 using comprehensure.Models;
 using Firebase.Auth;
@@ -56,6 +57,25 @@ namespace comprehensure
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<ModulesDashboardViewModel>();
             builder.Services.AddTransient<ModulesDashboard>();
+
+            builder.Services.AddTransient<StoryPage1>();
+            builder.Services.AddTransient<StoryPage2>();
+            builder.Services.AddTransient<StoryPage3>();
+            builder.Services.AddTransient<StoryPage4>();
+            builder.Services.AddTransient<StoryPage5>();
+            builder.Services.AddTransient<StoryPage6>();
+            builder.Services.AddTransient<StoryPage7>();
+            builder.Services.AddTransient<StoryPage8>();
+
+            
+            builder.Services.AddTransient<StoryPage1ViewModel>();
+            builder.Services.AddTransient<StoryPage2ViewModel>();
+            builder.Services.AddTransient<StoryPage3ViewModel>();
+            builder.Services.AddTransient<StoryPage4ViewModel>();
+            builder.Services.AddTransient<StoryPage5ViewModel>();
+            builder.Services.AddTransient<StoryPage6ViewModel>();
+            builder.Services.AddTransient<StoryPage7ViewModel>();
+            builder.Services.AddTransient<StoryPage8ViewModel>();
 
             return builder.Build();
         }

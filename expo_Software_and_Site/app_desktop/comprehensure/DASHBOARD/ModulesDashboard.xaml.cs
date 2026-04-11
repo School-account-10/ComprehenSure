@@ -6,15 +6,17 @@ namespace comprehensure.DASHBOARD;
 
 public partial class ModulesDashboard : ContentPage
 {
-    public ModulesDashboard()
+    public ModulesDashboard(DataBaseControl.Models.ModulesDashboardViewModel viewModel)
     {
         InitializeComponent();
+        BindingContext = viewModel;
     }
 
     private async void BackButton_Clicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync();
+        await Shell.Current.GoToAsync("MainDashboard");
     }
 
-    
+
 }

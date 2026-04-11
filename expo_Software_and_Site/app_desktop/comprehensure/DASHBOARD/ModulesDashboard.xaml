@@ -64,7 +64,8 @@
                         CornerRadius="20"
                         FontAttributes="Bold"
                         HeightRequest="50"
-                        Text="START" />
+                        Command="{Binding startmodule1Command}"
+                        Text="START1" />
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -128,6 +129,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
+                        Command="{Binding startmodule2Command}"
                         TextColor="#1B3A57" />
                 </Grid>
 
@@ -192,6 +194,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
+                        Command="{Binding startmodule3Command}"
                         TextColor="#1B3A57" />
                 </Grid>
 
@@ -255,7 +258,8 @@
                         CornerRadius="20"
                         FontAttributes="Bold"
                         HeightRequest="50"
-                        Text="START" />
+                        Text="START"
+                        Command="{Binding startmodule4Command}"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -319,6 +323,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
+                        Command="{Binding startmodule5Command}"
                         TextColor="#1B3A57" />
                 </Grid>
 
@@ -383,6 +388,7 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
+                        Command="{Binding startmodule6Command}"
                         TextColor="#1B3A57" />
                 </Grid>
 
@@ -446,7 +452,8 @@
                         CornerRadius="20"
                         FontAttributes="Bold"
                         HeightRequest="50"
-                        Text="START" />
+                        Text="START" 
+                        Command="{Binding startmodule7Command}"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
@@ -510,7 +517,8 @@
                         FontAttributes="Bold"
                         HeightRequest="50"
                         Text="START"
-                        TextColor="#1B3A57" />
+                        TextColor="#1B3A57" 
+                        Command="{Binding startmodule8Command}"/>
                 </Grid>
 
                 <VisualStateManager.VisualStateGroups>
