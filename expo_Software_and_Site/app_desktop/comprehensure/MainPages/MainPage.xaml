@@ -1,42 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="comprehensure.MainPage"
-             BackgroundColor="#f4f9fd"
-             Shell.NavBarIsVisible="False">
+<ContentPage
+    x:Class="comprehensure.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#f4f9fd"
+    Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions="Auto, *">
-        <Label Text="ComprehenSure" Padding="20,10" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
+        <Label
+            Padding="20,10"
+            FontAttributes="Bold"
+            FontSize="18"
+            Text="ComprehenSure"
+            TextColor="#1B3A57" />
 
         <ScrollView Grid.Row="1">
-            <VerticalStackLayout Padding="40" 
-                                 Spacing="20" 
-                                 VerticalOptions="Center" 
-                                 HorizontalOptions="Fill">
+            <VerticalStackLayout
+                Padding="40"
+                HorizontalOptions="Fill"
+                Spacing="20"
+                VerticalOptions="Center">
 
-                <Image Source="applogo.jpg"
-                       HeightRequest="250"
-                       WidthRequest="250"
-                       Aspect="AspectFill"
-                       HorizontalOptions="Center">
+                <Image
+                    Aspect="AspectFill"
+                    HeightRequest="250"
+                    HorizontalOptions="Center"
+                    Source="applogo.jpg"
+                    WidthRequest="250">
                     <Image.Clip>
-                        <EllipseGeometry Center="125,125" RadiusX="125" RadiusY="125" />
+                        <EllipseGeometry
+                            Center="125,125"
+                            RadiusX="125"
+                            RadiusY="125" />
                     </Image.Clip>
                 </Image>
 
-                <Label Text="Comprehensure" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#1B3A57" />
-                <Label Text="The learning app." FontSize="16" HorizontalOptions="Center" TextColor="Gray" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="32"
+                    HorizontalOptions="Center"
+                    Text="Comprehensure"
+                    TextColor="#1B3A57" />
+                <Label
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="The learning app."
+                    TextColor="Gray" />
 
-                <VerticalStackLayout Spacing="15" Margin="0,20" MaximumWidthRequest="350" HorizontalOptions="Center">
-                    <Button Text="Login" Clicked="Button_login_Clicked" BackgroundColor="#80c2ed" TextColor="White" CornerRadius="25" HeightRequest="55" />
-                    <Button Text="Sign Up" Clicked="Button_sign_up_Clicked" BackgroundColor="Transparent" BorderColor="#80c2ed" BorderWidth="1" CornerRadius="25" HeightRequest="55" TextColor="#80c2ed" />
+                <VerticalStackLayout
+                    Margin="0,20"
+                    HorizontalOptions="Center"
+                    MaximumWidthRequest="350"
+                    Spacing="15">
+                    <Button
+                        BackgroundColor="#80c2ed"
+                        Clicked="Button_login_Clicked"
+                        CornerRadius="25"
+                        HeightRequest="55"
+                        Text="Login"
+                        TextColor="White" />
+                    <Button
+                        BackgroundColor="Transparent"
+                        BorderColor="#80c2ed"
+                        BorderWidth="1"
+                        Clicked="Button_sign_up_Clicked"
+                        CornerRadius="25"
+                        HeightRequest="55"
+                        Text="Sign Up"
+                        TextColor="#80c2ed" />
                 </VerticalStackLayout>
 
-                <Border Stroke="#eaed80" StrokeThickness="1" BackgroundColor="#fffef0" Padding="15" MaximumWidthRequest="400" HorizontalOptions="Center">
+                <Border
+                    Padding="15"
+                    BackgroundColor="#fffef0"
+                    HorizontalOptions="Center"
+                    MaximumWidthRequest="400"
+                    Stroke="#eaed80"
+                    StrokeThickness="1">
                     <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="15"/>
+                        <RoundRectangle CornerRadius="15" />
                     </Border.StrokeShape>
-                    <Label Text="about the app (placeholder)" TextColor="Gray" HorizontalTextAlignment="Center" FontSize="12" />
+                    <Label
+                        FontSize="12"
+                        HorizontalTextAlignment="Center"
+                        Text="about the app (placeholder)"
+                        TextColor="Gray" />
                 </Border>
             </VerticalStackLayout>
         </ScrollView>

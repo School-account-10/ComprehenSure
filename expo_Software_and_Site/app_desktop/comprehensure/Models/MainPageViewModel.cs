@@ -5,6 +5,14 @@ namespace comprehensure.Models
 {
     public partial class MainPageViewModel : ObservableObject
     {
+
+
+        [RelayCommand]
+        private async Task modules()
+        {
+
+        }
+
         [RelayCommand]
         private async Task GoToLogin()
         {

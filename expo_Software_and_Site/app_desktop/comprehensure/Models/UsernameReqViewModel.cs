@@ -1,11 +1,14 @@
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using Firebase.Auth;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using CommunityToolkit.Maui.Alerts;
+
 
 namespace comprehensure.DataBaseControl.Models
 {
@@ -31,6 +34,23 @@ namespace comprehensure.DataBaseControl.Models
             $"https://firestore.googleapis.com/v1/projects/{projectId}/databases/(default)/documents";
         private readonly HttpClient client = new HttpClient();
         private readonly string projectId = "comprehensuredb";
+
+
+
+        public async Task Toastshow(string showtext) // this part does not work in windows 
+        {
+
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
+
+            ToastDuration duration = ToastDuration.Long;
+            double fontSize = 14;
+
+            var toast = Toast.Make(showtext, duration, fontSize);
+
+            await toast.Show(cancellationTokenSource.Token);
+
+        }
 
         public UsernameReqViewModel() { }
 
