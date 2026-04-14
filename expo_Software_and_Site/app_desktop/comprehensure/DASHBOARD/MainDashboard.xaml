@@ -51,7 +51,7 @@
                     BorderColor="#80c2ed"
                     BorderWidth="1"
                     CornerRadius="15"
-                    Text="Settings"
+                    Text="Settings(make this an fly out)"
                     TextColor="#80c2ed" />
             </VerticalStackLayout>
 

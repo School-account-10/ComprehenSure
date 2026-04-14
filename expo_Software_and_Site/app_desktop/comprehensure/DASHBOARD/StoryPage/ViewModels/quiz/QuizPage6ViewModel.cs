@@ -9,8 +9,7 @@ namespace comprehensure.DASHBOARD.StoryPage
 
     public partial class QuizPage6ViewModel : ObservableObject
     {
-        private int _currentPosition;
-        private int _totalSlides;
+       
 
 
     }

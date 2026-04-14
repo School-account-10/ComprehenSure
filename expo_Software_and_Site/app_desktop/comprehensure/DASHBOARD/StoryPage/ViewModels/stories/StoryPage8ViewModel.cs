@@ -7,7 +7,7 @@ using System.Windows.Input;
 namespace comprehensure.DASHBOARD.StoryPage
 {
 
-    public partial class StoryPage8ViewModel : ObservableObject
+    public partial class QuizPage8ViewModel : ObservableObject
     {
         private int _currentPosition;
         private int _totalSlides;
