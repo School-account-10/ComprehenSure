@@ -11,11 +11,11 @@ public partial class StoryPage1 : ContentPage
 
     private async void OnGoToQuizClicked(object sender, EventArgs e)
     {
-        
-        
+      
+        await Navigation.PushAsync(new QuizPage1());
     }
 
-  
+
     private async void OnBackButtonClicked(object sender, EventArgs e)
     {
         

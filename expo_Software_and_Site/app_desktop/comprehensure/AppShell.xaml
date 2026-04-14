@@ -6,84 +6,66 @@
     xmlns:dashboard="clr-namespace:comprehensure.DASHBOARD"
     xmlns:local="clr-namespace:comprehensure"
     xmlns:storypage="clr-namespace:comprehensure.DASHBOARD.StoryPage"
-    Shell.NavBarIsVisible="False">
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="#F4F8FB">
 
-    <FlyoutItem Title="Main">
-        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid" x:Key="FlyoutItemLabelStyle">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#80c2ed" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="20" BackgroundColor="#1B3A57">
+            <Border StrokeShape="RoundRectangle 35" HeightRequest="70" WidthRequest="70" HorizontalOptions="Start">
+                <Image Source="user.png" Aspect="AspectFill" />
+            </Border>
+            <Label Text="Comprehensure" TextColor="White" FontAttributes="Bold" FontSize="18" Margin="0,10,0,0"/>
+            <Label Text="Learning Dashboard" TextColor="#80c2ed" FontSize="12"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Dashboard" Icon="home_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate dashboard:MainDashboard}" Route="MainDashboard" />
     </FlyoutItem>
 
-    <ShellContent
-        Title="SignUp"
-        ContentTemplate="{DataTemplate local:SignUpPage}"
-        Route="signUp" />
-    <ShellContent
-        Title="Login"
-        ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="Login" />
-    <ShellContent
-        Title="Maindashboard"
-        ContentTemplate="{DataTemplate dashboard:MainDashboard}"
-        Route="MainDashboard" />
+    <FlyoutItem Title="Modules" Icon="book_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate dashboard:ModulesDashboard}" Route="ModuleDashboard" />
+    </FlyoutItem>
 
-    <ShellContent
-    Title="ModuleDashboard"
-    ContentTemplate="{DataTemplate dashboard:ModulesDashboard}"
-    Route="ModuleDashboard" />
+    <FlyoutItem Title="Profile" Icon="user_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate dashboard:ProfileDashboard}" Route="ProfileDashboard" />
+    </FlyoutItem>
 
+    <ShellContent Title="Login" ContentTemplate="{DataTemplate local:LoginPage}" Route="Login" FlyoutItemIsVisible="False" />
+    <ShellContent Title="SignUp" ContentTemplate="{DataTemplate local:SignUpPage}" Route="signUp" FlyoutItemIsVisible="False" />
+    <ShellContent Title="Username Requirement" ContentTemplate="{DataTemplate dashboard:UsernameReq}" Route="UsernameReq" FlyoutItemIsVisible="False" />
+    <ShellContent Title="MainPage" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" FlyoutItemIsVisible="False" />
 
-    <ShellContent
-        Title="Username Requirement"
-        ContentTemplate="{DataTemplate dashboard:UsernameReq}"
-        Route="UsernameReq" />
+    <ShellContent Title="Story Page 1" ContentTemplate="{DataTemplate storypage:StoryPage1}" Route="StoryPage1" FlyoutItemIsVisible="False" />
+    <ShellContent Title="Story Page 2" ContentTemplate="{DataTemplate storypage:StoryPage2}" Route="StoryPage2" FlyoutItemIsVisible="False" />
+    <ShellContent Title="Story Page 3" ContentTemplate="{DataTemplate storypage:StoryPage3}" Route="StoryPage3" FlyoutItemIsVisible="False" />
+    <ShellContent Title="Story Page 4" ContentTemplate="{DataTemplate storypage:StoryPage4}" Route="StoryPage4" FlyoutItemIsVisible="False" />
+    <ShellContent Title="Story Page 5" ContentTemplate="{DataTemplate storypage:StoryPage5}" Route="StoryPage5" FlyoutItemIsVisible="False" />
+    <ShellContent Title="Story Page 6" ContentTemplate="{DataTemplate storypage:StoryPage6}" Route="StoryPage6" FlyoutItemIsVisible="False" />
+    <ShellContent Title="Story Page 7" ContentTemplate="{DataTemplate storypage:StoryPage7}" Route="StoryPage7" FlyoutItemIsVisible="False" />
+    <ShellContent Title="Story Page 8" ContentTemplate="{DataTemplate storypage:StoryPage8}" Route="StoryPage8" FlyoutItemIsVisible="False" />
 
-    <ShellContent
-     Title="Profile"
-     ContentTemplate="{DataTemplate dashboard:ProfileDashboard}"
-     Route="ProfileDashboard" />
-
-    <ShellContent
-    Title="Startpaget"
-    ContentTemplate="{DataTemplate local:MainPage}"
-    Route="MainPage" />
-
-
-    <ShellContent
-    Title="Story Page 1"
-    ContentTemplate="{DataTemplate storypage:StoryPage1}"
-    Route="StoryPage1" />
-
-    <ShellContent
-    Title="Story Page 2"
-    ContentTemplate="{DataTemplate storypage:StoryPage2}"
-    Route="StoryPage2" />
-
-    <ShellContent
-    Title="Story Page 3"
-    ContentTemplate="{DataTemplate storypage:StoryPage3}"
-    Route="StoryPage3" />
-
-    <ShellContent
-    Title="Story Page 4"
-    ContentTemplate="{DataTemplate storypage:StoryPage4}"
-    Route="StoryPage4" />
-
-    <ShellContent
-    Title="Story Page 5"
-    ContentTemplate="{DataTemplate storypage:StoryPage5}"
-    Route="StoryPage5" />
-
-    <ShellContent
-    Title="Story Page 6"
-    ContentTemplate="{DataTemplate storypage:StoryPage6}"
-    Route="StoryPage6" />
-
-    <ShellContent
-    Title="Story Page 7"
-    ContentTemplate="{DataTemplate storypage:StoryPage7}"
-    Route="StoryPage7" />
-
-    <ShellContent
-    Title="Story Page 8"
-    ContentTemplate="{DataTemplate storypage:StoryPage8}"
-    Route="StoryPage8" />
 </Shell>

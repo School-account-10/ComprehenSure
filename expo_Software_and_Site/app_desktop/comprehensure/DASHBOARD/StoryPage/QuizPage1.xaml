@@ -2,14 +2,101 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="comprehensure.DASHBOARD.StoryPage.QuizPage1"
-             Title="QuizPage1">
+             Title="Story 1 Quiz"
+             BackgroundColor="#F4F8FB">
 
-    <VerticalStackLayout Padding="30" Spacing="20">
-        <Label Text="The Forgotten Library Quiz" 
-               FontSize="24" 
-               FontAttributes="Bold" 
-               HorizontalOptions="Center" />
+    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
 
-    </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="0,0,0,20">
+            <Label x:Name="QuestionNumberLabel" Text="Question 1 of 10" FontSize="14" HorizontalOptions="Center" TextColor="#80c2ed" />
+            <ProgressBar x:Name="QuizProgress" Progress="0.1" ProgressColor="#80c2ed" HeightRequest="10" />
+        </VerticalStackLayout>
 
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="25">
+                <Frame BackgroundColor="White" CornerRadius="15" HasShadow="True" Padding="20">
+                    <Label x:Name="QuestionText" 
+                           FontSize="18" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                </Frame>
+
+                <VerticalStackLayout x:Name="OptionsContainer" Spacing="20" Padding="10">
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Border x:Name="CircleA" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="26" WidthRequest="26" VerticalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="13"/>
+                            </Border.StrokeShape>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="a"/>
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Label x:Name="BtnA" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="a"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Border x:Name="CircleB" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="26" WidthRequest="26" VerticalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="13"/>
+                            </Border.StrokeShape>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="b"/>
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Label x:Name="BtnB" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="b"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Border x:Name="CircleC" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="26" WidthRequest="26" VerticalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="13"/>
+                            </Border.StrokeShape>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="c"/>
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Label x:Name="BtnC" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="c"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Border x:Name="CircleD" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="26" WidthRequest="26" VerticalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="13"/>
+                            </Border.StrokeShape>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="d"/>
+                            </Border.GestureRecognizers>
+                        </Border>
+                        <Label x:Name="BtnD" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="d"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button Grid.Row="2" x:Name="NextButton" 
+                Text="Next Question" 
+                Clicked="OnNextClicked" 
+                IsEnabled="False" 
+                Margin="0,20,0,0" 
+                BackgroundColor="#80c2ed" 
+                TextColor="White" 
+                CornerRadius="25" 
+                HeightRequest="50" />
+    </Grid>
 </ContentPage>

@@ -32,14 +32,7 @@ namespace comprehensure
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
-            if (DeviceInfo.Current.Platform == DevicePlatform.Android)
-            {
-                builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = "USEBUILTIN", AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
-            }
-            else
-            {
-                builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = apiKey, AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
-            }
+            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = "", AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
             // sorry sir in a cybersecurity standpoint this is bad asf 
 
             /*
