@@ -1,10 +1,10 @@
 namespace comprehensure.DASHBOARD.StoryPage;
-
 public partial class QuizPage1 : ContentPage
 {
-    public QuizPage1()
+    public QuizPage1(DASHBOARD.StoryPage.QuizPage1ViewModel viewModel)
     {
         InitializeComponent();
+        BindingContext = viewModel;
     }
 
 

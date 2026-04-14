@@ -2,9 +2,10 @@ namespace comprehensure.DASHBOARD.StoryPage;
 
 public partial class QuizPage2 : ContentPage
 {
-    public QuizPage2()
+    public QuizPage2(DASHBOARD.StoryPage.QuizPage2ViewModel viewModel)
     {
         InitializeComponent();
+        BindingContext = viewModel;
     }
 
     private async void OnSubmitClicked(object sender, EventArgs e)

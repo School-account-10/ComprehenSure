@@ -42,7 +42,19 @@ namespace comprehensure
             }
             // sorry sir in a cybersecurity standpoint this is bad asf 
 
+            /*
+            ganto gawin yung sa os detection just let ai explain it
 
+            <Label Text="Hello">
+    <Label.FontSize>
+        <OnPlatform x:TypeArguments="x:Double">
+            <On Platform="Android" Value="14" />
+            <On Platform="WinUI" Value="18" />
+            <On Platform="MacCatalyst" Value="18" />
+        </OnPlatform>
+    </Label.FontSize>
+</Label>
+            */
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<SignUpViewModel>();
             builder.Services.AddTransient<MainDashboardViewModel>();
@@ -69,13 +81,13 @@ namespace comprehensure
 
             
             builder.Services.AddTransient<StoryPage1ViewModel>();
-            builder.Services.AddTransient<StoryPage2ViewModel>();
-            builder.Services.AddTransient<StoryPage3ViewModel>();
+            builder.Services.AddTransient<QuizPage2ViewModel>();
+            builder.Services.AddTransient<QuizPage3ViewModel>();
             builder.Services.AddTransient<StoryPage4ViewModel>();
-            builder.Services.AddTransient<StoryPage5ViewModel>();
-            builder.Services.AddTransient<StoryPage6ViewModel>();
-            builder.Services.AddTransient<StoryPage7ViewModel>();
-            builder.Services.AddTransient<StoryPage8ViewModel>();
+            builder.Services.AddTransient<QuizPage5ViewModel>();
+            builder.Services.AddTransient<QuizPage6ViewModel>();
+            builder.Services.AddTransient<QuizPage7ViewModel>();
+            builder.Services.AddTransient<QuizPage8ViewModel>();
 
             return builder.Build();
         }
