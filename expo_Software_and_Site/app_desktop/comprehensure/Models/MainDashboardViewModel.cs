@@ -173,7 +173,7 @@ namespace comprehensure.DataBaseControl.Models
         {
             _ = valuecheck();
             float resultModule = ((float)ModuleFinished / _moduleCount) * 100;
-            StrokeOffset = -ModuleFinished * 5.5;
+            StrokeOffset = -ModuleFinished * 4.9;
             DisplayPercentage = $"{resultModule}%";
         }
 
