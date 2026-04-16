@@ -5,9 +5,7 @@ using comprehensure.DataBaseControl.Models;
 using comprehensure.Models;
 using Firebase.Auth;
 using Firebase.Auth.Providers;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-// code to android emu is 1111
 
 namespace comprehensure
 {
@@ -15,11 +13,9 @@ namespace comprehensure
     {
         public static MauiApp CreateMauiApp()
         {
-            var builder = MauiApp.CreateBuilder();
+            var apiKey = LoadApiKey();
 
-            builder.Configuration.AddUserSecrets<App>();
-            builder.Configuration.AddJsonFile("Resources/Raw/Firebase_api/API_KEY/secrets.json", optional: true);
-            var apiKey = builder.Configuration["FirebaseApiKey"];
+            var builder = MauiApp.CreateBuilder();
 
             builder
                 .UseMauiApp<App>()
@@ -29,25 +25,18 @@ namespace comprehensure
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 })
                 .UseMauiCommunityToolkit();
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
-            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig() { ApiKey = "", AuthDomain = "comprehensuredb.web.app", Providers = new FirebaseAuthProvider[] { new EmailProvider() }, }) { });
-            // sorry sir in a cybersecurity standpoint this is bad asf 
 
-            /*
-            ganto gawin yung sa os detection just let ai explain it
+            builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
+            {
+                ApiKey = apiKey,
+                AuthDomain = "comprehensuredb.web.app",
+                Providers = new FirebaseAuthProvider[] { new EmailProvider() }
+            }));
 
-            <Label Text="Hello">
-    <Label.FontSize>
-        <OnPlatform x:TypeArguments="x:Double">
-            <On Platform="Android" Value="14" />
-            <On Platform="WinUI" Value="18" />
-            <On Platform="MacCatalyst" Value="18" />
-        </OnPlatform>
-    </Label.FontSize>
-</Label>
-            */
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<SignUpViewModel>();
             builder.Services.AddTransient<MainDashboardViewModel>();
@@ -72,7 +61,6 @@ namespace comprehensure
             builder.Services.AddTransient<StoryPage7>();
             builder.Services.AddTransient<StoryPage8>();
 
-            
             builder.Services.AddTransient<StoryPage1ViewModel>();
             builder.Services.AddTransient<QuizPage2ViewModel>();
             builder.Services.AddTransient<QuizPage3ViewModel>();
@@ -83,6 +71,23 @@ namespace comprehensure
             builder.Services.AddTransient<QuizPage8ViewModel>();
 
             return builder.Build();
+        }
+
+        private static string LoadApiKey()
+        {
+            try
+            {
+                using var stream = FileSystem.OpenAppPackageFileAsync("secrets.json").Result;
+                using var reader = new StreamReader(stream);
+                var json = reader.ReadToEnd();
+                var doc = System.Text.Json.JsonDocument.Parse(json);
+                return doc.RootElement.GetProperty("FirebaseApiKey").GetString() ?? string.Empty;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Failed to load API key: {ex.Message}");
+                return string.Empty;
+            }
         }
     }
 }
