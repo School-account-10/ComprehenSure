@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage x:Class="comprehensure.LoginPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="comprehensure.LoginPage"
              BackgroundColor="#f4f9fd">
 
     <Grid RowDefinitions="Auto, *">
-        <Label Text="ComprehenSure" Padding="20,10" TextColor="#1B3A57" FontAttributes="Bold" FontSize="18" />
+        <Label Padding="25,20" FontAttributes="Bold" FontSize="20" Text="ComprehenSure" TextColor="#1B3A57" />
 
-        <ScrollView Grid.Row="1" VerticalOptions="Center">
-            <VerticalStackLayout Spacing="20" Padding="30" MaximumWidthRequest="450">
-                <Label Text="Welcome Back" FontSize="30" FontAttributes="Bold" TextColor="#1B3A57" HorizontalOptions="Center" />
-                <Frame CornerRadius="20" HasShadow="True" BorderColor="Transparent" BackgroundColor="White" Padding="25">
-                    <VerticalStackLayout Spacing="15">
-                        <Entry x:Name="Email" Placeholder="Email Address" BackgroundColor="#f9fdff" Text="{Binding Email}" />
-                        
-                        <Entry x:Name="Password" Placeholder="Password" IsPassword="True" BackgroundColor="#f9fdff" Text="{Binding Password}" />
-                        
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="40" Spacing="30" MaximumWidthRequest="450">
+                <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                    <Label Text="Welcome Back" FontSize="32" FontAttributes="Bold" TextColor="#1B3A57" HorizontalOptions="Center" />
+                    <Label Text="Sign in to continue your journey" TextColor="#507D9B" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+
+                <Border BackgroundColor="White" Padding="30" StrokeThickness="0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="25" />
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Spacing="20">
+                        <Entry x:Name="Email" Placeholder="Email Address" TextColor="#1B3A57" BackgroundColor="#f9fdff" Text="{Binding Email}" HeightRequest="50" />
+
+                        <Entry x:Name="Password" Placeholder="Password" IsPassword="True" TextColor="#1B3A57" BackgroundColor="#f9fdff" Text="{Binding Password}" HeightRequest="50" />
+
                         <Button x:Name="Login_Button" Text="LOGIN" Command="{Binding LoginCommand}"
-                                BackgroundColor="#80c2ed" TextColor="White" CornerRadius="25" HeightRequest="50" />
+                                BackgroundColor="#80c2ed" TextColor="White" CornerRadius="25" HeightRequest="55" FontAttributes="Bold" Margin="0,10,0,0" />
                     </VerticalStackLayout>
-                </Frame>
+                </Border>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>

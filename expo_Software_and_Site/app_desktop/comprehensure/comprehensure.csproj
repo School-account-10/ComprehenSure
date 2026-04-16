@@ -42,6 +42,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="DASHBOARD\NewFolder1\**" />
+	  <Compile Remove="DASHBOARD\NewFolder1\**" />
+	  <EmbeddedResource Remove="DASHBOARD\NewFolder1\**" />
+	  <MauiCss Remove="DASHBOARD\NewFolder1\**" />
+	  <MauiXaml Remove="DASHBOARD\NewFolder1\**" />
+	  <None Remove="DASHBOARD\NewFolder1\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<None Remove="Resources\Raw\LocalDB\ACCOUNTS\Accounts.json" />
 	</ItemGroup>
 
@@ -69,6 +78,12 @@
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\MainDashboard.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\MiniGames\OneThemePage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\MiniGames\SynonymHuntPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\ModulesDashboard.xaml">

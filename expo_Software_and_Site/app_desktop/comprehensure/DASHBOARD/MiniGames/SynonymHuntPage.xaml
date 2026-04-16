@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="comprehensure.DASHBOARD.MiniGames.SynonymHuntPage"
+             BackgroundColor="#F4F8FB"
+             Title="Synonym Hunt">
+
+    <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
+        <Label Text="STORY RECAP: THE HIDDEN LIBRARY" 
+               FontSize="12" 
+               TextColor="#80c2ed" 
+               HorizontalOptions="Center" />
+
+        <Label Text="From the story, what does 'ANCIENT' mean?" 
+               FontSize="18" 
+               TextColor="#1B3A57" 
+               HorizontalOptions="Center" 
+               HorizontalTextAlignment="Center"/>
+
+        <Button Text="Very Old" 
+                BackgroundColor="#BDE0FE" 
+                TextColor="#1B3A57" 
+                CornerRadius="15"
+                HeightRequest="60"
+                Clicked="OnCorrectAnswer"/>
+
+        <Button Text="Modern" 
+                BackgroundColor="#BDE0FE" 
+                TextColor="#1B3A57" 
+                CornerRadius="15"
+                HeightRequest="60"
+                Clicked="OnWrongAnswer"/>
+    </VerticalStackLayout>
+</ContentPage>

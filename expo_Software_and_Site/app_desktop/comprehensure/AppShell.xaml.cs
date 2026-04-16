@@ -1,4 +1,5 @@
 ﻿using comprehensure.DASHBOARD;
+using comprehensure.DASHBOARD.MiniGames;
 using comprehensure.DASHBOARD.StoryPage;
 
 namespace comprehensure
@@ -20,6 +21,8 @@ namespace comprehensure
             Routing.RegisterRoute(nameof(StoryPage6), typeof(StoryPage6));
             Routing.RegisterRoute(nameof(StoryPage7), typeof(StoryPage7));
             Routing.RegisterRoute(nameof(StoryPage8), typeof(StoryPage8));
+            Routing.RegisterRoute("SynonymGamePage", typeof(SynonymHuntPage));
+            Routing.RegisterRoute("OneThemeGamePage", typeof(OneThemePage));
 
         }
     }
