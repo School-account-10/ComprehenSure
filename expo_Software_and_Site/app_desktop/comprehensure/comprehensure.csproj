@@ -109,10 +109,13 @@
 	<ItemGroup>
 		<Folder Include="DASHBOARD\StoryPage\ViewModels\stories\" />
 		<Folder Include="Resources\Images\Progress_bar\" />
+		<Folder Include="Resources\Raw\Firebase_api\API_KEY\" />
 	</ItemGroup>
-	
 	<ItemGroup>
-		<None Update="Resources\Raw\Firebase_api\API_KEY\secrets.json">
+		<MauiAsset Include="Resources\Raw\secrets.json" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="Resources\Raw\secrets.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
