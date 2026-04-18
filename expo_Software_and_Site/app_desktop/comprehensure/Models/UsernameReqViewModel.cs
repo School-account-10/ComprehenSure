@@ -62,29 +62,29 @@ namespace comprehensure.DataBaseControl.Models
 
         private async Task<bool> UsernameExists(string username)
         {
-            Username = Username.Trim().ToLower();
+            
+            username = username.Trim().ToLower();
+            Username = username;
 
             string url = $"{BaseUrl}:runQuery";
 
-            string json = JsonSerializer.Serialize(
-                new
+            string json = JsonSerializer.Serialize(new
+            {
+                structuredQuery = new
                 {
-                    structuredQuery = new
+                    from = new[] { new { collectionId = "userdata" } },
+                    where = new
                     {
-                        from = new[] { new { collectionId = "userdata" } },
-                        where = new
+                        fieldFilter = new
                         {
-                            fieldFilter = new
-                            {
-                                field = new { fieldPath = "username" },
-                                op = "EQUAL",
-                                value = new { stringValue = username },
-                            },
+                            field = new { fieldPath = "Username" }, 
+                            op = "EQUAL",
+                            value = new { stringValue = username },
                         },
-                        limit = 1,
                     },
-                }
-            );
+                    limit = 1,
+                },
+            });
 
             HttpResponseMessage response = await client.PostAsync(
                 url,
@@ -96,33 +96,44 @@ namespace comprehensure.DataBaseControl.Models
             if (!response.IsSuccessStatusCode)
             {
                 await Shell.Current.DisplayAlert($"Error {(int)response.StatusCode}", result, "OK");
-                await Shell.Current.DisplayAlert(
-                    "Sign Up",
-                    "username note taken Status:  " + "false",
-                    "OK"
-                );
                 _ = UserCreation();
                 return false;
             }
 
             if (string.IsNullOrEmpty(result))
             {
-                await Shell.Current.DisplayAlert("text field empty", "Status:  " + "false", "OK");
+                await Shell.Current.DisplayAlert("Error", "Empty response from server.", "OK");
                 return false;
             }
 
-            if (result.Contains("document"))
+           
+            using var doc = JsonDocument.Parse(result);
+            var root = doc.RootElement;
+
+            
+            if (root.ValueKind == JsonValueKind.Array)
             {
-                await Shell.Current.DisplayAlert("Sign Up", "Status:  " + "true", "OK");
-                await Shell.Current.DisplayAlert("Sign Up", "Welcome back " + Username, "OK");
-                await Shell.Current.GoToAsync($"MainDashboard?uid={UserUid}&baseUrl={BaseUrl}");
-                return true;
+                foreach (var element in root.EnumerateArray())
+                {
+                    if (element.TryGetProperty("document", out var documentProp))
+                    {
+                        if (documentProp.TryGetProperty("fields", out _))
+                        {
+                           
+                            await Shell.Current.DisplayAlert(
+                                "Username Taken",
+                                $"\"{Username}\" is already in use. Please choose a different username.",
+                                "OK"
+                            );
+                            return true; 
+                        }
+                    }
+                }
             }
-            else
-            {
-                _ = UserCreation();
-                return true;
-            }
+
+            
+            _ = UserCreation();
+            return false; 
         }
 
         public async Task UserCreation()
