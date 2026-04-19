@@ -107,6 +107,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="DASHBOARD\StoryPage\ViewModels\quiz\quizdata\" />
 		<Folder Include="DASHBOARD\StoryPage\ViewModels\stories\" />
 		<Folder Include="Resources\Images\Progress_bar\" />
 		<Folder Include="Resources\Raw\Firebase_api\API_KEY\" />

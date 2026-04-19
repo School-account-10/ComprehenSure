@@ -21,11 +21,13 @@ namespace comprehensure.DASHBOARD.StoryPage
             "Standing inside the old library, Leo realized something meaningful. The most valuable knowledge is not always the most popular. Sometimes, important truths are hidden in quiet places, waiting for someone curious enough to search for them."
         };
 
-        public StoryPage1()
+        public StoryPage1(DASHBOARD.StoryPage.StoryPage1ViewModel viewModel)
         {
             InitializeComponent();
+            BindingContext = viewModel;
             UpdateUI();
         }
+       
 
         private void UpdateUI()
         {
@@ -59,7 +61,7 @@ namespace comprehensure.DASHBOARD.StoryPage
 
         private async void OnGoToQuizClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new QuizPage1());
+            await Navigation.PushAsync(new QuizPage1(new QuizPage1ViewModel()));
         }
     }
 }
