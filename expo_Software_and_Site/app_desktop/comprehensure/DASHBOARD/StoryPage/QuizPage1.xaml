@@ -8,15 +8,18 @@
     <Grid RowDefinitions="Auto, *, Auto" Padding="20">
 
         <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="0,0,0,20">
-            <Label x:Name="QuestionNumberLabel" Text="Question 1 of 10" FontSize="14" HorizontalOptions="Center" TextColor="#80c2ed" />
+            <Label x:Name="QuestionNumberLabel"
+                   Text="{Binding QuestionNumber}"
+                   FontSize="14" HorizontalOptions="Center" TextColor="#80c2ed" />
             <ProgressBar x:Name="QuizProgress" Progress="0.1" ProgressColor="#80c2ed" HeightRequest="10" />
         </VerticalStackLayout>
 
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Spacing="25">
                 <Frame BackgroundColor="White" CornerRadius="15" HasShadow="True" Padding="20">
-                    <Label x:Name="QuestionText" 
-                           FontSize="18" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center" />
+                    <Label x:Name="QuestionText"
+                           Text="{Binding Mainquestion}"
+                           FontSize="18" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center"/>
                 </Frame>
 
                 <VerticalStackLayout x:Name="OptionsContainer" Spacing="20" Padding="10">
@@ -27,12 +30,12 @@
                                 <RoundRectangle CornerRadius="13"/>
                             </Border.StrokeShape>
                             <Border.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="a"/>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="A"/>
                             </Border.GestureRecognizers>
                         </Border>
-                        <Label x:Name="BtnA" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
+                        <Label x:Name="BtnA" Text="{Binding Ch1bt}" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="a"/>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="A"/>
                             </Label.GestureRecognizers>
                         </Label>
                     </HorizontalStackLayout>
@@ -43,12 +46,12 @@
                                 <RoundRectangle CornerRadius="13"/>
                             </Border.StrokeShape>
                             <Border.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="b"/>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="B"/>
                             </Border.GestureRecognizers>
                         </Border>
-                        <Label x:Name="BtnB" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
+                        <Label x:Name="BtnB" Text="{Binding Ch2bt}" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="b"/>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="B"/>
                             </Label.GestureRecognizers>
                         </Label>
                     </HorizontalStackLayout>
@@ -59,12 +62,12 @@
                                 <RoundRectangle CornerRadius="13"/>
                             </Border.StrokeShape>
                             <Border.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="c"/>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="C"/>
                             </Border.GestureRecognizers>
                         </Border>
-                        <Label x:Name="BtnC" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
+                        <Label x:Name="BtnC" Text="{Binding Ch3bt}" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="c"/>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="C"/>
                             </Label.GestureRecognizers>
                         </Label>
                     </HorizontalStackLayout>
@@ -75,12 +78,12 @@
                                 <RoundRectangle CornerRadius="13"/>
                             </Border.StrokeShape>
                             <Border.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="d"/>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="D"/>
                             </Border.GestureRecognizers>
                         </Border>
-                        <Label x:Name="BtnD" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
+                        <Label x:Name="BtnD" Text="{Binding Ch4bt}" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="d"/>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="D"/>
                             </Label.GestureRecognizers>
                         </Label>
                     </HorizontalStackLayout>
@@ -89,14 +92,14 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <Button Grid.Row="2" x:Name="NextButton" 
-                Text="Next Question" 
-                Clicked="OnNextClicked" 
-                IsEnabled="False" 
-                Margin="0,20,0,0" 
-                BackgroundColor="#80c2ed" 
-                TextColor="White" 
-                CornerRadius="25" 
+        <Button Grid.Row="2" x:Name="NextButton"
+                Text="Next Question"
+                Clicked="OnNextClicked"
+                IsEnabled="False"
+                Margin="0,20,0,0"
+                BackgroundColor="#80c2ed"
+                TextColor="White"
+                CornerRadius="25"
                 HeightRequest="50" />
     </Grid>
 </ContentPage>

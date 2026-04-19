@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Why was the library mostly forgotten by the people in town?",
+    "choices": {
+      "A": "It was destroyed by a storm.",
+      "B": "People preferred modern bookstores and online sources.",
+      "C": "It was too far from the town center.",
+      "D": "It only contained children’s books."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "How does the author describe the inside of the library?",
+    "choices": {
+      "A": "Bright, colorful, and crowded.",
+      "B": "Dark, empty, and newly built.",
+      "C": "Dusty, quiet, and filled with old books.",
+      "D": "Modern, clean, and well-organized."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What made Leo interested in visiting the library?",
+    "choices": {
+      "A": "His friends told him to go.",
+      "B": "He needed a quiet place to study.",
+      "C": "He heard rumors about hidden stories and knowledge.",
+      "D": "He wanted to avoid schoolwork."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What does Leo discover behind the bookshelf?",
+    "choices": {
+      "A": "A secret treasure chest.",
+      "B": "A hidden passage with old journals.",
+      "C": "A locked door to another building.",
+      "D": "A room full of modern computers."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Why was Leo unable to understand the journal at first?",
+    "choices": {
+      "A": "It was written in a foreign language.",
+      "B": "The pages were missing.",
+      "C": "It was written in shorthand.",
+      "D": "The writing was invisible."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What strategy did Leo use to understand the journals?",
+    "choices": {
+      "A": "He asked his teachers to translate.",
+      "B": "He ignored the difficult parts.",
+      "C": "He studied patterns and symbols over time.",
+      "D": "He guessed the meaning of each word."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What kind of information did the journals contain?",
+    "choices": {
+      "A": "Recipes and daily routines.",
+      "B": "Stories about fictional characters.",
+      "C": "Accounts of explorers’ journeys and decisions.",
+      "D": "Lists of books in the library."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What important realization did Leo have about history?",
+    "choices": {
+      "A": "It is only about famous people.",
+      "B": "It focuses only on large events.",
+      "C": "It includes small details and human decisions.",
+      "D": "It is mostly made up of myths."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What was the result of Leo sharing his discoveries?",
+    "choices": {
+      "A": "The library was closed permanently.",
+      "B": "People became interested and visited the library again.",
+      "C": "The journals were taken away and hidden.",
+      "D": "The town ignored his findings."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What is the main message of the story?",
+    "choices": {
+      "A": "Old buildings should be replaced.",
+      "B": "Knowledge is only valuable if it is popular.",
+      "C": "Important truths can be found through curiosity and effort.",
+      "D": "History is not useful in modern times."
+    },
+    "answer": "C"
+  }
+]
