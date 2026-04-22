@@ -4,6 +4,7 @@ using Firebase.Auth;
 
 namespace comprehensure.DataBaseControl.Models
 {
+
     public partial class SignUpViewModel : ObservableObject
     {
         private readonly FirebaseAuthClient _authClient;
@@ -27,6 +28,12 @@ namespace comprehensure.DataBaseControl.Models
 
 
         [RelayCommand]
+        public async Task LoginPage()
+        {
+            // This uses Shell navigation to go to your LoginPage
+            await Shell.Current.GoToAsync("LoginPage");
+        }
+
         private async Task SignUp()
         {
 
@@ -56,6 +63,9 @@ namespace comprehensure.DataBaseControl.Models
                 string readable = raw.Contains(":") ? raw.Split(':').Last().Trim() : raw;
                 await Shell.Current.DisplayAlert("Sign Up Failed", readable, "OK");
             }
+
         }
+
     }
+
 }

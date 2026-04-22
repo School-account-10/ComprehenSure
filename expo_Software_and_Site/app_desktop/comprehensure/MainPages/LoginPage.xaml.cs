@@ -71,5 +71,16 @@ namespace comprehensure
         {
             await Shell.Current.GoToAsync("..");
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Shell.SetNavBarIsVisible(this, false);
+            Shell.SetNavBarHasShadow(this, false);
+            Shell.SetBackButtonBehavior(this, new BackButtonBehavior
+            {
+                IsVisible = false,
+                IsEnabled = false
+            });
+        }
     }
 }

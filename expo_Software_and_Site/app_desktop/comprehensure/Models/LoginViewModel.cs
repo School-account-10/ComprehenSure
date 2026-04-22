@@ -36,6 +36,15 @@ namespace comprehensure.DataBaseControl.Models
                 _ = Toastshow($"Ms Checker Login completed in: {timems} MS");
             else
                 await Shell.Current.DisplayAlert("Ms Checker", $"Login completed in: {timems} MS", "OK");
+
+
+        }
+
+        [RelayCommand]
+        public async Task GoToSignUp()
+        {
+            // This uses Shell navigation to go to your SignUpPage
+            await Shell.Current.GoToAsync("SignUpPage");
         }
 
         public LoginViewModel(FirebaseAuthClient authClient)
