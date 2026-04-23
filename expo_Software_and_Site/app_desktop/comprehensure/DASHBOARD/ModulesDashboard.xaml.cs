@@ -15,7 +15,7 @@ public partial class ModulesDashboard : ContentPage
     private async void BackButton_Clicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync();
-        await Shell.Current.GoToAsync("MainDashboard");
+        await Shell.Current.GoToAsync("///MainDashboard");
     }
 
 

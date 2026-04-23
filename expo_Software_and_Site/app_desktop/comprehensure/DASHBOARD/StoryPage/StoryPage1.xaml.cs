@@ -6,62 +6,113 @@ namespace comprehensure.DASHBOARD.StoryPage
     public partial class StoryPage1 : ContentPage
     {
         private int _currentPage = 0;
+
         private readonly string[] _storyPages = new string[]
         {
-            "In a quiet town surrounded by green hills, there stood an old library that most people had forgotten. It was built many years ago, long before modern buildings and computers became common. The paint on its walls was fading, and the wooden doors made a soft creaking sound when opened.",
-            "Few visitors entered anymore. Most people preferred new bookstores or searched for information online. Because of this, the library felt lonely. Inside, tall shelves were filled with dusty books. Some books looked so old that their pages had turned yellow. The smell of old paper and wood filled the air.",
-            "Sunlight entered through narrow windows, lighting up floating dust in the room. It felt like stepping into the past. People in town often said that the library held forgotten knowledge, stories and letters that no one had read for years.",
-            "One afternoon, a curious student named Leo decided to visit. Leo loved history. While other students saw history as boring lists of dates, he saw it as stories of real people who made brave choices. As he stepped inside, the wooden floor creaked.",
-            "While exploring the back corner of the library, Leo noticed something unusual. One bookshelf looked slightly out of place. Curious, he gently pushed it. To his surprise, it moved just enough to reveal a narrow passage behind it. His heart beat faster.",
-            "The hidden space was small and dim, with a single desk and several old journals stacked on top. Leo carefully opened one journal. The writing inside was strange, written in shorthand—a quick writing style used long ago to save time and space.",
-            "For days after school, Leo returned to the library. He sat at the small desk and worked patiently. He compared letters, searched for patterns, and slowly decoded the words. It was not easy, but little by little, the stories began to make sense.",
-            "The journals described long journeys across unknown lands. There were detailed drawings of rivers, mountains, and paths that were not on modern maps. Some pages told of dangerous storms and difficult choices. Others spoke about teamwork and courage.",
-            "One journal described an expedition where a group of travelers had disappeared. Leo realized that these were not just adventure stories. They were real accounts of human decisions. History was about the small details and choices that change everything.",
-            "After a month of hard work, Leo translated several journals and shared his findings with the local history club. Everyone became interested. The club decided to preserve the writings and inform the town. Soon, more people began visiting the library again.",
-            "Standing inside the old library, Leo realized something meaningful. The most valuable knowledge is not always the most popular. Sometimes, important truths are hidden in quiet places, waiting for someone curious enough to search for them."
+            // Page 1
+            "In a quiet town surrounded by green hills, there stood an old library that most people had forgotten. It was built many years ago, long before modern buildings and computers became common. The paint on its walls was fading, and the wooden doors made a soft creaking sound when opened. Few visitors entered anymore. Most people preferred new bookstores or searched for information online. Because of this, the library felt lonely. Inside, tall shelves were filled with dusty books. Some books looked so old that their pages had turned yellow. The smell of old paper and wood filled the air. Sunlight entered through narrow windows, lighting up floating dust in the room. It felt like stepping into the past.",
+
+            // Page 2
+            "People in town often said that the library held forgotten knowledge, stories and letters that no one had read for years. Some even believed it contained secret writings from explorers who had traveled to faraway lands long ago. One afternoon, a curious student named Leo decided to visit. Leo loved history. While other students saw history as boring lists of dates, he saw it as stories of real people who made brave choices. When he heard rumors about the old library, his interest grew stronger. He wanted to see if the stories were true. As he stepped inside, the wooden floor creaked under his shoes. The room was quiet—so quiet that he could hear the turning of his own pages. He slowly walked between the shelves, reading the titles. Many books had not been touched for years.",
+
+            // Page 3
+            "While exploring the back corner of the library, Leo noticed something unusual. One bookshelf looked slightly out of place. Curious, he gently pushed it. To his surprise, it moved just enough to reveal a narrow passage behind it. His heart beat faster. He stepped inside the hidden space. It was small and dim, with a single desk and several old journals stacked on top. The covers were worn, and some pages were tied together with thin string. Leo carefully opened one journal. The writing inside was strange. It was written in shorthand—a quick writing style used long ago to save time and space. At first, he could not understand it. But instead of giving up, he copied parts of the text and began studying the symbols.",
+
+            // Page 4
+            "For days after school, Leo returned to the library. He sat at the small desk and worked patiently. He compared letters, searched for patterns, and slowly decoded the words. It was not easy. Sometimes he felt frustrated. Sometimes he made mistakes and had to start again. But little by little, the stories began to make sense. The journals were written by explorers from many years ago. They described long journeys across unknown lands. There were detailed drawings of rivers, mountains, and paths that were not on modern maps. Some pages told of dangerous storms and difficult choices. Others spoke about teamwork, courage, and fear.",
+
+            // Page 5
+            "One journal described an expedition where a group of travelers had disappeared. The writer carefully recorded their last known location and the choices they made before they vanished. Leo realized that these were not just adventure stories. They were real accounts of human decisions—good ones and bad ones. As he continued reading, Leo began to understand something important. History was not only about big events. It was about small details. It was about writing things down carefully. It was about observing and recording what people did, why they did it, and what happened after.",
+
+            // Page 6
+            "He learned that one small decision could change everything. A wrong turn on a map. A choice to continue during bad weather. A moment of doubt or courage. After a month of hard work, Leo had translated several journals. He organized the information into clear notes and simple summaries. He created maps based on the old drawings and compared them with modern ones. Excited by what he discovered, Leo shared his findings with the local history club. At first, some members were surprised that such important stories had been hidden for so long. But as Leo explained the journals, everyone became interested.",
+
+            // Page 7
+            "The club decided to preserve the writings and inform the town about the forgotten explorers. Soon, more people began visiting the library. The once-quiet building slowly became alive again. Standing inside the old library one evening, Leo looked around at the shelves. He realized something meaningful. The most valuable knowledge is not always the most popular. Sometimes, important truths are hidden in quiet places. Sometimes, they wait patiently for someone curious enough to search for them."
         };
 
-        public StoryPage1(DASHBOARD.StoryPage.StoryPage1ViewModel viewModel)
+        private BoxView[] _dots;
+
+        public StoryPage1()
         {
             InitializeComponent();
-            BindingContext = viewModel;
+            _dots = new BoxView[] { Dot1, Dot2, Dot3, Dot4, Dot5, Dot6, Dot7 };
             UpdateUI();
         }
-       
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Shell.SetNavBarIsVisible(this, false);
+            Shell.SetNavBarHasShadow(this, false);
+            Shell.SetBackButtonBehavior(this, new BackButtonBehavior
+            {
+                IsVisible = false,
+                IsEnabled = false
+            });
+        }
 
         private void UpdateUI()
         {
-            // Set Text
-            StoryLabel.Text = _storyPages[_currentPage];
+            int total = _storyPages.Length;
+            int current = _currentPage;
 
-            // Set Indicator
-            PageIndicator.Text = $"Page {_currentPage + 1} of {_storyPages.Length}";
+            StoryLabel.Text = _storyPages[current];
 
-            // Scroll to top
-            StoryScroll.ScrollToAsync(0, 0, false);
+            PageIndicator.Text = $"Page {current + 1} of {total}";
+            int pct = (int)(((current + 1) / (double)total) * 100);
+            ProgressPercent.Text = $"{pct}%";
+
+            double maxWidth = 640;
+            ProgressFill.WidthRequest = maxWidth * (current + 1) / total;
+
+            for (int i = 0; i < _dots.Length; i++)
+            {
+                _dots[i].BackgroundColor = (i == current)
+                    ? Color.FromArgb("#0F2D4A")
+                    : Color.FromArgb("#CBDCEB");
+                _dots[i].WidthRequest = (i == current) ? 10 : 8;
+                _dots[i].HeightRequest = (i == current) ? 10 : 8;
+            }
+
+            NextBtn.Opacity = (current == total - 1) ? 0.35 : 1.0;
+            NextBtn.IsEnabled = (current < total - 1);
+
+            QuizBanner.IsVisible = (current == total - 1);
         }
 
         private void OnPrevClicked(object sender, EventArgs e)
         {
-            if (_currentPage > 0)
-            {
-                _currentPage--;
-                UpdateUI();
-            }
+            if (_currentPage > 0) { _currentPage--; UpdateUI(); }
         }
 
         private void OnNextClicked(object sender, EventArgs e)
         {
-            if (_currentPage < _storyPages.Length - 1)
-            {
-                _currentPage++;
-                UpdateUI();
-            }
+            if (_currentPage < _storyPages.Length - 1) { _currentPage++; UpdateUI(); }
         }
 
         private async void OnGoToQuizClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new QuizPage1(new QuizPage1ViewModel()));
+        }
+
+        private void OnBackClicked(object sender, EventArgs e)
+        {
+            // Show custom styled popup overlay
+            PopupOverlay.IsVisible = true;
+        }
+
+        private async void OnPopupConfirm(object sender, EventArgs e)
+        {
+            PopupOverlay.IsVisible = false;
+            await Navigation.PopAsync();
+        }
+
+        private void OnPopupCancel(object sender, EventArgs e)
+        {
+            PopupOverlay.IsVisible = false;
+
+
         }
     }
 }

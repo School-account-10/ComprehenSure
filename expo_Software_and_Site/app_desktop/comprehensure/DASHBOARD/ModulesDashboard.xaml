@@ -3,214 +3,505 @@
     x:Class="comprehensure.DASHBOARD.ModulesDashboard"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="#F4F8FB"
+    BackgroundColor="#F2F6FB"
     Shell.NavBarIsVisible="False">
 
-    <ScrollView VerticalOptions="FillAndExpand">
-        <VerticalStackLayout Padding="30" Spacing="20">
+    <Grid>
 
-            <Grid ColumnDefinitions="Auto, *">
-                <Button Grid.Column="0"
-                        Text="← Back" 
-                        Clicked="BackButton_Clicked"
-                        BackgroundColor="Transparent"
-                        TextColor="#507D9B"
-                        FontAttributes="Bold"
-                        FontSize="16" />
+        <!-- Background decorative blobs -->
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" InputTransparent="True">
+            <Ellipse Fill="White"    WidthRequest="580" HeightRequest="440"
+                     HorizontalOptions="Start" VerticalOptions="Start"
+                     Margin="-140,-110,0,0" Opacity="0.75" />
+            <Ellipse Fill="#D6EAFF" WidthRequest="460" HeightRequest="380"
+                     HorizontalOptions="End" VerticalOptions="End"
+                     Margin="0,0,-110,-60" Opacity="0.45" />
+        </Grid>
 
-                <Label Grid.Column="1"
-                       Text="LEARNING MODULES"
-                       TextColor="#1B3A57"
-                       FontSize="24"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       Margin="0,0,80,0" />
-            </Grid>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <VerticalStackLayout Padding="40,36,40,56" Spacing="28">
 
-            <FlexLayout
-                AlignContent="Start"
-                AlignItems="Start"
-                Direction="Row"
-                JustifyContent="Center"
-                Wrap="Wrap">
+                <!-- ══════════════════════════════════════ -->
+                <!--  HEADER BAR                           -->
+                <!-- ══════════════════════════════════════ -->
+                <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="16">
 
-                <Border x:Name="M1" Margin="15" BackgroundColor="White" HeightRequest="400" StrokeThickness="0" WidthRequest="220">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="25" />
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow x:Name="S1" Brush="#80c2ed" Opacity="0.15" Radius="15" Offset="0,8" />
-                    </Border.Shadow>
-                    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
-                        <Border Grid.Row="0" HeightRequest="120" BackgroundColor="#F0F8FF" StrokeThickness="0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="15" />
-                            </Border.StrokeShape>
-                            <Image Source="module_icon1.png" Aspect="AspectFit" Margin="10"/>
-                        </Border>
-                        <VerticalStackLayout Grid.Row="1" Spacing="5" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Text="Module 1" TextColor="#1B3A57" />
-                            <Label FontSize="13" HorizontalTextAlignment="Center" Text="Introduction" TextColor="#507D9B" />
-                        </VerticalStackLayout>
-                        <Button Grid.Row="2" BackgroundColor="#80c2ed" CornerRadius="15" FontAttributes="Bold" HeightRequest="50" Text="START" TextColor="White" Command="{Binding startmodule1Command}"/>
-                    </Grid>
-                </Border>
+                    <!-- Back button -->
+                    <Border Grid.Column="0"
+                            BackgroundColor="White" Stroke="#CBDCEB" StrokeThickness="1"
+                            VerticalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20" />
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#0F2D4A" Offset="0,4" Radius="12" Opacity="0.07" />
+                        </Border.Shadow>
+                        <Button Text="← Back"
+                                Clicked="BackButton_Clicked"
+                                BackgroundColor="Transparent"
+                                TextColor="#0F2D4A"
+                                BorderWidth="0"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                HeightRequest="44"
+                                Padding="20,0" />
+                    </Border>
 
-                <Border x:Name="M2" Margin="15" BackgroundColor="White" HeightRequest="400" StrokeThickness="0" WidthRequest="220">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="25" />
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow x:Name="S2" Brush="#80c2ed" Opacity="0.15" Radius="15" Offset="0,8" />
-                    </Border.Shadow>
-                    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
-                        <Border Grid.Row="0" HeightRequest="120" BackgroundColor="#F0F8FF" StrokeThickness="0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="15" />
-                            </Border.StrokeShape>
-                            <Image Source="module_icon2.png" Aspect="AspectFit" Margin="10"/>
-                        </Border>
-                        <VerticalStackLayout Grid.Row="1" Spacing="5" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Text="Module 2" TextColor="#1B3A57" />
-                            <Label FontSize="13" HorizontalTextAlignment="Center" Text="Vocabulary" TextColor="#507D9B" />
-                        </VerticalStackLayout>
-                        <Button Grid.Row="2" BackgroundColor="#80c2ed" CornerRadius="15" FontAttributes="Bold" HeightRequest="50" Text="START" TextColor="White" Command="{Binding startmodule2Command}"/>
-                    </Grid>
-                </Border>
+                    <!-- Title + subtitle -->
+                    <VerticalStackLayout Grid.Column="1"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="2">
+                        <Label Text="MODULES"
+                               TextColor="#0F2D4A"
+                               FontSize="30" FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               CharacterSpacing="1.5" />
+                        <Label Text="Read each story carefully!"
+                               TextColor="#6B8CAE" FontSize="13"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
 
-                <Border x:Name="M3" Margin="15" BackgroundColor="White" HeightRequest="400" StrokeThickness="0" WidthRequest="220">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="25" />
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow x:Name="S3" Brush="#80c2ed" Opacity="0.15" Radius="15" Offset="0,8" />
-                    </Border.Shadow>
-                    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
-                        <Border Grid.Row="0" HeightRequest="120" BackgroundColor="#F0F8FF" StrokeThickness="0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="15" />
-                            </Border.StrokeShape>
-                            <Image Source="module_icon3.png" Aspect="AspectFit" Margin="10"/>
-                        </Border>
-                        <VerticalStackLayout Grid.Row="1" Spacing="5" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Text="Module 3" TextColor="#1B3A57" />
-                            <Label FontSize="13" HorizontalTextAlignment="Center" Text="Context Clues" TextColor="#507D9B" />
-                        </VerticalStackLayout>
-                        <Button Grid.Row="2" BackgroundColor="#80c2ed" CornerRadius="15" FontAttributes="Bold" HeightRequest="50" Text="START" TextColor="White" Command="{Binding startmodule3Command}"/>
-                    </Grid>
-                </Border>
+                    <!-- Spacer to balance back button -->
+                    <BoxView Grid.Column="2" WidthRequest="90" BackgroundColor="Transparent" />
+                </Grid>
 
-                <Border x:Name="M4" Margin="15" BackgroundColor="White" HeightRequest="400" StrokeThickness="0" WidthRequest="220">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="25" />
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow x:Name="S4" Brush="#80c2ed" Opacity="0.15" Radius="15" Offset="0,8" />
-                    </Border.Shadow>
-                    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
-                        <Border Grid.Row="0" HeightRequest="120" BackgroundColor="#F0F8FF" StrokeThickness="0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="15" />
-                            </Border.StrokeShape>
-                            <Image Source="module_icon4.png" Aspect="AspectFit" Margin="10"/>
-                        </Border>
-                        <VerticalStackLayout Grid.Row="1" Spacing="5" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Text="Module 4" TextColor="#1B3A57" />
-                            <Label FontSize="13" HorizontalTextAlignment="Center" Text="Main Ideas" TextColor="#507D9B" />
-                        </VerticalStackLayout>
-                        <Button Grid.Row="2" BackgroundColor="#80c2ed" CornerRadius="15" FontAttributes="Bold" HeightRequest="50" Text="START" TextColor="White" Command="{Binding startmodule4Command}"/>
-                    </Grid>
-                </Border>
+                <!-- ══════════════════════════════════════ -->
+                <!--  DIFFICULTY LEGEND                    -->
+                <!-- ══════════════════════════════════════ -->
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="16">
+                    <Border Padding="14,8" BackgroundColor="#E8F5E9" Stroke="#A5D6A7" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="14"/>
+                        </Border.StrokeShape>
+                        <Label Text="🟢  Easy" FontSize="12" FontAttributes="Bold" TextColor="#2E7D32" />
+                    </Border>
+                    <Border Padding="14,8" BackgroundColor="#FFF8E1" Stroke="#FFD54F" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="14"/>
+                        </Border.StrokeShape>
+                        <Label Text="🟡  Average" FontSize="12" FontAttributes="Bold" TextColor="#F57F17" />
+                    </Border>
+                    <Border Padding="14,8" BackgroundColor="#FBE9E7" Stroke="#FFAB91" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="14"/>
+                        </Border.StrokeShape>
+                        <Label Text="🔴  Intermediate" FontSize="12" FontAttributes="Bold" TextColor="#BF360C" />
+                    </Border>
+                </HorizontalStackLayout>
 
-                <Border x:Name="M5" Margin="15" BackgroundColor="White" HeightRequest="400" StrokeThickness="0" WidthRequest="220">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="25" />
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow x:Name="S5" Brush="#80c2ed" Opacity="0.15" Radius="15" Offset="0,8" />
-                    </Border.Shadow>
-                    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
-                        <Border Grid.Row="0" HeightRequest="120" BackgroundColor="#F0F8FF" StrokeThickness="0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="15" />
-                            </Border.StrokeShape>
-                            <Image Source="module_icon5.png" Aspect="AspectFit" Margin="10"/>
-                        </Border>
-                        <VerticalStackLayout Grid.Row="1" Spacing="5" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Text="Module 5" TextColor="#1B3A57" />
-                            <Label FontSize="13" HorizontalTextAlignment="Center" Text="Inference" TextColor="#507D9B" />
-                        </VerticalStackLayout>
-                        <Button Grid.Row="2" BackgroundColor="#80c2ed" CornerRadius="15" FontAttributes="Bold" HeightRequest="50" Text="START" TextColor="White" Command="{Binding startmodule5Command}"/>
-                    </Grid>
-                </Border>
+                <!-- ══════════════════════════════════════ -->
+                <!--  MODULE CARDS GRID                    -->
+                <!-- ══════════════════════════════════════ -->
+                <FlexLayout
+                    AlignContent="Start"
+                    AlignItems="Start"
+                    Direction="Row"
+                    JustifyContent="Center"
+                    Wrap="Wrap">
 
-                <Border x:Name="M6" Margin="15" BackgroundColor="White" HeightRequest="400" StrokeThickness="0" WidthRequest="220">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="25" />
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow x:Name="S6" Brush="#80c2ed" Opacity="0.15" Radius="15" Offset="0,8" />
-                    </Border.Shadow>
-                    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
-                        <Border Grid.Row="0" HeightRequest="120" BackgroundColor="#F0F8FF" StrokeThickness="0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="15" />
-                            </Border.StrokeShape>
-                            <Image Source="module_icon6.png" Aspect="AspectFit" Margin="10"/>
-                        </Border>
-                        <VerticalStackLayout Grid.Row="1" Spacing="5" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Text="Module 6" TextColor="#1B3A57" />
-                            <Label FontSize="13" HorizontalTextAlignment="Center" Text="Summarizing" TextColor="#507D9B" />
-                        </VerticalStackLayout>
-                        <Button Grid.Row="2" BackgroundColor="#80c2ed" CornerRadius="15" FontAttributes="Bold" HeightRequest="50" Text="START" TextColor="White" Command="{Binding startmodule6Command}"/>
-                    </Grid>
-                </Border>
+                    <!-- ── MODULE 1 – Easy ── -->
+                    <Border Margin="12" WidthRequest="300" BackgroundColor="White"
+                            Stroke="#CBDCEB" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="36"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#0F2D4A" Offset="0,8" Radius="24" Opacity="0.07" />
+                        </Border.Shadow>
+                        <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
 
-                <Border x:Name="M7" Margin="15" BackgroundColor="White" HeightRequest="400" StrokeThickness="0" WidthRequest="220">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="25" />
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow x:Name="S7" Brush="#80c2ed" Opacity="0.15" Radius="15" Offset="0,8" />
-                    </Border.Shadow>
-                    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
-                        <Border Grid.Row="0" HeightRequest="120" BackgroundColor="#F0F8FF" StrokeThickness="0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="15" />
-                            </Border.StrokeShape>
-                            <Image Source="module_icon7.png" Aspect="AspectFit" Margin="10"/>
-                        </Border>
-                        <VerticalStackLayout Grid.Row="1" Spacing="5" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Text="Module 7" TextColor="#1B3A57" />
-                            <Label FontSize="13" HorizontalTextAlignment="Center" Text="Critical Analysis" TextColor="#507D9B" />
-                        </VerticalStackLayout>
-                        <Button Grid.Row="2" BackgroundColor="#80c2ed" CornerRadius="15" FontAttributes="Bold" HeightRequest="50" Text="START" TextColor="White" Command="{Binding startmodule7Command}"/>
-                    </Grid>
-                </Border>
+                            <!-- Thumbnail -->
+                            <Border Grid.Row="0" HeightRequest="130"
+                                    BackgroundColor="#EBF4FF" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="module_icon1.png" Aspect="AspectFit" Margin="16"/>
+                            </Border>
 
-                <Border x:Name="M8" Margin="15" BackgroundColor="White" HeightRequest="400" StrokeThickness="0" WidthRequest="220">
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="25" />
-                    </Border.StrokeShape>
-                    <Border.Shadow>
-                        <Shadow x:Name="S8" Brush="#80c2ed" Opacity="0.15" Radius="15" Offset="0,8" />
-                    </Border.Shadow>
-                    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
-                        <Border Grid.Row="0" HeightRequest="120" BackgroundColor="#F0F8FF" StrokeThickness="0">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="15" />
-                            </Border.StrokeShape>
-                            <Image Source="module_icon8.png" Aspect="AspectFit" Margin="10"/>
-                        </Border>
-                        <VerticalStackLayout Grid.Row="1" Spacing="5" VerticalOptions="Center">
-                            <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Text="Module 8" TextColor="#1B3A57" />
-                            <Label FontSize="13" HorizontalTextAlignment="Center" Text="Mastery Test" TextColor="#507D9B" />
-                        </VerticalStackLayout>
-                        <Button Grid.Row="2" BackgroundColor="#80c2ed" CornerRadius="15" FontAttributes="Bold" HeightRequest="50" Text="START" TextColor="White" Command="{Binding startmodule8Command}"/>
-                    </Grid>
-                </Border>
+                            <!-- Info -->
+                            <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
+                                <Border Padding="10,5" BackgroundColor="#E8F5E9"
+                                        Stroke="#A5D6A7" StrokeThickness="1"
+                                        HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12"/>
+                                    </Border.StrokeShape>
+                                    <Label Text="🟢  Easy" FontSize="11" FontAttributes="Bold"
+                                           TextColor="#2E7D32" />
+                                </Border>
+                                <Label Text="The Forgotten Library"
+                                       FontAttributes="Bold" FontSize="18"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#0F2D4A"
+                                       LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
 
-            </FlexLayout>
-        </VerticalStackLayout>
-    </ScrollView>
+                            <!-- CTA -->
+                            <Border Grid.Row="2" BackgroundColor="#0F2D4A"
+                                    Stroke="Transparent" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="26"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="#0F2D4A" Offset="0,5" Radius="14" Opacity="0.22" />
+                                </Border.Shadow>
+                                <Button Text="START READING"
+                                        Command="{Binding startmodule1Command}"
+                                        BackgroundColor="Transparent" TextColor="White"
+                                        BorderWidth="0" HeightRequest="52"
+                                        FontAttributes="Bold" FontSize="13"
+                                        CharacterSpacing="1.0" />
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <!-- ── MODULE 2 – Easy ── -->
+                    <Border Margin="12" WidthRequest="300" BackgroundColor="White"
+                            Stroke="#CBDCEB" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="36"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#0F2D4A" Offset="0,8" Radius="24" Opacity="0.07" />
+                        </Border.Shadow>
+                        <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
+                            <Border Grid.Row="0" HeightRequest="130"
+                                    BackgroundColor="#EBF4FF" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="module_icon2.png" Aspect="AspectFit" Margin="16"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
+                                <Border Padding="10,5" BackgroundColor="#E8F5E9"
+                                        Stroke="#A5D6A7" StrokeThickness="1"
+                                        HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12"/>
+                                    </Border.StrokeShape>
+                                    <Label Text="🟢  Easy" FontSize="11" FontAttributes="Bold" TextColor="#2E7D32" />
+                                </Border>
+                                <Label Text="The Clockmaker's Secret"
+                                       FontAttributes="Bold" FontSize="18"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#0F2D4A" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+                            <Border Grid.Row="2" BackgroundColor="#0F2D4A"
+                                    Stroke="Transparent" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="26"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="#0F2D4A" Offset="0,5" Radius="14" Opacity="0.22" />
+                                </Border.Shadow>
+                                <Button Text="START READING"
+                                        Command="{Binding startmodule2Command}"
+                                        BackgroundColor="Transparent" TextColor="White"
+                                        BorderWidth="0" HeightRequest="52"
+                                        FontAttributes="Bold" FontSize="13"
+                                        CharacterSpacing="1.0" />
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <!-- ── MODULE 3 – Easy ── -->
+                    <Border Margin="12" WidthRequest="300" BackgroundColor="White"
+                            Stroke="#CBDCEB" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="36"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#0F2D4A" Offset="0,8" Radius="24" Opacity="0.07" />
+                        </Border.Shadow>
+                        <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
+                            <Border Grid.Row="0" HeightRequest="130"
+                                    BackgroundColor="#EBF4FF" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="module_icon3.png" Aspect="AspectFit" Margin="16"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
+                                <Border Padding="10,5" BackgroundColor="#E8F5E9"
+                                        Stroke="#A5D6A7" StrokeThickness="1"
+                                        HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12"/>
+                                    </Border.StrokeShape>
+                                    <Label Text="🟢  Easy" FontSize="11" FontAttributes="Bold" TextColor="#2E7D32" />
+                                </Border>
+                                <Label Text="The Observatory on the Hill"
+                                       FontAttributes="Bold" FontSize="18"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#0F2D4A" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+                            <Border Grid.Row="2" BackgroundColor="#0F2D4A"
+                                    Stroke="Transparent" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="26"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="#0F2D4A" Offset="0,5" Radius="14" Opacity="0.22" />
+                                </Border.Shadow>
+                                <Button Text="START READING"
+                                        Command="{Binding startmodule3Command}"
+                                        BackgroundColor="Transparent" TextColor="White"
+                                        BorderWidth="0" HeightRequest="52"
+                                        FontAttributes="Bold" FontSize="13"
+                                        CharacterSpacing="1.0" />
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <!-- ── MODULE 4 – Average ── -->
+                    <Border Margin="12" WidthRequest="300" BackgroundColor="White"
+                            Stroke="#CBDCEB" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="36"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#0F2D4A" Offset="0,8" Radius="24" Opacity="0.07" />
+                        </Border.Shadow>
+                        <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
+                            <Border Grid.Row="0" HeightRequest="130"
+                                    BackgroundColor="#FFF8E1" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="module_icon4.png" Aspect="AspectFit" Margin="16"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
+                                <Border Padding="10,5" BackgroundColor="#FFF8E1"
+                                        Stroke="#FFD54F" StrokeThickness="1"
+                                        HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12"/>
+                                    </Border.StrokeShape>
+                                    <Label Text="🟡  Average" FontSize="11" FontAttributes="Bold" TextColor="#F57F17" />
+                                </Border>
+                                <Label Text="The Garden of Hidden Patterns"
+                                       FontAttributes="Bold" FontSize="18"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#0F2D4A" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+                            <Border Grid.Row="2" BackgroundColor="#0F2D4A"
+                                    Stroke="Transparent" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="26"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="#0F2D4A" Offset="0,5" Radius="14" Opacity="0.22" />
+                                </Border.Shadow>
+                                <Button Text="START READING"
+                                        Command="{Binding startmodule4Command}"
+                                        BackgroundColor="Transparent" TextColor="White"
+                                        BorderWidth="0" HeightRequest="52"
+                                        FontAttributes="Bold" FontSize="13"
+                                        CharacterSpacing="1.0" />
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <!-- ── MODULE 5 – Average ── -->
+                    <Border Margin="12" WidthRequest="300" BackgroundColor="White"
+                            Stroke="#CBDCEB" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="36"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#0F2D4A" Offset="0,8" Radius="24" Opacity="0.07" />
+                        </Border.Shadow>
+                        <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
+                            <Border Grid.Row="0" HeightRequest="130"
+                                    BackgroundColor="#FFF8E1" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="module_icon5.png" Aspect="AspectFit" Margin="16"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
+                                <Border Padding="10,5" BackgroundColor="#FFF8E1"
+                                        Stroke="#FFD54F" StrokeThickness="1"
+                                        HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12"/>
+                                    </Border.StrokeShape>
+                                    <Label Text="🟡  Average" FontSize="11" FontAttributes="Bold" TextColor="#F57F17" />
+                                </Border>
+                                <Label Text="The Map of Quiet Decisions"
+                                       FontAttributes="Bold" FontSize="18"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#0F2D4A" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+                            <Border Grid.Row="2" BackgroundColor="#0F2D4A"
+                                    Stroke="Transparent" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="26"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="#0F2D4A" Offset="0,5" Radius="14" Opacity="0.22" />
+                                </Border.Shadow>
+                                <Button Text="START READING"
+                                        Command="{Binding startmodule5Command}"
+                                        BackgroundColor="Transparent" TextColor="White"
+                                        BorderWidth="0" HeightRequest="52"
+                                        FontAttributes="Bold" FontSize="13"
+                                        CharacterSpacing="1.0" />
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <!-- ── MODULE 6 – Average ── -->
+                    <Border Margin="12" WidthRequest="300" BackgroundColor="White"
+                            Stroke="#CBDCEB" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="36"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#0F2D4A" Offset="0,8" Radius="24" Opacity="0.07" />
+                        </Border.Shadow>
+                        <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
+                            <Border Grid.Row="0" HeightRequest="130"
+                                    BackgroundColor="#FFF8E1" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="module_icon6.png" Aspect="AspectFit" Margin="16"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
+                                <Border Padding="10,5" BackgroundColor="#FFF8E1"
+                                        Stroke="#FFD54F" StrokeThickness="1"
+                                        HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12"/>
+                                    </Border.StrokeShape>
+                                    <Label Text="🟡  Average" FontSize="11" FontAttributes="Bold" TextColor="#F57F17" />
+                                </Border>
+                                <Label Text="The Weight of Paper Wings"
+                                       FontAttributes="Bold" FontSize="18"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#0F2D4A" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+                            <Border Grid.Row="2" BackgroundColor="#0F2D4A"
+                                    Stroke="Transparent" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="26"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="#0F2D4A" Offset="0,5" Radius="14" Opacity="0.22" />
+                                </Border.Shadow>
+                                <Button Text="START READING"
+                                        Command="{Binding startmodule6Command}"
+                                        BackgroundColor="Transparent" TextColor="White"
+                                        BorderWidth="0" HeightRequest="52"
+                                        FontAttributes="Bold" FontSize="13"
+                                        CharacterSpacing="1.0" />
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <!-- ── MODULE 7 – Intermediate ── -->
+                    <Border Margin="12" WidthRequest="300" BackgroundColor="White"
+                            Stroke="#CBDCEB" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="36"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#0F2D4A" Offset="0,8" Radius="24" Opacity="0.07" />
+                        </Border.Shadow>
+                        <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
+                            <Border Grid.Row="0" HeightRequest="130"
+                                    BackgroundColor="#FBE9E7" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="module_icon7.png" Aspect="AspectFit" Margin="16"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
+                                <Border Padding="10,5" BackgroundColor="#FBE9E7"
+                                        Stroke="#FFAB91" StrokeThickness="1"
+                                        HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12"/>
+                                    </Border.StrokeShape>
+                                    <Label Text="🔴  Intermediate" FontSize="11" FontAttributes="Bold" TextColor="#BF360C" />
+                                </Border>
+                                <Label Text="The City of Silent Bargains"
+                                       FontAttributes="Bold" FontSize="18"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#0F2D4A" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+                            <Border Grid.Row="2" BackgroundColor="#0F2D4A"
+                                    Stroke="Transparent" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="26"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="#0F2D4A" Offset="0,5" Radius="14" Opacity="0.22" />
+                                </Border.Shadow>
+                                <Button Text="START READING"
+                                        Command="{Binding startmodule7Command}"
+                                        BackgroundColor="Transparent" TextColor="White"
+                                        BorderWidth="0" HeightRequest="52"
+                                        FontAttributes="Bold" FontSize="13"
+                                        CharacterSpacing="1.0" />
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <!-- ── MODULE 8 – Intermediate ── -->
+                    <Border Margin="12" WidthRequest="300" BackgroundColor="White"
+                            Stroke="#CBDCEB" StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="36"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#0F2D4A" Offset="0,8" Radius="24" Opacity="0.07" />
+                        </Border.Shadow>
+                        <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
+                            <Border Grid.Row="0" HeightRequest="130"
+                                    BackgroundColor="#FBE9E7" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22"/>
+                                </Border.StrokeShape>
+                                <Image Source="module_icon8.png" Aspect="AspectFit" Margin="16"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
+                                <Border Padding="10,5" BackgroundColor="#FBE9E7"
+                                        Stroke="#FFAB91" StrokeThickness="1"
+                                        HorizontalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12"/>
+                                    </Border.StrokeShape>
+                                    <Label Text="🔴  Intermediate" FontSize="11" FontAttributes="Bold" TextColor="#BF360C" />
+                                </Border>
+                                <Label Text="Whispers of the Iron Forest"
+                                       FontAttributes="Bold" FontSize="18"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#0F2D4A" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+                            <Border Grid.Row="2" BackgroundColor="#0F2D4A"
+                                    Stroke="Transparent" StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="26"/>
+                                </Border.StrokeShape>
+                                <Border.Shadow>
+                                    <Shadow Brush="#0F2D4A" Offset="0,5" Radius="14" Opacity="0.22" />
+                                </Border.Shadow>
+                                <Button Text="START READING"
+                                        Command="{Binding startmodule8Command}"
+                                        BackgroundColor="Transparent" TextColor="White"
+                                        BorderWidth="0" HeightRequest="52"
+                                        FontAttributes="Bold" FontSize="13"
+                                        CharacterSpacing="1.0" />
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                </FlexLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

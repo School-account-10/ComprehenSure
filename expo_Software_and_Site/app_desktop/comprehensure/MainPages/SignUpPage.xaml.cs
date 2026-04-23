@@ -23,4 +23,19 @@ public partial class SignUpPage : ContentPage
     {
         await Navigation.PopAsync();
     }
+    private async void OnLoginTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("/LoginPage");
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        Shell.SetNavBarIsVisible(this, false);
+        Shell.SetNavBarHasShadow(this, false);
+        Shell.SetBackButtonBehavior(this, new BackButtonBehavior
+        {
+            IsVisible = false,
+            IsEnabled = false
+        });
+    }
 }

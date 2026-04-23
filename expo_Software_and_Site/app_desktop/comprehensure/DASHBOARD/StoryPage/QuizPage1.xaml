@@ -2,104 +2,149 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="comprehensure.DASHBOARD.StoryPage.QuizPage1"
-             Title="Story 1 Quiz"
-             BackgroundColor="#F4F8FB">
+             BackgroundColor="#F4F8FB"
+             Shell.NavBarIsVisible="False">
 
-    <Grid RowDefinitions="Auto, *, Auto" Padding="20">
+    <Grid>
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" InputTransparent="True">
+            <Ellipse Fill="White" WidthRequest="600" HeightRequest="450" HorizontalOptions="Start" VerticalOptions="Start" Margin="-150,-100,0,0" Opacity="0.7" />
+            <Ellipse Fill="#E3F2FD" WidthRequest="500" HeightRequest="400" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,-100,-50" Opacity="0.5" />
+        </Grid>
 
-        <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="0,0,0,20">
-            <Label x:Name="QuestionNumberLabel"
-                   Text="{Binding QuestionNumber}"
-                   FontSize="14" HorizontalOptions="Center" TextColor="#80c2ed" />
-            <ProgressBar x:Name="QuizProgress" Progress="0.1" ProgressColor="#80c2ed" HeightRequest="10" />
-        </VerticalStackLayout>
+        <Grid RowDefinitions="Auto, *, Auto" Padding="30,40">
 
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout Spacing="25">
-                <Frame BackgroundColor="White" CornerRadius="15" HasShadow="True" Padding="20">
-                    <Label x:Name="QuestionText"
-                           Text="{Binding Mainquestion}"
-                           FontSize="18" FontAttributes="Bold" TextColor="#1B3A57" HorizontalTextAlignment="Center"/>
-                </Frame>
+            <VerticalStackLayout Grid.Row="0" Spacing="15" Margin="0,0,0,20">
+                <Label x:Name="QuestionNumberLabel"
+                       Text="{Binding QuestionNumber}"
+                       FontSize="16" 
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" 
+                       TextColor="#4A90E2" />
 
-                <VerticalStackLayout x:Name="OptionsContainer" Spacing="20" Padding="10">
-
-                    <HorizontalStackLayout Spacing="15">
-                        <Border x:Name="CircleA" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="26" WidthRequest="26" VerticalOptions="Center">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="13"/>
-                            </Border.StrokeShape>
-                            <Border.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="A"/>
-                            </Border.GestureRecognizers>
-                        </Border>
-                        <Label x:Name="BtnA" Text="{Binding Ch1bt}" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="A"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </HorizontalStackLayout>
-
-                    <HorizontalStackLayout Spacing="15">
-                        <Border x:Name="CircleB" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="26" WidthRequest="26" VerticalOptions="Center">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="13"/>
-                            </Border.StrokeShape>
-                            <Border.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="B"/>
-                            </Border.GestureRecognizers>
-                        </Border>
-                        <Label x:Name="BtnB" Text="{Binding Ch2bt}" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="B"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </HorizontalStackLayout>
-
-                    <HorizontalStackLayout Spacing="15">
-                        <Border x:Name="CircleC" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="26" WidthRequest="26" VerticalOptions="Center">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="13"/>
-                            </Border.StrokeShape>
-                            <Border.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="C"/>
-                            </Border.GestureRecognizers>
-                        </Border>
-                        <Label x:Name="BtnC" Text="{Binding Ch3bt}" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="C"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </HorizontalStackLayout>
-
-                    <HorizontalStackLayout Spacing="15">
-                        <Border x:Name="CircleD" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="26" WidthRequest="26" VerticalOptions="Center">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="13"/>
-                            </Border.StrokeShape>
-                            <Border.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="D"/>
-                            </Border.GestureRecognizers>
-                        </Border>
-                        <Label x:Name="BtnD" Text="{Binding Ch4bt}" VerticalOptions="Center" FontSize="16" TextColor="#1B3A57" FontFamily="Calibri">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="D"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </HorizontalStackLayout>
-
-                </VerticalStackLayout>
+                <Border HeightRequest="12" StrokeThickness="0" BackgroundColor="#E3F2FD">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="6" />
+                    </Border.StrokeShape>
+                    <ProgressBar x:Name="QuizProgress" 
+                                 Progress="0.1" 
+                                 ProgressColor="#80c2ed" 
+                                 ScaleY="4" />
+                </Border>
             </VerticalStackLayout>
-        </ScrollView>
 
-        <Button Grid.Row="2" x:Name="NextButton"
-                Text="Next Question"
-                Clicked="OnNextClicked"
-                IsEnabled="False"
-                Margin="0,20,0,0"
-                BackgroundColor="#80c2ed"
-                TextColor="White"
-                CornerRadius="25"
-                HeightRequest="50" />
+            <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Never">
+                <VerticalStackLayout Spacing="30" HorizontalOptions="Center" WidthRequest="600">
+
+                    <Border BackgroundColor="White" 
+                            Stroke="#CBDCEB" 
+                            StrokeThickness="1" 
+                            Padding="30">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="30" />
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#4A90E2" Offset="0,10" Radius="20" Opacity="0.1" />
+                        </Border.Shadow>
+
+                        <Label x:Name="QuestionText"
+                               Text="{Binding Mainquestion}"
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               TextColor="#1B3A57" 
+                               HorizontalTextAlignment="Center"
+                               LineHeight="1.2"/>
+                    </Border>
+
+                    <VerticalStackLayout x:Name="OptionsContainer" Spacing="15">
+
+                        <Border BackgroundColor="White" Stroke="#CBDCEB" StrokeThickness="1" Padding="20,15">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+                            <HorizontalStackLayout Spacing="15">
+                                <Border x:Name="CircleA" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="28" WidthRequest="28" VerticalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="14"/>
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Label x:Name="BtnA" Text="{Binding Ch1bt}" VerticalOptions="Center" FontSize="17" TextColor="#1B3A57" FontFamily="Calibri" />
+                            </HorizontalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="A"/>
+                            </Border.GestureRecognizers>
+                        </Border>
+
+                        <Border BackgroundColor="White" Stroke="#CBDCEB" StrokeThickness="1" Padding="20,15">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+                            <HorizontalStackLayout Spacing="15">
+                                <Border x:Name="CircleB" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="28" WidthRequest="28" VerticalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="14"/>
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Label x:Name="BtnB" Text="{Binding Ch2bt}" VerticalOptions="Center" FontSize="17" TextColor="#1B3A57" FontFamily="Calibri" />
+                            </HorizontalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="B"/>
+                            </Border.GestureRecognizers>
+                        </Border>
+
+                        <Border BackgroundColor="White" Stroke="#CBDCEB" StrokeThickness="1" Padding="20,15">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+                            <HorizontalStackLayout Spacing="15">
+                                <Border x:Name="CircleC" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="28" WidthRequest="28" VerticalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="14"/>
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Label x:Name="BtnC" Text="{Binding Ch3bt}" VerticalOptions="Center" FontSize="17" TextColor="#1B3A57" FontFamily="Calibri" />
+                            </HorizontalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="C"/>
+                            </Border.GestureRecognizers>
+                        </Border>
+
+                        <Border BackgroundColor="White" Stroke="#CBDCEB" StrokeThickness="1" Padding="20,15">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+                            <HorizontalStackLayout Spacing="15">
+                                <Border x:Name="CircleD" Stroke="#80c2ed" StrokeThickness="2" HeightRequest="28" WidthRequest="28" VerticalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="14"/>
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Label x:Name="BtnD" Text="{Binding Ch4bt}" VerticalOptions="Center" FontSize="17" TextColor="#1B3A57" FontFamily="Calibri" />
+                            </HorizontalStackLayout>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnOptionClicked" CommandParameter="D"/>
+                            </Border.GestureRecognizers>
+                        </Border>
+
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <Button Grid.Row="2" x:Name="NextButton"
+                    Text="NEXT QUESTION"
+                    Clicked="OnNextClicked"
+                    IsEnabled="False"
+                    BackgroundColor="#80c2ed"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    HeightRequest="55" 
+                    WidthRequest="250"
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,0">
+                <Button.Shadow>
+                    <Shadow Brush="#80c2ed" Opacity="0.3" Radius="10" Offset="0,4" />
+                </Button.Shadow>
+            </Button>
+        </Grid>
     </Grid>
 </ContentPage>

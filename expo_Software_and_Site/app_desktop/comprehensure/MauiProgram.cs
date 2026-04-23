@@ -61,10 +61,11 @@ namespace comprehensure
             builder.Services.AddTransient<StoryPage7>();
             builder.Services.AddTransient<StoryPage8>();
 
-            builder.Services.AddTransient<StoryPage1ViewModel>();
+
+            builder.Services.AddTransient<StoryPage2ViewModel>();
+            builder.Services.AddTransient<StoryPage4ViewModel>();
             builder.Services.AddTransient<QuizPage2ViewModel>();
             builder.Services.AddTransient<QuizPage3ViewModel>();
-            builder.Services.AddTransient<StoryPage4ViewModel>();
             builder.Services.AddTransient<QuizPage5ViewModel>();
             builder.Services.AddTransient<QuizPage6ViewModel>();
             builder.Services.AddTransient<QuizPage7ViewModel>();

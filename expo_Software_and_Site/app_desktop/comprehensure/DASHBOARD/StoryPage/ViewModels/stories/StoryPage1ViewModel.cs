@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
-namespace comprehensure.DASHBOARD.StoryPage
+namespace comprehensure.DASHBOARD.StoryPag
 {
 
 public partial class StoryPage1ViewModel : ObservableObject

@@ -5,67 +5,251 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:dashboard="clr-namespace:comprehensure.DASHBOARD"
     xmlns:local="clr-namespace:comprehensure"
-    xmlns:storypage="clr-namespace:comprehensure.DASHBOARD.StoryPage"
     Shell.FlyoutBehavior="Flyout"
-    FlyoutBackgroundColor="#F4F8FB">
+    FlyoutBackgroundColor="#F2F6FB">
 
-    <Shell.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Grid" x:Key="FlyoutItemLabelStyle">
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="Transparent" />
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Selected">
-                                <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="#80c2ed" />
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
-            </Style>
-        </ResourceDictionary>
-    </Shell.Resources>
-
+    <!-- ══════════════════════════════════════════════════ -->
+    <!--  FLYOUT HEADER                                     -->
+    <!-- ══════════════════════════════════════════════════ -->
     <Shell.FlyoutHeader>
-        <VerticalStackLayout Padding="20" BackgroundColor="#1B3A57">
-            <Border StrokeShape="RoundRectangle 35" HeightRequest="70" WidthRequest="70" HorizontalOptions="Start">
-                <Image Source="user.png" Aspect="AspectFill" />
-            </Border>
-            <Label Text="Comprehensure" TextColor="White" FontAttributes="Bold" FontSize="18" Margin="0,10,0,0"/>
-            <Label Text="Learning Dashboard" TextColor="#80c2ed" FontSize="12"/>
-        </VerticalStackLayout>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#0F2D4A" Offset="0" />
+                    <GradientStop Color="#1B4A72" Offset="1" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <!-- Decorative blob (mirrors dashboard style) -->
+            <Ellipse Fill="#D6EAFF"
+                     WidthRequest="200" HeightRequest="160"
+                     HorizontalOptions="End" VerticalOptions="End"
+                     Margin="0,0,-60,-40" Opacity="0.12" />
+
+            <VerticalStackLayout Padding="24,32,24,24" Spacing="12">
+
+                <!-- Avatar ring -->
+                <Border HeightRequest="72" WidthRequest="72"
+                        Stroke="#CBDCEB" StrokeThickness="1.5"
+                        BackgroundColor="#1B4A72"
+                        HorizontalOptions="Start">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="36" />
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Brush="#000000" Offset="0,4" Radius="14" Opacity="0.20" />
+                    </Border.Shadow>
+                    <Image Source="user.png" Aspect="AspectFill" />
+                </Border>
+
+                <!-- App name + subtitle -->
+                <VerticalStackLayout Spacing="2">
+                    <Label Text="ComprehenSure"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           CharacterSpacing="0.5" />
+                    <Label Text="Learning Dashboard"
+                           TextColor="#80c2ed"
+                           FontSize="12"
+                           CharacterSpacing="1.2" />
+                </VerticalStackLayout>
+
+                <BoxView HeightRequest="1" BackgroundColor="#FFFFFF" Opacity="0.12" Margin="0,4,0,0" />
+            </VerticalStackLayout>
+        </Grid>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Dashboard" Icon="home_icon.png">
+    <!-- ══════════════════════════════════════════════════ -->
+    <!--  FLYOUT ITEMS                                      -->
+    <!-- ══════════════════════════════════════════════════ -->
+
+    <!-- ── DASHBOARD ── -->
+    <FlyoutItem Title="Dashboard" Icon="home.png">
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Border Margin="12,4" Padding="16,14"
+                        BackgroundColor="White"
+                        Stroke="#CBDCEB" StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20" />
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Brush="#0F2D4A" Offset="0,3" Radius="10" Opacity="0.06" />
+                    </Border.Shadow>
+                    <HorizontalStackLayout Spacing="16" VerticalOptions="Center">
+                        <Border HeightRequest="38" WidthRequest="38"
+                                BackgroundColor="#EBF4FF" Stroke="#CBDCEB" StrokeThickness="1">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+                            <Image Source="{Binding Icon}" HeightRequest="20" WidthRequest="20"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <Label Text="{Binding Title}" VerticalOptions="Center"
+                               FontAttributes="Bold" FontSize="15" TextColor="#0F2D4A" />
+                    </HorizontalStackLayout>
+                </Border>
+            </DataTemplate>
+        </Shell.ItemTemplate>
         <ShellContent ContentTemplate="{DataTemplate dashboard:MainDashboard}" Route="MainDashboard" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Modules" Icon="book_icon.png">
+    <!-- ── MODULES ── -->
+    <FlyoutItem Title="Modules" Icon="book.png">
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Border Margin="12,4" Padding="16,14"
+                        BackgroundColor="White"
+                        Stroke="#CBDCEB" StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20" />
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Brush="#0F2D4A" Offset="0,3" Radius="10" Opacity="0.06" />
+                    </Border.Shadow>
+                    <HorizontalStackLayout Spacing="16" VerticalOptions="Center">
+                        <Border HeightRequest="38" WidthRequest="38"
+                                BackgroundColor="#EBF4FF" Stroke="#CBDCEB" StrokeThickness="1">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+                            <Image Source="{Binding Icon}" HeightRequest="20" WidthRequest="20"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <Label Text="{Binding Title}" VerticalOptions="Center"
+                               FontAttributes="Bold" FontSize="15" TextColor="#0F2D4A" />
+                    </HorizontalStackLayout>
+                </Border>
+            </DataTemplate>
+        </Shell.ItemTemplate>
         <ShellContent ContentTemplate="{DataTemplate dashboard:ModulesDashboard}" Route="ModuleDashboard" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Profile" Icon="user_icon.png">
+    <!-- ── LEADERBOARD (new — matches the leaderboard card on the dashboard) ── -->
+    <FlyoutItem Title="Leaderboard" Icon="trophy.png">
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Border Margin="12,4" Padding="16,14"
+                        BackgroundColor="White"
+                        Stroke="#E8C547" StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20" />
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Brush="#0F2D4A" Offset="0,3" Radius="10" Opacity="0.06" />
+                    </Border.Shadow>
+                    <HorizontalStackLayout Spacing="16" VerticalOptions="Center">
+                        <!-- Gold-tinted pill to match the leaderboard gold accent -->
+                        <Border HeightRequest="38" WidthRequest="38"
+                                BackgroundColor="#FFF8DC" Stroke="#E8C547" StrokeThickness="1">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+                            <Label Text="&#x1F3C6;" FontSize="16"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <Label Text="{Binding Title}" VerticalOptions="Center"
+                               FontAttributes="Bold" FontSize="15" TextColor="#0F2D4A" />
+                    </HorizontalStackLayout>
+                </Border>
+            </DataTemplate>
+        </Shell.ItemTemplate>
+        <ShellContent ContentTemplate="{DataTemplate dashboard:MainDashboard}" Route="Leaderboard" />
+    </FlyoutItem>
+
+    <!-- ── MINI GAMES (new — matches the Mini Games button on the dashboard) ── -->
+    <FlyoutItem Title="Mini Games" Icon="game.png">
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Border Margin="12,4" Padding="16,14"
+                        BackgroundColor="White"
+                        Stroke="#CBDCEB" StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20" />
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Brush="#0F2D4A" Offset="0,3" Radius="10" Opacity="0.06" />
+                    </Border.Shadow>
+                    <HorizontalStackLayout Spacing="16" VerticalOptions="Center">
+                        <Border HeightRequest="38" WidthRequest="38"
+                                BackgroundColor="#EBF4FF" Stroke="#CBDCEB" StrokeThickness="1">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+                            <Label Text="&#x1F3AE;" FontSize="16"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <Label Text="{Binding Title}" VerticalOptions="Center"
+                               FontAttributes="Bold" FontSize="15" TextColor="#0F2D4A" />
+                    </HorizontalStackLayout>
+                </Border>
+            </DataTemplate>
+        </Shell.ItemTemplate>
+        <ShellContent ContentTemplate="{DataTemplate dashboard:ModulesDashboard}" Route="MiniGames" />
+    </FlyoutItem>
+
+    <!-- ── PROFILE ── -->
+    <FlyoutItem Title="Profile" Icon="user.png">
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Border Margin="12,4" Padding="16,14"
+                        BackgroundColor="White"
+                        Stroke="#CBDCEB" StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20" />
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Brush="#0F2D4A" Offset="0,3" Radius="10" Opacity="0.06" />
+                    </Border.Shadow>
+                    <HorizontalStackLayout Spacing="16" VerticalOptions="Center">
+                        <Border HeightRequest="38" WidthRequest="38"
+                                BackgroundColor="#EBF4FF" Stroke="#CBDCEB" StrokeThickness="1">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+                            <Image Source="{Binding Icon}" HeightRequest="20" WidthRequest="20"
+                                   HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Border>
+                        <Label Text="{Binding Title}" VerticalOptions="Center"
+                               FontAttributes="Bold" FontSize="15" TextColor="#0F2D4A" />
+                    </HorizontalStackLayout>
+                </Border>
+            </DataTemplate>
+        </Shell.ItemTemplate>
         <ShellContent ContentTemplate="{DataTemplate dashboard:ProfileDashboard}" Route="ProfileDashboard" />
     </FlyoutItem>
 
-    <ShellContent Title="Login" ContentTemplate="{DataTemplate local:LoginPage}" Route="Login" FlyoutItemIsVisible="False" />
-    <ShellContent Title="SignUp" ContentTemplate="{DataTemplate local:SignUpPage}" Route="signUp" FlyoutItemIsVisible="False" />
-    <ShellContent Title="Username Requirement" ContentTemplate="{DataTemplate dashboard:UsernameReq}" Route="UsernameReq" FlyoutItemIsVisible="False" />
-    <ShellContent Title="MainPage" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" FlyoutItemIsVisible="False" />
+    <!-- ══════════════════════════════════════════════════ -->
+    <!--  FLYOUT FOOTER — Log Out                          -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout Padding="12,8,12,28" Spacing="0">
+            <BoxView HeightRequest="1" BackgroundColor="#CBDCEB" Margin="4,0,4,12" />
+            <!-- Outline style matching the dashboard's "Decrease Score" outline button -->
+            <Border BackgroundColor="Transparent" Stroke="#CBDCEB" StrokeThickness="1.5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Button Text="Log Out"
+                        Clicked="OnLogOutClicked"
+                        BackgroundColor="Transparent"
+                        TextColor="#0F2D4A"
+                        BorderWidth="0"
+                        HeightRequest="50"
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        CharacterSpacing="0.5" />
+            </Border>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
 
-    <ShellContent Title="Story Page 1" ContentTemplate="{DataTemplate storypage:StoryPage1}" Route="StoryPage1" FlyoutItemIsVisible="False" />
-    <ShellContent Title="Story Page 2" ContentTemplate="{DataTemplate storypage:StoryPage2}" Route="StoryPage2" FlyoutItemIsVisible="False" />
-    <ShellContent Title="Story Page 3" ContentTemplate="{DataTemplate storypage:StoryPage3}" Route="StoryPage3" FlyoutItemIsVisible="False" />
-    <ShellContent Title="Story Page 4" ContentTemplate="{DataTemplate storypage:StoryPage4}" Route="StoryPage4" FlyoutItemIsVisible="False" />
-    <ShellContent Title="Story Page 5" ContentTemplate="{DataTemplate storypage:StoryPage5}" Route="StoryPage5" FlyoutItemIsVisible="False" />
-    <ShellContent Title="Story Page 6" ContentTemplate="{DataTemplate storypage:StoryPage6}" Route="StoryPage6" FlyoutItemIsVisible="False" />
-    <ShellContent Title="Story Page 7" ContentTemplate="{DataTemplate storypage:StoryPage7}" Route="StoryPage7" FlyoutItemIsVisible="False" />
-    <ShellContent Title="Story Page 8" ContentTemplate="{DataTemplate storypage:StoryPage8}" Route="StoryPage8" FlyoutItemIsVisible="False" />
+    <!-- ══════════════════════════════════════════════════ -->
+    <!--  HIDDEN SHELL CONTENTS                            -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <ShellContent Title="Login"    ContentTemplate="{DataTemplate local:LoginPage}"       Route="Login"      FlyoutItemIsVisible="False" />
+    <ShellContent Title="SignUp"   ContentTemplate="{DataTemplate local:SignUpPage}"      Route="signUp"     FlyoutItemIsVisible="False" />
+    <ShellContent Title="Username" ContentTemplate="{DataTemplate dashboard:UsernameReq}" Route="UsernameReq" FlyoutItemIsVisible="False" />
+    <ShellContent Title="MainPage" ContentTemplate="{DataTemplate local:MainPage}"        Route="MainPage"   FlyoutItemIsVisible="False" />
 
 </Shell>
