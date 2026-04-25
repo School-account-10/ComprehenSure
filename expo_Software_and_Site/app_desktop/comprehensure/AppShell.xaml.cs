@@ -8,12 +8,13 @@ namespace comprehensure
     {
         private async void OnLogOutClicked(object sender, EventArgs e)
         {
-            // Close the flyout first
+            // flyout close
             Shell.Current.FlyoutIsPresented = false;
 
-            // Show custom popup and wait for result
+            // show it, then close
             bool confirm = await ShowLogoutPopup();
-            if (!confirm) return;
+            if (!confirm)
+                return;
 
             await Shell.Current.GoToAsync("MainPage");
         }
@@ -22,15 +23,13 @@ namespace comprehensure
         {
             var tcs = new TaskCompletionSource<bool>();
 
-            // ── Dimmed overlay ──────────────────────────────────────────
             var overlay = new Grid
             {
                 BackgroundColor = Color.FromArgb("#80000000"),
                 HorizontalOptions = LayoutOptions.Fill,
-                VerticalOptions = LayoutOptions.Fill
+                VerticalOptions = LayoutOptions.Fill,
             };
 
-            // ── Top gradient accent band ────────────────────────────────
             var gradientBand = new Border
             {
                 HeightRequest = 6,
@@ -40,28 +39,26 @@ namespace comprehensure
                     new GradientStopCollection
                     {
                         new GradientStop(Color.FromArgb("#0F2D4A"), 0f),
-                        new GradientStop(Color.FromArgb("#2E6BA8"), 1f)
+                        new GradientStop(Color.FromArgb("#2E6BA8"), 1f),
                     },
                     new Point(0, 0),
-                    new Point(1, 0)),
+                    new Point(1, 0)
+                ),
                 StrokeShape = new Microsoft.Maui.Controls.Shapes.RoundRectangle
                 {
-                    CornerRadius = new CornerRadius(36, 36, 0, 0)
-                }
+                    CornerRadius = new CornerRadius(36, 36, 0, 0),
+                },
             };
 
-
-            // ── Title ───────────────────────────────────────────────────
             var titleLabel = new Label
             {
                 Text = "Log Out?",
                 FontSize = 22,
                 FontAttributes = FontAttributes.Bold,
                 TextColor = Color.FromArgb("#0F2D4A"),
-                HorizontalOptions = LayoutOptions.Center
+                HorizontalOptions = LayoutOptions.Center,
             };
 
-            // ── Body message ────────────────────────────────────────────
             var bodyLabel = new Label
             {
                 Text = "Are you sure you want to log out of your account?",
@@ -69,18 +66,16 @@ namespace comprehensure
                 TextColor = Color.FromArgb("#6B8CAE"),
                 HorizontalTextAlignment = TextAlignment.Center,
                 LineHeight = 1.6,
-                LineBreakMode = LineBreakMode.WordWrap
+                LineBreakMode = LineBreakMode.WordWrap,
             };
 
-            // ── Divider ─────────────────────────────────────────────────
             var divider = new BoxView
             {
                 HeightRequest = 1,
                 BackgroundColor = Color.FromArgb("#EBF4FF"),
-                Margin = new Thickness(0, 4)
+                Margin = new Thickness(0, 4),
             };
 
-            // ── "Yes, log out" button ───────────────────────────────────
             var yesButton = new Button
             {
                 Text = "Yes, log out",
@@ -89,7 +84,7 @@ namespace comprehensure
                 BorderWidth = 0,
                 FontAttributes = FontAttributes.Bold,
                 FontSize = 14,
-                HeightRequest = 52
+                HeightRequest = 52,
             };
 
             var yesBorder = new Border
@@ -99,19 +94,19 @@ namespace comprehensure
                 StrokeThickness = 0,
                 StrokeShape = new Microsoft.Maui.Controls.Shapes.RoundRectangle
                 {
-                    CornerRadius = new CornerRadius(26)
+                    CornerRadius = new CornerRadius(26),
                 },
                 Shadow = new Shadow
                 {
                     Brush = new SolidColorBrush(Color.FromArgb("#0F2D4A")),
                     Offset = new Point(0, 6),
                     Radius = 16,
-                    Opacity = 0.22f
+                    Opacity = 0.22f,
                 },
-                Content = yesButton
+                Content = yesButton,
             };
 
-            // ── "Cancel" button ─────────────────────────────────────────
+            
             var cancelButton = new Button
             {
                 Text = "Cancel",
@@ -120,7 +115,7 @@ namespace comprehensure
                 BorderWidth = 0,
                 FontAttributes = FontAttributes.Bold,
                 FontSize = 14,
-                HeightRequest = 52
+                HeightRequest = 52,
             };
 
             var cancelBorder = new Border
@@ -130,34 +125,32 @@ namespace comprehensure
                 StrokeThickness = 1.5,
                 StrokeShape = new Microsoft.Maui.Controls.Shapes.RoundRectangle
                 {
-                    CornerRadius = new CornerRadius(26)
+                    CornerRadius = new CornerRadius(26),
                 },
-                Content = cancelButton
+                Content = cancelButton,
             };
 
-            // ── Button stack ────────────────────────────────────────────
+            
             var buttonStack = new VerticalStackLayout
             {
                 Spacing = 12,
-                Children = { yesBorder, cancelBorder }
+                Children = { yesBorder, cancelBorder },
             };
 
-            // ── Inner content ────────────────────────────────────────────
+            
             var innerContent = new VerticalStackLayout
             {
                 Spacing = 20,
                 Padding = new Thickness(36, 28, 36, 32),
-                Children = { titleLabel, bodyLabel, divider, buttonStack }
+                Children = { titleLabel, bodyLabel, divider, buttonStack },
             };
 
-            // ── Full card stack (band + content) ────────────────────────
             var cardStack = new VerticalStackLayout
             {
                 Spacing = 0,
-                Children = { gradientBand, innerContent }
+                Children = { gradientBand, innerContent },
             };
 
-            // ── Popup card ───────────────────────────────────────────────
             var card = new Border
             {
                 HorizontalOptions = LayoutOptions.Center,
@@ -168,23 +161,20 @@ namespace comprehensure
                 StrokeThickness = 1,
                 StrokeShape = new Microsoft.Maui.Controls.Shapes.RoundRectangle
                 {
-                    CornerRadius = new CornerRadius(36)
+                    CornerRadius = new CornerRadius(36),
                 },
                 Shadow = new Shadow
                 {
                     Brush = new SolidColorBrush(Color.FromArgb("#0F2D4A")),
                     Offset = new Point(0, 16),
                     Radius = 48,
-                    Opacity = 0.18f
+                    Opacity = 0.18f,
                 },
-                Content = cardStack
+                Content = cardStack,
             };
 
             overlay.Children.Add(card);
 
-            // ── Get the currently visible ContentPage from Shell ────────
-            // Shell itself is MainPage and has no .Content — we must
-            // walk the navigation stack to find the active ContentPage.
             ContentPage? currentPage = null;
 
             var navStack = Shell.Current?.Navigation?.NavigationStack;
@@ -192,11 +182,15 @@ namespace comprehensure
             {
                 for (int i = navStack.Count - 1; i >= 0; i--)
                 {
-                    if (navStack[i] is ContentPage cp) { currentPage = cp; break; }
+                    if (navStack[i] is ContentPage cp)
+                    {
+                        currentPage = cp;
+                        break;
+                    }
                 }
             }
 
-            // Fallback: check the current item's content page
+            
             if (currentPage == null)
             {
                 var shellContent = Shell.Current?.CurrentItem?.CurrentItem?.CurrentItem;
@@ -204,9 +198,13 @@ namespace comprehensure
                     currentPage = scp;
             }
 
-            if (currentPage == null) { tcs.SetResult(false); return tcs.Task; }
+            if (currentPage == null)
+            {
+                tcs.SetResult(false);
+                return tcs.Task;
+            }
 
-            // ── Inject overlay into the page's root Grid ────────────────
+            
             Grid rootGrid;
             if (currentPage.Content is Grid existingGrid)
             {
@@ -222,11 +220,19 @@ namespace comprehensure
 
             rootGrid.Children.Add(overlay);
 
-            // ── Cleanup helper ───────────────────────────────────────────
+           
             void Cleanup() => rootGrid.Children.Remove(overlay);
 
-            yesButton.Clicked += (s, args) => { Cleanup(); tcs.SetResult(true); };
-            cancelButton.Clicked += (s, args) => { Cleanup(); tcs.SetResult(false); };
+            yesButton.Clicked += (s, args) =>
+            {
+                Cleanup();
+                tcs.SetResult(true);
+            };
+            cancelButton.Clicked += (s, args) =>
+            {
+                Cleanup();
+                tcs.SetResult(false);
+            };
 
             return tcs.Task;
         }

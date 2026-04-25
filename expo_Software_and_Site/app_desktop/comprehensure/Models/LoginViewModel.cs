@@ -176,7 +176,7 @@ namespace comprehensure.DataBaseControl.Models
                 return;
             }
 
-            // ─────────────────────────────────────────────────────────────
+
 
             try
             {
@@ -200,13 +200,19 @@ namespace comprehensure.DataBaseControl.Models
                     await Shell.Current.GoToAsync($"///UsernameReq?email={emailcl}&uid={uid}");
                 }
             }
+           
+            catch (Firebase.Auth.FirebaseAuthHttpException ex)
+            {
+                await Shell.Current.DisplayAlert("Sign-In Failed", ex.Reason.ToString(), "OK");
+            }
             catch (System.Exception ex)
             {
                 var (title, message) = ParseFirebaseError(ex);
                 await Shell.Current.DisplayAlert(title, message, "OK");
             }
+            
             finally
-            {
+            {   
                 _isNavigating = false;
             }
         }

@@ -9,6 +9,7 @@ namespace comprehensure.DASHBOARD.StoryPage
         string uid = Preferences.Default.Get("SavedUserUid", "");
 
         private bool _locked;
+        private bool _resultsSaved;   // prevent score duplication here DO NOT REMOVE 
         private string _correctAnswer = "";
         private readonly string projectId = "comprehensuredb";
         private string BaseUrl => $"https://firestore.googleapis.com/v1/projects/{projectId}/databases/(default)/documents";
@@ -108,11 +109,26 @@ namespace comprehensure.DASHBOARD.StoryPage
             return true;
         }
 
-        // ── Save quiz results to Firestore ────────────────────────────────
-        // Reads current ModuleFinished and ScoreOfTotal first,
-        // then adds to them so other modules' data is never overwritten.
+     
+        /// score duplication error was here fr
+        private static int ReadFirestoreInt(JsonElement integerValueElement)
+        {
+            if (integerValueElement.ValueKind == JsonValueKind.String)
+            {
+                int.TryParse(integerValueElement.GetString(), out int parsed);
+                return parsed;
+            }
+            if (integerValueElement.ValueKind == JsonValueKind.Number)
+                return integerValueElement.GetInt32();
+            return 0;
+        }
+
         public async Task SaveQuizResults()
         {
+            // Prevent double-saving (e.g. Finish button tap + OnDisappearing both call this)
+            if (_resultsSaved) return;
+            _resultsSaved = true;
+
             string uid = Preferences.Default.Get("SavedUserUid", "");
             if (string.IsNullOrEmpty(uid)) return;
 
@@ -123,7 +139,7 @@ namespace comprehensure.DASHBOARD.StoryPage
             {
                 using var http = new HttpClient();
 
-                // Read current values first
+                
                 var readResponse = await http.GetAsync($"{BaseUrl}/userdata/{uid}");
                 if (readResponse.IsSuccessStatusCode)
                 {
@@ -131,14 +147,16 @@ namespace comprehensure.DASHBOARD.StoryPage
                     using var doc = JsonDocument.Parse(readJson);
                     var fields = doc.RootElement.GetProperty("fields");
 
-                    if (fields.TryGetProperty("ModuleFinished", out var mf))
-                        int.TryParse(mf.GetProperty("integerValue").GetString(), out currentModuleFinished);
+                    if (fields.TryGetProperty("ModuleFinished", out var mf) &&
+                        mf.TryGetProperty("integerValue", out var mfVal))
+                        currentModuleFinished = ReadFirestoreInt(mfVal);
 
-                    if (fields.TryGetProperty("ScoreOfTotal", out var sc))
-                        int.TryParse(sc.GetProperty("integerValue").GetString(), out currentScore);
+                    if (fields.TryGetProperty("ScoreOfTotal", out var sc) &&
+                        sc.TryGetProperty("integerValue", out var scVal))
+                        currentScore = ReadFirestoreInt(scVal);
                 }
 
-                // Patch only ModuleFinished and ScoreOfTotal
+               
                 string url = $"{BaseUrl}/userdata/{uid}?updateMask.fieldPaths=ModuleFinished&updateMask.fieldPaths=ScoreOfTotal";
 
                 var data = new

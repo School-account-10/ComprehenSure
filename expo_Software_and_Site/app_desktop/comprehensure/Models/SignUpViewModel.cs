@@ -30,10 +30,11 @@ namespace comprehensure.DataBaseControl.Models
         [RelayCommand]
         public async Task LoginPage()
         {
-            // This uses Shell navigation to go to your LoginPage
+            
             await Shell.Current.GoToAsync("LoginPage");
         }
 
+        [RelayCommand]
         private async Task SignUp()
         {
 
