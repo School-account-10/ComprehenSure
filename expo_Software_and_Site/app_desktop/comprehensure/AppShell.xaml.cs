@@ -1,4 +1,4 @@
-﻿using comprehensure.DASHBOARD;
+using comprehensure.DASHBOARD;
 using comprehensure.DASHBOARD.MiniGames;
 using comprehensure.DASHBOARD.StoryPage;
 
@@ -183,8 +183,6 @@ namespace comprehensure
             overlay.Children.Add(card);
 
             // ── Get the currently visible ContentPage from Shell ────────
-            // Shell itself is MainPage and has no .Content — we must
-            // walk the navigation stack to find the active ContentPage.
             ContentPage? currentPage = null;
 
             var navStack = Shell.Current?.Navigation?.NavigationStack;
@@ -248,6 +246,16 @@ namespace comprehensure
             Routing.RegisterRoute(nameof(StoryPage8), typeof(StoryPage8));
             Routing.RegisterRoute("SynonymGamePage", typeof(SynonymHuntPage));
             Routing.RegisterRoute("OneThemeGamePage", typeof(OneThemePage));
+
+            // ── ADDED: Register QuizPage routes 1-8 ─────────────────────
+            Routing.RegisterRoute(nameof(QuizPage1), typeof(QuizPage1)); // ADDED
+            Routing.RegisterRoute(nameof(QuizPage2), typeof(QuizPage2)); // ADDED
+            Routing.RegisterRoute(nameof(QuizPage3), typeof(QuizPage3)); // ADDED
+            Routing.RegisterRoute(nameof(QuizPage4), typeof(QuizPage4)); // ADDED
+            Routing.RegisterRoute(nameof(QuizPage5), typeof(QuizPage5)); // ADDED
+            Routing.RegisterRoute(nameof(QuizPage6), typeof(QuizPage6)); // ADDED
+            Routing.RegisterRoute(nameof(QuizPage7), typeof(QuizPage7)); // ADDED
+            Routing.RegisterRoute(nameof(QuizPage8), typeof(QuizPage8)); // ADDED
         }
     }
 }

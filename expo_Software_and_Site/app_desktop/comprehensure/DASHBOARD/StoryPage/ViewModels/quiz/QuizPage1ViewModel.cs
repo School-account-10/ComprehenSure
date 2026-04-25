@@ -15,6 +15,7 @@ namespace comprehensure.DASHBOARD.StoryPage
 
         public int Score { get; private set; } = 0;
         public int TotalQuestions => _questions?.Count ?? 0;
+        public int CurrentQuestionIndex => CurrentIndex;
 
         [ObservableProperty]
         private string _mainquestion;
@@ -47,8 +48,6 @@ namespace comprehensure.DASHBOARD.StoryPage
             string json = await reader.ReadToEndAsync();
 
             var loaded = JsonSerializer.Deserialize<List<QuizItem>>(json);
-
-         
             _questions = loaded.OrderBy(_ => _rng.Next()).ToList();
 
             ShowQuestion(CurrentIndex);
@@ -62,7 +61,6 @@ namespace comprehensure.DASHBOARD.StoryPage
             Mainquestion = q.Question;
             QuestionNumber = $"Question {index + 1} of {_questions.Count}";
 
-      
             var choices = new List<(string Key, string Text)>
             {
                 ("A", q.Choices.A),
@@ -71,7 +69,6 @@ namespace comprehensure.DASHBOARD.StoryPage
                 ("D", q.Choices.D),
             }.OrderBy(_ => _rng.Next()).ToList();
 
-            
             _correctAnswer = q.Choices.GetByKey(q.Answer);
 
             Ch1bt = choices[0].Text;
@@ -108,9 +105,6 @@ namespace comprehensure.DASHBOARD.StoryPage
             return true;
         }
 
-        // ── Save quiz results to Firestore ────────────────────────────────
-        // Reads current ModuleFinished and ScoreOfTotal first,
-        // then adds to them so other modules' data is never overwritten.
         public async Task SaveQuizResults()
         {
             string uid = Preferences.Default.Get("SavedUserUid", "");
@@ -123,7 +117,6 @@ namespace comprehensure.DASHBOARD.StoryPage
             {
                 using var http = new HttpClient();
 
-                // Read current values first
                 var readResponse = await http.GetAsync($"{BaseUrl}/userdata/{uid}");
                 if (readResponse.IsSuccessStatusCode)
                 {
@@ -138,7 +131,6 @@ namespace comprehensure.DASHBOARD.StoryPage
                         int.TryParse(sc.GetProperty("integerValue").GetString(), out currentScore);
                 }
 
-                // Patch only ModuleFinished and ScoreOfTotal
                 string url = $"{BaseUrl}/userdata/{uid}?updateMask.fieldPaths=ModuleFinished&updateMask.fieldPaths=ScoreOfTotal";
 
                 var data = new
@@ -173,41 +165,5 @@ namespace comprehensure.DASHBOARD.StoryPage
                 System.Diagnostics.Debug.WriteLine($"[SaveQuizResults] Exception: {ex.Message}");
             }
         }
-    }
-
-    public class QuizItem
-    {
-        [JsonPropertyName("question")]
-        public string Question { get; set; }
-
-        [JsonPropertyName("choices")]
-        public QuizChoices Choices { get; set; }
-
-        [JsonPropertyName("answer")]
-        public string Answer { get; set; }
-    }
-
-    public class QuizChoices
-    {
-        [JsonPropertyName("A")]
-        public string A { get; set; }
-
-        [JsonPropertyName("B")]
-        public string B { get; set; }
-
-        [JsonPropertyName("C")]
-        public string C { get; set; }
-
-        [JsonPropertyName("D")]
-        public string D { get; set; }
-
-        public string GetByKey(string key) => key switch
-        {
-            "A" => A,
-            "B" => B,
-            "C" => C,
-            "D" => D,
-            _ => ""
-        };
     }
 }

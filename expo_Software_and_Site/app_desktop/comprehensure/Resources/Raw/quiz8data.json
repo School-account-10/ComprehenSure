@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is the physical nature of the trees in the forest Maren enters?",
+    "choices": {
+      "A": "They are made of crystalline glass.",
+      "B": "They are fused with strands of blackened iron.",
+      "C": "They are eternally burning without being consumed.",
+      "D": "They are giant flowers that never bloom."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What \"price\" does the forest demand in exchange for answers?",
+    "choices": {
+      "A": "A physical drop of blood.",
+      "B": "All of Maren's material possessions.",
+      "C": "One specific memory to be left behind.",
+      "D": "The ability to speak ever again."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What do the \"whispers\" in the forest eventually sound like to Maren?",
+    "choices": {
+      "A": "The voices of her ancestors.",
+      "B": "Foreign languages she cannot understand.",
+      "C": "Her own voice, saying things she doesn't remember.",
+      "D": "The sound of metal clanging in the wind."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "When Maren looks into the pool at the base of the iron tree, what does she see?",
+    "choices": {
+      "A": "Her own reflection, looking older.",
+      "B": "Scenes and images from her own life.",
+      "C": "A map leading out of the forest.",
+      "D": "Nothing but a dark, bottomless void."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Why does Maren initially hesitate to surrender a memory?",
+    "choices": {
+      "A": "She is afraid she will forget her way home.",
+      "B": "She believes the forest will use the memory against her.",
+      "C": "She fears that losing a memory will alter her identity.",
+      "D": "The iron tree tells her the memory is too valuable."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What kind of memory does Maren ultimately choose to relinquish?",
+    "choices": {
+      "A": "A memory of childhood joy.",
+      "B": "A memory of a loved one she lost.",
+      "C": "A memory rooted in self-doubt and fear.",
+      "D": "A memory of a physical injury."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "How does the forest react when Maren whispers the name of the memory she is giving up?",
+    "choices": {
+      "A": "The trees begin to weep iron tears.",
+      "B": "The symbols on the iron trunk flare softly and the pool shimmers.",
+      "C": "The forest becomes pitch black.",
+      "D": "A heavy rain begins to fall."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "After surrendering the memory, how does Maren describe the space where the memory used to be?",
+    "choices": {
+      "A": "As a painful, bleeding wound.",
+      "B": "As a faded photograph with indistinct edges.",
+      "C": "As a bright, burning light that hurts her eyes.",
+      "D": "As a complete void she can't even remember having."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What is the symbolic meaning of the Iron Forest as revealed by Maren's reflection?",
+    "choices": {
+      "A": "It is a physical trap set by an evil sorcerer.",
+      "B": "It is a reflection of the parts of ourselves we hesitate to examine.",
+      "C": "It is a gateway to another planet.",
+      "D": "It is a test of physical strength and endurance."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What is the growth Maren achieves at the end of the story?",
+    "choices": {
+      "A": "The gathering of more power and knowledge.",
+      "B": "The ability to ignore all her past mistakes.",
+      "C": "The courage to let go of something that was limiting her.",
+      "D": "Becoming the new guardian of the Iron Forest."
+    },
+    "answer": "C"
+  }
+]

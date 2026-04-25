@@ -1,0 +1,102 @@
+[
+  {
+    "question": "How is Mr. Alden’s shop best described?",
+    "choices": {
+      "A": "Large and modern with bright lights.",
+      "B": "Old-fashioned, quiet, and filled with different clocks.",
+      "C": "Empty and rarely visited by customers.",
+      "D": "Noisy and crowded with machines."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What made Mr. Alden different from other shopkeepers?",
+    "choices": {
+      "A": "He refused to sell his clocks.",
+      "B": "He only sold expensive clocks.",
+      "C": "He asked customers about their lives before suggesting a clock.",
+      "D": "He repaired clocks for free."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "Why did Clara visit the shop?",
+    "choices": {
+      "A": "She wanted to buy a gift for a friend.",
+      "B": "She needed a clock to help manage her time for exams.",
+      "C": "She was curious about the shop’s history.",
+      "D": "She was curious about the shop’s history."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What was unique about the wooden clock Mr. Alden suggested?",
+    "choices": {
+      "A": "It made loud sounds every minute.",
+      "B": "It had a maze design and a moving hand that followed a path.",
+      "C": "It displayed digital time.",
+      "D": "It changed colors throughout the day."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What did Clara first notice about the clock’s movement?",
+    "choices": {
+      "A": "It moved faster than other clocks.",
+      "B": "It stopped working at certain times.",
+      "C": "It followed a winding path and paused at points.",
+      "D": ". It made ticking sounds in different tones."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "How did Clara begin to understand the clock’s hidden messages?",
+    "choices": {
+      "A": "By asking Mr. Alden for the answers.",
+      "B": "By guessing randomly.",
+      "C": "By observing, sketching, and comparing patterns",
+      "D": "By reading a manual that came with the clock."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What kind of messages did the clock reveal?",
+    "choices": {
+      "A": ". Instructions for fixing clocks.",
+      "B": "Encouragements about patience and careful thinking.",
+      "C": "Warnings about future events.",
+      "D": "Stories about Mr. Alden's past."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "How did the clock affect Clara’s behavior?",
+    "choices": {
+      "A": "She became more rushed and anxious.",
+      "B": "She stopped studying altogether.",
+      "C": "She became more patient and attentive.",
+      "D": "She depended completely on the clock."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What did Mr. Alden mean when he said the lessons were not only in the clock?",
+    "choices": {
+      "A": "The clock was broken and useless.",
+      "B": "The lessons depended on Clara’s effort and mindset.",
+      "C": "The clock had no real purpose.",
+      "D": "The lessons were written in a separate book."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What is the main message of the story?",
+    "choices": {
+      "A": "Time should always be measured accurately.",
+      "B": "Old objects are more valuable than new ones.",
+      "C": "Patience, attention, and curiosity lead to personal growth.",
+      "D": "People should always follow others’ advice."
+    },
+    "answer": "C"
+  }
+]

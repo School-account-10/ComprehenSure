@@ -19,7 +19,7 @@
                     <GradientStop Color="#1B4A72" Offset="1" />
                 </LinearGradientBrush>
             </Grid.Background>
-
+    
             <!-- Decorative blob (mirrors dashboard style) -->
             <Ellipse Fill="#D6EAFF"
                      WidthRequest="200" HeightRequest="160"

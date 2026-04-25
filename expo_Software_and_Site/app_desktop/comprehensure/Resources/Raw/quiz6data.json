@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Why were the paper wings initially met with disbelief?",
+    "choices": {
+      "A": "People thought the engineers were lying about the invention.",
+      "B": "The wings looked too fragile to support human weight.",
+      "C": "The wings required rare fuel that no one could access.",
+      "D": "The wings had already caused accidents during testing."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What made the wings fundamentally different from traditional flight technology?",
+    "choices": {
+      "A": "They were powered by sunlight instead of engines.",
+      "B": "They depended on wind direction more than machines.",
+      "C": "They reacted to the flyer's emotional and mental state.",
+      "D": "They were designed only for short-distance travel."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "The first public demonstration mainly served to show that:",
+    "choices": {
+      "A": "Only trained pilots could fly safely.",
+      "B": "Fear instantly destroys the wings.",
+      "C": "The wings could function despite appearing delicate.",
+      "D": "The wings were too dangerous for public use."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What was the most unsettling conclusion from the first widely broadcast fall?",
+    "choices": {
+      "A": "The wings were secretly damaged by sabotage.",
+      "B": "The wings were unstable due to air pressure.",
+      "C": "The failure was caused by the flyer's internal emotional state.",
+      "D": "Engineers had hidden the wings' mechanical defects."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "Based on the passage, which emotional condition most directly caused the wings to fail?",
+    "choices": {
+      "A": "Feeling fear in general.",
+      "B": "Losing emotional balance and letting fear overpower control.",
+      "C": "Being overconfident and reckless.",
+      "D": "Feeling sadness before flying."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Why did governments begin requiring psychological screenings for flight permits?",
+    "choices": {
+      "A": "To ensure flyers had enough physical strength.",
+      "B": "To identify who might emotionally destabilize mid-flight.",
+      "C": "To prevent engineers from using unsafe materials.",
+      "D": "To stop the public from flying too often."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What discovery surprised Anya when she interviewed successful flyers?",
+    "choices": {
+      "A": "Most of them had never felt fear in their lives.",
+      "B": "Most of them used secret training methods.",
+      "C": "Most of them still felt fear but refused to let it dominate.",
+      "D": "Most of them had mechanical modifications on their wings."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "Why had Anya never flown before her nighttime attempt?",
+    "choices": {
+      "A": "She believed engineers were not allowed to fly.",
+      "B": "She feared public failure and embarrassment.",
+      "C": "She did not trust her own invention.",
+      "D": "She was physically unable to use the wings."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What caused Anya's wings to stabilize during her flight?",
+    "choices": {
+      "A": "She forced herself to stop being afraid.",
+      "B": "She remembered her engineering training.",
+      "C": "She accepted and acknowledged her fear instead of denying it.",
+      "D": "She focused on the city lights below her."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "Which statement best expresses the central message of the story?",
+    "choices": {
+      "A": "Technology becomes dangerous when it replaces machines with emotion.",
+      "B": "True strength is not the absence of fear but the ability to balance it with control.",
+      "C": "Fear is a weakness that must be removed to succeed.",
+      "D": "Progress is only possible through strict government regulation."
+    },
+    "answer": "B"
+  }
+]

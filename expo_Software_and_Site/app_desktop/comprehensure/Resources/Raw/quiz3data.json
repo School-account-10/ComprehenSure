@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Why was the observatory mostly forgotten?",
+    "choices": {
+      "A": "It was destroyed by a storm.",
+      "B": "It was closed by the government.",
+      "C": "People lost interest due to modern buildings and city lights.",
+      "D": "It became too dangerous to visit."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What motivated Adrian to visit the observatory?",
+    "choices": {
+      "A": "He was curious about how stars move and follow patterns.",
+      "B": "He needed a quiet place to study.",
+      "C": "He wanted to meet Dr. Vale.",
+      "D": "He was told to go there by his teacher."
+    },
+    "answer": "A"
+  },
+  {
+    "question": "Who is Dr. Vale in the story?",
+    "choices": {
+      "A": "A tourist visiting the observatory.",
+      "B": "A scientist who built the observatory.",
+      "C": "A student learning about astronomy.",
+      "D": "The caretaker who continues studying the stars."
+    },
+    "answer": "D"
+  },
+  {
+    "question": "What did Dr. Vale mean when she said the stars are not random?",
+    "choices": {
+      "A": "They move according to predictable laws.",
+      "B": "They are controlled by machines.",
+      "C": "They only appear at certain times.",
+      "D": "They are placed in the sky by people."
+    },
+    "answer": "A"
+  },
+  {
+    "question": "What challenge did Adrian face when first using the star chart?",
+    "choices": {
+      "A": "The chart was incomplete.",
+      "B": "The stars were too dim to see.",
+      "C": "The chart's patterns were not immediately clear.",
+      "D": "The telescope was broken."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "How did Adrian begin to understand the movement of the stars?",
+    "choices": {
+      "A": "By memorizing the chart.",
+      "B": "By asking others for answers.",
+      "C": "By observing repeatedly over time.",
+      "D": "By reading books only."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What task did Dr. Vale give Adrian on the cloudy night?",
+    "choices": {
+      "A": "To clean the observatory.",
+      "B": "To repair the telescope.",
+      "C": "To draw new constellations.",
+      "D": "To predict a star's position using his notes."
+    },
+    "answer": "D"
+  },
+  {
+    "question": "What was significant about Adrian's prediction?",
+    "choices": {
+      "A": "It was incorrect but helpful.",
+      "B": "It proved that patterns can be used to understand movement.",
+      "C": "It showed that guessing can work.",
+      "D": "It surprised Dr. Vale because it was random."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "How did Adrian apply what he learned beyond astronomy?",
+    "choices": {
+      "A": "He ignored patterns in daily life.",
+      "B": "He began noticing patterns in nature and routines.",
+      "C": "He only focused on studying stars.",
+      "D": "He stopped observing his surroundings."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What is the main message of the story?",
+    "choices": {
+      "A": "Careful observation and patience reveal hidden patterns and structure.",
+      "B": "The sky is too complex to understand.",
+      "C": "Discovery is only about finding new things.",
+      "D": "Science is only for experts."
+    },
+    "answer": "A"
+  }
+]
