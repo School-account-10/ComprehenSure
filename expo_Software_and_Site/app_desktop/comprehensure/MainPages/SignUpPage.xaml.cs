@@ -7,6 +7,14 @@ public partial class SignUpPage : ContentPage
     {
         InitializeComponent();
         BindingContext = viewModel;
+        Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
+        Shell.SetNavBarIsVisible(this, false);
+        Shell.SetNavBarHasShadow(this, false);
+        Shell.SetBackButtonBehavior(this, new BackButtonBehavior
+        {
+            IsVisible = false,
+            IsEnabled = false
+        });
     }
 
 
