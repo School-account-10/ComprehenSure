@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What functions as the primary \"currency\" in the city?",
+    "choices": {
+      "A": "Money and property.",
+      "B": "Influence and social status.",
+      "C": "Secrets with measurable value.",
+      "D": "Legal contracts."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "How do people in the city behave because of this system?",
+    "choices": {
+      "A": "They speak freely and openly.",
+      "B": "They avoid all social interaction.",
+      "C": "They act cautiously and deliberately.",
+      "D": "They ignore the existence of secrets."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What does Leora's \"invisible ledger\" symbolize?",
+    "choices": {
+      "A": "Her financial wealth.",
+      "B": "Her personal history and hidden truths.",
+      "C": "Her social connections.",
+      "D": "Her daily routine."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Why is Leora's secret considered valuable?",
+    "choices": {
+      "A": "It is widely known by others.",
+      "B": "It has already been exposed.",
+      "C": "It remains completely hidden and powerful.",
+      "D": "It is written in official records."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What warning does the clerk give about trading secrets?",
+    "choices": {
+      "A": "Secrets lose value over time.",
+      "B": "Every trade changes the balance and has consequences.",
+      "C": "Secrets can only be traded once.",
+      "D": "There is no risk involved in trading."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What is unusual about the envelope Leora receives?",
+    "choices": {
+      "A": "It contains multiple documents.",
+      "B": "It feels heavy and makes noise.",
+      "C": "It is silent and seems almost weightless.",
+      "D": "It is sealed with a visible lock."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What is the meaning of the line, \"You are not the only one who remembers\"?",
+    "choices": {
+      "A": "Leora's secret has been forgotten.",
+      "B": "Someone else shares or knows her hidden truth.",
+      "C": "The city records all secrets publicly.",
+      "D": "The clerk is warning her to leave."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What realization does Leora come to after opening the envelope?",
+    "choices": {
+      "A": "Secrets can be erased completely.",
+      "B": "Power comes from exposing everything.",
+      "C": "Secrets shift control rather than disappear.",
+      "D": "The system of trading secrets is ending."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What central conflict does Leora face?",
+    "choices": {
+      "A": "Whether to leave the city or stay.",
+      "B": "Whether to trust the clerk.",
+      "C": "Whether to reveal a powerful truth or remain silent.",
+      "D": "Whether to recover her original secret."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What is the main message of the story?",
+    "choices": {
+      "A": "Power is gained by collecting as many secrets as possible.",
+      "B": "Silence is a sign of weakness.",
+      "C": "True power lies in the careful choice between revealing and withholding truth.",
+      "D": "Secrets should always be shared for fairness."
+    },
+    "answer": "C"
+  }
+]

@@ -13,16 +13,16 @@ namespace comprehensure.DASHBOARD.StoryPage
             "In a quiet town surrounded by green hills, there stood an old library that most people had forgotten. It was built many years ago, long before modern buildings and computers became common. The paint on its walls was fading, and the wooden doors made a soft creaking sound when opened. Few visitors entered anymore. Most people preferred new bookstores or searched for information online. Because of this, the library felt lonely. Inside, tall shelves were filled with dusty books. Some books looked so old that their pages had turned yellow. The smell of old paper and wood filled the air. Sunlight entered through narrow windows, lighting up floating dust in the room. It felt like stepping into the past.",
 
             // Page 2
-            "People in town often said that the library held forgotten knowledge, stories and letters that no one had read for years. Some even believed it contained secret writings from explorers who had traveled to faraway lands long ago. One afternoon, a curious student named Leo decided to visit. Leo loved history. While other students saw history as boring lists of dates, he saw it as stories of real people who made brave choices. When he heard rumors about the old library, his interest grew stronger. He wanted to see if the stories were true. As he stepped inside, the wooden floor creaked under his shoes. The room was quiet�so quiet that he could hear the turning of his own pages. He slowly walked between the shelves, reading the titles. Many books had not been touched for years.",
+            "People in town often said that the library held forgotten knowledge, stories and letters that no one had read for years. Some even believed it contained secret writings from explorers who had traveled to faraway lands long ago. One afternoon, a curious student named Leo decided to visit. Leo loved history. While other students saw history as boring lists of dates, he saw it as stories of real people who made brave choices. When he heard rumors about the old library, his interest grew stronger. He wanted to see if the stories were true. As he stepped inside, the wooden floor creaked under his shoes. The room was quiet—so quiet that he could hear the turning of his own pages. He slowly walked between the shelves, reading the titles. Many books had not been touched for years.",
 
             // Page 3
-            "While exploring the back corner of the library, Leo noticed something unusual. One bookshelf looked slightly out of place. Curious, he gently pushed it. To his surprise, it moved just enough to reveal a narrow passage behind it. His heart beat faster. He stepped inside the hidden space. It was small and dim, with a single desk and several old journals stacked on top. The covers were worn, and some pages were tied together with thin string. Leo carefully opened one journal. The writing inside was strange. It was written in shorthand�a quick writing style used long ago to save time and space. At first, he could not understand it. But instead of giving up, he copied parts of the text and began studying the symbols.",
+            "While exploring the back corner of the library, Leo noticed something unusual. One bookshelf looked slightly out of place. Curious, he gently pushed it. To his surprise, it moved just enough to reveal a narrow passage behind it. His heart beat faster. He stepped inside the hidden space. It was small and dim, with a single desk and several old journals stacked on top. The covers were worn, and some pages were tied together with thin string. Leo carefully opened one journal. The writing inside was strange. It was written in shorthand—a quick writing style used long ago to save time and space. At first, he could not understand it. But instead of giving up, he copied parts of the text and began studying the symbols.",
 
             // Page 4
             "For days after school, Leo returned to the library. He sat at the small desk and worked patiently. He compared letters, searched for patterns, and slowly decoded the words. It was not easy. Sometimes he felt frustrated. Sometimes he made mistakes and had to start again. But little by little, the stories began to make sense. The journals were written by explorers from many years ago. They described long journeys across unknown lands. There were detailed drawings of rivers, mountains, and paths that were not on modern maps. Some pages told of dangerous storms and difficult choices. Others spoke about teamwork, courage, and fear.",
 
             // Page 5
-            "One journal described an expedition where a group of travelers had disappeared. The writer carefully recorded their last known location and the choices they made before they vanished. Leo realized that these were not just adventure stories. They were real accounts of human decisions�good ones and bad ones. As he continued reading, Leo began to understand something important. History was not only about big events. It was about small details. It was about writing things down carefully. It was about observing and recording what people did, why they did it, and what happened after.",
+            "One journal described an expedition where a group of travelers had disappeared. The writer carefully recorded their last known location and the choices they made before they vanished. Leo realized that these were not just adventure stories. They were real accounts of human decisions—good ones and bad ones. As he continued reading, Leo began to understand something important. History was not only about big events. It was about small details. It was about writing things down carefully. It was about observing and recording what people did, why they did it, and what happened after.",
 
             // Page 6
             "He learned that one small decision could change everything. A wrong turn on a map. A choice to continue during bad weather. A moment of doubt or courage. After a month of hard work, Leo had translated several journals. He organized the information into clear notes and simple summaries. He created maps based on the old drawings and compared them with modern ones. Excited by what he discovered, Leo shared his findings with the local history club. At first, some members were surprised that such important stories had been hidden for so long. But as Leo explained the journals, everyone became interested.",
@@ -38,11 +38,8 @@ namespace comprehensure.DASHBOARD.StoryPage
             InitializeComponent();
             _dots = new BoxView[] { Dot1, Dot2, Dot3, Dot4, Dot5, Dot6, Dot7 };
             UpdateUI();
-        }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
+            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
             Shell.SetNavBarIsVisible(this, false);
             Shell.SetNavBarHasShadow(this, false);
             Shell.SetBackButtonBehavior(this, new BackButtonBehavior
@@ -50,6 +47,12 @@ namespace comprehensure.DASHBOARD.StoryPage
                 IsVisible = false,
                 IsEnabled = false
             });
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
         }
 
         private void UpdateUI()
@@ -96,9 +99,14 @@ namespace comprehensure.DASHBOARD.StoryPage
             await Navigation.PushAsync(new QuizPage1(new QuizPage1ViewModel()));
         }
 
+        // ── Dictionary button ─────────────────────────────────────────────
+        private async void OnDictionaryClicked(object sender, TappedEventArgs e)
+        {
+            await Navigation.PushAsync(new DictionaryPage1());
+        }
+
         private void OnBackClicked(object sender, EventArgs e)
         {
-            // Show custom styled popup overlay
             PopupOverlay.IsVisible = true;
         }
 
@@ -111,8 +119,6 @@ namespace comprehensure.DASHBOARD.StoryPage
         private void OnPopupCancel(object sender, EventArgs e)
         {
             PopupOverlay.IsVisible = false;
-
-
         }
     }
 }

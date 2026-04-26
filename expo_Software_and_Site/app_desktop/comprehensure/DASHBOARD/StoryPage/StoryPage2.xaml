@@ -2,19 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="comprehensure.DASHBOARD.StoryPage.StoryPage2"
-             BackgroundColor="#F4F8FB"
+             BackgroundColor="#0A1628"
              Shell.NavBarIsVisible="False">
 
     <Grid>
 
-        <!-- Background decorative blobs -->
-        <Grid x:Name="BlobLayer" HorizontalOptions="Fill" VerticalOptions="Fill" InputTransparent="True">
-            <Ellipse Fill="White"   WidthRequest="580" HeightRequest="440"
-                     HorizontalOptions="Start" VerticalOptions="Start"
-                     Margin="-140,-110,0,0" Opacity="0.75" />
-            <Ellipse Fill="#D6EAFF" WidthRequest="460" HeightRequest="380"
-                     HorizontalOptions="End" VerticalOptions="End"
-                     Margin="0,0,-110,-60" Opacity="0.45" />
+        <!-- Blurred thumbnail background -->
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" InputTransparent="True">
+            <!-- Full-screen thumbnail image -->
+            <Image Source="t2.png"
+                   Aspect="AspectFill"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Fill"
+                   Opacity="0.55" />
+            <!-- Frosted glass overlay -->
+            <BoxView BackgroundColor="#0A1628" Opacity="0.80"
+                     HorizontalOptions="Fill" VerticalOptions="Fill" />
         </Grid>
 
         <ScrollView>
@@ -55,11 +58,11 @@
                                          Spacing="2">
                         <Label Text="MODULE 2"
                                FontSize="10" FontAttributes="Bold"
-                               TextColor="#2E6BA8" CharacterSpacing="2.2"
+                               TextColor="#7EB8F7" CharacterSpacing="2.2"
                                HorizontalOptions="Center" />
                         <Label Text="The Clockmaker's Secret"
                                FontSize="20" FontAttributes="Bold"
-                               TextColor="#0F2D4A"
+                               TextColor="#FFFFFF"
                                HorizontalOptions="Center" />
                     </VerticalStackLayout>
 
@@ -85,16 +88,16 @@
                                x:Name="PageIndicator"
                                Text="Page 1 of 7"
                                FontSize="12" FontAttributes="Bold"
-                               TextColor="#6B8CAE" />
+                               TextColor="#C8DCEF" />
                         <Label Grid.Column="1"
                                x:Name="ProgressPercent"
                                Text="14%"
                                FontSize="12" FontAttributes="Bold"
-                               TextColor="#2E6BA8" />
+                               TextColor="#7EB8F7" />
                     </Grid>
 
                     <!-- Track -->
-                    <Border BackgroundColor="#E2EAF4"
+                    <Border BackgroundColor="#FFFFFF" Opacity="0.20"
                             Stroke="Transparent" StrokeThickness="0"
                             HeightRequest="8">
                         <Border.StrokeShape>
@@ -102,7 +105,7 @@
                         </Border.StrokeShape>
                         <!-- Fill — width controlled via WidthRequest binding -->
                         <Border x:Name="ProgressFill"
-                                BackgroundColor="#0F2D4A"
+                                BackgroundColor="#4A90D9"
                                 Stroke="Transparent" StrokeThickness="0"
                                 HeightRequest="8"
                                 HorizontalOptions="Start"
@@ -117,14 +120,14 @@
                 <!-- ══════════════════════════════════════ -->
                 <!--  STORY CARD                           -->
                 <!-- ══════════════════════════════════════ -->
-                <Border BackgroundColor="White"
-                        Stroke="#CBDCEB" StrokeThickness="1"
+                <Border BackgroundColor="#FDFBF7"
+                        Stroke="#D4C5A9" StrokeThickness="1"
                         Padding="44,40">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="36" />
                     </Border.StrokeShape>
                     <Border.Shadow>
-                        <Shadow Brush="#0F2D4A" Offset="0,10" Radius="32" Opacity="0.07" />
+                        <Shadow Brush="#000000" Offset="0,16" Radius="40" Opacity="0.35" />
                     </Border.Shadow>
 
                     <VerticalStackLayout Spacing="20">
@@ -132,14 +135,14 @@
                         <!-- Decorative open-quote -->
                         <Label Text="&#x201C;"
                                FontSize="72" TextColor="#2E6BA8"
-                               Opacity="0.18"
+                               Opacity="0.45"
                                Margin="0,-20,0,-28"
                                HorizontalOptions="Start" />
 
                         <!-- Story text -->
                         <Label x:Name="StoryLabel"
                                FontSize="17"
-                               TextColor="#1A2E42"
+                               TextColor="#0F1E2E"
                                LineHeight="1.85"
                                HorizontalTextAlignment="Start"
                                VerticalOptions="Start" />
@@ -147,7 +150,7 @@
                         <!-- Decorative close-quote -->
                         <Label Text="&#x201D;"
                                FontSize="72" TextColor="#2E6BA8"
-                               Opacity="0.18"
+                               Opacity="0.45"
                                Margin="0,-28,0,-16"
                                HorizontalOptions="End" />
 
@@ -166,17 +169,17 @@
                                            VerticalOptions="Center"
                                            Spacing="8">
                         <BoxView x:Name="Dot1" WidthRequest="10" HeightRequest="10"
-                                 CornerRadius="5" BackgroundColor="#0F2D4A" />
+                                 CornerRadius="5" BackgroundColor="#FFFFFF" />
                         <BoxView x:Name="Dot2" WidthRequest="8" HeightRequest="8"
-                                 CornerRadius="4" BackgroundColor="#CBDCEB" />
+                                 CornerRadius="4" BackgroundColor="#FFFFFF" Opacity="0.35" />
                         <BoxView x:Name="Dot3" WidthRequest="8" HeightRequest="8"
-                                 CornerRadius="4" BackgroundColor="#CBDCEB" />
+                                 CornerRadius="4" BackgroundColor="#FFFFFF" Opacity="0.35" />
                         <BoxView x:Name="Dot4" WidthRequest="8" HeightRequest="8"
-                                 CornerRadius="4" BackgroundColor="#CBDCEB" />
+                                 CornerRadius="4" BackgroundColor="#FFFFFF" Opacity="0.35" />
                         <BoxView x:Name="Dot5" WidthRequest="8" HeightRequest="8"
-                                 CornerRadius="4" BackgroundColor="#CBDCEB" />
+                                 CornerRadius="4" BackgroundColor="#FFFFFF" Opacity="0.35" />
                         <BoxView x:Name="Dot6" WidthRequest="8" HeightRequest="8"
-                                 CornerRadius="4" BackgroundColor="#CBDCEB" />
+                                 CornerRadius="4" BackgroundColor="#FFFFFF" Opacity="0.35" />
 
                     </HorizontalStackLayout>
 
@@ -199,6 +202,64 @@
                                 HeightRequest="52" Padding="22,0" />
                     </Border>
                 </Grid>
+
+                <!-- ══════════════════════════════════════ -->
+                <!--  DICTIONARY BUTTON                    -->
+                <!-- ══════════════════════════════════════ -->
+                <Border Stroke="Transparent" StrokeThickness="0" Padding="0">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#0A0F1E" Offset="0"/>
+                            <GradientStop Color="#1A2744" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="28"/>
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Brush="#1A1008" Offset="0,8" Radius="20" Opacity="0.30"/>
+                    </Border.Shadow>
+                    <Grid ColumnDefinitions="Auto,*,Auto" Padding="24,16" ColumnSpacing="14">
+                        <!-- Book icon chip -->
+                        <Border Grid.Column="0"
+                                BackgroundColor="#1E2F52"
+                                Stroke="Transparent" StrokeThickness="0"
+                                HeightRequest="44" WidthRequest="44">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="22"/>
+                            </Border.StrokeShape>
+                            <Label Text="📖" FontSize="20"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </Border>
+                        <!-- Text -->
+                        <VerticalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+                            <Label Text="VOCABULARY GUIDE"
+                                   FontSize="10" FontAttributes="Bold"
+                                   TextColor="#4A90D9" CharacterSpacing="2"/>
+                            <Label Text="View all words &amp; pronunciations"
+                                   FontSize="13" TextColor="#7EB8F7"/>
+                        </VerticalStackLayout>
+                        <!-- Arrow chip -->
+                        <Border Grid.Column="2"
+                                BackgroundColor="#1E3A6B"
+                                Stroke="Transparent" StrokeThickness="0"
+                                HeightRequest="36" WidthRequest="36"
+                                VerticalOptions="Center">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="18"/>
+                            </Border.StrokeShape>
+                            <Label Text="→" FontSize="16" FontAttributes="Bold"
+                                   TextColor="#F5E4B8"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </Border>
+                        <!-- Tap gesture over the whole row -->
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnDictionaryClicked"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </Border>
 
                 <!-- ══════════════════════════════════════ -->
                 <!--  GO TO QUIZ — only shows on last page -->

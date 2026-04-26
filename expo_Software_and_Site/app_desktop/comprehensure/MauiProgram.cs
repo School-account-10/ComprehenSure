@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui;
 using comprehensure.DASHBOARD;
 using comprehensure.DASHBOARD.StoryPage;
 using comprehensure.DataBaseControl.Models;
@@ -61,15 +61,28 @@ namespace comprehensure
             builder.Services.AddTransient<StoryPage7>();
             builder.Services.AddTransient<StoryPage8>();
 
-
             builder.Services.AddTransient<StoryPage2ViewModel>();
             builder.Services.AddTransient<StoryPage4ViewModel>();
+
+            // ── ADDED: QuizPage ViewModels 1-8 ──────────────────────────
+            builder.Services.AddTransient<QuizPage1ViewModel>(); // ADDED
             builder.Services.AddTransient<QuizPage2ViewModel>();
             builder.Services.AddTransient<QuizPage3ViewModel>();
+            builder.Services.AddTransient<QuizPage4ViewModel>(); // ADDED
             builder.Services.AddTransient<QuizPage5ViewModel>();
             builder.Services.AddTransient<QuizPage6ViewModel>();
             builder.Services.AddTransient<QuizPage7ViewModel>();
             builder.Services.AddTransient<QuizPage8ViewModel>();
+
+            // ── ADDED: QuizPage Pages 1-8 ───────────────────────────────
+            builder.Services.AddTransient<QuizPage1>(); // ADDED
+            builder.Services.AddTransient<QuizPage2>();
+            builder.Services.AddTransient<QuizPage3>(); // ADDED
+            builder.Services.AddTransient<QuizPage4>(); // ADDED
+            builder.Services.AddTransient<QuizPage5>(); // ADDED
+            builder.Services.AddTransient<QuizPage6>(); // ADDED
+            builder.Services.AddTransient<QuizPage7>(); // ADDED
+            builder.Services.AddTransient<QuizPage8>(); // ADDED
 
             return builder.Build();
         }

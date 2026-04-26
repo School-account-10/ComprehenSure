@@ -6,6 +6,14 @@ namespace comprehensure
         {
             InitializeComponent();
             BindingContext = viewModel;
+            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
+            Shell.SetNavBarIsVisible(this, false);
+            Shell.SetNavBarHasShadow(this, false);
+            Shell.SetBackButtonBehavior(this, new BackButtonBehavior
+            {
+                IsVisible = false,
+                IsEnabled = false
+            });
         }
 
         public class UserAccount // in simple terms this more of the name of the terms in the accounts.json

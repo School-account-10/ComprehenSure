@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="comprehensure.DASHBOARD.StoryPage.DictionaryPage6"
+             BackgroundColor="#0A0F1E"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+
+        <!-- Background texture blobs -->
+        <Grid InputTransparent="True" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Ellipse Fill="#1A2744" WidthRequest="500" HeightRequest="500"
+                     HorizontalOptions="Start" VerticalOptions="Start"
+                     Margin="-180,-180,0,0" Opacity="0.6"/>
+            <Ellipse Fill="#0F1A30" WidthRequest="400" HeightRequest="400"
+                     HorizontalOptions="End" VerticalOptions="End"
+                     Margin="0,0,-120,-120" Opacity="0.5"/>
+            <Ellipse Fill="#1E2F52" WidthRequest="300" HeightRequest="300"
+                     HorizontalOptions="Center" VerticalOptions="Center"
+                     Opacity="0.3"/>
+        </Grid>
+
+        <ScrollView>
+            <VerticalStackLayout Spacing="0" Padding="0,0,0,60"
+                                 HorizontalOptions="Center"
+                                 MaximumWidthRequest="760">
+
+                <!-- ═══════════════════════════════════ -->
+                <!--  HERO HEADER                        -->
+                <!-- ═══════════════════════════════════ -->
+                <Grid Padding="32,52,32,32">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Back button -->
+                    <Border Grid.Row="0"
+                            BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1"
+                            HorizontalOptions="Start" Margin="0,0,0,28">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Button Text="← Back to Story"
+                                x:Name="BackBtn"
+                                Clicked="OnBackClicked"
+                                BackgroundColor="Transparent"
+                                TextColor="#7EB8F7"
+                                BorderWidth="0"
+                                FontAttributes="Bold"
+                                FontSize="13"
+                                HeightRequest="44"
+                                Padding="20,0"/>
+                    </Border>
+
+                    <!-- Book icon row -->
+                    <HorizontalStackLayout Grid.Row="1" Spacing="14"
+                                           HorizontalOptions="Center"
+                                           Margin="0,0,0,16">
+                        <!-- Decorative lines -->
+                        <BoxView BackgroundColor="#1E3A6B" HeightRequest="1" WidthRequest="60"
+                                 VerticalOptions="Center"/>
+                        <Label Text="📖" FontSize="36" VerticalOptions="Center"/>
+                        <BoxView BackgroundColor="#1E3A6B" HeightRequest="1" WidthRequest="60"
+                                 VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <!-- Title block -->
+                    <VerticalStackLayout Grid.Row="2" Spacing="6" HorizontalOptions="Center">
+                        <Label Text="VOCABULARY"
+                               FontSize="11" FontAttributes="Bold"
+                               TextColor="#4A90D9" CharacterSpacing="5"
+                               HorizontalOptions="Center"/>
+                        <Label Text="The Weight of Paper Wings"
+                               FontSize="28" FontAttributes="Bold"
+                               TextColor="#E8F0FF"
+                               HorizontalOptions="Center"/>
+                        <Label Text="17 words to know"
+                               FontSize="13" TextColor="#4A6A9A"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- Divider -->
+                <Border HeightRequest="1" Stroke="Transparent" Margin="32,0,32,32">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="Transparent" Offset="0"/>
+                            <GradientStop Color="#1E3A6B" Offset="0.5"/>
+                            <GradientStop Color="Transparent" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+
+                <!-- ═══════════════════════════════════ -->
+                <!--  WORD CARDS                         -->
+                <!-- ═══════════════════════════════════ -->
+                <VerticalStackLayout Spacing="16" Padding="24,0">
+
+                    <!-- Delicate -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <!-- Left accent strip -->
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <!-- Content -->
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Delicate" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text="/ˈde-li-kate/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Delicate"/>
+                                </Grid>
+                                <Label Text="Delicate describes something easily damaged or fragile." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Translucent -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Translucent" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text="/trans-ˈlu-sent/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Translucent"/>
+                                </Grid>
+                                <Label Text="Translucent means allowing light to pass through but not clearly." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Precision -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Precision" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text="/pre-ˈsi-shon/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Precision"/>
+                                </Grid>
+                                <Label Text="Precision refers to accuracy and careful detail." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Breakthrough -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Breakthrough" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text=" /ˈbreak-ˌthru/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Breakthrough"/>
+                                </Grid>
+                                <Label Text="Precise means exact and accurate." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Unsettled -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Unsettled" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text="/ˌun-ˈse-teld/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Unsettled"/>
+                                </Grid>
+                                <Label Text="Unsettled describes a feeling of discomfort or unease." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Predictable -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Predictable" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text="/pri-ˈdik-ta-bol/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Predictable"/>
+                                </Grid>
+                                <Label Text="Predictable means something that can be expected or known." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Suspended -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Suspended" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text="/sus-ˈspen-ded/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Suspended"/>
+                                </Grid>
+                                <Label Text="Suspended means hanging or floating in the air." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Fascination -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Fascination" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text="/ˌfa-si-ˈna-shon/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Fascination"/>
+                                </Grid>
+                                <Label Text="Fascination refers to strong interest or attraction." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Suppress -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Suppress" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text=" /so-ˈpress/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Suppress"/>
+                                </Grid>
+                                <Label Text="Suppress means to hold back or prevent something from being expressed." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Hesitation -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Hesitation" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text=" /ˌhe-si-ˈta-shon/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Hesitation"/>
+                                </Grid>
+                                <Label Text="Hesitation is a pause due to uncertaint." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Investigations -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Investigations" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text="/in-ˌves-ti-ˈga-shons/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Investigations"/>
+                                </Grid>
+                                <Label Text="Investigations are careful examinations to discover facts, used to understand the cause of accidents." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Vulnerability -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Vulnerability" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text="/ˌvul-ne-ra-ˈbi-li-ti/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Vulnerability"/>
+                                </Grid>
+                                <Label Text="Vulnerability refers to the state of being open to harm or weakness." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Psychological -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Psychological" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text=" /ˌsai-ko-ˈlo-ji-kal/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Psychological"/>
+                                </Grid>
+                                <Label Text="Psychological relates to the mind and emotions." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Acknowledging -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Acknowledging" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text= "/ack-ˈna-le-jing/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Acknowledging"/>
+                                </Grid>
+                                <Label Text="Acknowledging means accepting or recognizing something." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Disorienting -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Disorienting" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text= "/dis-ˈor-yen-ting/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Disorienting"/>
+                                </Grid>
+                                <Label Text="Disorienting describes a feeling of confusion or loss of direction." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Eliminate -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Eliminate" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text= "/e-ˈli-mi-ˌnate/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Eliminate"/>
+                                </Grid>
+                                <Label Text="Eliminate means to remove completely." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Stability -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,8" Radius="24" Opacity="0.4"/>
+                        </Border.Shadow>
+                        <Grid ColumnDefinitions="8,*" ColumnSpacing="0">
+                            <Border Grid.Column="0" Stroke="Transparent" StrokeThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#2E6BA8" Offset="0"/>
+                                        <GradientStop Color="#1A3F6B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20,0,0,20"/>
+                                </Border.StrokeShape>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1" Spacing="6" Padding="20,18,20,18">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <Label Grid.Column="0" Text="Stability" FontSize="20" FontAttributes="Bold" TextColor="#E8F0FF"/>
+                                    <Border Grid.Column="1" BackgroundColor="#0F1A30" Stroke="#1E3A6B" StrokeThickness="1" Padding="10,4">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="10"/>
+                                        </Border.StrokeShape>
+                                        <Label Text= "/sta-ˈbi-li-ti/" FontSize="11" TextColor="#4A90D9" FontAttributes="Italic"/>
+                                    </Border>
+                                
+                                    <Button Grid.Column="2"
+                                            Text="🔊"
+                                            FontSize="18"
+                                            BackgroundColor="Transparent"
+                                            BorderWidth="0"
+                                            Padding="8,0"
+                                            HeightRequest="36"
+                                            WidthRequest="44"
+                                            Clicked="OnSpeakClicked"
+                                            CommandParameter="Stability"/>
+                                </Grid>
+                                <Label Text="Stability refers to a state of balance and control." FontSize="14" TextColor="#7EB8F7" LineHeight="1.5"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+
+                    <!-- Bottom quote -->
+                    <Border BackgroundColor="#0D1528" Stroke="#8B6914" StrokeThickness="1" Padding="28,22" Margin="0,8,0,0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                            <Label Text="&#x2728; Tip" FontSize="12" FontAttributes="Bold"
+                                   TextColor="#4A90D9" CharacterSpacing="2"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="Try to use each word in a sentence as you read the story. It helps the meaning stick!"
+                                   FontSize="13" TextColor="#4A6A9A"
+                                   HorizontalTextAlignment="Center"
+                                   LineHeight="1.6"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

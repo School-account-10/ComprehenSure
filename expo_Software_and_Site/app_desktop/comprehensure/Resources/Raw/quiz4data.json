@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What was Mara always interested in looking at?",
+    "choices": {
+      "A": "Animals and pets.",
+      "B": "Repeating shapes, the beat in music, and how leaves grow.",
+      "C": "Toys and games.",
+      "D": "Reading and writing stories."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "When Mara first goes into the garden, what makes it special?",
+    "choices": {
+      "A": "It has a very large and beautiful fountain in the middle.",
+      "B": "Plants follow rules, like spirals and exact intervals.",
+      "C": "The garden is full of wild, messy plants that grow everywhere.",
+      "D": "It has rare flowers that can't be found anywhere else."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "At the end of the story, what does Mara realize about ordinary places?",
+    "choices": {
+      "A": "They are boring and she wants to move to a big city.",
+      "B": "They look extraordinary once you learn how to look for hidden structures.",
+      "C": "They are only beautiful if a mathematician fixes them.",
+      "D": "You should always keep your eyes closed when walking through them."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "When Mara guessed where the next flowers would grow, what did she notice about the pattern?",
+    "choices": {
+      "A": "Two more flowers and moved a little toward the east.",
+      "B": "The flowers were changing colors from red to bright blue.",
+      "C": "The flowers were growing in a perfect circle around a big tree.",
+      "D": "There was no pattern at all."
+    },
+    "answer": "A"
+  },
+  {
+    "question": "What/why did Mara examine such things as floor tiles and musical beats?",
+    "choices": {
+      "A": "She enjoyed their colorful designs.",
+      "B": "She was trying to discover some patterns.",
+      "C": "Her teacher instructed her that she had to do it for her assignment.",
+      "D": "She intended to paint them in her coloring book."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "How did Mr. Calder design his garden?",
+    "choices": {
+      "A": "Colorful flowers.",
+      "B": "Pictures from books.",
+      "C": "Mathematics and geometry.",
+      "D": "Good luck charms and spells."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What did Mara keep in her notebook?",
+    "choices": {
+      "A": "Flowers and leaves that had dried up.",
+      "B": "A story about Mr. Calder.",
+      "C": "Posters and stickers.",
+      "D": "Illustrations and calculations."
+    },
+    "answer": "D"
+  },
+  {
+    "question": "Where did the red flowers widen as they stretched out?",
+    "choices": {
+      "A": "Along the straight paths.",
+      "B": "Inside the iron gate.",
+      "C": "In the spirals.",
+      "D": "Near the lavender plants."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "Where did the story about the garden happen?",
+    "choices": {
+      "A": "In the middle of a busy city.",
+      "B": "A loud playground.",
+      "C": "On a small island.",
+      "D": "At the quieter edge of town."
+    },
+    "answer": "D"
+  },
+  {
+    "question": "How did Mara feel about patterns after visiting the garden?",
+    "choices": {
+      "A": "She thought they were just for math class.",
+      "B": "She saw them as clues to how things work.",
+      "C": "She thought they were too hard to learn.",
+      "D": "She decided she didn't like patterns anymore."
+    },
+    "answer": "B"
+  }
+]
