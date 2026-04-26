@@ -17,15 +17,14 @@ namespace comprehensure
 
         protected override async void OnStart()
         {
+            Connectivity.Current.ConnectivityChanged += Connectivity_ConnectivityChanged;
             string savedUid = Preferences.Default.Get("SavedUserUid", "");
             string savedEmail = Preferences.Default.Get("SavedUserEmail", "");
 
             if (string.IsNullOrEmpty(savedUid))
             {
-
                 return;
             }
-
 
             bool hasUsername = await CheckHasUsername(savedUid);
 
@@ -35,7 +34,6 @@ namespace comprehensure
             }
             else
             {
-
                 await Shell.Current.GoToAsync($"///UsernameReq?email={savedEmail}&uid={savedUid}");
             }
         }
@@ -45,7 +43,8 @@ namespace comprehensure
             string url = $"{BaseUrl}/userdata/{uid}";
             try
             {
-                var response = await client.GetAsync(url);
+                var response = await client.GetAsync(url); // fix this part for no connection
+
                 if (!response.IsSuccessStatusCode)
                     return false;
 
@@ -53,11 +52,9 @@ namespace comprehensure
                 using var doc = JsonDocument.Parse(json);
                 var fields = doc.RootElement.GetProperty("fields");
 
-
                 if (fields.TryGetProperty("UserHasUserName", out var hasUserNameProp))
                     if (hasUserNameProp.TryGetProperty("booleanValue", out var boolVal))
                         return boolVal.GetBoolean();
-
 
                 if (fields.TryGetProperty("Username", out var usernameProp))
                 {
@@ -69,7 +66,6 @@ namespace comprehensure
             }
             catch
             {
-
                 return !string.IsNullOrEmpty(uid);
             }
         }
@@ -79,13 +75,32 @@ namespace comprehensure
             return new Window(new AppShell());
         }
 
-        private async void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        public static async Task HandleConnectivityAsync(NetworkAccess networkAccess)
         {
-            var current = e.NetworkAccess;
-            if (current == NetworkAccess.Internet)
+            Boolean isnetwork;
+
+            if (networkAccess == NetworkAccess.Internet)
+            {
+                isnetwork = true;
                 await Shell.Current.DisplayAlert("Connected", "You are now online.", "OK");
-            else
-                await Shell.Current.DisplayAlert("Connection Lost", "You are now offline. You can still use the app", "OK");
+            }
+            else if (networkAccess == NetworkAccess.None)
+            {
+                isnetwork = false;
+                await Shell.Current.DisplayAlert(
+                    "Connection Lost",
+                    "Network is required to use this app",
+                    "OK"
+                );
+            }
+        }
+
+        private async void Connectivity_ConnectivityChanged(
+            object sender,
+            ConnectivityChangedEventArgs e
+        )
+        {
+            await HandleConnectivityAsync(e.NetworkAccess);
         }
     }
 }

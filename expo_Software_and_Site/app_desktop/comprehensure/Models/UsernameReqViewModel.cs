@@ -37,7 +37,7 @@ namespace comprehensure.DataBaseControl.Models
 
 
 
-        public async Task Toastshow(string showtext) // this part does not work in windows 
+        public async Task Toastshow(string showtext) // this part does not work in windows (note for future self)
         {
 
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
