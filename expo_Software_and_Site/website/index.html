@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comprehensure – Learn Smarter, Retain More</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0b1a2e;
+      --navy2:   #0f2240;
+      --navy3:   #152d52;
+      --blue:    #2563eb;
+      --blue2:   #3b82f6;
+      --white:   #ffffff;
+      --offwhite:#f0f6ff;
+      --yellow:  #fef3b0;
+      --yellow2: #fde68a;
+      --muted:   #94a3b8;
+      --muted2:  #64748b;
+      --border:  rgba(255,255,255,0.08);
+      --font:    'Plus Jakarta Sans', sans-serif;
+      --radius:  14px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--offwhite);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* subtle grid bg */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 16px 7%;
+      background: rgba(11,26,46,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .nav-cta, nav .hamburger { justify-self: end; }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 1.2rem; font-weight: 800; color: var(--white);
+    }
+    .nav-logo img { width: 64px; height: 64px; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.4); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      font-size: .9rem; font-weight: 500; color: var(--muted);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue); color: #fff;
+      font-weight: 600; font-size: .88rem;
+      padding: 9px 20px; border-radius: 8px;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--blue2); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
+
+    /* ── MOBILE NAV ── */
+    .mobile-nav {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(11,26,46,.97); flex-direction: column;
+      align-items: center; justify-content: center; gap: 28px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 1.6rem; font-weight: 700; color: var(--white); }
+    .mobile-nav-close { position: absolute; top: 22px; right: 7%; font-size: 1.8rem; cursor: pointer; color: var(--muted); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; z-index: 1;
+      min-height: 95vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 90px 7% 60px;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(254,243,176,0.07);
+      border: 1px solid rgba(254,243,176,0.2);
+      color: var(--yellow2); font-size: .8rem; font-weight: 600;
+      padding: 5px 14px; border-radius: 99px; margin-bottom: 26px;
+      animation: up .5s ease both;
+    }
+    .hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--yellow2); animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+      font-weight: 800; line-height: 1.1; letter-spacing: -.5px;
+      max-width: 820px; color: var(--white);
+      animation: up .6s .08s ease both;
+    }
+    .hero h1 .hl { color: var(--yellow); }
+    .hero p {
+      max-width: 520px; margin: 20px auto 0;
+      font-size: 1.05rem; color: var(--muted); font-weight: 400;
+      animation: up .6s .16s ease both;
+    }
+    .hero-btns {
+      display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; justify-content: center;
+      animation: up .6s .24s ease both;
+    }
+    .btn-blue {
+      background: var(--blue); color: #fff;
+      font-weight: 600; font-size: .95rem;
+      padding: 13px 28px; border-radius: 8px;
+      transition: background .2s, transform .15s;
+    }
+    .btn-blue:hover { background: var(--blue2); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,.15);
+      color: var(--offwhite); font-weight: 600; font-size: .95rem;
+      padding: 13px 28px; border-radius: 8px;
+      background: rgba(255,255,255,.03);
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.06); }
+
+    @keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ── HERO MOCKUP ── */
+    .hero-mockup {
+      position: relative; margin-top: 60px; width: 100%; max-width: 1000px;
+      animation: up .7s .35s ease both;
+    }
+    .desktop-frame {
+      width: 100%; border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--navy2);
+      box-shadow: 0 30px 90px rgba(0,0,0,.5);
+      overflow: hidden;
+    }
+    .frame-bar {
+      background: rgba(255,255,255,.03); padding: 10px 14px;
+      display: flex; align-items: center; gap: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .fdot { width:10px;height:10px;border-radius:50%; }
+    .fdot:nth-child(1){background:#ff5f57;} .fdot:nth-child(2){background:#febc2e;} .fdot:nth-child(3){background:#28c840;}
+    .frame-url {
+      flex:1; margin:0 10px; background:rgba(255,255,255,.04);
+      border-radius:5px; height:22px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:.7rem;color:var(--muted2);
+    }
+    .frame-screen {
+      aspect-ratio: 16/9;
+      background: linear-gradient(140deg, var(--navy2), var(--navy3));
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+    }
+    .ph-icon { font-size: 2rem; opacity: .4; }
+    .ph-label { font-size: .75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.2); }
+    .ph-tip { font-size: .72rem; color: rgba(255,255,255,.15); font-style: italic; }
+
+    .mobile-float {
+      position: absolute; right: -30px; bottom: -50px; width: 170px;
+    }
+    .mobile-frame {
+      border-radius: 24px; background: var(--navy2);
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 24px 70px rgba(0,0,0,.6); overflow: hidden;
+    }
+    .mobile-notch { background: #000; height: 20px; margin: 0 auto; width: 42%; border-radius: 0 0 12px 12px; }
+    .mobile-screen {
+      aspect-ratio: 9/19;
+      background: linear-gradient(160deg, var(--navy2), var(--navy3));
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 8px; padding: 12px;
+    }
+
+    /* ── SECTIONS ── */
+    section { position: relative; z-index: 1; padding: 90px 7%; }
+    .sec-tag { font-size: .75rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--yellow2); margin-bottom: 10px; display: block; }
+    .sec-title { font-size: clamp(1.7rem,3.5vw,2.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -.3px; color: var(--white); }
+    .sec-sub { color: var(--muted); font-size: 1rem; margin-top: 12px; max-width: 500px; }
+    .center { text-align: center; }
+    .mx { margin-left: auto; margin-right: auto; }
+
+    /* ── FEATURES ── */
+    #features { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .features-head { margin-bottom: 52px; }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px; max-width: 1060px; margin: 0 auto;
+    }
+    .fcard {
+      background: rgba(11,26,46,.6);
+      border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 24px;
+      transition: border-color .25s, transform .25s;
+    }
+    .fcard:hover { border-color: rgba(254,243,176,.2); transform: translateY(-4px); }
+    .fcard-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; margin-bottom: 16px;
+      background: rgba(37,99,235,.15); border: 1px solid rgba(37,99,235,.25);
+    }
+    .fcard-icon.y { background: rgba(254,243,176,.08); border-color: rgba(254,243,176,.2); }
+    .fcard h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .fcard p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── SCREENSHOTS ── */
+    #showcase { background: var(--navy); }
+    .showcase-wrap {
+      max-width: 1060px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    }
+    .showcase-btns { display:flex;gap:10px;flex-wrap:wrap;margin-top:26px; }
+    .screens-col { display: flex; flex-direction: column; gap: 14px; }
+    .sc-frame {
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); background: var(--navy2);
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+    }
+    .sc-bar {
+      padding: 10px 14px; background: rgba(255,255,255,.03);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 6px; font-size: .7rem; color: var(--muted2);
+    }
+    .sc-dots { display:flex;gap:4px; }
+    .scd{width:8px;height:8px;border-radius:50%;}
+    .scd:nth-child(1){background:#ff5f57;}.scd:nth-child(2){background:#febc2e;}.scd:nth-child(3){background:#28c840;}
+    .sc-screen {
+      aspect-ratio: 16/9;
+      background: linear-gradient(140deg, var(--navy2), var(--navy3));
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+    }
+    .mobile-pair { display:flex;gap:12px; }
+    .mc-frame {
+      flex:1; border-radius:18px; overflow:hidden;
+      border:1px solid var(--border); background:var(--navy2);
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+    }
+    .mc-notch { background:#000;height:18px;margin:0 auto;width:40%;border-radius:0 0 10px 10px; }
+    .mc-screen {
+      aspect-ratio:9/17;
+      background:linear-gradient(160deg,var(--navy2),var(--navy3));
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:10px;
+    }
+
+    /* ── HOW ── */
+    #how { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .how-wrap { max-width: 660px; margin: 0 auto; }
+    .steps { display:flex;flex-direction:column;gap:0;margin-top:48px; }
+    .step { display:grid;grid-template-columns:52px 1fr;gap:18px;padding-bottom:36px; }
+    .step:last-child{padding-bottom:0;}
+    .step-left{display:flex;flex-direction:column;align-items:center;}
+    .step-num{
+      width:42px;height:42px;border-radius:50%;
+      background:var(--blue);color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:.95rem;flex-shrink:0;
+    }
+    .step-line{flex:1;width:2px;background:rgba(37,99,235,.2);margin-top:6px;}
+    .step:last-child .step-line{display:none;}
+    .step-body{padding-top:7px;}
+    .step-body h3{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:6px;}
+    .step-body p{font-size:.88rem;color:var(--muted);}
+
+    /* ── STATS ── */
+    #stats { background: var(--blue); }
+    .stats-row {
+      max-width:900px;margin:0 auto;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:32px;text-align:center;
+    }
+    .stat-n { font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:#fff;letter-spacing:-.5px; }
+    .stat-l { color:rgba(255,255,255,.7);font-size:.88rem;margin-top:4px; }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--navy); }
+    .testi-grid {
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:16px;max-width:1060px;margin:46px auto 0;
+    }
+    .tcard {
+      background:var(--navy2);border:1px solid var(--border);
+      border-radius:var(--radius);padding:26px;
+    }
+    .tcard-stars{color:var(--yellow2);font-size:.85rem;margin-bottom:10px;}
+    .tcard-text{font-size:.88rem;color:var(--muted);line-height:1.65;}
+    .tcard-author{display:flex;align-items:center;gap:12px;margin-top:18px;}
+    .tcard-avatar{
+      width:36px;height:36px;border-radius:50%;
+      background:linear-gradient(135deg,var(--blue),var(--blue2));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:.8rem;color:#fff;flex-shrink:0;
+    }
+    .tcard-name{font-weight:600;font-size:.88rem;color:var(--white);}
+    .tcard-role{font-size:.76rem;color:var(--muted2);}
+
+    /* ── DOWNLOAD ── */
+    #download { background: var(--navy2); border-top: 1px solid var(--border); text-align: center; }
+    .dl-box {
+      max-width:680px;margin:0 auto;
+      background:var(--navy3);border:1px solid var(--border);
+      border-radius:20px;padding:56px 40px;
+    }
+    .dl-logo{width:66px;height:66px;border-radius:15px;margin:0 auto 18px;overflow:hidden;background:var(--navy2);}
+    .dl-logo img{width:100%;height:100%;object-fit:cover;}
+    .dl-box h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;color:var(--white);margin-bottom:10px;}
+    .dl-box p{color:var(--muted);font-size:.93rem;max-width:400px;margin:0 auto 28px;}
+    .dl-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+    .dl-btn{
+      display:flex;align-items:center;gap:8px;
+      background:rgba(255,255,255,.05);border:1px solid var(--border);
+      color:var(--white);padding:10px 18px;border-radius:9px;
+      font-weight:600;font-size:.84rem;cursor:pointer;
+      transition:background .2s,transform .15s;
+    }
+    .dl-btn:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
+    .dl-btn-icon{font-size:1.15rem;}
+    .dl-btn small{display:block;font-size:.66rem;font-weight:400;color:var(--muted2);}
+
+    /* ── FOOTER ── */
+    footer {
+      position:relative;z-index:1;
+      background:var(--navy);border-top:1px solid var(--border);
+      padding:52px 7% 28px;
+    }
+    .footer-grid{
+      max-width:1060px;margin:0 auto;
+      display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:38px;
+    }
+    .footer-brand p{color:var(--muted);font-size:.86rem;margin-top:12px;max-width:240px;line-height:1.65;}
+    .footer-col h4{font-weight:700;font-size:.86rem;color:var(--white);margin-bottom:14px;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+    .footer-col a{color:var(--muted);font-size:.84rem;transition:color .2s;}
+    .footer-col a:hover{color:var(--white);}
+    .footer-bottom{
+      max-width:1060px;margin:0 auto;
+      display:flex;justify-content:space-between;align-items:center;
+      border-top:1px solid var(--border);padding-top:22px;
+      font-size:.78rem;color:var(--muted2);flex-wrap:wrap;gap:10px;
+    }
+
+    /* ── REVEAL ── */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.in{opacity:1;transform:translateY(0);}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .nav-links{display:none;} .hamburger{display:flex;}
+      .showcase-wrap{grid-template-columns:1fr;gap:36px;}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:28px;}
+      .mobile-float{display:none;}
+    }
+    @media(max-width:600px){
+      section{padding:64px 5%;} nav{padding:14px 5%;}
+      .footer-grid{grid-template-columns:1fr;}
+      .dl-box{padding:38px 20px;}
+      .mobile-pair{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <span class="mobile-nav-close" onclick="closeMobileNav()">✕</span>
+  <a href="#features" onclick="closeMobileNav()">Features</a>
+  <a href="#showcase" onclick="closeMobileNav()">Screenshots</a>
+  <a href="#download" onclick="closeMobileNav()">Download</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="appcs.png" alt="Comprehensure" onerror="this.style.display='none'"/>
+    Comprehensure
+  </div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#showcase">Screenshots</a>
+  </div>
+  <a href="#download" class="nav-cta">Download</a>
+  <div class="hamburger" onclick="openMobileNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag"><span class="hero-tag-dot"></span> Now on Desktop &amp; Mobile</div>
+  <h1>ComprehenSure.<br/>Grow with <span class="hl">every page.</span></h1>
+  <p>Comprehensure turns any document into an active learning experience — with AI summaries, comprehension quizzes, and spaced repetition built right in.</p>
+  <div class="hero-btns">
+    <a href="#download" class="btn-blue">Get it Free →</a>
+    <a href="#showcase" class="btn-outline">See Screenshots</a>
+  </div>
+
+  <div class="hero-mockup">
+    <div class="desktop-frame">
+      <div class="frame-bar">
+        <div class="fdot"></div><div class="fdot"></div><div class="fdot"></div>
+        <div class="frame-url">app.comprehensure.com</div>
+      </div>
+      <div class="frame-screen">
+        <div class="ph-icon">🖥️</div>
+        <div class="ph-label">Desktop App Screenshot</div>
+        <div class="ph-tip">Replace with your desktop screenshot (1280×720+)</div>
+      </div>
+    </div>
+    <div class="mobile-float">
+      <div class="mobile-frame">
+        <div class="mobile-notch"></div>
+        <div class="mobile-screen">
+          <div class="ph-icon" style="font-size:1.2rem;opacity:.35">📱</div>
+          <div class="ph-label" style="font-size:.6rem">Mobile Screenshot</div>
+          <div class="ph-tip" style="font-size:.62rem;text-align:center;">Replace with<br/>mobile screenshot</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="features-head center reveal">
+    <span class="sec-tag">Features</span>
+    <h2 class="sec-title mx">Everything you need to actually <span style="color:var(--yellow)">understand</span> what you read</h2>
+    <p class="sec-sub mx">Built for students, researchers, and curious people who want to learn — not just skim.</p>
+  </div>
+  <div class="features-grid">
+    <div class="fcard reveal">
+      <div class="fcard-icon">⚡</div>
+      <h3>Instant AI Summaries</h3>
+      <p>Paste any content and get a clean, structured summary in seconds. Works with articles, PDFs, and plain text.</p>
+    </div>
+    <div class="fcard reveal">
+      <div class="fcard-icon y">🧠</div>
+      <h3>Active Recall Quizzes</h3>
+      <p>Auto-generated comprehension questions based on what you just read — proven to lock in memory better than re-reading.</p>
+    </div>
+    <div class="fcard reveal">
+      <div class="fcard-icon">📊</div>
+      <h3>Progress Tracking</h3>
+      <p>Track reading streaks, quiz scores, and how your retention improves over time. Simple charts, no clutter.</p>
+    </div>
+    <div class="fcard reveal">
+      <div class="fcard-icon y">📚</div>
+      <h3>Works with Everything</h3>
+      <p>Paste a URL, upload a PDF, or just type. Comprehensure handles the rest — no reformatting needed.</p>
+    </div>
+    <div class="fcard reveal">
+      <div class="fcard-icon">🔖</div>
+      <h3>Smart Highlights</h3>
+      <p>Key concepts and important sentences are highlighted automatically so you always know what to focus on.</p>
+    </div>
+    <div class="fcard reveal">
+      <div class="fcard-icon y">🔄</div>
+      <h3>Spaced Repetition</h3>
+      <p>The app schedules your reviews at the right time — so you study smarter, not more. Science-backed and effective.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section id="showcase">
+  <div class="showcase-wrap">
+    <div class="reveal">
+      <span class="sec-tag">Screenshots</span>
+      <h2 class="sec-title">Looks great on <span style="color:var(--yellow)">every screen</span></h2>
+      <p class="sec-sub">A clean, focused interface whether you're studying on your laptop or reviewing flashcards on your phone.</p>
+      <div class="showcase-btns">
+        <a href="#download" class="btn-blue" style="font-size:.88rem;padding:11px 22px;">Download for Desktop</a>
+        <a href="#download" class="btn-outline" style="font-size:.88rem;padding:11px 22px;">Get Mobile App</a>
+      </div>
+    </div>
+    <div class="screens-col reveal">
+      <div class="sc-frame">
+        <div class="sc-bar">
+          <div class="sc-dots"><div class="scd"></div><div class="scd"></div><div class="scd"></div></div>
+          <span style="margin-left:8px;">Comprehensure Desktop</span>
+        </div>
+        <div class="sc-screen">
+          <div class="ph-icon">🖥️</div>
+          <div class="ph-label">Desktop Screenshot</div>
+          <div class="ph-tip">Recommended: 1280×720 or higher</div>
+        </div>
+      </div>
+      <div class="mobile-pair">
+        <div class="mc-frame">
+          <div class="mc-notch"></div>
+          <div class="mc-screen">
+            <div class="ph-icon" style="font-size:1.4rem;opacity:.4">📱</div>
+            <div class="ph-label" style="font-size:.65rem;">Mobile – Home</div>
+            <div class="ph-tip" style="font-size:.65rem;text-align:center;">390×844 recommended</div>
+          </div>
+        </div>
+        <div class="mc-frame">
+          <div class="mc-notch"></div>
+          <div class="mc-screen">
+            <div class="ph-icon" style="font-size:1.4rem;opacity:.4">📝</div>
+            <div class="ph-label" style="font-size:.65rem;">Mobile – Quiz</div>
+            <div class="ph-tip" style="font-size:.65rem;text-align:center;">390×844 recommended</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-row">
+    <div class="reveal"><div class="stat-n">50K+</div><div class="stat-l">Active Learners</div></div>
+    <div class="reveal"><div class="stat-n">2M+</div><div class="stat-l">Documents Processed</div></div>
+    <div class="reveal"><div class="stat-n">94%</div><div class="stat-l">Retention Improvement</div></div>
+    <div class="reveal"><div class="stat-n">4.9★</div><div class="stat-l">Average Rating</div></div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section id="download">
+  <div class="dl-box reveal">
+    <div class="dl-logo">
+      <img src="appcs.png" alt="Comprehensure" onerror="this.parentElement.innerHTML='💡'"/>
+    </div>
+    <h2>Start for free today</h2>
+    <p>Available on Windows, macOS, Linux, iOS, and Android. Your progress syncs across all your devices.</p>
+    <div class="dl-btns">
+      <div class="dl-btn"><span class="dl-btn-icon">🍎</span><div><small>Download for</small>macOS</div></div>
+      <div class="dl-btn"><span class="dl-btn-icon">🪟</span><div><small>Download for</small>Windows</div></div>
+      <div class="dl-btn"><span class="dl-btn-icon">🐧</span><div><small>Download for</small>Linux</div></div>
+      <div class="dl-btn"><span class="dl-btn-icon">📱</span><div><small>Get it on</small>App Store</div></div>
+      <div class="dl-btn"><span class="dl-btn-icon">🤖</span><div><small>Get it on</small>Google Play</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <img src="appcs.png" alt="logo" style="width:40px;height:40px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.4);" onerror="this.style.display='none'"/>
+        Comprehensure
+      </div>
+      <p>Helping people actually understand and remember what they read — one document at a time.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#showcase">Screenshots</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#">Changelog</a></li>
+        <li><a href="#">Roadmap</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Comprehensure. All rights reserved.</span>
+    <span>Made with 💡 for lifelong learners</span>
+  </div>
+</footer>
+
+<script>
+  function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); }
+  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 70);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  const statObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) { animateStats(); statObs.disconnect(); }
+  }, { threshold: 0.5 });
+  const statsEl = document.getElementById('stats');
+  if (statsEl) statObs.observe(statsEl);
+
+  function animateStats() {
+    document.querySelectorAll('.stat-n').forEach(el => {
+      const raw = el.textContent;
+      const num = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      const suffix = raw.replace(/[0-9.]/g, '');
+      let start = null;
+      const dur = 1400;
+      const tick = (ts) => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / dur, 1);
+        const ev = 1 - Math.pow(1 - p, 3);
+        el.textContent = (num < 100 ? (ev * num).toFixed(num % 1 !== 0 ? 1 : 0) : Math.floor(ev * num).toLocaleString()) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }
+</script>
+</body>
+</html>

@@ -145,7 +145,7 @@ namespace comprehensure.DASHBOARD.StoryPage
                     fields = new
                     {
                         ModuleFinished = new { integerValue = (currentModuleFinished + 1).ToString() },
-                        ScoreOfTotal   = new { integerValue = (currentScore + Score).ToString() }
+                        ScoreOfTotal = new { integerValue = (currentScore + Score).ToString() }
                     }
                 };
 
@@ -171,6 +171,19 @@ namespace comprehensure.DASHBOARD.StoryPage
             {
                 System.Diagnostics.Debug.WriteLine($"[SaveQuizResults] Exception: {ex.Message}");
             }
+        }
+  
+
+    private int ReadFirestoreInt(JsonElement element)
+        {
+            if (element.ValueKind == JsonValueKind.String &&
+                int.TryParse(element.GetString(), out int result))
+                return result;
+
+            if (element.ValueKind == JsonValueKind.Number)
+                return element.GetInt32();
+
+            return 0;
         }
     }
 }

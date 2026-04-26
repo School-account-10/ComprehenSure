@@ -17,13 +17,14 @@ public partial class MainDashboard : ContentPage
     {
         base.OnAppearing();
         await _viewModel.OnAppearing();
-        _viewModel.StartAutoRefresh();
+        // AutoRefresh removed — was firing 2 Firestore reads/sec.
+        // Data is now loaded on demand with in-memory caching.
     }
 
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
-        _viewModel.StopAutoRefresh();
+        // Nothing to stop — AutoRefresh no longer exists.
     }
 
     private async void OnSynonymHuntClicked(object sender, EventArgs e)
