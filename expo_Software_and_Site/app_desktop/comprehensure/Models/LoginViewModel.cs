@@ -10,7 +10,7 @@ namespace comprehensure.DataBaseControl.Models
     public partial class LoginViewModel : ObservableObject
     {
         private readonly FirebaseAuthClient _authClient;
-        private readonly string projectId = "comprehensuredb";
+        private readonly string projectId = "comprehensuredb-f9f7c";
         private string BaseUrl =>
             $"https://firestore.googleapis.com/v1/projects/{projectId}/databases/(default)/documents";
         private readonly HttpClient client = new HttpClient();
@@ -36,14 +36,11 @@ namespace comprehensure.DataBaseControl.Models
                 _ = Toastshow($"Ms Checker Login completed in: {timems} MS");
             else
                 await Shell.Current.DisplayAlert("Ms Checker", $"Login completed in: {timems} MS", "OK");
-
-
         }
 
         [RelayCommand]
         public async Task GoToSignUp()
         {
-            // This uses Shell navigation to go to your SignUpPage
             await Shell.Current.GoToAsync("SignUpPage");
         }
 
@@ -64,24 +61,35 @@ namespace comprehensure.DataBaseControl.Models
             try
             {
                 var response = await client.GetAsync(url);
-                if (!response.IsSuccessStatusCode)
-                    return false;
+                if (!response.IsSuccessStatusCode) return false;
 
                 var json = await response.Content.ReadAsStringAsync();
                 using var doc = JsonDocument.Parse(json);
                 var fields = doc.RootElement.GetProperty("fields");
 
+                bool hasUsername = false;
+                string username  = string.Empty;
+                int modules      = 0;
+                int score        = 0;
+
                 if (fields.TryGetProperty("UserHasUserName", out var hasUserNameProp))
                     if (hasUserNameProp.TryGetProperty("booleanValue", out var boolVal))
-                        return boolVal.GetBoolean();
+                        hasUsername = boolVal.GetBoolean();
 
                 if (fields.TryGetProperty("Username", out var usernameProp))
-                {
-                    string username = usernameProp.GetProperty("stringValue").GetString();
-                    return !string.IsNullOrWhiteSpace(username);
-                }
+                    username = usernameProp.GetProperty("stringValue").GetString() ?? string.Empty;
 
-                return false;
+                if (fields.TryGetProperty("ModuleFinished", out var modProp))
+                    int.TryParse(modProp.GetProperty("integerValue").GetString(), out modules);
+
+                if (fields.TryGetProperty("ScoreOfTotal", out var scoreProp))
+                    int.TryParse(scoreProp.GetProperty("integerValue").GetString(), out score);
+
+                // ✅ Cache everything we fetched so future logins skip this read
+                if (hasUsername && !string.IsNullOrEmpty(username))
+                    UserCache.SaveUser(uid, _Email?.Trim() ?? string.Empty, username, modules, score);
+
+                return hasUsername;
             }
             catch
             {
@@ -92,8 +100,6 @@ namespace comprehensure.DataBaseControl.Models
         private (string title, string message) ParseFirebaseError(Exception ex)
         {
             string raw = ex.Message.ToLower();
-
-            // Log the raw error to debug output so we can see exactly what Firebase sends
             System.Diagnostics.Debug.WriteLine($"[LoginViewModel] Firebase error raw: {ex.Message}");
 
             if (raw.Contains("email_not_found") ||
@@ -130,12 +136,10 @@ namespace comprehensure.DataBaseControl.Models
                 return ("No Connection",
                         "Could not reach the server.\nPlease check your internet connection.");
 
-           
             string readable = ex.Message.Contains(":")
                 ? ex.Message.Split(':').Last().Trim()
                 : ex.Message;
 
-            
             if (string.IsNullOrWhiteSpace(readable))
                 readable = ex.Message;
 
@@ -148,10 +152,8 @@ namespace comprehensure.DataBaseControl.Models
             if (_isNavigating) return;
             _isNavigating = true;
 
-            string emailcl = _Email?.Trim();
+            string emailcl    = _Email?.Trim();
             string passwordcl = _Password?.Trim();
-
-            // ── Client-side validation (before hitting Firebase) ──────────
 
             if (string.IsNullOrEmpty(emailcl))
             {
@@ -160,7 +162,6 @@ namespace comprehensure.DataBaseControl.Models
                 return;
             }
 
-            // Only Gmail accounts are allowed in this app
             if (!emailcl.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase))
             {
                 await Shell.Current.DisplayAlert("Invalid Email",
@@ -176,18 +177,22 @@ namespace comprehensure.DataBaseControl.Models
                 return;
             }
 
-
-
             try
             {
                 var result = await _authClient.SignInWithEmailAndPasswordAsync(emailcl, passwordcl);
                 _ = getms();
 
                 string uid = result.User.Uid;
-                Preferences.Default.Set("SavedUserUid", uid);
-                Preferences.Default.Set("SavedUserEmail", emailcl);
-                Preferences.Default.Set("IsFirstLogin", true);
 
+                // ✅ Cache hit — skip Firestore read entirely
+                if (UserCache.IsCached(uid))
+                {
+                    await Shell.Current.DisplayAlert("Login Complete", "Welcome back, " + UserCache.Username, "OK");
+                    await Shell.Current.GoToAsync("///MainDashboard");
+                    return;
+                }
+
+                // ❌ Not cached — read from Firestore only on first login
                 bool hasUsername = await HasUsername(uid);
 
                 if (hasUsername)
@@ -200,19 +205,17 @@ namespace comprehensure.DataBaseControl.Models
                     await Shell.Current.GoToAsync($"///UsernameReq?email={emailcl}&uid={uid}");
                 }
             }
-           
             catch (Firebase.Auth.FirebaseAuthHttpException ex)
             {
                 await Shell.Current.DisplayAlert("Sign-In Failed", ex.Reason.ToString(), "OK");
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 var (title, message) = ParseFirebaseError(ex);
                 await Shell.Current.DisplayAlert(title, message, "OK");
             }
-            
             finally
-            {   
+            {
                 _isNavigating = false;
             }
         }

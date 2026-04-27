@@ -11,7 +11,7 @@ namespace comprehensure.DASHBOARD.StoryPage
         private bool _locked;
         private bool _resultsSaved;   // prevent score duplication here DO NOT REMOVE 
         private string _correctAnswer = "";
-        private readonly string projectId = "comprehensuredb";
+        private readonly string projectId = "comprehensuredb-f9f7c";
         private string BaseUrl => $"https://firestore.googleapis.com/v1/projects/{projectId}/databases/(default)/documents";
 
         public int Score { get; private set; } = 0;
