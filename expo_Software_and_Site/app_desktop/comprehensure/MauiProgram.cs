@@ -33,7 +33,7 @@ namespace comprehensure
             builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
             {
                 ApiKey = apiKey,
-                AuthDomain = "comprehensuredb.web.app",
+                AuthDomain = "comprehensuredb-f9f7c.firebaseapp.com",
                 Providers = new FirebaseAuthProvider[] { new EmailProvider() }
             }));
 

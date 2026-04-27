@@ -9,7 +9,6 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using CommunityToolkit.Maui.Alerts;
 
-
 namespace comprehensure.DataBaseControl.Models
 {
     [QueryProperty(nameof(UserEmail), "email")]
@@ -17,7 +16,7 @@ namespace comprehensure.DataBaseControl.Models
     public partial class UsernameReqViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string[] _achievements; // get from quiz with limits, module finished.
+        private string[] _achievements;
 
         [ObservableProperty]
         private string _userEmail;
@@ -30,26 +29,19 @@ namespace comprehensure.DataBaseControl.Models
 
         [ObservableProperty]
         private string _usertime = DateTime.Now.ToString("yyyy-MM-dd hh:mm tt");
+
         private string BaseUrl =>
             $"https://firestore.googleapis.com/v1/projects/{projectId}/databases/(default)/documents";
         private readonly HttpClient client = new HttpClient();
-        private readonly string projectId = "comprehensuredb";
+        private readonly string projectId = "comprehensuredb-f9f7c";
 
-
-
-        public async Task Toastshow(string showtext) // this part does not work in windows (note for future self)
+        public async Task Toastshow(string showtext)
         {
-
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-
-
             ToastDuration duration = ToastDuration.Long;
             double fontSize = 14;
-
             var toast = Toast.Make(showtext, duration, fontSize);
-
             await toast.Show(cancellationTokenSource.Token);
-
         }
 
         public UsernameReqViewModel() { }
@@ -62,23 +54,21 @@ namespace comprehensure.DataBaseControl.Models
 
         private async Task<bool> UsernameExists(string username)
         {
-            
             username = username.Trim().ToLower();
             Username = username;
 
-            string url = $"{BaseUrl}:runQuery";
-
+            string url  = $"{BaseUrl}:runQuery";
             string json = JsonSerializer.Serialize(new
             {
                 structuredQuery = new
                 {
-                    from = new[] { new { collectionId = "userdata" } },
+                    from  = new[] { new { collectionId = "userdata" } },
                     where = new
                     {
                         fieldFilter = new
                         {
-                            field = new { fieldPath = "Username" }, 
-                            op = "EQUAL",
+                            field = new { fieldPath = "Username" },
+                            op    = "EQUAL",
                             value = new { stringValue = username },
                         },
                     },
@@ -106,11 +96,9 @@ namespace comprehensure.DataBaseControl.Models
                 return false;
             }
 
-           
-            using var doc = JsonDocument.Parse(result);
-            var root = doc.RootElement;
+            using var doc  = JsonDocument.Parse(result);
+            var root       = doc.RootElement;
 
-            
             if (root.ValueKind == JsonValueKind.Array)
             {
                 foreach (var element in root.EnumerateArray())
@@ -119,48 +107,40 @@ namespace comprehensure.DataBaseControl.Models
                     {
                         if (documentProp.TryGetProperty("fields", out _))
                         {
-                           
                             await Shell.Current.DisplayAlert(
                                 "Username Taken",
                                 $"\"{Username}\" is already in use. Please choose a different username.",
                                 "OK"
                             );
-                            return true; 
+                            return true;
                         }
                     }
                 }
             }
 
-            
             _ = UserCreation();
-            return false; 
+            return false;
         }
 
         public async Task UserCreation()
         {
-
-
             var data = new
             {
                 fields = new
                 {
-                    Username = new { stringValue = Username },
-                    Email = new { stringValue = UserEmail },
-                    DeviceTimeOfReg = new { stringValue = Usertime },
-                    Uid = new { stringValue = UserUid },
-                    ServerTimeOfReg = new
-                    {
-                        stringValue = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"),
-                    },
-                    ModuleFinished = new { integerValue = "0" },
-                    ScoreOfTotal = new { integerValue = "0" },
+                    Username        = new { stringValue  = Username },
+                    Email           = new { stringValue  = UserEmail },
+                    DeviceTimeOfReg = new { stringValue  = Usertime },
+                    Uid             = new { stringValue  = UserUid },
+                    ServerTimeOfReg = new { stringValue  = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") },
+                    ModuleFinished  = new { integerValue = "0" },
+                    ScoreOfTotal    = new { integerValue = "0" },
                     UserHasUserName = new { booleanValue = true },
                 },
             };
 
-            var options = new JsonSerializerOptions { PropertyNamingPolicy = null };
-            var json = JsonSerializer.Serialize(data, options);
-
+            var options  = new JsonSerializerOptions { PropertyNamingPolicy = null };
+            var json     = JsonSerializer.Serialize(data, options);
             var response = await client.PatchAsync(
                 $"{BaseUrl}/userdata/{UserUid}",
                 new StringContent(json, Encoding.UTF8, "application/json")
@@ -174,13 +154,10 @@ namespace comprehensure.DataBaseControl.Models
             }
             else
             {
-                await Shell.Current.DisplayAlert(
-                    "Success",
-                    "Account Registered for " + Username,
-                    "OK"
-                );
-                Preferences.Default.Set("SavedUserUid", UserUid);
-                Preferences.Default.Set("SavedUserEmail", UserEmail);
+                // ✅ Cache the new user so future logins skip the Firestore read
+                UserCache.SaveUser(UserUid, UserEmail, Username, moduleFinished: 0, scoreOfTotal: 0);
+
+                await Shell.Current.DisplayAlert("Success", "Account Registered for " + Username, "OK");
                 await Shell.Current.GoToAsync($"MainDashboard?uid={UserUid}&baseUrl={BaseUrl}");
             }
         }

@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 namespace comprehensure.DataBaseControl.Models
@@ -8,10 +8,9 @@ namespace comprehensure.DataBaseControl.Models
         [RelayCommand]
         private async Task logout()
         {
-            Preferences.Default.Clear();
+            
+            UserCache.Clear();
             await Shell.Current.GoToAsync("///MainPage");
         }
     }
-
-
 }

@@ -4,7 +4,7 @@ namespace comprehensure
 {
     public partial class App : Application
     {
-        private readonly string projectId = "comprehensuredb";
+        private readonly string projectId = "comprehensuredb-f9f7c";
         private string BaseUrl =>
             $"https://firestore.googleapis.com/v1/projects/{projectId}/databases/(default)/documents";
         private readonly HttpClient client = new HttpClient();

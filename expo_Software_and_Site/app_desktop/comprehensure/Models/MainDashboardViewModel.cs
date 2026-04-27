@@ -9,7 +9,7 @@ namespace comprehensure.DataBaseControl.Models
     [QueryProperty(nameof(firstlogin), "firstwelcome")]
     public partial class MainDashboardViewModel : ObservableObject
     {
-        private readonly string projectId = "comprehensuredb";
+        private readonly string projectId = "comprehensuredb-f9f7c";
         private string BaseUrl =>
             $"https://firestore.googleapis.com/v1/projects/{projectId}/databases/(default)/documents";
         private readonly HttpClient client = new HttpClient();
