@@ -113,11 +113,12 @@
 
                             <!-- Thumbnail -->
                             <Border Grid.Row="0" HeightRequest="130"
-                                    BackgroundColor="#EBF4FF" StrokeThickness="0">
+                                    BackgroundColor="Transparent" StrokeThickness="0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="22"/>
                                 </Border.StrokeShape>
-                                <Image Source="module_icon1.png" Aspect="AspectFit" Margin="16"/>
+                                <Image Source="forgotten_library.png" Aspect="AspectFill"
+                                   HorizontalOptions="Fill" VerticalOptions="Fill"/>
                             </Border>
 
                             <!-- Info -->
@@ -168,11 +169,12 @@
                         </Border.Shadow>
                         <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
                             <Border Grid.Row="0" HeightRequest="130"
-                                    BackgroundColor="#EBF4FF" StrokeThickness="0">
+                                    BackgroundColor="Transparent" StrokeThickness="0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="22"/>
                                 </Border.StrokeShape>
-                                <Image Source="module_icon2.png" Aspect="AspectFit" Margin="16"/>
+                                <Image Source="clockmaker.png" Aspect="AspectFill"
+                                   HorizontalOptions="Fill" VerticalOptions="Fill"/>
                             </Border>
                             <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
                                 <Border Padding="10,5" BackgroundColor="#E8F5E9"
@@ -217,11 +219,12 @@
                         </Border.Shadow>
                         <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
                             <Border Grid.Row="0" HeightRequest="130"
-                                    BackgroundColor="#EBF4FF" StrokeThickness="0">
+                                    BackgroundColor="Transparent" StrokeThickness="0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="22"/>
                                 </Border.StrokeShape>
-                                <Image Source="module_icon3.png" Aspect="AspectFit" Margin="16"/>
+                                <Image Source="observe.png" Aspect="AspectFill"
+                                   HorizontalOptions="Fill" VerticalOptions="Fill"/>
                             </Border>
                             <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
                                 <Border Padding="10,5" BackgroundColor="#E8F5E9"
@@ -266,11 +269,12 @@
                         </Border.Shadow>
                         <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
                             <Border Grid.Row="0" HeightRequest="130"
-                                    BackgroundColor="#FFF8E1" StrokeThickness="0">
+                                    BackgroundColor="Transparent" StrokeThickness="0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="22"/>
                                 </Border.StrokeShape>
-                                <Image Source="module_icon4.png" Aspect="AspectFit" Margin="16"/>
+                                <Image Source="garden.png" Aspect="AspectFill"
+                                   HorizontalOptions="Fill" VerticalOptions="Fill"/>
                             </Border>
                             <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
                                 <Border Padding="10,5" BackgroundColor="#FFF8E1"
@@ -315,11 +319,12 @@
                         </Border.Shadow>
                         <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
                             <Border Grid.Row="0" HeightRequest="130"
-                                    BackgroundColor="#FFF8E1" StrokeThickness="0">
+                                    BackgroundColor="Transparent" StrokeThickness="0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="22"/>
                                 </Border.StrokeShape>
-                                <Image Source="module_icon5.png" Aspect="AspectFit" Margin="16"/>
+                                <Image Source="map.png" Aspect="AspectFill"
+                                   HorizontalOptions="Fill" VerticalOptions="Fill"/>
                             </Border>
                             <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
                                 <Border Padding="10,5" BackgroundColor="#FFF8E1"
@@ -364,11 +369,12 @@
                         </Border.Shadow>
                         <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
                             <Border Grid.Row="0" HeightRequest="130"
-                                    BackgroundColor="#FFF8E1" StrokeThickness="0">
+                                    BackgroundColor="Transparent" StrokeThickness="0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="22"/>
                                 </Border.StrokeShape>
-                                <Image Source="module_icon6.png" Aspect="AspectFit" Margin="16"/>
+                                <Image Source="paper.png" Aspect="AspectFill"
+                                   HorizontalOptions="Fill" VerticalOptions="Fill"/>
                             </Border>
                             <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
                                 <Border Padding="10,5" BackgroundColor="#FFF8E1"
@@ -413,11 +419,12 @@
                         </Border.Shadow>
                         <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
                             <Border Grid.Row="0" HeightRequest="130"
-                                    BackgroundColor="#FBE9E7" StrokeThickness="0">
+                                    BackgroundColor="Transparent" StrokeThickness="0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="22"/>
                                 </Border.StrokeShape>
-                                <Image Source="module_icon7.png" Aspect="AspectFit" Margin="16"/>
+                                <Image Source="city.png" Aspect="AspectFill"
+                                   HorizontalOptions="Fill" VerticalOptions="Fill"/>
                             </Border>
                             <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
                                 <Border Padding="10,5" BackgroundColor="#FBE9E7"
@@ -462,11 +469,12 @@
                         </Border.Shadow>
                         <Grid RowDefinitions="Auto, *, Auto" Padding="24,24,24,28" RowSpacing="14">
                             <Border Grid.Row="0" HeightRequest="130"
-                                    BackgroundColor="#FBE9E7" StrokeThickness="0">
+                                    BackgroundColor="Transparent" StrokeThickness="0">
                                 <Border.StrokeShape>
                                     <RoundRectangle CornerRadius="22"/>
                                 </Border.StrokeShape>
-                                <Image Source="module_icon8.png" Aspect="AspectFit" Margin="16"/>
+                                <Image Source="whisper.png" Aspect="AspectFill"
+                                   HorizontalOptions="Fill" VerticalOptions="Fill"/>
                             </Border>
                             <VerticalStackLayout Grid.Row="1" Spacing="6" VerticalOptions="Center">
                                 <Border Padding="10,5" BackgroundColor="#FBE9E7"

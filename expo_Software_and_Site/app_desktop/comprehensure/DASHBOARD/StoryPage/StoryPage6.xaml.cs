@@ -42,10 +42,8 @@ namespace comprehensure.DASHBOARD.StoryPage
             InitializeComponent();
             _dots = new BoxView[] { Dot1, Dot2, Dot3, Dot4, Dot5, Dot6, Dot7, Dot8 };
             UpdateUI();
-        }
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
+
+            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
             Shell.SetNavBarIsVisible(this, false);
             Shell.SetNavBarHasShadow(this, false);
             Shell.SetBackButtonBehavior(this, new BackButtonBehavior
@@ -54,6 +52,11 @@ namespace comprehensure.DASHBOARD.StoryPage
                 IsEnabled = false
             });
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+        }
         private void UpdateUI()
         {
             int total = _storyPages.Length;
@@ -61,9 +64,9 @@ namespace comprehensure.DASHBOARD.StoryPage
 
             StoryLabel.Text = _storyPages[current];
 
-            PageIndicator.Text = $"Page {current + 1} of {total}";
-            int pct = (int)(((current + 1) / (double)total) * 100);
-            ProgressPercent.Text = $"{pct}%";
+            // Reading all pages contributes up to 80%; the remaining 20% comes from completing the quiz
+            double readingProgress = (current + 1) / (double)total * 80.0;
+            int pct = (int)readingProgress;
 
             double maxWidth = 640;
             ProgressFill.WidthRequest = maxWidth * (current + 1) / total;
@@ -95,7 +98,7 @@ namespace comprehensure.DASHBOARD.StoryPage
 
         private async void OnGoToQuizClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new QuizPage1(new QuizPage1ViewModel()));
+            await Navigation.PushAsync(new QuizPage6(new QuizPage6ViewModel()));
         }
 
         private void OnBackClicked(object sender, EventArgs e)
@@ -113,6 +116,10 @@ namespace comprehensure.DASHBOARD.StoryPage
         private void OnPopupCancel(object sender, EventArgs e)
         {
             PopupOverlay.IsVisible = false;
+        }
+        private async void OnDictionaryClicked(object sender, TappedEventArgs e)
+        {
+            await Navigation.PushAsync(new DictionaryPage6());
         }
     }
 }

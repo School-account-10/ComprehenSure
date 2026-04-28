@@ -29,7 +29,18 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiAsset Include="Resources\Raw\quiz1data.json" />
+		<MauiAsset Include="Resources\Raw\quiz2data.json" />
+		<MauiAsset Include="Resources\Raw\quiz3data.json" />
+		<MauiAsset Include="Resources\Raw\quiz4data.json" />
+		<MauiAsset Include="Resources\Raw\quiz5data.json" />
+		<MauiAsset Include="Resources\Raw\quiz6data.json" />
+		<MauiAsset Include="Resources\Raw\quiz7data.json" />
+		<MauiAsset Include="Resources\Raw\quiz8data.json" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" />
 
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
@@ -77,6 +88,24 @@
 		<MauiXaml Update="DASHBOARD\AllAboutUS_Dashboard.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\DictionaryPage3.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\DictionaryPage4.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\DictionaryPage5.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\DictionaryPage6.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\DictionaryPage7.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\DictionaryPage8.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\MainDashboard.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
@@ -93,6 +122,30 @@
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\ProgressDashboard.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\StoryPage\DictionaryPage2.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\StoryPage\DictionaryPage3.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\StoryPage\DictionaryPage4.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\StoryPage\DictionaryPage5.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\StoryPage\DictionaryPage6.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\StoryPage\DictionaryPage7.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\StoryPage\DictionaryPage8.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="DASHBOARD\StoryPage\NewContent1.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\UsernameReq.xaml">

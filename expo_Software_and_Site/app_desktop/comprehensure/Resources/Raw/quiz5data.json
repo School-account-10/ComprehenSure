@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What does the \"darkened stone\" of the town hall most likely symbolize?",
+    "choices": {
+      "A": "The town's poverty over time.",
+      "B": "The town hall being abandoned.",
+      "C": "The weight of time and history.",
+      "D": "The town's failure to modernize."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "Why did most people ignore the town hall, based on the passage?",
+    "choices": {
+      "A": "They believed it was unsafe.",
+      "B": "They were too focused on daily life and routines.",
+      "C": "They were forbidden to enter.",
+      "D": "They disliked the mayor's decisions."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Which idea best explains why the archive contained maps instead of relying only on photographs or written records?",
+    "choices": {
+      "A": "Maps were easier to hide from the public.",
+      "B": "Maps could visually track development patterns and decisions.",
+      "C": "Photographs were considered unreliable evidence.",
+      "D": "Written records were illegal in Riverton."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Mr. Rowan's statement about footpaths mainly suggests that:",
+    "choices": {
+      "A": "People preferred walking instead of using vehicles.",
+      "B": "Nature determined the shape of the town more than people.",
+      "C": "Informal human habits often influence formal planning.",
+      "D": "Footpaths were created only for tourists."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "When Elias first compared the old and new maps, he thought they were unrelated. What caused him to change his mind?",
+    "choices": {
+      "A": "Mr. Rowan explained every detail to him.",
+      "B": "He noticed repeated structures and continuity between them.",
+      "C": "He found the same signature on both maps.",
+      "D": "The newer map was more colorful."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "What is the best interpretation of the quote: \"Growth is rarely accidental\"?",
+    "choices": {
+      "A": "Towns never expand unless forced by disasters.",
+      "B": "Communities develop through predictable cycles of destruction.",
+      "C": "Expansion usually reflects intentional choices and human needs.",
+      "D": "Growth only happens when leaders plan perfectly."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "The bridge in the story represents more than just transportation. What is its deeper role in Riverton's development?",
+    "choices": {
+      "A": "It caused the town to lose farmland permanently.",
+      "B": "It created new economic opportunities that shaped settlement patterns.",
+      "C": "It prevented people from traveling outside the town.",
+      "D": "It served as a symbol of conflict between neighborhoods."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Which of the following best describes Elias's learning process throughout the story?",
+    "choices": {
+      "A": "He memorized town history for a school project.",
+      "B": "He gradually shifted from seeing development as random to seeing it as interconnected decisions.",
+      "C": "He became frustrated because the maps contradicted each other.",
+      "D": "He learned that the town should stop expanding."
+    },
+    "answer": "B"
+  },
+  {
+    "question": "Why was Elias's proposal for the new neighborhood considered logical and effective?",
+    "choices": {
+      "A": "It was designed to make the town larger than neighboring cities.",
+      "B": "It focused only on residential expansion.",
+      "C": "It followed existing patterns of movement, gathering, and access.",
+      "D": "It copied the design of the oldest map exactly."
+    },
+    "answer": "C"
+  },
+  {
+    "question": "What is the central message of the passage as a whole?",
+    "choices": {
+      "A": "Towns should preserve all old documents to maintain tradition.",
+      "B": "Development is mainly determined by geography and climate.",
+      "C": "Communities are shaped by small decisions that accumulate into long-term patterns.",
+      "D": "Progress only happens through large and sudden projects."
+    },
+    "answer": "C"
+  }
+]
