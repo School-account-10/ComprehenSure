@@ -72,10 +72,9 @@ namespace comprehensure.DASHBOARD.StoryPage
 
             StoryLabel.Text = _storyPages[current];
 
-            PageIndicator.Text = $"Page {current + 1} of {total}";
-            int pct = (int)(((current + 1) / (double)total) * 100);
-            ProgressPercent.Text = $"{pct}%";
-
+            // Reading all pages contributes up to 80%; the remaining 20% comes from completing the quiz
+            double readingProgress = (current + 1) / (double)total * 80.0;
+            int pct = (int)readingProgress;
             double maxWidth = 640;
             ProgressFill.WidthRequest = maxWidth * (current + 1) / total;
 

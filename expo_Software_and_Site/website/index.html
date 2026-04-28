@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="shorcut icon" type="image/png" href="appcs.png"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -39,7 +40,7 @@
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
 
-    /* subtle grid bg */
+
     body::after {
       content: '';
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
@@ -49,7 +50,7 @@
       background-size: 48px 48px;
     }
 
-    /* ── NAV ── */
+ 
     nav {
       position: sticky; top: 0; z-index: 100;
       display: grid; grid-template-columns: 1fr auto 1fr;
@@ -81,7 +82,6 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
 
-    /* ── MOBILE NAV ── */
     .mobile-nav {
       display: none; position: fixed; inset: 0; z-index: 200;
       background: rgba(11,26,46,.97); flex-direction: column;
@@ -91,7 +91,6 @@
     .mobile-nav a { font-size: 1.6rem; font-weight: 700; color: var(--white); }
     .mobile-nav-close { position: absolute; top: 22px; right: 7%; font-size: 1.8rem; cursor: pointer; color: var(--muted); }
 
-    /* ── HERO ── */
     .hero {
       position: relative; z-index: 1;
       min-height: 95vh;
@@ -203,7 +202,6 @@
     .center { text-align: center; }
     .mx { margin-left: auto; margin-right: auto; }
 
-    /* ── FEATURES ── */
     #features { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .features-head { margin-bottom: 52px; }
     .features-grid {
@@ -227,7 +225,6 @@
     .fcard h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
     .fcard p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
 
-    /* ── SCREENSHOTS ── */
     #showcase { background: var(--navy); }
     .showcase-wrap {
       max-width: 1060px; margin: 0 auto;
@@ -266,7 +263,6 @@
       display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:10px;
     }
 
-    /* ── HOW ── */
     #how { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .how-wrap { max-width: 660px; margin: 0 auto; }
     .steps { display:flex;flex-direction:column;gap:0;margin-top:48px; }
@@ -285,7 +281,6 @@
     .step-body h3{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:6px;}
     .step-body p{font-size:.88rem;color:var(--muted);}
 
-    /* ── STATS ── */
     #stats { background: var(--blue); }
     .stats-row {
       max-width:900px;margin:0 auto;
@@ -295,7 +290,6 @@
     .stat-n { font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:#fff;letter-spacing:-.5px; }
     .stat-l { color:rgba(255,255,255,.7);font-size:.88rem;margin-top:4px; }
 
-    /* ── TESTIMONIALS ── */
     #testimonials { background: var(--navy); }
     .testi-grid {
       display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -317,7 +311,6 @@
     .tcard-name{font-weight:600;font-size:.88rem;color:var(--white);}
     .tcard-role{font-size:.76rem;color:var(--muted2);}
 
-    /* ── DOWNLOAD ── */
     #download { background: var(--navy2); border-top: 1px solid var(--border); text-align: center; }
     .dl-box {
       max-width:680px;margin:0 auto;
@@ -340,7 +333,6 @@
     .dl-btn-icon{font-size:1.15rem;}
     .dl-btn small{display:block;font-size:.66rem;font-weight:400;color:var(--muted2);}
 
-    /* ── FOOTER ── */
     footer {
       position:relative;z-index:1;
       background:var(--navy);border-top:1px solid var(--border);
@@ -362,11 +354,10 @@
       font-size:.78rem;color:var(--muted2);flex-wrap:wrap;gap:10px;
     }
 
-    /* ── REVEAL ── */
+
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
     .reveal.in{opacity:1;transform:translateY(0);}
 
-    /* ── RESPONSIVE ── */
     @media(max-width:900px){
       .nav-links{display:none;} .hamburger{display:flex;}
       .showcase-wrap{grid-template-columns:1fr;gap:36px;}
@@ -383,7 +374,6 @@
 </head>
 <body>
 
-<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <span class="mobile-nav-close" onclick="closeMobileNav()">✕</span>
   <a href="#features" onclick="closeMobileNav()">Features</a>
@@ -391,7 +381,6 @@
   <a href="#download" onclick="closeMobileNav()">Download</a>
 </div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">
     <img src="appcs.png" alt="Comprehensure" onerror="this.style.display='none'"/>
@@ -407,11 +396,10 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-tag"><span class="hero-tag-dot"></span> Now on Desktop &amp; Mobile</div>
   <h1>ComprehenSure.<br/>Grow with <span class="hl">every page.</span></h1>
-  <p>Comprehensure turns any document into an active learning experience — with AI summaries, comprehension quizzes, and spaced repetition built right in.</p>
+  <p>ComprehenSure is an interactive platform that enhances comprehension through structured modules, stories, and quizzes. The app features mini-games, an active progress bar to track growth, and vocabulary lists paired with a voice assistant for advanced pronunciation.</p>
   <div class="hero-btns">
     <a href="#download" class="btn-blue">Get it Free →</a>
     <a href="#showcase" class="btn-outline">See Screenshots</a>
@@ -442,43 +430,42 @@
   </div>
 </section>
 
-<!-- FEATURES -->
 <section id="features">
   <div class="features-head center reveal">
     <span class="sec-tag">Features</span>
     <h2 class="sec-title mx">Everything you need to actually <span style="color:var(--yellow)">understand</span> what you read</h2>
-    <p class="sec-sub mx">Built for students, researchers, and curious people who want to learn — not just skim.</p>
+    <p class="sec-sub mx">Built for Senior High School students who want to learn — not just skim.</p>
   </div>
   <div class="features-grid">
     <div class="fcard reveal">
       <div class="fcard-icon">⚡</div>
-      <h3>Instant AI Summaries</h3>
-      <p>Paste any content and get a clean, structured summary in seconds. Works with articles, PDFs, and plain text.</p>
+      <h3>Interactive Reading Materials</h3>
+      <p>Provides digital modules that has stories that are designed for Senior High School students. These reading materials help users practice comprehension through engaging and relevant texts.</p>
     </div>
     <div class="fcard reveal">
       <div class="fcard-icon y">🧠</div>
-      <h3>Active Recall Quizzes</h3>
-      <p>Auto-generated comprehension questions based on what you just read — proven to lock in memory better than re-reading.</p>
+      <h3>Quizzes</h3>
+      <p>After each reading material, students can answer quizzes to measure their understanding.</p>
     </div>
     <div class="fcard reveal">
       <div class="fcard-icon">📊</div>
-      <h3>Progress Tracking</h3>
-      <p>Track reading streaks, quiz scores, and how your retention improves over time. Simple charts, no clutter.</p>
+      <h3>Progress Tracking Dashboard</h3>
+      <p>Allows students to monitor their reading performance, quiz scores, and overall improvement over time.</p>
     </div>
     <div class="fcard reveal">
       <div class="fcard-icon y">📚</div>
-      <h3>Works with Everything</h3>
-      <p>Paste a URL, upload a PDF, or just type. Comprehensure handles the rest — no reformatting needed.</p>
+      <h3>Interactive Learning Activities / Gamified Exercises</h3>
+      <p>Includes engaging activities or mini-games to make learning more fun and interactive.</p>
     </div>
     <div class="fcard reveal">
-      <div class="fcard-icon">🔖</div>
-      <h3>Smart Highlights</h3>
-      <p>Key concepts and important sentences are highlighted automatically so you always know what to focus on.</p>
+      <div class="fcard-icon">✨</div>
+      <h3>User-Friendly Interface</h3>
+      <p>Designed with simple navigation, engaging visuals, and an organized layout for easier and more comfortable use.</p>
     </div>
     <div class="fcard reveal">
-      <div class="fcard-icon y">🔄</div>
-      <h3>Spaced Repetition</h3>
-      <p>The app schedules your reviews at the right time — so you study smarter, not more. Science-backed and effective.</p>
+      <div class="fcard-icon y">🧑‍💻</div>
+      <h3>Multi-Platform Accessibility</h3>
+      <p>Available on both desktop and mobile devices, allowing students to access learning materials anytime and anywhere.</p>
     </div>
   </div>
 </section>
@@ -529,7 +516,6 @@
   </div>
 </section>
 
-<!-- STATS -->
 <section id="stats">
   <div class="stats-row">
     <div class="reveal"><div class="stat-n">50K+</div><div class="stat-l">Active Learners</div></div>
@@ -539,7 +525,6 @@
   </div>
 </section>
 
-<!-- DOWNLOAD -->
 <section id="download">
   <div class="dl-box reveal">
     <div class="dl-logo">
@@ -557,7 +542,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
