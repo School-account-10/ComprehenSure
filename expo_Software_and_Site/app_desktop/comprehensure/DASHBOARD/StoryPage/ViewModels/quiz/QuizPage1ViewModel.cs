@@ -11,6 +11,13 @@ namespace comprehensure.DASHBOARD.StoryPage
         private bool _locked;
         private bool _resultsSaved;   // prevent score duplication here DO NOT REMOVE 
         private string _correctAnswer = "";
+
+        // Progress value received from StoryPage1 (0-based page index)
+        public int StoryProgress { get; }
+
+        // AI score and Calculated score are separate.
+        // Calculated score = Score * 2, always derived — never stored independently.
+        public int CalculatedScore => Score * 2;
         private readonly string projectId = "comprehensuredb-f9f7c";
         private string BaseUrl => $"https://firestore.googleapis.com/v1/projects/{projectId}/databases/(default)/documents";
 
@@ -41,6 +48,11 @@ namespace comprehensure.DASHBOARD.StoryPage
 
         private List<QuizItem> _questions = new();
         private readonly Random _rng = new Random();
+
+        public QuizPage1ViewModel(int storyProgress = 0)
+        {
+            StoryProgress = storyProgress;
+        }
 
         public async Task LoadQuestions()
         {
@@ -138,14 +150,21 @@ namespace comprehensure.DASHBOARD.StoryPage
                         currentScore = ReadFirestoreInt(scVal);
                 }
 
-                string url = $"{BaseUrl}/userdata/{uid}?updateMask.fieldPaths=ModuleFinished&updateMask.fieldPaths=ScoreOfTotal";
+                // Snapshot all values BEFORE the anonymous object — avoids C# name
+                // shadowing inside anonymous initializers when property names match.
+                int newModuleFinished  = currentModuleFinished + 1;
+                int newScoreOfTotal    = currentScore + Score;
+                int newCalculatedScore = Score * 2;   // explicit, not via property
+
+                string url = $"{BaseUrl}/userdata/{uid}?updateMask.fieldPaths=ModuleFinished&updateMask.fieldPaths=ScoreOfTotal&updateMask.fieldPaths=CalculatedScore";
 
                 var data = new
                 {
                     fields = new
                     {
-                        ModuleFinished = new { integerValue = (currentModuleFinished + 1).ToString() },
-                        ScoreOfTotal = new { integerValue = (currentScore + Score).ToString() }
+                        ModuleFinished  = new { integerValue = newModuleFinished.ToString() },
+                        ScoreOfTotal    = new { integerValue = newScoreOfTotal.ToString() },
+                        CalculatedScore = new { integerValue = newCalculatedScore.ToString() }
                     }
                 };
 
@@ -164,7 +183,7 @@ namespace comprehensure.DASHBOARD.StoryPage
                 }
                 else
                 {
-                    System.Diagnostics.Debug.WriteLine($"[SaveQuizResults] Saved — ModuleFinished: {currentModuleFinished + 1}, ScoreOfTotal: {currentScore + Score}");
+                    System.Diagnostics.Debug.WriteLine($"[SaveQuizResults] Saved — ModuleFinished: {newModuleFinished}, ScoreOfTotal: {newScoreOfTotal}, CalculatedScore: {newCalculatedScore}");
                 }
             }
             catch (Exception ex)
