@@ -19,7 +19,7 @@
                    Opacity="0.95" />
             <!-- Frosted glass overlay -->
             <BoxView BackgroundColor="#6B8CAE" Opacity="0.30"
-                     HorizontalOptions="Fill" Ve    rticalOptions="Fill" />
+                     HorizontalOptions="Fill" VerticalOptions="Fill" />
         </Grid>
         
         <ScrollView>

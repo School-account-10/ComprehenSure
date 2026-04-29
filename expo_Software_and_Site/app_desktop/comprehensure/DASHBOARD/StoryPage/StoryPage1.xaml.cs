@@ -7,6 +7,9 @@ namespace comprehensure.DASHBOARD.StoryPage
     {
         private int _currentPage = 0;
 
+        // Readable progress value — passed to QuizPage1ViewModel on navigation
+        public int StoryProgress => _currentPage;
+
         private readonly string[] _storyPages = new string[]
         {
             // Page 1
@@ -98,7 +101,7 @@ namespace comprehensure.DASHBOARD.StoryPage
 
         private async void OnGoToQuizClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new QuizPage1(new QuizPage1ViewModel()));
+            await Navigation.PushAsync(new QuizPage1(new QuizPage1ViewModel(StoryProgress)));
         }
 
         // ── Dictionary button ─────────────────────────────────────────────
