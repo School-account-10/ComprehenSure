@@ -1,0 +1,26 @@
+modify the current system make it so it does not turn to 100 in the progress in that part 
+and then depending on the score the percentage will be calculated based on how much will be added
+
+for example module is 80 % then every score is worth 1 %  
+
+so if they get 
+so for example the user score 6
+
+revised progress calculation 
+percentage of module ( currentreadprogress = 80)
+then for the (calculatedscore = score * 2 )
+(calculatedscore + currentreadProgress / currentmoduleopen = progress)
+
+EVERY point 1 equals to 1 percent /
+
+
+- first modify the max to 80% only /
+- make the progress be a readable variable which i can use in the story page to pass to the quiz viewmodel 
+
+- ( note for the ai score and the Calculated score is different calculated score is calculated using (score * 2 ) so both values are separate just add anohher variable after that just add that to the things we send to he db aka name it (calculatedscore)/ 
+- send to db the calculated score/
+
+ - make sure its reflected in the progress bar
+- make it so the quiz for the quiz every time 1 point is (2*1) then added to the percentage 
+
+- 
