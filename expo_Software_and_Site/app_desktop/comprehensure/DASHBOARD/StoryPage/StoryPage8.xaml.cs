@@ -57,7 +57,6 @@ namespace comprehensure.DASHBOARD.StoryPage
         protected override void OnAppearing()
         {
             base.OnAppearing();
-;
         }
         private void UpdateUI()
         {
@@ -73,7 +72,7 @@ namespace comprehensure.DASHBOARD.StoryPage
             ProgressPercent.Text = $"{pct}%";
 
             double maxWidth = 640;
-            ProgressFill.WidthRequest = maxWidth * (current + 1) / total;
+            ProgressFill.WidthRequest = maxWidth * readingProgress / 100.0;
 
             for (int i = 0; i < _dots.Length; i++)
             {
@@ -87,9 +86,12 @@ namespace comprehensure.DASHBOARD.StoryPage
             NextBtn.Opacity = (current == total - 1) ? 0.35 : 1.0;
             NextBtn.IsEnabled = (current < total - 1);
 
+            PrevBtn.Opacity = (current == 0) ? 0.35 : 1.0;
+            PrevBtn.IsEnabled = (current > 0);
+            PrevBtnBorder.Opacity = (current == 0) ? 0.35 : 1.0;
+
             QuizBanner.IsVisible = (current == total - 1);
         }
-
         private void OnPrevClicked(object sender, EventArgs e)
         {
             if (_currentPage > 0) { _currentPage--; UpdateUI(); }

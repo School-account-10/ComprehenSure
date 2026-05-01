@@ -43,6 +43,7 @@ namespace comprehensure.DASHBOARD.StoryPage
             UpdateUI();
 
             Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
+            Shell.SetFlyoutBehavior(this, FlyoutBehavior.Disabled);
             Shell.SetNavBarIsVisible(this, false);
             Shell.SetNavBarHasShadow(this, false);
             Shell.SetBackButtonBehavior(this, new BackButtonBehavior
@@ -85,6 +86,10 @@ namespace comprehensure.DASHBOARD.StoryPage
 
             NextBtn.Opacity = (current == total - 1) ? 0.35 : 1.0;
             NextBtn.IsEnabled = (current < total - 1);
+
+            PrevBtn.Opacity = (current == 0) ? 0.35 : 1.0;
+            PrevBtn.IsEnabled = (current > 0);
+            PrevBtnBorder.Opacity = (current == 0) ? 0.35 : 1.0;
 
             QuizBanner.IsVisible = (current == total - 1);
         }

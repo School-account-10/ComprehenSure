@@ -72,11 +72,14 @@ namespace comprehensure.DASHBOARD.StoryPage
 
             StoryLabel.Text = _storyPages[current];
 
+            PageIndicator.Text = $"Page {current + 1} of {total}";
             // Reading all pages contributes up to 80%; the remaining 20% comes from completing the quiz
             double readingProgress = (current + 1) / (double)total * 80.0;
             int pct = (int)readingProgress;
+            ProgressPercent.Text = $"{pct}%";
+
             double maxWidth = 640;
-            ProgressFill.WidthRequest = maxWidth * (current + 1) / total;
+            ProgressFill.WidthRequest = maxWidth * readingProgress / 100.0;
 
             for (int i = 0; i < _dots.Length; i++)
             {
@@ -89,6 +92,10 @@ namespace comprehensure.DASHBOARD.StoryPage
 
             NextBtn.Opacity = (current == total - 1) ? 0.35 : 1.0;
             NextBtn.IsEnabled = (current < total - 1);
+
+            PrevBtn.Opacity = (current == 0) ? 0.35 : 1.0;
+            PrevBtn.IsEnabled = (current > 0);
+            PrevBtnBorder.Opacity = (current == 0) ? 0.35 : 1.0;
 
             QuizBanner.IsVisible = (current == total - 1);
         }

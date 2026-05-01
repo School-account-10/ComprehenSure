@@ -10,7 +10,7 @@ namespace comprehensure.DASHBOARD.StoryPage
         private readonly string[] _storyPages = new string[]
         {
             //THE ClOCKMAKER'S SECRET
-            // Page 1
+            // Page 1 
             "In the quiet town of Maplewood, a narrow street was lined with small shops that had stood for many years. Between a warm bakery that smelled of fresh bread and a cozy bookstore filled with novels stood an old clock shop with a wooden sign that read, Alden’s Timepieces. The gold paint on the letters had faded, and the windows were slightly fogged from years of dust and oil, yet the shop remained open every day without fail.\r\nInside worked Mr. Alden, the town’s clockmaker. He was an elderly man with silver hair and round glasses that rested gently on his nose. His hands were steady and careful, even after decades of repairing tiny gears and springs. The shop was always filled with the steady ticking of clocks. Tall grandfather clocks stood proudly against the walls, small pocket watches rested in glass cases, and cuckoo clocks hung near the ceiling. Though each clock was different, they somehow ticked in perfect harmony, creating a calm and steady rhythm that filled the room.\r\n",
             
             // Page 2
@@ -68,7 +68,7 @@ namespace comprehensure.DASHBOARD.StoryPage
             ProgressPercent.Text = $"{pct}%";
 
             double maxWidth = 640;
-            ProgressFill.WidthRequest = maxWidth * (current + 1) / total;
+            ProgressFill.WidthRequest = maxWidth * readingProgress / 100.0;
 
             for (int i = 0; i < _dots.Length; i++)
             {
@@ -81,6 +81,10 @@ namespace comprehensure.DASHBOARD.StoryPage
 
             NextBtn.Opacity = (current == total - 1) ? 0.35 : 1.0;
             NextBtn.IsEnabled = (current < total - 1);
+
+            PrevBtn.Opacity = (current == 0) ? 0.35 : 1.0;
+            PrevBtn.IsEnabled = (current > 0);
+            PrevBtnBorder.Opacity = (current == 0) ? 0.35 : 1.0;
 
             QuizBanner.IsVisible = (current == total - 1);
         }

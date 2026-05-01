@@ -27,6 +27,11 @@ public partial class MainDashboard : ContentPage
         // Nothing to stop — AutoRefresh no longer exists.
     }
 
+    private async void OnMasterDictionaryClicked(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new MasterDictionaryPage());
+    }
+
     private async void OnSynonymHuntClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new MiniGames.SynonymHuntPage());
