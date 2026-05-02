@@ -207,12 +207,12 @@ namespace comprehensure.DataBaseControl.Models
             }
             catch (Firebase.Auth.FirebaseAuthHttpException ex)
             {
-                await Shell.Current.DisplayAlert("Sign-In Failed", ex.Reason.ToString(), "OK");
+                await Shell.Current.DisplayAlert("Sign-In Failed", ex.Message, "OK");
             }
             catch (Exception ex)
             {
-                var (title, message) = ParseFirebaseError(ex);
-                await Shell.Current.DisplayAlert(title, message, "OK");
+               
+                await Shell.Current.DisplayAlert("fail!", ex.Message, "OK");
             }
             finally
             {

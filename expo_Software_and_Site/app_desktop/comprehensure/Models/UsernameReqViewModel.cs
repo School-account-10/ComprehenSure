@@ -154,6 +154,11 @@ namespace comprehensure.DataBaseControl.Models
             }
             else
             {
+                // ✅ Persist UID + Email to Preferences so QuizFunc and
+                //    MainDashboardViewModel can read them via SavedUserUid / SavedUserEmail.
+                Preferences.Default.Set("SavedUserUid",   UserUid);
+                Preferences.Default.Set("SavedUserEmail", UserEmail);
+
                 // ✅ Cache the new user so future logins skip the Firestore read
                 UserCache.SaveUser(UserUid, UserEmail, Username, moduleFinished: 0, scoreOfTotal: 0);
 

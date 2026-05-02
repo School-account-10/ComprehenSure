@@ -25,7 +25,7 @@ public partial class QuizPage1 : ContentPage
             IsEnabled = false
         });
     }
-
+   
     protected override async void OnAppearing()
     {
         base.OnAppearing();
@@ -181,5 +181,6 @@ public partial class QuizPage1 : ContentPage
         ProgressPercent.Text = "100%";
         ProgressFill.WidthRequest = _trackWidth;
     }
+
 
 }
