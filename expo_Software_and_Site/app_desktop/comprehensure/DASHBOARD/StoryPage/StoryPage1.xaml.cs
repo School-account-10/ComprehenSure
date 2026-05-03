@@ -1,13 +1,14 @@
 using System;
 using Microsoft.Maui.Controls;
+using comprehensure.Models;
 
 namespace comprehensure.DASHBOARD.StoryPage
 {
     public partial class StoryPage1 : ContentPage
     {
         private int _currentPage = 0;
+        private bool _progressSaved = false;          // prevent duplicate writes
 
-        // Readable progress value — passed to QuizPage1ViewModel on navigation
         public int StoryProgress => _currentPage;
 
         private readonly string[] _storyPages = new string[]
@@ -56,7 +57,6 @@ namespace comprehensure.DASHBOARD.StoryPage
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
         }
 
         private void UpdateUI()
@@ -67,7 +67,6 @@ namespace comprehensure.DASHBOARD.StoryPage
             StoryLabel.Text = _storyPages[current];
 
             PageIndicator.Text = $"Page {current + 1} of {total}";
-            // Reading all pages contributes up to 80%; the remaining 20% comes from completing the quiz
             double readingProgress = (current + 1) / (double)total * 80.0;
             int pct = (int)readingProgress;
             ProgressPercent.Text = $"{pct}%";
@@ -92,6 +91,13 @@ namespace comprehensure.DASHBOARD.StoryPage
             PrevBtnBorder.Opacity = (current == 0) ? 0.35 : 1.0;
 
             QuizBanner.IsVisible = (current == total - 1);
+
+            // ── Save 80 % progress to Firestore once when the last page is reached ──
+            if (current == total - 1 && !_progressSaved)
+            {
+                _progressSaved = true;
+                _ = QuizFunc.SaveProgressAsync(storyNumber: 1, progress: pct);
+            }
         }
 
         private void OnPrevClicked(object sender, EventArgs e)
@@ -109,7 +115,6 @@ namespace comprehensure.DASHBOARD.StoryPage
             await Navigation.PushAsync(new QuizPage1(new QuizPage1ViewModel(StoryProgress)));
         }
 
-        // ── Dictionary button ─────────────────────────────────────────────
         private async void OnDictionaryClicked(object sender, TappedEventArgs e)
         {
             await Navigation.PushAsync(new DictionaryPage1());
