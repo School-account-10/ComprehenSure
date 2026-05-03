@@ -245,6 +245,7 @@ namespace comprehensure
             Routing.RegisterRoute(nameof(SignUpPage), typeof(SignUpPage));
             Routing.RegisterRoute(nameof(MainDashboard), typeof(MainDashboard));
             Routing.RegisterRoute(nameof(ModulesDashboard), typeof(ModulesDashboard));
+            Routing.RegisterRoute(nameof(AboutUs), typeof(AboutUs));
             Routing.RegisterRoute(nameof(StoryPage1), typeof(StoryPage1));
             Routing.RegisterRoute(nameof(StoryPage2), typeof(StoryPage2));
             Routing.RegisterRoute(nameof(StoryPage3), typeof(StoryPage3));

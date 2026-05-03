@@ -44,8 +44,296 @@
 
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
 
-		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Include="Resources\Images\**\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+		<MauiImage Update="Resources\Images\m1_curiosity_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_curiosity_2.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_curiosity_3.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_curiosity_4.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_history_1.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_history_2.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_history_3.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_history_4.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_knowledge_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_knowledge_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_knowledge_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m1_knowledge_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_message_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_message_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_message_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_message_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_patience_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_patience_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_patience_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_patience_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_wisdom_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_wisdom_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_wisdom_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m2_wisdom_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_balance_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_balance_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_balance_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_balance_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_hidden_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_hidden_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_hidden_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_hidden_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_vision_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_vision_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_vision_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m3_vision_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_harmony_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_harmony_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_harmony_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_harmony_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_investigation_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_investigation_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_investigation_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_investigation_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_revelation_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_revelation_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_revelation_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m4_revelation_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_anticipation_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_anticipation_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_anticipation_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_anticipation_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_continuity_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_continuity_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_continuity_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_continuity_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_intention_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_intention_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_intention_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m5_intention_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_awareness_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_awareness_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_awareness_3.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_awareness_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_discipline_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_discipline_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_discipline_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_discipline_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_vulnerability_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_vulnerability_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_vulnerability_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m6_vulnerability_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_preservation_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_preservation_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_preservation_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_preservation_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_reciprocation_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_reciprocation_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_reciprocation_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_reciprocation_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_resonance_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_resonance_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_resonance_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m7_resonance_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_introspection_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_introspection_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_introspection_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_introspection_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_stagnation_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_stagnation_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_stagnation_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_stagnation_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_surrender_1.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_surrender_2.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_surrender_3.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
+		<MauiImage Update="Resources\Images\m8_surrender_4.jpg.jpg">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</MauiImage>
 
 		<MauiFont Include="Resources\Fonts\*" />
 
@@ -85,6 +373,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<MauiXaml Update="DASHBOARD\AboutUs.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="DASHBOARD\AllAboutUS_Dashboard.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>

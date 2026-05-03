@@ -1,0 +1,28 @@
+<ContentPage
+    x:Class="comprehensure.DASHBOARD.AboutUs"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F2F6FB"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView VerticalOptions="FillAndExpand">
+        <VerticalStackLayout Padding="40,36,40,56" Spacing="28">
+
+            <!-- ══════════════════════════════════════ -->
+            <!--  HEADER BAR                           -->
+            <!-- ══════════════════════════════════════ -->
+            <Grid ColumnDefinitions="Auto, *, Auto" ColumnSpacing="16">
+
+                <Button Text="← Back"
+        Command="{Binding BackCommand}"
+        BackgroundColor="Transparent"
+        TextColor="#0F2D4A"
+        BorderWidth="0"
+        FontAttributes="Bold"
+        FontSize="13"
+        HeightRequest="44"
+        Padding="20,0" />
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

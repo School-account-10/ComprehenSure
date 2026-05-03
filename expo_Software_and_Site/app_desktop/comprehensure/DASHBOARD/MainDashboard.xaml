@@ -35,6 +35,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <!--  ══════════════════════════════════════════  -->
@@ -191,7 +192,7 @@
                 <!--  ROW 1 — NAV BUTTONS                        -->
                 <!--  ══════════════════════════════════════════  -->
 
-                <!--  ★ MODULES — hero primary button  -->
+                <!--  MODULES  hero primary button  -->
                 <Border
                     Grid.Row="1"
                     Grid.Column="0"
@@ -213,10 +214,10 @@
                             Margin="0,12,0,0"
                             Padding="12,4"
                             HorizontalOptions="Center"
-                            Stroke="#FFFFFF33"
+                            Stroke="#EBBF0C"
                             StrokeThickness="1">
                             <Border.Background>
-                                <SolidColorBrush Color="#FFFFFF18" />
+                                <SolidColorBrush Color="#EBBF0C" />
                             </Border.Background>
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="20" />
@@ -247,8 +248,8 @@
                 <Border
                     Grid.Row="1"
                     Grid.Column="2"
-                    BackgroundColor="White"
-                    Stroke="#CBDCEB"
+                    BackgroundColor="#0F2D4A"
+                    Stroke="Transparent"
                     StrokeThickness="1">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="28" />
@@ -257,21 +258,84 @@
                         <Shadow Brush="#0F2D4A" Offset="0,4" Radius="12" Opacity="0.07" />
                     </Border.Shadow>
                     <Button
-                        BackgroundColor="Transparent"
+                        BackgroundColor="#0F2D4A"
                         BorderWidth="0"
                         CharacterSpacing="2.0"
+                        Command="{Binding AboutUsCommand}"
                         FontAttributes="Bold"
-                        FontSize="15"
+                        FontSize="25"
                         HeightRequest="88"
                         Text="ABOUT US"
-                        TextColor="#0F2D4A" />
+                        TextColor="White" />
+                </Border>
+
+                <!--  MASTER DICTIONARY BUTTON  -->
+                <Border
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Margin="0,12,0,0"
+                    Stroke="#1E3A6B"
+                    StrokeThickness="1.5">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#0A0F1E" Offset="0"/>
+                            <GradientStop Color="#0F1A30" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="28"/>
+                    </Border.StrokeShape>
+                    <Border.Shadow>
+                        <Shadow Brush="#4A90D9" Offset="0,6" Radius="20" Opacity="0.18"/>
+                    </Border.Shadow>
+                    <Grid ColumnDefinitions="Auto,*,Auto" Padding="20,16" ColumnSpacing="16">
+                        <!-- Book icon chip -->
+                        <Border Grid.Column="0"
+                                BackgroundColor="#0F1A30"
+                                Stroke="#1E3A6B" StrokeThickness="1"
+                                HeightRequest="52" WidthRequest="52">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="26"/>
+                            </Border.StrokeShape>
+                            <Label Text="📚" FontSize="24"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </Border>
+                        <!-- Text -->
+                        <VerticalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+                            <Label Text="MASTER DICTIONARY"
+                                   FontSize="11" FontAttributes="Bold"
+                                   TextColor="#4A90D9" CharacterSpacing="2.2"/>
+                            <Label Text="All words from Modules 1–8"
+                                   FontSize="13" TextColor="#4A6A9A"/>
+                            <HorizontalStackLayout Spacing="8" Margin="0,4,0,0">
+                                <Border BackgroundColor="#1B4A1B" Stroke="#2E7D32" StrokeThickness="1" Padding="8,3">
+                                    <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                                    <Label Text="🟢 Easy" FontSize="10" FontAttributes="Bold" TextColor="#A5D6A7"/>
+                                </Border>
+                                <Border BackgroundColor="#3D3200" Stroke="#F9A825" StrokeThickness="1" Padding="8,3">
+                                    <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                                    <Label Text="🟡 Average" FontSize="10" FontAttributes="Bold" TextColor="#FFE082"/>
+                                </Border>
+                                <Border BackgroundColor="#4A0F0F" Stroke="#C62828" StrokeThickness="1" Padding="8,3">
+                                    <Border.StrokeShape><RoundRectangle CornerRadius="10"/></Border.StrokeShape>
+                                    <Label Text="🔴 Intermediate" FontSize="10" FontAttributes="Bold" TextColor="#EF9A9A"/>
+                                </Border>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMasterDictionaryClicked"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
                 </Border>
 
                 <!--  ══════════════════════════════════════════  -->
                 <!--  ROW 2 — CHALLENGE ZONE (left+mid cols)     -->
                 <!--  ══════════════════════════════════════════  -->
                 <VerticalStackLayout
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Spacing="16">
@@ -311,39 +375,20 @@
                             </Border.Shadow>
                             <VerticalStackLayout Spacing="0">
 
-                                <!--  Thumbnail placeholder  -->
+                                <!--  Thumbnail  -->
                                 <Border
-                                    HeightRequest="150"
+                                    HeightRequest="290"
                                     Stroke="Transparent"
                                     StrokeThickness="0">
                                     <Border.StrokeShape>
                                         <RoundRectangle CornerRadius="28,28,0,0" />
                                     </Border.StrokeShape>
-                                    <Border.Background>
-                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#D6EAFF" />
-                                            <GradientStop Offset="1" Color="#CBDCEB" />
-                                        </LinearGradientBrush>
-                                    </Border.Background>
-                                    <Grid>
-                                        <Image
-                                            Aspect="AspectFill"
-                                            Opacity="0"
-                                            Source="synonym_thumb.png" />
-                                        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                            <Label
-                                                FontSize="40"
-                                                HorizontalOptions="Center"
-                                                Text="🔍" />
-                                            <Label
-                                                CharacterSpacing="1.0"
-                                                FontSize="10"
-                                                HorizontalOptions="Center"
-                                                Opacity="0.5"
-                                                Text="THUMBNAIL"
-                                                TextColor="#6B8CAE" />
-                                        </VerticalStackLayout>
-                                    </Grid>
+                                    <Image
+                                        Aspect="AspectFill"
+                                        Opacity="1"
+                                        Source="synonym_thumb.png"
+                                        HorizontalOptions="Fill"
+                                        VerticalOptions="Fill" />
                                 </Border>
 
                                 <!--  Card content  -->
@@ -402,39 +447,20 @@
                             </Border.Shadow>
                             <VerticalStackLayout Spacing="0">
 
-                                <!--  Thumbnail placeholder  -->
+                                <!--  Thumbnail  -->
                                 <Border
-                                    HeightRequest="150"
+                                    HeightRequest="290"
                                     Stroke="Transparent"
                                     StrokeThickness="0">
                                     <Border.StrokeShape>
                                         <RoundRectangle CornerRadius="28,28,0,0" />
                                     </Border.StrokeShape>
-                                    <Border.Background>
-                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                            <GradientStop Offset="0" Color="#D6EAFF" />
-                                            <GradientStop Offset="1" Color="#CBDCEB" />
-                                        </LinearGradientBrush>
-                                    </Border.Background>
-                                    <Grid>
-                                        <Image
-                                            Aspect="AspectFill"
-                                            Opacity="0"
-                                            Source="theme_thumb.png" />
-                                        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                            <Label
-                                                FontSize="40"
-                                                HorizontalOptions="Center"
-                                                Text="🖼️" />
-                                            <Label
-                                                CharacterSpacing="1.0"
-                                                FontSize="10"
-                                                HorizontalOptions="Center"
-                                                Opacity="0.5"
-                                                Text="THUMBNAIL"
-                                                TextColor="#6B8CAE" />
-                                        </VerticalStackLayout>
-                                    </Grid>
+                                    <Image
+                                        Aspect="AspectFill"
+                                        Opacity="1"
+                                        Source="theme_thumb.png"
+                                        HorizontalOptions="Fill"
+                                        VerticalOptions="Fill" />
                                 </Border>
 
                                 <!--  Card content  -->
@@ -500,13 +526,13 @@
                                 Opacity="0.15"
                                 Text="&#x201C;"
                                 TextColor="#0F2D4A"
-                                VerticalOptions="Start" />
+                                VerticalOptions="Start" />  
                             <Label
                                 Grid.Column="1"
                                 FontAttributes="Italic"
                                 FontSize="14"
                                 LineBreakMode="WordWrap"
-                                Text="Important truths can be found through curiosity and effort."
+                                Text="placeholder"
                                 TextColor="#6B8CAE"
                                 VerticalOptions="Center" />
                         </Grid>
@@ -518,7 +544,7 @@
                 <!--  ROW 2 — LEADERBOARD (right col)            -->
                 <!--  ══════════════════════════════════════════  -->
                 <Border
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="2"
                     Padding="24,24"
                     BackgroundColor="White"
